@@ -19,3 +19,8 @@ Here are some ideas to get you started:
 if u have any issue with pip conflicting use below commands
 1) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 2) python get-pip.py
+
+
+
+pip install robotframework-selenium2library
+
