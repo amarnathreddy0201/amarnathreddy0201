@@ -31,4 +31,9 @@ pip install virtualenvwrapper-win
 mkvirtualenv myproject
 workon myproject
 pip install django
+django-admin startproject "projectname"  #Name of the project
+django-admin startapp "app name"  or python manage.py startapp appname
+
+pip install --user pipenv
+pipenv install django
 
