@@ -24,3 +24,11 @@ if u have any issue with pip conflicting use below commands
 
 pip install robotframework-selenium2library
 
+
+
+For Django preparation:
+pip install virtualenvwrapper-win
+mkvirtualenv myproject
+workon myproject
+pip install django
+
