@@ -27,12 +27,20 @@ pip install robotframework-selenium2library
 
 
 For Django preparation:
-pip install virtualenvwrapper-win
-mkvirtualenv myproject
-workon myproject
-pip install django
-django-admin startproject "projectname"  #Name of the project
-django-admin startapp "app name"  or python manage.py startapp appname
+  pip install virtualenvwrapper-win
+  mkvirtualenv myproject
+  workon myproject
+  pip install django
+  django-admin startproject "projectname"  #Name of the project
+  django-admin startapp "app name"  or python manage.py startapp appname
+
+  python manage.py showmigrations
+  python manage.py migrate
+  python manage.py makemigrations
+  (model in sql format)python manage.py sqlmigrate meetings 0001(Follow this :- python manage.py "this is belongs to sqllite migrations" "This is app names in our project" "in our app check the       migrations and give starting name")
+  if above command not working first make the migrations(makemigrations)
+  python manage.py migrate(it will put data in sqlite)
+  python manage.py createsuperuser
 
 pip install --user pipenv
 pipenv install django
