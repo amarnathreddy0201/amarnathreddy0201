@@ -9,12 +9,13 @@
     <style>
       .body{
         margin-left:10%;
+        margin-right: 10%;
       }
       .iconDetails {
         
         float:left; 
-        height:300px;
-        width:400px; 
+        height:200px;
+        width:300px; 
       } 
       .right{
         text-align: right;
@@ -27,10 +28,10 @@
   </head>
   <body class="body">
     <section class="section has-text-container">
-      <div class="CURRICULUM VITAE" style="text-align: center;"><h1><b>CURRICULUM VITAE</b></h1></div>
+      <div class="CURRICULUM VITAE" style="text-align: center;"><h1><strong>MY PROFILE PAGE</strong></h1></div>
       <div class='container2'>
         <div class="left">
-            <img src='static/amar.jpg' class='iconDetails'>
+            <img src="../static/amar.jpg" class='iconDetails'>
         </div>  
         <div class="right" >
           <h4>AMARNATH REDDY SURAPUREDDY</h4>
@@ -44,7 +45,7 @@
         </div>
       </div>
       <div class="roe">
-        <a class="button is-info is-outlined is-rounded" href="#">Contact</a>
+        <a type="button" class="button is-info is-outlined is-rounded" href="{{ url_for 'contact' }}">Contact</a>
       </div>
     
     </section>
@@ -56,32 +57,34 @@
             <div class="card m-3">
               <div class="card-content">
                 <h1 class="title">About</h1>
-                <Ol>
-                  <li></li>
-                </Ol>
+                
+                  <p>Seeking a position in an organization where I can learn, <br>grow and innovate new things along with being resourceful and orient<br> towards organization goals in win-win situation.
+
+                  </p>
+                
               </div>
 
             </div>
             <div class="card m-3">
               <div class="card-content">
                 <h1 class="title">Interests</h1>
-                <ol>
+                <p>
                   <li>Playing Ball badminton, Volleyball</li>
                   <li>Walking and Googling.</li>
-                </ol>
+                </p>
               </div>
             </div>
             <div class="card m-3">
               <div class="card-content">
                 <h1 class="title">Strengths</h1>
-                <ol>
+                <p>
                   <li>Positive Thinking</li>
                   <li>Self-motivation </li>
                   <li>Punctuality</li>
                   <li>Analytical Thinking</li>
                   <li>Leadership</li>
                   
-                </ol>
+                </p>
               </div>
 
             </div>
@@ -90,32 +93,31 @@
             <div class="card m-3">
               <div class="card-content">
                 <h1 class="title">Education</h1>
-                <ol>
+                <p>
                   <li>Bachelor of Technology @AITS,Rajampet,2018,71.29%,EEE</li>
                   <li>Diploma @E.S.C.GOVT. POLYTECHNIC-NANDYAL,2015,81.11%,DEEE</li>
                   <lI>SSC @NAVABHARATH EM &TH HS,2012,9.0GPA</LI>
-                </ol>
+                </p>
               </div>
 
             </div>
             <div class="card m-3">
               <div class="card-content">
                 <h1 class="title">Experience</h1>
-                <ol>
+                <p>
                   <li>Playing Ball badminton, Volleyball</li>
                   <li>Walking and Googling.</li>
-                </ol>
+                </p>
               </div>
             </div>
             <div class="card m-3">
               <div class="card-content">
                 <h1 class="title">Technical skills</h1>
-                <ol>
-                  <li>Programing languages  :  C, C++, Python, HTML, CSS, JavaScript. </li>
-                  <li>Operating system      :  Linux, Windows.</li>
-                  <li>Database              :  MySQL.</li>
-                  <li>Version control       : GitHub,Bitbucket.</li>
-                </ol>
+                <p><li>Programing languages  :  C, C++, Python, HTML, CSS, JavaScript.</li>
+                  <li>Operating system       :  Linux, Windows.</li>
+                  <li>Database               :  MySQL.</li>
+                  <li>Version control       :  GitHub,Bitbucket.</li>
+                </p>
               </div>
 
             </div>
