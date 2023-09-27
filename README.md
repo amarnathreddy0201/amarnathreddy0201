@@ -51,3 +51,4 @@ pipenv install django
 1) Boost continuous sending data .
 2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
 3) https://github.com/lagadic/visp/blob/master/cmake/FindPylon.cmake pypylon cmake
+4) https://gist.github.com/UnaNancyOwen/9d25d9ef66b163e0667b4b3bf3962f8a
