@@ -45,7 +45,11 @@ For Django preparation:
 pip install --user pipenv
 pipenv install django
 
-
+######    logging files ####################
+import logging
+logging.basicConfig(level=logging.INFO, filename='sample.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(filename)s - %(lineno)d')
+logger = logging.getLogger(__name__)
+logger.info("print")
 
 ############################################################################ CPP #######################################################
 1) Boost continuous sending data .
