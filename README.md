@@ -42,6 +42,10 @@ For Django preparation:
   python manage.py migrate(it will put data in sqlite)
   python manage.py createsuperuser
 
+##### Virtual env for different python versions.
+1) py -3.11 -m venv pyenv_3.11
+2) Ex :-  py python_version -m venv your_venv_name.
+
 pip install --user pipenv
 pipenv install django
 
