@@ -61,3 +61,6 @@ logger.info("print")
 3) https://github.com/lagadic/visp/blob/master/cmake/FindPylon.cmake pypylon cmake
 4) Opencv include in cmake : https://gist.github.com/UnaNancyOwen/9d25d9ef66b163e0667b4b3bf3962f8a
 5) Spdlog :   https://github.com/gabime/spdlog/blob/v1.x/CMakeLists.txt
+
+###################  AWS ##############################
+1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist. 
