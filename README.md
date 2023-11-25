@@ -45,3 +45,7 @@ pipenv install django
 ######################### CPP #############################
 1) Boost continuous sending data .
 2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
+
+######################### CPP #############################
+1) Boost continuous sending data .
+2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
