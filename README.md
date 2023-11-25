@@ -15,16 +15,11 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-
 if u have any issue with pip conflicting use below commands
 1) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 2) python get-pip.py
 
-
-
 pip install robotframework-selenium2library
-
-
 
 For Django preparation:
   pip install virtualenvwrapper-win
@@ -58,6 +53,12 @@ logger.info("print")
 ######################### CPP #############################
 1) Boost continuous sending data .
 2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
+
+
+######################### CPP #############################
+1) Boost continuous sending data .
+2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
+
 3) https://github.com/lagadic/visp/blob/master/cmake/FindPylon.cmake pypylon cmake
 4) Opencv include in cmake : https://gist.github.com/UnaNancyOwen/9d25d9ef66b163e0667b4b3bf3962f8a
 5) Spdlog :   https://github.com/gabime/spdlog/blob/v1.x/CMakeLists.txt
@@ -70,3 +71,4 @@ This is forlearning.
 This is forlearning.
 ###################  AWS ##############################
 1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist. 
+
