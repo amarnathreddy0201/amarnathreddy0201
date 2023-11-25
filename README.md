@@ -15,16 +15,11 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-
 if u have any issue with pip conflicting use below commands
 1) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 2) python get-pip.py
 
-
-
 pip install robotframework-selenium2library
-
-
 
 For Django preparation:
   pip install virtualenvwrapper-win
@@ -47,6 +42,6 @@ pipenv install django
 
 
 
-######################### CPP ################
+######################### CPP #############################
 1) Boost continuous sending data .
 2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
