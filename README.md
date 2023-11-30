@@ -54,7 +54,6 @@ logger.info("print")
 1) Boost continuous sending data .
 2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
 
-
 ######################### CPP #############################
 1) Boost continuous sending data .
 2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
@@ -66,9 +65,3 @@ logger.info("print")
 This is forlearning.
 ###################  AWS ##############################
 1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist. 
-
-
-This is forlearning.
-###################  AWS ##############################
-1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist. 
-
