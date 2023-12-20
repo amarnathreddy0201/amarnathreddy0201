@@ -64,4 +64,11 @@ logger.info("print")
 
 This is forlearning.
 ###################  AWS ##############################
-1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist. 
+1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist.
+
+##### fastapi with lambda(windows) ###################
+1) pip freeze>requirements.txt
+2) pip install -t dependencies -r requirements.txt
+3) Compress-Archive -Path .\dependencies -DestinationPath .\lambda_function.zip
+4) Compress-Archive -Path .\main.py -DestinationPath .\lambda_function.zip -Update
+
