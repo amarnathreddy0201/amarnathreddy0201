@@ -18,6 +18,7 @@ Here are some ideas to get you started:
 if u have any issue with pip conflicting use below commands
 1) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 2) python get-pip.py
+3) 
 
 pip install robotframework-selenium2library
 
@@ -40,6 +41,8 @@ For Django preparation:
 ##### Virtual env for different python versions.
 1) py -3.11 -m venv pyenv_3.11
 2) Ex :-  py python_version -m venv your_venv_name.
+
+python3.11 -m pip install ultralytics
 
 pip install --user pipenv
 pipenv install django
