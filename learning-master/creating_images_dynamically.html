@@ -1,0 +1,32 @@
+<!-- Reference : https://stackoverflow.com/questions/44586479/adding-new-div-on-button-click -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="container">
+        <button id="newsectionbtn">+New Section</button>
+        <section id="mainsection">
+            <div id="image" col-lg-4 col-xl-4 col-md-6 col-sm-6 col-6>
+                <!-- <img src="C:\Development\qa-cal\electron_appcreation\dummy3\CB.png"> -->
+            </div>
+        </section>
+    </div>
+    <script>
+        document.getElementById("newsectionbtn").onclick = function() {
+            var container = document.getElementById("container");
+            var section = document.getElementById("mainsection");
+            var images = document.createElement('img');
+            images.src="C:/dummy3/CB.png";
+
+            document.getElementById('image').appendChild(images);
+            //container.appendChild(section.cloneNode(true));
+        }
+    </script>
+</body>
+</html>
