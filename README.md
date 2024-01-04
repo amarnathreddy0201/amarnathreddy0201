@@ -39,10 +39,14 @@ For Django preparation:
   python manage.py createsuperuser
 
 ##### Virtual env for different python versions.
+windows:
 1) py -3.11 -m venv pyenv_3.11
 2) Ex :-  py python_version -m venv your_venv_name.
 
 python3.11 -m pip install ultralytics
+
+Linux:
+ python3 -m venv pyven_3.11
 
 pip install --user pipenv
 pipenv install django
