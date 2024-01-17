@@ -79,3 +79,11 @@ This is forlearning.
 3) Compress-Archive -Path .\dependencies -DestinationPath .\lambda_function.zip
 4) Compress-Archive -Path .\main.py -DestinationPath .\lambda_function.zip -Update
 
+Classification	Detection	Segmentation	Kind
+yolov8n-cls.pt	yolov8n.pt	yolov8n-seg.pt	Nano
+yolov8s-cls.pt	yolov8s.pt	yolov8s-seg.pt	Small
+yolov8m-cls.pt	yolov8m.pt	yolov8m-seg.pt	Medium
+yolov8l-cls.pt	yolov8l.pt	yolov8l-seg.pt	Large
+yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
+
+
