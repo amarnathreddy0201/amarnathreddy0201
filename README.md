@@ -86,4 +86,21 @@ yolov8m-cls.pt	yolov8m.pt	yolov8m-seg.pt	Medium
 yolov8l-cls.pt	yolov8l.pt	yolov8l-seg.pt	Large
 yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 
+**Creating a Python virtual environment in Linux**
+1) pip is not in your system : sudo apt-get install python-pip
+2) pip install virtualenv
+3) Create a virtual environment now,
+    $ virtualenv virtualenv_name
+4) virtualenv -p /usr/bin/python3 virtualenv_name
+5) source virtualenv_name/bin/activate
+6) deactivate
+**Creating Python virtualenv in Windows**
+1) pip install virtualenv
+2) python -m venv myenv
+3) myenv\Scripts\activate
+4) deactivate
+
+
+
+
 
