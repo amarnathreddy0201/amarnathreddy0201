@@ -94,6 +94,7 @@ yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 4) virtualenv -p /usr/bin/python3 virtualenv_name
 5) source virtualenv_name/bin/activate
 6) deactivate
+   
 **Creating Python virtualenv in Windows**
 1) pip install virtualenv
 2) python -m venv myenv
