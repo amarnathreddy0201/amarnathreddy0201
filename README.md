@@ -102,6 +102,20 @@ yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 4) deactivate
 
 
+** Docker to build and run **
+$ docker pull mysql:8.2
+
+$ docker images
+
+$ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
+
+$ docker exec -it container_name bash
+
+$ mysql -u root -p
+Enter password: ...
+mysql>
+
+
 
 
 
