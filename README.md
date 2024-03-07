@@ -109,13 +109,20 @@ $ docker images
 
 $ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
 
-$ docker exec -it container_name bash
 
-$ mysql -u root -p
+$ docker exec -it container_name bash  // Check your docker website.
+
+    ex : docker exec -it test-mysql bash
+
+$ mysql -u root -p    // Type this command it will show downside text
+
 Enter password: ...
 mysql>
 
+
 docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
+
+    example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
 
 
 
