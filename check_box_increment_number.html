@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #imageContainer {
+        position: relative;
+        display: inline-block;
+      }
+
+      .circleOverlay {
+        position: absolute;
+        border-radius: 5%;
+        width: 5px; /* Adjust the size of the circle */
+        height: 5px; /* Adjust the size of the circle */
+        background-color: red;
+        pointer-events: none;
+      }
+
+      #colorChangeImage {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <input type="text" id="gimper" value="0"></input>
+
+    <div id="imageContainer">
+      <!-- Replace 'path/to/your/image.jpg' with the actual path to your image -->
+      <img
+        id="colorChangeImage"
+        src="C:\Users\alluv\Downloads\Night image\Screenshot (337) 1108.png"
+        alt="Clickable Image"
+        onclick="drawCircle(event)" width="100%" height="100%"
+      />
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox1" value="1" />
+      <label for="checkbox1">1</label>
+      <input type="checkbox" id="checkbox2" value="2" />
+      <label for="checkbox2">2</label>
+      <input type="checkbox" id="checkbox3" value="3" />
+      <label for="checkbox3">3</label>
+      <input type="checkbox" id="checkbox4" value="4" />
+      <label for="checkbox4">4</label>
+      <input type="checkbox" id="checkbox5" value="5" />
+      <label for="checkbox5">5</label>
+      <input type="checkbox" id="checkbox6" value="6" />
+      <label for="checkbox6">6</label>
+      <input type="checkbox" id="checkbox7" value="7" />
+      <label for="checkbox7">7</label>
+      <input type="checkbox" id="checkbox8" value="8" />
+      <label for="checkbox8">8</label>
+      <input type="checkbox" id="checkbox9" value="9" />
+      <label for="checkbox9">9</label>
+    </div>
+
+    <script>
+
+        // function updateNumber() {
+        //   count = 0;
+        //   const checkboxes = document.querySelectorAll(
+        //     'input[type="checkbox"]:checked'
+        //   );
+        //   checkboxes.forEach((checkbox) => {
+        //     count += parseInt(checkbox.value, 0);
+        //   });
+        //   // document.getElementById("counter").innerText = "Count: " + count;
+        //   const value = document.getElementById("gimper").value ;
+        //   document.setElementById("gimper").value += count
+        // }
+
+
+        var total_number = 0;
+
+        function updateNumber() {
+          count = 0;
+          const checkboxes = document.getElementsByTagName('input');
+          
+          for (let i = 0; i < checkboxes.length; i++) {
+              if (checkboxes[i].type === 'checkbox' && checkboxes[i].checked) {
+                  count += parseInt(checkboxes[i].value, 0);
+              }
+
+              total_number =count;
+        }
+
+    const gimperInput = document.getElementById("gimper");
+    gimperInput.value = (parseInt(total_number)+parseInt(gimperInput.value));
+}
+
+
+        document
+          .getElementById("imageContainer")
+          .addEventListener("click", function () {
+            updateNumber();
+        });
+
+        // Listen for checkbox changes
+        // document
+        //   .querySelectorAll('input[type="checkbox"]')
+        //   .forEach((checkbox) => {
+        //     checkbox.addEventListener("change", function () {
+        //       updateNumber();
+        //     });
+        //   });
+      function drawCircle(event) {
+        
+
+        // console.log(document.getElementById("gimper").value);
+
+        var imageContainer = document.getElementById("imageContainer");
+
+        // Create a new circle overlay
+        var circleOverlay = document.createElement("div");
+        circleOverlay.className = "circleOverlay";
+
+        // Get the coordinates of the click event relative to the image container
+        var x = event.offsetX;
+        var y = event.offsetY;
+
+        // Set the position of the circle overlay
+        circleOverlay.style.top = y + "px"; // Adjusted to center the circle
+        circleOverlay.style.left = x + "px"; // Adjusted to center the circle
+
+        // Append the circle overlay to the image container
+        imageContainer.appendChild(circleOverlay);
+
+      }
+    </script>
+  </body>
+</html>
