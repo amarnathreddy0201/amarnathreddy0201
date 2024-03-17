@@ -130,3 +130,13 @@ docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
 
 
 
+### Build the Docker image: Once you have your Dockerfile and application files ready, navigate to the directory containing these files and run the following command to build the Docker image:
+
+1) docker build -t my-image .
+Replace my-image with the desired name for your image.
+
+Run a Docker container: After successfully building the Docker image, you can run a container using the following command:
+2) docker run -d --name my-container -p 8080:80 my-image
+
+
+
