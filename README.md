@@ -125,6 +125,8 @@ docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
     example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
 
 
+# Docker for running the docker fastapi
+  docker run --name nervous_kowalevski -d fastapi-app-simple:latest 
 
 
 
