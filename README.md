@@ -141,4 +141,7 @@ Run a Docker container: After successfully building the Docker image, you can ru
 2) docker run -d --name my-container -p 8080:80 my-image
 
 
+### Docker commands ########
+1) For clear : docker system prune -a  
+
 
