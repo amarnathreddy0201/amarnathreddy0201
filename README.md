@@ -94,6 +94,7 @@ yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 4) virtualenv -p /usr/bin/python3 virtualenv_name
 5) source virtualenv_name/bin/activate
 6) deactivate
+   
 **Creating Python virtualenv in Windows**
 1) pip install virtualenv
 2) python -m venv myenv
@@ -101,6 +102,46 @@ yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 4) deactivate
 
 
+** Docker to build and run **
+$ docker pull mysql:8.2
 
+$ docker images
+
+$ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
+
+
+$ docker exec -it container_name bash  // Check your docker website.
+
+    ex : docker exec -it test-mysql bash
+
+$ mysql -u root -p    // Type this command it will show downside text
+
+Enter password: ...
+mysql>
+
+
+docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
+
+    example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
+
+
+# Docker for running the docker fastapi
+  docker run --name nervous_kowalevski -d fastapi-app-simple:latest 
+
+
+
+### Build the Docker image: Once you have your Dockerfile and application files ready, navigate to the directory containing these files and run the following command to build the Docker image:
+
+1) docker build -t my-image .
+   
+Replace my-image with the desired name for your image.
+
+Run a Docker container: After successfully building the Docker image, you can run a container using the following command:
+
+2) docker run -d --name my-container -p 8080:80 my-image
+
+
+### Docker commands ########
+1) For clear : docker system prune -a  
 
 
