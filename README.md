@@ -179,3 +179,21 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 1) lsof -i :8000
 2) lsof -i -P -n | grep LISTEN
 
+
+#### For docker installation in ec2 ###################
+1) sudo apt update
+2)  sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+3) curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+4) sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+5) sudo apt update
+6) sudo apt install -y docker-ce docker-ce-cli containerd.io
+7) sudo systemctl start docker
+8) sudo systemctl enable docker
+9) docker --version
+
+
+
+ 
+
+
