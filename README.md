@@ -146,5 +146,7 @@ Run a Docker container: After successfully building the Docker image, you can ru
 
 2) For checking log files : docker exec container_id_or_name cat /path/to/log/file
 
+3) docker tag count-web-application(name of the image) docker/web-app
 
+4) docker push dockerhub/web-app
 
