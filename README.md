@@ -142,13 +142,21 @@ Run a Docker container: After successfully building the Docker image, you can ru
 
 
 ### Docker commands ########
-1) For clear : docker system prune -a
+1) stop the docker : sudo docker stop count-web-application-container
+2) remove the docker : sudo docker rm count-web-application-container
+3)  For clear : docker system prune -a
 
-2) For checking log files : docker exec container_id_or_name cat /path/to/log/file
 
-3) docker tag count-web-application(name of the image) docker/web-app
+#### for pushing to docker hub #########
+4) For checking log files : docker exec container_id_or_name cat /path/to/log/file
 
-4) docker push dockerhub/web-app
+5) docker tag count-web-application(name of the image) docker/web-app
+
+6) docker push dockerhub/web-app
+
+7) docker images
+
+8) sudo docker rmi 5323383c00e8(pid of image)
 
 
 ###  python 3.11 in ec2 instance commands ##
