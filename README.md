@@ -142,6 +142,9 @@ Run a Docker container: After successfully building the Docker image, you can ru
 
 
 ### Docker commands ########
-1) For clear : docker system prune -a  
+1) For clear : docker system prune -a
+
+2) For checking log files : docker exec container_id_or_name cat /path/to/log/file
+
 
 
