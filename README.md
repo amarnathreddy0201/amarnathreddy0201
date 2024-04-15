@@ -150,3 +150,20 @@ Run a Docker container: After successfully building the Docker image, you can ru
 
 4) docker push dockerhub/web-app
 
+
+###  python 3.11 in ec2 instance commands ##
+
+1) sudo apt update
+2) sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+3) wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
+4) tar -xf Python-3.11.0.tgz
+5) cd Python-3.11.0
+ > ./configure --enable-optimizations
+ > make -j 8  # Adjust the number according to the number of CPU cores
+ > sudo make altinstall
+6) python3.11 -m venv myenv
+7) source myenv/bin/activate
+
+
