@@ -175,3 +175,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 7) source myenv/bin/activate
 
 
+########################## For ip address finding #######
+1) lsof -i :8000
+2) lsof -i -P -n | grep LISTEN
+
