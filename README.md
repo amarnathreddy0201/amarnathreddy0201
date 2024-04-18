@@ -196,6 +196,56 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 
 
- 
+
+
+ ####  interview questions############
+ 1) How yolo works?
+      a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
+      Inputting an image: The image is resized to 448x448, then passed through a CNN to extract features
+      Dividing the image into a grid: The grid size can be 13x13 or 19x19, with each cell containing 5 boxes
+      Predicting bounding boxes and class probabilities: Each cell predicts a set of bounding boxes and class probabilities
+      Removing overlapping guesses: YOLO uses non-maximum suppression to remove any guesses that overlap with other guesses
+      Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
+2) Object detection vs segmentation
+   a) Finding the object and location of the object.
+   b) Fine-grained information
+   Object detection:
+     Focuses on identifying and localizing specific objects within an image or video. It involves finding bounding boxes around objects and classifying them.
+   Segmentation:
+     Focuses on dividing an image into meaningful regions and assigning class labels to each pixel. It provides fine-grained information about object boundaries and regions.
+
+3) Different types of filters:
+   a) Smoothing filters
+     Gaussian filter: This filter applies a two-dimensional Gaussian function to the neighborhood pixels to smoothen the image. The greater the standard deviation of the Gaussian distribution, the greater the blur will be.
+     Median filter: This filter replaces each pixel value with the median of the neighboring pixels. It is effective in reducing the salt and pepper noise from the images.
+   b) Sharpening filters
+     Laplacian filter: This filter convolves over the image based on the principle of the Laplace transform. It calculates the image matrix's second-order derivative and highlights its edges and details by emphasizing regions of rapid intensity changes.
+   c) Edge detection filters:
+     Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
+     Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
+  d) Thresholding filters:
+    Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
+    Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
+  e) Morphological filters:
+    Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
+    Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
+4) Different types of segmentation(Semantic vs instance segmentation):
+   a) Semantic segmentation : One class consider as same entity.
+   b) Instane segmentation : Distinguishes between different instances of the same class
+   Semantic segmentation treats all objects within a category as one entity. Instance segmentation treats multiple objects in the same class as unique individual instances. 
+    Semantic and instance segmentation have real-world applications such as: Urban planning and smart city management, Medical diagnostics and research, Autonomous vehicles and advanced driver-assistance systems (ADAS), Analyzing  medical scans, and Satellite or aerial imagery. 
+     
+
+5) How RT-DERT works?
+  Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+**Key Features**
+  Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+  IoU-aware Query Selection: Baidu's RT-DETR improves object query initialization by utilizing IoU-aware query selection. This allows the model to focus on the most relevant objects in the scene, enhancing the detection accuracy.
+  Adaptable Inference Speed: Baidu's RT-DETR supports flexible adjustments of inference speed by using different decoder layers without the need for retraining. This adaptability facilitates practical application in various real-time object detection scenarios.
+
+7) Difference between low level and highlevel languages?
+  High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today
+   
+   
 
 
