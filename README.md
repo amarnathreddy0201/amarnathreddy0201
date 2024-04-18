@@ -223,19 +223,29 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
    a) Smoothing filters
      Gaussian filter: This filter applies a two-dimensional Gaussian function to the neighborhood pixels to smoothen the image. The greater the standard deviation of the Gaussian distribution, the greater the blur will be.
      Median filter: This filter replaces each pixel value with the median of the neighboring pixels. It is effective in reducing the salt and pepper noise from the images.
+   
    b) Sharpening filters
      Laplacian filter: This filter convolves over the image based on the principle of the Laplace transform. It calculates the image matrix's second-order derivative and highlights its edges and details by emphasizing regions of rapid intensity changes.
+   
    c) Edge detection filters:
      Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
      Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
+   
   d) Thresholding filters:
     Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
     Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
+    
   e) Morphological filters:
     Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
     Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
+
+  f) The anisotropic diffusion filter (ADF) is a technique used in image processing and computer vision to reduce image noise while preserving image content.
+  
+  g) The Bilateral Filter is a non-linear, edge-preserving smoothing filter that is commonly used in Computer Vision as a simple noise-reduction stage in a pipeline.
+  
+  h) Morphological operations include dilation, erosion, opening, closing, and boundary extraction. For example, dilation can expand image pixels or add pixels on object boundaries, while erosion can shrink the image pixels or remove pixels on object boundaries. Compound operations often combine dilation and erosion, such as closing, which performs dilation and then erosion, or opening, which performs erosion and then dilation.
    
-4) Different types of segmentation(Semantic vs instance segmentation):
+5) Different types of segmentation(Semantic vs instance segmentation):
    
    a) Semantic segmentation : One class consider as same entity.
    b) Instane segmentation : Distinguishes between different instances of the same class
@@ -243,7 +253,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     Semantic and instance segmentation have real-world applications such as: Urban planning and smart city management, Medical diagnostics and research, Autonomous vehicles and advanced driver-assistance systems (ADAS), Analyzing  medical scans, and Satellite or aerial imagery. 
      
 
-5) How RT-DERT works?
+6) How RT-DERT works?
   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
 
   **Key Features**
