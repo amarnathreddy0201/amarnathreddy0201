@@ -198,7 +198,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 
 
- ####  interview questions############
+ ##  interview questions ##
  1) How yolo works?
     
       a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
