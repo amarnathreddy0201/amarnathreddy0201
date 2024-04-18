@@ -200,15 +200,20 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
  ####  interview questions############
  1) How yolo works?
+    
       a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
       Inputting an image: The image is resized to 448x448, then passed through a CNN to extract features
       Dividing the image into a grid: The grid size can be 13x13 or 19x19, with each cell containing 5 boxes
       Predicting bounding boxes and class probabilities: Each cell predicts a set of bounding boxes and class probabilities
       Removing overlapping guesses: YOLO uses non-maximum suppression to remove any guesses that overlap with other guesses
       Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
+    
 2) Object detection vs segmentation
+   
    a) Finding the object and location of the object.
+   
    b) Fine-grained information
+   
    Object detection:
      Focuses on identifying and localizing specific objects within an image or video. It involves finding bounding boxes around objects and classifying them.
    Segmentation:
@@ -229,7 +234,9 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
   e) Morphological filters:
     Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
     Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
+   
 4) Different types of segmentation(Semantic vs instance segmentation):
+   
    a) Semantic segmentation : One class consider as same entity.
    b) Instane segmentation : Distinguishes between different instances of the same class
    Semantic segmentation treats all objects within a category as one entity. Instance segmentation treats multiple objects in the same class as unique individual instances. 
@@ -238,12 +245,13 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 5) How RT-DERT works?
   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+
 **Key Features**
   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
   IoU-aware Query Selection: Baidu's RT-DETR improves object query initialization by utilizing IoU-aware query selection. This allows the model to focus on the most relevant objects in the scene, enhancing the detection accuracy.
   Adaptable Inference Speed: Baidu's RT-DETR supports flexible adjustments of inference speed by using different decoder layers without the need for retraining. This adaptability facilitates practical application in various real-time object detection scenarios.
 
-7) Difference between low level and highlevel languages?
+6) Difference between low level and highlevel languages?
   High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today
    
    
