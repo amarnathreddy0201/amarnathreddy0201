@@ -282,7 +282,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 6) Difference between low level and highlevel languages?
    
-  High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today
+    High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today.
    
    
 
