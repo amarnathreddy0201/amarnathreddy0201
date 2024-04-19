@@ -404,35 +404,36 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       #Transfer tensor from GPU to CPU
       tensor_cpu_again = tensor_gpu.to('cpu')  # or tensor_gpu.cpu()
 
-  TensorFlow:
+    TensorFlow:
+    
+      Model1:
+    
+        import tensorflow as tf
+    
+        #Create a tensor on CPU
+        tensor_cpu = tf.convert_to_tensor([1, 2, 3])
+        
+        #Transfer tensor from CPU to GPU
+        with tf.device('/gpu:0'):  # Change '0' to the GPU device index you want to use
+            tensor_gpu = tf.identity(tensor_cpu)  # or tf.identity(tensor_cpu).gpu()
+        
+        #Transfer tensor from GPU to CPU
+        tensor_cpu_again = tf.identity(tensor_gpu)  # or tf.identity(tensor_gpu).cpu()
   
-    Model1:
-      import tensorflow as tf
+      Model2:
   
-      #Create a tensor on CPU
-      tensor_cpu = tf.convert_to_tensor([1, 2, 3])
-      
-      #Transfer tensor from CPU to GPU
-      with tf.device('/gpu:0'):  # Change '0' to the GPU device index you want to use
-          tensor_gpu = tf.identity(tensor_cpu)  # or tf.identity(tensor_cpu).gpu()
-      
-      #Transfer tensor from GPU to CPU
-      tensor_cpu_again = tf.identity(tensor_gpu)  # or tf.identity(tensor_gpu).cpu()
-
-    Model2:
-
-      import tensorflow as tf
-
-      #Create a tensor on CPU
-      tensor_cpu = tf.constant([1, 2, 3])
-      
-      #Transfer tensor from CPU to GPU
-      tensor_gpu = tf.convert_to_tensor(tensor_cpu)
-      with tf.device('/gpu:0'):  # Change '0' to the GPU device index you want to use
-          tensor_gpu = tf.identity(tensor_gpu)
-      
-      #Transfer tensor from GPU to CPU
-      tensor_cpu_again = tensor_gpu.numpy()
+        import tensorflow as tf
+  
+        #Create a tensor on CPU
+        tensor_cpu = tf.constant([1, 2, 3])
+        
+        #Transfer tensor from CPU to GPU
+        tensor_gpu = tf.convert_to_tensor(tensor_cpu)
+        with tf.device('/gpu:0'):  # Change '0' to the GPU device index you want to use
+            tensor_gpu = tf.identity(tensor_gpu)
+        
+        #Transfer tensor from GPU to CPU
+        tensor_cpu_again = tensor_gpu.numpy()
 
   
       
