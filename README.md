@@ -298,5 +298,45 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     Compute Unified Device Architecture (CUDA) is a parallel computing platform and application programming interface (API) that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing, an approach called general-purpose computing on GPUs (GPGPU).
      
    
+9) CUDA using pytorch:
+    a) Check if CUDA is available:
+   
+       import torch
+       print(torch.cuda.is_available())
+   
+    b) Check the CUDA device count:
+       print(torch.cuda.device_count())
+
+    c) Check the CUDA device properties:
+
+       for i in range(torch.cuda.device_count()):
+       print(torch.cuda.get_device_properties(i))
+
+    d) Check the current CUDA device:
+
+       print(torch.cuda.current_device())
+
+
+10) CUDA using tensorflow:
+      a) Check if CUDA is available:
+
+          import tensorflow as tf
+          print(tf.test.is_built_with_cuda())
+    
+      b) Check the CUDA device count:
+
+          print(len(tf.config.experimental.list_physical_devices('GPU')))
+
+
+      c) Check the CUDA device properties:
+
+          gpus = tf.config.experimental.list_physical_devices('GPU')
+          for gpu in gpus:
+              print("Name:", gpu.name, "  Type:", gpu.device_type)
+
+      d) Check the current CUDA device:
+
+          print(tf.config.experimental.get_visible_devices('GPU'))
+
 
 
