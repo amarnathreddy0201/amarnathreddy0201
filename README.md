@@ -285,6 +285,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today.
 
 7) Difference between pytorch and tensorflow:
+   
      a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. Both frameworks have their own strengths and weaknesses, and the best choice for you will depend on your specific needs.
    
      b) PyTorch is a Python-based deep learning framework that is known for its flexibility and ease of use. PyTorch uses a dynamic computation graph, which allows you to create and modify your models on the fly. This makes PyTorch a good choice for rapid prototyping and experimentation.
