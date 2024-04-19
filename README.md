@@ -387,6 +387,53 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       f) State Transfer:
 
       RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
+
+
+13) Tensor CPU to GPU using pythorch and tensorflow:
+
+    Pytorch :
     
+      import torch
+
+      # Create a tensor on CPU
+      tensor_cpu = torch.tensor([1, 2, 3])
+      
+      # Transfer tensor from CPU to GPU
+      tensor_gpu = tensor_cpu.to('cuda')  # or tensor_cpu.cuda()
+      
+      # Transfer tensor from GPU to CPU
+      tensor_cpu_again = tensor_gpu.to('cpu')  # or tensor_gpu.cpu()
+
+  TensorFlow:
+    Model1:
+      import tensorflow as tf
+  
+      # Create a tensor on CPU
+      tensor_cpu = tf.convert_to_tensor([1, 2, 3])
+      
+      # Transfer tensor from CPU to GPU
+      with tf.device('/gpu:0'):  # Change '0' to the GPU device index you want to use
+          tensor_gpu = tf.identity(tensor_cpu)  # or tf.identity(tensor_cpu).gpu()
+      
+      # Transfer tensor from GPU to CPU
+      tensor_cpu_again = tf.identity(tensor_gpu)  # or tf.identity(tensor_gpu).cpu()
+
+    Model2:
+
+      import tensorflow as tf
+
+      # Create a tensor on CPU
+      tensor_cpu = tf.constant([1, 2, 3])
+      
+      # Transfer tensor from CPU to GPU
+      tensor_gpu = tf.convert_to_tensor(tensor_cpu)
+      with tf.device('/gpu:0'):  # Change '0' to the GPU device index you want to use
+          tensor_gpu = tf.identity(tensor_gpu)
+      
+      # Transfer tensor from GPU to CPU
+      tensor_cpu_again = tensor_gpu.numpy()
+
+  
+      
     
     
