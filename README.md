@@ -321,6 +321,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 
 10) CUDA using tensorflow:
+    
       a) Check if CUDA is available:
 
           import tensorflow as tf
