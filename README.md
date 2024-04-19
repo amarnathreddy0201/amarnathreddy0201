@@ -370,4 +370,23 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
     d) Memory Sharing:
 
+13) What is REST API?
+    
+      REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing networked applications. RESTful APIs are designed to be simple, lightweight, and scalable, making them popular for building web services and APIs.
+
+      a) Statelessness:
+
+      b) Resources and URIs:
+
+      c) HTTP Methods:
+
+      d) Representation:
+
+      e) Uniform Interface:
+
+      f) State Transfer:
+
+      RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
+    
+    
     
