@@ -305,22 +305,25 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
        print(torch.cuda.is_available())
    
     b) Check the CUDA device count:
+   
        print(torch.cuda.device_count())
 
     c) Check the CUDA device properties:
 
        for i in range(torch.cuda.device_count()):
-       print(torch.cuda.get_device_properties(i))
+
+         print(torch.cuda.get_device_properties(i))
 
     d) Check the current CUDA device:
 
        print(torch.cuda.current_device())
 
 
-10) CUDA using tensorflow:
+11) CUDA using tensorflow:
       a) Check if CUDA is available:
 
           import tensorflow as tf
+    
           print(tf.test.is_built_with_cuda())
     
       b) Check the CUDA device count:
