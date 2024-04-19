@@ -342,4 +342,30 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
           print(tf.config.experimental.get_visible_devices('GPU'))
 
 
+12) What is a tensor?
+    
+      A tensor is a mathematical object representing a multi-dimensional array of numerical values. In the context of machine learning frameworks like TensorFlow and PyTorch, tensors are the fundamental data structures used for computation.
 
+    a) Dimensionality:
+    
+    b) Data Types:
+
+    c) Operations:
+
+    d) Memory Layout:
+
+    e) Gradient Computation:
+
+13) Difference between Tensor and Numpy:
+
+    Tensors and NumPy arrays are both used to represent multi-dimensional arrays of numerical data, but they have some differences, especially in the context of machine learning frameworks like TensorFlow and PyTorch.
+
+    a) Integration with Deep Learning Frameworks:
+
+    b) Computation on Accelerators:
+
+    c) Automatic Differentiation:
+
+    d) Memory Sharing:
+
+    
