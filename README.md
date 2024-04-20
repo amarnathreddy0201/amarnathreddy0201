@@ -181,6 +181,37 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 1) lsof -i :8000
 2) lsof -i -P -n | grep LISTEN
 
+## Simple docker 
+
+  ```
+      #Use the official Python image
+      FROM python:3.11.5
+      
+      # Install necessary system dependencies including libgl1-mesa-glx
+      RUN apt-get update && apt-get install -y libgl1-mesa-glx
+      
+      # Set the working directory in the container
+      WORKDIR /app
+      
+      # Copy the dependencies file to the working directory
+      COPY requirements.txt .
+      
+      # Install REQUIREMENTS
+      RUN pip install --upgrade pip && \
+          pip install -r requirements.txt && \
+          pip uninstall -y jwt PyJWT && \
+          pip install PyJWT && \
+          pip uninstall -y motor &&\
+          pip install motor==3.4.0
+          
+      
+      # Copy the content of the local src directory to the working directory
+      COPY . /app
+      
+      # Command to run the FastAPI application with Uvicorn
+      CMD ["uvicorn","api1:app","--host","0.0.0.0","--port","8001"]
+  ```
+
 
 #### For docker installation in ec2 ###################
 1) sudo apt update
