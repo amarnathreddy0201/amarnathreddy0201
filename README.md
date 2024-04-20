@@ -466,7 +466,16 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
           #Transfer tensor from GPU to CPU
           tensor_cpu_again = tensor_gpu.numpy()
 
+
+- Command for docker in ec2
+
+      echo "Running a new container from the latest image..."
+      # Run a new container from the latest image with a specific name
+      docker run -d --name fastapi-app-simple-container -e AWS_ACCESS_KEY_ID= tour_access_key_id -e AWS_SECRET_ACCESS_KEY=your_access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8000:8000 amarnathreddysurapureddy0201/fastapi-app-simple:latest
+
+      1) amarnathreddysurapureddy0201 is user name
+      2) fastapi-app-simple:latest is image
+      3) Container : fastapi-app-simple-container
   
-      
     
     
