@@ -519,3 +519,17 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     d) Method 4 is predicting missing values.
     
         where we have no missing values, we can train a statistical or machine learning algorithm in order to predict the missing values. Since among the samples for which this training is performed, there are missing values, it is necessary to replace them initially using one of the simplest methods for recovering gaps. This way will give us better performance, unless, of course, a missing value should have a high variance. As always, an example. With Madan here, we don’t have any number for the experience column. If we have a bigger table, with more people with similar information — the same country, profession, and education — it is possible to calculate correctly the most possible result for the missing feature. In this case, even if we didn’t guess absolutely right.
+
+17) What is Random seed?
+    
+    Random seed is used to ensure that results are reproducible. This is important in data science and other fields. For example, in Python, random seed is used to generate a pseudo-random encryption key, which is an important part of computer security. Random seed also makes optimization of codes easy where random numbers are used for testing.
+
+    ```
+      import random
+  
+      random.seed(10)
+      print(random.random())
+      
+      random.seed(10)
+      print(random.random())
+  ```
