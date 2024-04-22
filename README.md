@@ -534,3 +534,18 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       print(random.random())
 
 
+18) Why YOLO ?
+
+    Model for real time detection.
+
+    Yolov1 : problem with Small objects.
+
+    Yolov2 : Bounding boxes + Multi class
+
+    Yolov3 : Pyramid n/w's
+
+        Different scales and resolutions
+
+    Yolov4 : Accuracy and speed
+
+    Yolov5 : 
