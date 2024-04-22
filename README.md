@@ -230,7 +230,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 # https://bastibe.de/2013-05-30-speeding-up-matplotlib.html
 
  ##  interview questions ##
- 1) How yolo works?
+ **1) How yolo works?**
     
       a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
     
@@ -244,7 +244,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     
       Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
     
-2) Object detection vs segmentation
+**2) Object detection vs segmentation**
    
    a) Finding the object and location of the object.
    
@@ -256,7 +256,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
    Segmentation:
      Focuses on dividing an image into meaningful regions and assigning class labels to each pixel. It provides fine-grained information about object boundaries and regions.
 
-3) Different types of filters:
+**3) Different types of filters:**
    
    a) Smoothing filters:
    
@@ -292,7 +292,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
   
    h) Morphological operations include dilation, erosion, opening, closing, and boundary extraction. For example, dilation can expand image pixels or add pixels on object boundaries, while erosion can shrink the image pixels or remove pixels on object boundaries. Compound operations often combine dilation and erosion, such as closing, which performs dilation and then erosion, or opening, which performs erosion and then dilation.
    
-4) Different types of segmentation(Semantic vs instance segmentation):
+**4) Different types of segmentation(Semantic vs instance segmentation):**
    
    a) Semantic segmentation : One class consider as same entity.
    
@@ -302,7 +302,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       Semantic and instance segmentation have real-world applications such as: Urban planning and smart city management, Medical diagnostics and research, Autonomous vehicles and advanced driver-assistance systems (ADAS), Analyzing  medical scans, and Satellite or aerial imagery. 
      
 
-5) How RT-DERT works?
+**5) How RT-DERT works?**
    
     Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
   
@@ -315,7 +315,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
    
     High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today.
 
-7) Difference between pytorch and tensorflow:
+**7) Difference between pytorch and tensorflow:**
    
      a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. Both frameworks have their own strengths and weaknesses, and the best choice for you will depend on your specific needs.
    
@@ -324,12 +324,12 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
      c) TensorFlow is another Python-based deep learning framework that is known for its scalability and performance. TensorFlow uses a static computation graph, which means that you need to define your model before you can start training it. This can make TensorFlow less flexible than PyTorch, but it also makes TensorFlow more efficient for training large models.
 
 
-8) What is CUDA and why it is used?
+**8) What is CUDA and why it is used?**
    
     Compute Unified Device Architecture (CUDA) is a parallel computing platform and application programming interface (API) that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing, an approach called general-purpose computing on GPUs (GPGPU).
      
    
-9) CUDA using pytorch:
+**9) CUDA using pytorch:**
     
     a) Check if CUDA is available:
    
@@ -351,7 +351,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
        print(torch.cuda.current_device())
 
 
-10) CUDA using tensorflow:
+**10) CUDA using tensorflow:**
     
       a) Check if CUDA is available:
 
@@ -375,7 +375,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
           print(tf.config.experimental.get_visible_devices('GPU'))
 
 
-11) What is a tensor?
+**11) What is a tensor?**
     
       A tensor is a mathematical object representing a multi-dimensional array of numerical values. In the context of machine learning frameworks like TensorFlow and PyTorch, tensors are the fundamental data structures used for computation.
 
@@ -389,7 +389,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
     e) Gradient Computation:
 
-12) Difference between Tensor and Numpy:
+**12) Difference between Tensor and Numpy:**
 
     Tensors and NumPy arrays are both used to represent multi-dimensional arrays of numerical data, but they have some differences, especially in the context of machine learning frameworks like TensorFlow and PyTorch.
 
@@ -401,7 +401,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
     d) Memory Sharing:
 
-13) What is REST API?
+**13) What is REST API?**
     
       REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing networked applications. RESTful APIs are designed to be simple, lightweight, and scalable, making them popular for building web services and APIs.
 
@@ -420,7 +420,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
 
 
-14) Tensor CPU to GPU using pythorch and tensorflow:
+**14) Tensor CPU to GPU using pythorch and tensorflow:**
 
     Pytorch :
     
@@ -477,7 +477,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       2) fastapi-app-simple:latest is image
       3) Container : fastapi-app-simple-container
   
-15) what is the use of activation function in neural network
+**15) what is the use of activation function in neural network?**
 
     a) Activation functions, also known as transfer functions, are used in neural networks to calculate the weighted sum of inputs and biases, which then determines if a neuron can be activated. They also manipulate the presented data and produce an output for the neural network that contains the parameters in the data. Activation functions can be linear or nonlinear, and are used to control the output of neural networks across different domains.
     
@@ -501,7 +501,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     
             Also known as "no activation," or "identity function" (multiplied x1.0), this function doesn't do anything to the weighted sum of the input, it simply spits out the value it was given.
     
-16) how do you handle missing or corrupted data in a dataset?
+**16) how do you handle missing or corrupted data in a dataset?**
     
     a) Method 1 is deleting rows or columns.
     
@@ -520,7 +520,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     
         where we have no missing values, we can train a statistical or machine learning algorithm in order to predict the missing values. Since among the samples for which this training is performed, there are missing values, it is necessary to replace them initially using one of the simplest methods for recovering gaps. This way will give us better performance, unless, of course, a missing value should have a high variance. As always, an example. With Madan here, we don’t have any number for the experience column. If we have a bigger table, with more people with similar information — the same country, profession, and education — it is possible to calculate correctly the most possible result for the missing feature. In this case, even if we didn’t guess absolutely right.
 
-17) What is Random seed?
+**17) What is Random seed?**
     
     Random seed is used to ensure that results are reproducible. This is important in data science and other fields. For example, in Python, random seed is used to generate a pseudo-random encryption key, which is an important part of computer security. Random seed also makes optimization of codes easy where random numbers are used for testing.
 
@@ -534,7 +534,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       print(random.random())
 
 
-18) Why YOLO ?
+**18) Why YOLO ?**
 
     Model for real time detection.
 
@@ -559,4 +559,25 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     Yolov9:
 
         This model is superior to RT-DETR and YOLO-MS in terms of accuracy and efficiency, setting new standards in lightweight model performance.
+
+
+**19) What is Convolutional Neural Network?**
+
+    CNN stands for Convolutional Neural Network, which is a class of deep neural networks commonly used in tasks involving visual imagery analysis, such as image classification, object detection, and image segmentation.
+
+    Here's a breakdown of CNNs and their components:
+
+      1) Convolutional Layers : These are the fundamental building blocks of CNNs. Convolutional layers apply convolution operations to the input data using filters (also called kernels) to extract features. The filters slide over the input data, computing dot products at each position, which helps capture **spatial patterns and local dependencies in the data**.
+   
+      2) Pooling Layers: Pooling layers are typically inserted between convolutional layers to **reduce the spatial dimensions of the feature maps** while retaining the most important information. Common **pooling operations include max pooling and average pooling, which downsample the input by taking the maximum or average** value within each pooling region.
+   
+      3) Activation Functions: **Activation functions introduce non-linearity into the network**, allowing **CNNs to learn complex patterns and relationships in the data**. Popular activation functions used in CNNs include ReLU (Rectified Linear Unit), sigmoid, and tanh.
+   
+      4) Fully Connected Layers: Fully connected layers, also known as dense layers, are typically found at the end of a CNN architecture. These layers connect every neuron in one layer to every neuron in the next layer, allowing the network to learn high-level features and make predictions based on the extracted features.
+   
+      5) Flattening: Before passing the output of convolutional and pooling layers to fully connected layers, the feature maps are flattened into a one-dimensional vector. This flattening operation reshapes the data into a format suitable for input to the fully connected layers.
+   
+    **CNNs** are trained using **backpropagation and gradient descent algorithms**, where the network learns to minimize a loss function by adjusting its weights and biases during the training process. They are particularly effective in handling high-dimensional data like images due to their ability to automatically learn hierarchical representations of features directly from the raw data.
+
+
     
