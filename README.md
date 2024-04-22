@@ -420,7 +420,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
 
 
-13) Tensor CPU to GPU using pythorch and tensorflow:
+14) Tensor CPU to GPU using pythorch and tensorflow:
 
     Pytorch :
     
@@ -477,5 +477,45 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       2) fastapi-app-simple:latest is image
       3) Container : fastapi-app-simple-container
   
+15) what is the use of activation function in neural network
+
+    a) Activation functions, also known as transfer functions, are used in neural networks to calculate the weighted sum of inputs and biases, which then determines if a neuron can be activated. They also manipulate the presented data and produce an output for the neural network that contains the parameters in the data. Activation functions can be linear or nonlinear, and are used to control the output of neural networks across different domains.
     
+    b) Activation functions introduce non-linearities to neural networks, enabling them to learn complex patterns and make non-linear predictions. For example, the sigmoid function is commonly used in artificial neural networks, particularly in feedforward neural networks, because it allows the network to introduce non-linearity into the model, which allows the neural network to learn more complex decision boundaries.
+
+    c) Here are some examples of activation functions:
     
+        1) ReLU:
+    
+            The most used activation function in the world, used in almost all the convolutional neural networks or deep learning.
+    
+        2) Leaky ReLU:
+    
+            An improved version of the ReLU function, where the gradient is 0 for x<0, which would deactivate the neurons in that region.
+    
+        3) tanh:
+    
+            Also called the hyperbolic tangent activation function, this mathematical function commonly used in artificial neural networks for their hidden layers. It transforms input values to produce output values between -1 and 1.
+    
+        4) Linear:
+    
+            Also known as "no activation," or "identity function" (multiplied x1.0), this function doesn't do anything to the weighted sum of the input, it simply spits out the value it was given.
+    
+16) how do you handle missing or corrupted data in a dataset?
+    
+    a) Method 1 is deleting rows or columns.
+    
+        We usually use this method when it comes to empty cells.
+        For example, if the majority of our data is missing for a column or for a row, we can simply delete them.
+    
+    b) Method 2 is replacing the missing data with aggregated values.
+    
+        In this case, we can calculate the aggregated value based on the rest of the values we have in the column and put the received number to the empty spot.
+    
+    c) Method 3 is creating an unknown category.
+    
+        Categorical features have a number of possible values, which gives us an opportunity to create one more category for the missing values. This way we will lower the variance by adding new information to the data. This could be used when the original information is missing or cannot be understood,
+    
+    d) Method 4 is predicting missing values.
+    
+        where we have no missing values, we can train a statistical or machine learning algorithm in order to predict the missing values. Since among the samples for which this training is performed, there are missing values, it is necessary to replace them initially using one of the simplest methods for recovering gaps. This way will give us better performance, unless, of course, a missing value should have a high variance. As always, an example. With Madan here, we don’t have any number for the experience column. If we have a bigger table, with more people with similar information — the same country, profession, and education — it is possible to calculate correctly the most possible result for the missing feature. In this case, even if we didn’t guess absolutely right.
