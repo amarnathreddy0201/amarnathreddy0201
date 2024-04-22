@@ -548,4 +548,15 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
     Yolov4 : Accuracy and speed
 
-    Yolov5 : 
+        CSPDarknet53 as the backbone network, Mish activation function, and improved data augmentation.
+
+    Yolov5 :
+
+    Yolov8 :
+
+        Along with its versatility, YOLOv8 boasts several other innovations that make it a strong candidate for a wide range of object detection and image segmentation tasks. These include a new backbone network, anchor-free detection head, and loss function. Additionally, YOLOv8 is highly efficient and can run on a variety of hardware, from CPUs to GPUs.
+
+    Yolov9:
+
+        This model is superior to RT-DETR and YOLO-MS in terms of accuracy and efficiency, setting new standards in lightweight model performance.
+    
