@@ -590,6 +590,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 
 **20) What is the purpose of GridSearcCV**
+
     	GridSearchCV is a technique for finding the optimal parameter values from a given set of parameters in a grid. It's essentially a cross-validation technique. The model as well as the parameters must be entered. After extracting the best parameter values, predictions are made
 
     	```
