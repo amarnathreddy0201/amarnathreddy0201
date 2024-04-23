@@ -277,9 +277,11 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
    
    c) Edge detection filters:
    
-     Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
+	1) Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
+	
+	     	Sobel function in opencv is used to perform edge detection on an image. it computes the gradient of the image intensity at each pixel, which can be used to detect edges or sharp changes in intensity. Sobel edge detection typically involves convolving the image with a Sobel kernel in the both the horizontal and vertical directions to compute the gradient magnitude and direction.
    
-     Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
+     	2) Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
    
    d) Thresholding filters:
    
@@ -587,4 +589,18 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
     **CNNs** are trained using **backpropagation and gradient descent algorithms**, where the network learns to minimize a loss function by adjusting its weights and biases during the training process. They are particularly effective in handling high-dimensional data like images due to their ability to automatically learn hierarchical representations of features directly from the raw data.
 
 
-    
+**20) What is the purpose of GridSearcCV**
+    	GridSearchCV is a technique for finding the optimal parameter values from a given set of parameters in a grid. It's essentially a cross-validation technique. The model as well as the parameters must be entered. After extracting the best parameter values, predictions are made
+
+    	```
+	    params = dict()
+     
+	    params["C"] = (1e-6,1,10,100.0 )
+     
+	    params["gamma"] = (1e-6,1,10,100.0)
+     
+	    params["degree"] = (1,2,3)
+     
+	    params["kernel"] = ['linear','poly', 'rbf', 'sigmoid']
+     
+21) 
