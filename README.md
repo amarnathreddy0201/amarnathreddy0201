@@ -39,90 +39,88 @@ For Django preparation:
   python manage.py createsuperuser
 
 ##### Virtual env for different python versions.
-windows:
-1) py -3.11 -m venv pyenv_3.11
-2) Ex :-  py python_version -m venv your_venv_name.
+  windows:
+    1) py -3.11 -m venv pyenv_3.11
+    2) Ex :-  py python_version -m venv your_venv_name.
+    
+    python3.11 -m pip install ultralytics
 
-python3.11 -m pip install ultralytics
-
-Linux:
- python3 -m venv pyven_3.11
+  Linux:
+   python3 -m venv pyven_3.11
 
 pip install --user pipenv
 pipenv install django
 
 ######    logging files ####################
-import logging
-logging.basicConfig(level=logging.INFO, filename='sample.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(filename)s - %(lineno)d')
-logger = logging.getLogger(__name__)
-logger.info("print")
+  import logging
+  logging.basicConfig(level=logging.INFO, filename='sample.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(filename)s - %(lineno)d')
+  logger = logging.getLogger(__name__)
+  logger.info("print")
+
+
 
 ######################### CPP #############################
-1) Boost continuous sending data .
-2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
-
-######################### CPP #############################
-1) Boost continuous sending data .
-2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
-
-3) https://github.com/lagadic/visp/blob/master/cmake/FindPylon.cmake pypylon cmake
-4) Opencv include in cmake : https://gist.github.com/UnaNancyOwen/9d25d9ef66b163e0667b4b3bf3962f8a
-5) Spdlog :   https://github.com/gabime/spdlog/blob/v1.x/CMakeLists.txt
+  1) Boost continuous sending data .
+  2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
+  
+  3) https://github.com/lagadic/visp/blob/master/cmake/FindPylon.cmake pypylon cmake
+  4) Opencv include in cmake : https://gist.github.com/UnaNancyOwen/9d25d9ef66b163e0667b4b3bf3962f8a
+  5) Spdlog :   https://github.com/gabime/spdlog/blob/v1.x/CMakeLists.txt
 
 This is forlearning.
 ###################  AWS ##############################
-1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist.
+  1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist.
 
 ##### fastapi with lambda(windows) ###################
-1) pip freeze>requirements.txt
-2) pip install -t dependencies -r requirements.txt
-3) Compress-Archive -Path .\dependencies -DestinationPath .\lambda_function.zip
-4) Compress-Archive -Path .\main.py -DestinationPath .\lambda_function.zip -Update
-
-Classification	Detection	Segmentation	Kind
-yolov8n-cls.pt	yolov8n.pt	yolov8n-seg.pt	Nano
-yolov8s-cls.pt	yolov8s.pt	yolov8s-seg.pt	Small
-yolov8m-cls.pt	yolov8m.pt	yolov8m-seg.pt	Medium
-yolov8l-cls.pt	yolov8l.pt	yolov8l-seg.pt	Large
-yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
+  1) pip freeze>requirements.txt
+  2) pip install -t dependencies -r requirements.txt
+  3) Compress-Archive -Path .\dependencies -DestinationPath .\lambda_function.zip
+  4) Compress-Archive -Path .\main.py -DestinationPath .\lambda_function.zip -Update
+  
+  Classification	Detection	Segmentation	Kind
+  yolov8n-cls.pt	yolov8n.pt	yolov8n-seg.pt	Nano
+  yolov8s-cls.pt	yolov8s.pt	yolov8s-seg.pt	Small
+  yolov8m-cls.pt	yolov8m.pt	yolov8m-seg.pt	Medium
+  yolov8l-cls.pt	yolov8l.pt	yolov8l-seg.pt	Large
+  yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 
 **Creating a Python virtual environment in Linux**
-1) pip is not in your system : sudo apt-get install python-pip
-2) pip install virtualenv
-3) Create a virtual environment now,
-    $ virtualenv virtualenv_name
-4) virtualenv -p /usr/bin/python3 virtualenv_name
-5) source virtualenv_name/bin/activate
-6) deactivate
+  1) pip is not in your system : sudo apt-get install python-pip
+  2) pip install virtualenv
+  3) Create a virtual environment now,
+      $ virtualenv virtualenv_name
+  4) virtualenv -p /usr/bin/python3 virtualenv_name
+  5) source virtualenv_name/bin/activate
+  6) deactivate
    
 **Creating Python virtualenv in Windows**
-1) pip install virtualenv
-2) python -m venv myenv
-3) myenv\Scripts\activate
-4) deactivate
+  1) pip install virtualenv
+  2) python -m venv myenv
+  3) myenv\Scripts\activate
+  4) deactivate
 
 
-** Docker to build and run **
-$ docker pull mysql:8.2
-
-$ docker images
-
-$ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
-
-
-$ docker exec -it container_name bash  // Check your docker website.
-
-    ex : docker exec -it test-mysql bash
-
-$ mysql -u root -p    // Type this command it will show downside text
-
-Enter password: ...
-mysql>
-
-
-docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
-
-    example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
+## Docker to build and run
+  $ docker pull mysql:8.2
+  
+  $ docker images
+  
+  $ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
+  
+  
+  $ docker exec -it container_name bash  // Check your docker website.
+  
+      ex : docker exec -it test-mysql bash
+  
+  $ mysql -u root -p    // Type this command it will show downside text
+  
+  Enter password: ...
+  mysql>
+  
+  
+  docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
+  
+      example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
 
 
 # Docker for running the docker fastapi
@@ -132,33 +130,40 @@ docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
 
 ### Build the Docker image: Once you have your Dockerfile and application files ready, navigate to the directory containing these files and run the following command to build the Docker image:
 
-1) docker build -t my-image .
-   
-Replace my-image with the desired name for your image.
-
-Run a Docker container: After successfully building the Docker image, you can run a container using the following command:
-
-2) docker run -d --name my-container -p 8080:80 my-image
+  1) docker build -t my-image .
+     
+  Replace my-image with the desired name for your image.
+  
+  Run a Docker container: After successfully building the Docker image, you can run a container using the following command:
+  
+  2) docker run -d --name my-container -p 8080:80 my-image
 
 
 ### Docker commands ########
-1) stop the docker : sudo docker stop count-web-application-container
-2) remove the docker : sudo docker rm count-web-application-container
-3)  For clear : docker system prune -a
+  1) stop the docker : sudo docker stop count-web-application-container
+  2) remove the docker : sudo docker rm count-web-application-container
+  3)  For clear : docker system prune -a
 
 
 #### for pushing to docker hub #########
-4) For checking log files : docker exec container_id_or_name cat /path/to/log/file
+  1) For checking log files : docker exec container_id_or_name cat /path/to/log/file
+  
+  2) docker tag count-web-application(name of the image) dockerhub/name
+  
+  3) docker push dockerhub/name
+  
+  4) docker images
+  
+  5) sudo docker rmi 5323383c00e8(pid of image)
+  
+  6) For docker logs : sudo docker logs container-name
+  
+  **Note : name is application name.**
 
-5) docker tag count-web-application(name of the image) docker/web-app
+#### Pull the docker image:
 
-6) docker push dockerhub/web-app
-
-7) docker images
-
-8) sudo docker rmi 5323383c00e8(pid of image)
-
-9) For docker logs : sudo docker logs count-web-application-container
+	1) sudo docker pull dockerhub/name:latest
+	2) sudo docker run -d --name container-name -e AWS_ACCESS_KEY_ID=access_key_id -e AWS_SECRET_ACCESS_KEY=access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8001:8001 dockerhub/name
 
 
 ###  python 3.11 in ec2 instance commands ##
