@@ -158,6 +158,8 @@ Run a Docker container: After successfully building the Docker image, you can ru
 
 8) sudo docker rmi 5323383c00e8(pid of image)
 
+9) For docker logs : sudo docker logs count-web-application-container
+
 
 ###  python 3.11 in ec2 instance commands ##
 MEmory checking : df -h
