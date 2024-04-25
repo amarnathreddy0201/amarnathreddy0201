@@ -212,11 +212,19 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       
       # Install REQUIREMENTS
       RUN pip install --upgrade pip && \
-          pip install -r requirements.txt && \
-          pip uninstall -y jwt PyJWT && \
-          pip install PyJWT && \
-          pip uninstall -y motor &&\
-          pip install motor==3.4.0
+	    pip install -r requirements.txt && \
+	    pip uninstall -y fastapi && \
+	    pip install fastapi==0.97.0 && \
+	    pip uninstall -y fastapi-users && \
+	    pip install fastapi-users==12.1.2 && \
+	    pip uninstall -y fastapi-users-db-beanie && \
+	    pip install fastapi-users-db-beanie==3.0.0 && \
+	    pip uninstall -y fastapi-users-db-mongodb && \
+	    pip install fastapi-users-db-mongodb==1.1.0 && \
+	    pip uninstall -y jwt PyJWT && \
+	    pip install PyJWT && \
+	    pip uninstall -y motor &&\
+	    pip install motor==3.4.0
           
       
       # Copy the content of the local src directory to the working directory
