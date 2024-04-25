@@ -143,6 +143,7 @@ This is forlearning.
   1) stop the docker : sudo docker stop count-web-application-container
   2) remove the docker : sudo docker rm count-web-application-container
   3)  For clear : docker system prune -a
+  4)  For checking logs : docker logs count-web-application-container
 
 
 #### for pushing to docker hub #########
