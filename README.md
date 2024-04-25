@@ -164,6 +164,12 @@ This is forlearning.
 
 	1) sudo docker pull dockerhub/name:latest
 	2) sudo docker run -d --name container-name -e AWS_ACCESS_KEY_ID=access_key_id -e AWS_SECRET_ACCESS_KEY=access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8001:8001 dockerhub/name
+ ## Docker commands for removing container and image
+ 	For ec2 instance removing and new container:
+	stop the container : sudo docker stop count-web-application-container
+	remove the docker : sudo docker rm count-web-application-container
+	Check the id of image : sudo docker images
+	remove the image : sudo docker rmi 0d051dca991e(id of the image)
 
 
 ###  python 3.11 in ec2 instance commands ##
