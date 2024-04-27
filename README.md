@@ -619,7 +619,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
      
 	    params["kernel"] = ['linear','poly', 'rbf', 'sigmoid']
      
-21) How to change tensor variable
+**21) How to change tensor variable**
 	Now let's try to change one of the elements of the changable tensor.
 	
 	# Will error (requires the .assign() method)
@@ -638,3 +638,50 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 	# Won't error
 	changeable_tensor[0].assign(7)
 	changeable_tensor
+ 
+**22) Difference Between set, multiset, unordered_set, unordered_multiset in C++**
+    
+	1. Set: Sets are associative containers that store unique elements following a specific order. Following are the properties of sets:
+
+		Stores the values in sorted order. 
+		Stores only unique values. 
+		Elements can only be inserted or deleted but cannot be modified. 
+		We can erase more than 1 element by giving the start iterator and end iterator position. 
+		Traversal using iterators. 
+		Sets are implemented as Binary Search Tree.
+
+	3. Multisets: Multisets are associative containers that store multiple elements having equivalent values following a specific order. Following are the properties of multisets:
+
+		Stores elements in sorted order.
+
+		It allows the storage of multiple elements.
+
+		We can erase more than 1 element by giving the start iterator and end iterator.
+
+	3. unordered_set: unordered_set are associative containers that store unique elements in no particular order. Following are the properties of Unordered_sets: 
+
+		Elements can be stored in any order. ( no sorted order )
+
+		Stores only unique values.
+
+		Hash-table used to store elements.
+
+		We can erase only the element for which the iterator position is given.
+
+	4. Unordered_multiset: Unordered_multiset is an associative container that contains a set of non-unique elements in unsorted order. Following are the properties of Unordered_multiset: 
+
+		Elements can be stored in any order.
+
+		Duplicate elements can be stored.
+
+		Hash-table used to store elements.
+
+		We can erase only the element for which the iterator position is given.
+
+**23) Map vs multimap:**
+	
+ 	Map stores unique key-value pairs in a sorted manner. Each key is uniquely associated with a value that may or may not be unique. A key can be inserted or deleted from a map but cannot be modified. Values assigned to keys can be changed. It is a great way for quickly accessing value using the key and it is done in O(1) time.
+
+	Multimap is similar to map with an addition that multiple elements can have same keys. Also, it is NOT required that the key value and mapped value pair has to be unique in this case. One important thing to note about multimap is that multimap keeps all the keys in sorted order always. These properties of multimap makes it very much useful in competitive programming.
+
+ 
