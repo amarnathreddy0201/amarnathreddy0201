@@ -684,4 +684,9 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 	Multimap is similar to map with an addition that multiple elements can have same keys. Also, it is NOT required that the key value and mapped value pair has to be unique in this case. One important thing to note about multimap is that multimap keeps all the keys in sorted order always. These properties of multimap makes it very much useful in competitive programming.
 
+
+**24) Backward Pass (Backpropagation):**
+	
+ 	Backpropagation is the process of computing the gradient of the loss function with respect to each weight in the network, layer by layer, starting from the output layer and moving backward to the input layer. This gradient represents the **direction and magnitude of change that each weight should undergo to minimize the loss function.**
+
  
