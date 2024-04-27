@@ -619,4 +619,22 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
      
 	    params["kernel"] = ['linear','poly', 'rbf', 'sigmoid']
      
-21) 
+21) How to change tensor variable
+	Now let's try to change one of the elements of the changable tensor.
+	
+	# Will error (requires the .assign() method)
+	changeable_tensor[0] = 7
+	changeable_tensor
+	---------------------------------------------------------------------------
+	TypeError                                 Traceback (most recent call last)
+	<ipython-input-14-daecfbad2415> in <cell line: 2>()
+	      1 # Will error (requires the .assign() method)
+	----> 2 changeable_tensor[0] = 7
+	      3 changeable_tensor
+	
+	TypeError: 'ResourceVariable' object does not support item assignment
+	To change an element of a tf.Variable() tensor requires the assign() method.
+	
+	# Won't error
+	changeable_tensor[0].assign(7)
+	changeable_tensor
