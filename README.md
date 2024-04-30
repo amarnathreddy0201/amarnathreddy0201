@@ -716,3 +716,20 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 		Greedy search Selects the single most likely option. It's simple and fast, but it only considers each position in isolation.
 
 		Beam search Maintains a beam of multiple candidates at each step, ranked based on their probabilities. It's more complex and computationally expensive than greedy search, but it's more accurate because it considers future steps when selecting the next word.
+
+
+**27) Super Resolution in OpenCV:**
+
+	https://learnopencv.com/super-resolution-in-opencv/
+
+ 	Super-resolution refers to the process of upscaling or improving the details of the image. Follow this blog to learn the options for Super Resolution in OpenCV. When increasing the dimensions of an image, the extra pixels need to be interpolated somehow. Basic image processing techniques do not give good results as they do not take the surroundings in context while scaling up. Deep learning and, more recently, GANs come to the rescue here and provide much better results.
+
+ 	1) Resnet architecture
+
+  	2) Residual Blocks are skip-connection blocks that learn residual functions with reference to the layer inputs, instead of learning unreferenced functions. They were introduced as part of the ResNet architecture.
+
+   	3) Different techniques:
+    		a) EDSR : Enhanced deep resdiual network. it is slower than FSRCNN.
+      		b) FSRCNN : 
+		c) LapSRN : Same results as FSRCNN.
+  		d) ESPCN : Same speed as FSRCNN , giving less count than fsrcnn.
