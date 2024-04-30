@@ -709,4 +709,10 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 	
 	print(how_may_substrings("abababa","aaaba"))
 
- 
+**26) Greedy search vs Beam search:**
+
+		Greedy search and beam search are both search algorithms used in machine learning and natural language processing (NLP) tasks. They differ in how they make decisions during the search process:
+
+		Greedy search Selects the single most likely option. It's simple and fast, but it only considers each position in isolation.
+
+		Beam search Maintains a beam of multiple candidates at each step, ranked based on their probabilities. It's more complex and computationally expensive than greedy search, but it's more accurate because it considers future steps when selecting the next word.
