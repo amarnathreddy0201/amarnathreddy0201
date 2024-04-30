@@ -733,3 +733,13 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       		b) FSRCNN : 
 		c) LapSRN : Same results as FSRCNN.
   		d) ESPCN : Same speed as FSRCNN , giving less count than fsrcnn.
+
+**28) Anagrom:**
+
+	def anagrom(first,second):
+	    true_or_false = True
+	    if first!=second:
+	        true_or_false= False
+	    return true_or_false
+	        
+	print(anagrom(["a",2,"df"],["a",2,"df"]))
