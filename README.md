@@ -689,4 +689,24 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 	
  	Backpropagation is the process of computing the gradient of the loss function with respect to each weight in the network, layer by layer, starting from the output layer and moving backward to the input layer. This gradient represents the **direction and magnitude of change that each weight should undergo to minimize the loss function.**
 
+
+**25) Substring present:**
+
+    	def how_may_substrings(main,sub):
+	    number =0 
+	    if len(main) > len(sub):
+	        main,sub=main,sub
+	    else:
+	        main,sub = sub,main
+	    main_len =len(main)
+	    sub_len = len(sub)
+	    print(main_len,sub_len)
+	    for i in range(0,main_len-sub_len+1):
+	        print(main[i:i+sub_len])
+	        if (main[i:i+sub_len]==sub):
+	            number+=1
+	    return number
+	
+	print(how_may_substrings("abababa","aaaba"))
+
  
