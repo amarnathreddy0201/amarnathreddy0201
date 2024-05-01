@@ -252,6 +252,35 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 # https://bastibe.de/2013-05-30-speeding-up-matplotlib.html
 
  ##  interview questions ##
+	 class Amar:
+	    amar ="amar"
+	    
+	    def __init__(self,a,b):
+	        self.a = a
+	        self.b = b
+	    
+	    @staticmethod
+	    def Amar_call():
+	        return amar
+	    
+	    @classmethod
+	    def Amar_call1(cls):
+	        return cls.amar
+	
+	
+	amar = Amar(1,2)
+	print(amar.amar)
+	print(amar.a)
+	
+	# classs level
+	print(amar.Amar_call1())
+	print(Amar.Amar_call1())
+	
+	# Static level
+	print(amar.Amar_call().amar) # it's returning Amar_class as a object
+	print(Amar.Amar_call().amar) # it's returning Amar_class as a object
+
+
  **1) How yolo works?**
     
       a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
