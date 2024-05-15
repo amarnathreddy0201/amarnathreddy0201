@@ -808,3 +808,4 @@ stride + padding : f=2 and stride =3
    	(((n1-2+2p)/3)+1) * (((n2-2+2p)/3)+1)
 
 	
+The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative optimization algorithm used to minimize the loss function during the training of neural networks. Adam can be looked at as a combination of RMSprop and Stochastic Gradient Descent with momentum
