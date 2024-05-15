@@ -791,6 +791,20 @@ stride - the number of pixels a filter will move across as it covers the image. 
 padding - this can be either 'same' or 'valid', 'same' adds zeros the to outside of the image so the resulting output of the convolutional layer is the same as the input, where as 'valid' (default) cuts off excess pixels where the filter doesn't fit (e.g. 224 pixels wide divided by a kernel size of 3 (224/3 = 74.6) means a single pixel will get cut off the end.
 
 stride = ((n-f)/s)+1
+
+ 	n1 X n2 =>  (((n1-f)/s)+1) * (((n2-f)/s)+1)
 	n - input image size
  	f - filter size
   	s - stride size
+
+    example : 6 X 7 image size , filter(f=2) and stride is 3
+
+    	(((6-2)/3)+1) * (((7-2)/3)+1)
+
+stride + padding : f=2 and stride =3
+
+ 	n1 X n2 =>  (((n1-f+2p)/s)+1) * (((n2-f+2p)/s)+1)
+  	
+   	(((n1-2+2p)/3)+1) * (((n2-2+2p)/3)+1)
+
+	
