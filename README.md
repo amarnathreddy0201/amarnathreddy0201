@@ -772,3 +772,13 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 	    return true_or_false
 	        
 	print(anagrom(["a",2,"df"],["a",2,"df"]))
+
+**29) A (typical) architecture of a convolutional neural network**
+
+
+	1) A convolutional layer is the main building block of a CNN. It contains a set of filters (or kernels), parameters of which are to be learned throughout the training. The size of the filters is usually smaller than the actual image. Each filter convolves with the image and creates an activation map.
+
+	2) A hidden layer in a neural network is a layer of neurons that is neither the input nor output layer. The term "hidden" refers to the fact that these layers are not directly observable and are responsible for the depth of neural networks, allowing them to process complex data representations.
+
+	3) The purpose of the pooling layers is to reduce the dimensions of the hidden layer by combining the outputs of neuron clusters at the previous layer into a single neuron in the next layer
+
