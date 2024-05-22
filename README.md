@@ -809,3 +809,32 @@ stride + padding : f=2 and stride =3
 
 	
 The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative optimization algorithm used to minimize the loss function during the training of neural networks. Adam can be looked at as a combination of RMSprop and Stochastic Gradient Descent with momentum
+
+
+
+**30) Fibonic**
+
+	k=4
+	end =7
+
+	second_final=[]
+	
+	index = 0
+	for i in range(end):
+	    if i > k-1:
+	        sum= 0
+	
+	        for t in second_final[index : len(second_final)]:
+	            print("fatat : ",index)
+	            sum+=t
+	        index+=1
+	
+	        second_final.append(sum)
+	
+	    else:
+	        second_final.append(1)
+
+
+
+
+ 
