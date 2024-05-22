@@ -838,3 +838,49 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
 
 
  
+**31 Booble sort**
+
+	data =[33,2,33,1,2,45,2,4,-1,4,23]
+
+	data =[1,2,3,4,4]
+	
+	for i in range(len(data)-1):
+	    tr_fal = False
+	    
+	    for j in range(len(data)-1-i):
+	        
+	        if data[j]>data[j+1]:
+	            tr_fal = True
+	            
+	            data[j],data[j+1] = data[j+1],data[j]
+	    
+	    if tr_fal == False:
+	        print(tr_fal)
+	        break
+	    
+	    
+	print(data)
+
+
+**32 Selection sort**
+
+	for i in range(len(data)-1):
+    
+	    tr_fal = False
+	    for j in range(i+1,len(data)):
+	        
+	        if data[i]>data[j]:
+	            tr_fal = True
+	            
+	            data[i],data[j] = data[j],data[i]
+	        
+	    
+	    if tr_fal == False:
+	        print(tr_fal)
+	        break
+	
+	print(data)
+
+**33) insertion sort**
+
+	
