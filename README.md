@@ -883,4 +883,20 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
 
 **33) insertion sort**
 
+	data =[10,15,9,-1,0]
+	for i in range(1,len(data)):
+	    
+	    j = i-1
+	    mid = data[i]
+	    
+	    while j>=0 and  data[j]  > mid:
+	        
+	        data[j+1] = data[j]
+	        j-=1
+	    
+	    data[j+1] = mid
+	    
+	
+	print(data)
+
 	
