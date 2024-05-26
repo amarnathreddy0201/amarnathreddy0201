@@ -900,3 +900,33 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
 	print(data)
 
 	
+**34) Class and object:**
+
+	class Dog:
+	    # Class variable to count the number of dogs
+	    number_of_dogs = 0
+	    
+	    def __init__(self, name, age):
+	        self.name = name
+	        self.age = age
+	        Dog.number_of_dogs += 1
+	
+	    def description(self):
+	        return f"{self.name} is {self.age} years old"
+	    
+	    # @classmethod
+	    # def get_number_of_dogs(cls):
+	    def get_number_of_dogs(self):
+	        # return cls.number_of_dogs
+	        return self.number_of_dogs
+
+	# Create instances
+	dog1 = Dog("Buddy", 3)
+	dog2 = Dog("Bella", 5)
+	
+	dog2 = Dog("Bella", 5)
+	
+	data = dog2
+	
+	# Access class variable
+	print(data.get_number_of_dogs())  # Output: 2
