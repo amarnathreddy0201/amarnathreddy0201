@@ -941,3 +941,17 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
     	**b) Open-Closed Principle**
 
       		
+
+**36) Confussion matrix**
+
+		Posi        Negative
+          ---------------------------------
+Positive  |		|	FP	  |     Preecesion = (TP/(TP+FP))
+    	  |	TP	|		  |
+    	  ---------------------------------
+Negative  |		|		  |
+    	  |	FN	|	TN	  |
+    	  ---------------------------------
+       Recall = TP/(TP+FN)
+
+    Accuracy = (TP+TN)/(TP+TN+FP+FN)
