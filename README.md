@@ -930,3 +930,14 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
 	
 	# Access class variable
 	print(data.get_number_of_dogs())  # Output: 2
+
+
+**35) Solid priniciples of Python**
+
+	**a) Single Responsibility Principle**
+
+  		Only for one purpose.
+
+    	**b) Open-Closed Principle**
+
+      		
