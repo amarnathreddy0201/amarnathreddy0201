@@ -960,3 +960,68 @@ Negative  |		|		  |
        Recall = TP/(TP+FN)
 
     Accuracy = (TP+TN)/(TP+TN+FP+FN)
+
+
+**37) What is grdent descent:**
+
+	
+	Gradient descent is an optimization algorithm used to minimize the loss function in machine learning and neural networks. It is a method for finding the minimum of a function by iteratively moving towards the steepest descent, as defined by the negative of the gradient.
+
+	**Loss Function:**
+
+		The loss function (or cost function) measures the difference between the predicted values and the actual target values. The goal of training a neural network is to minimize this loss function.
+	**Gradient:**
+
+		The gradient is a vector of partial derivatives of the loss function with respect to each parameter (weights and biases) of the model. It points in the direction of the steepest increase in the loss function.
+
+	**The gradient descent algorithm involves the following steps:**
+
+	Initialization, Compute the Loss, Compute the Gradient, Update Parameters and Repeat
+
+**38) when gradient descent occurs forward propagation or backwards propagation**
+
+	Gradient descent primarily occurs during backpropagation in the context of training neural networks. Here's a brief overview of the process:
+
+  	Backward Propagation (Backpropagation):
+
+	The calculated error from forward propagation is propagated back through the network.
+ 
+	Gradients of the loss function with respect to the weights and biases are computed using the chain rule of calculus.
+ 
+	These gradients indicate how much the weights and biases need to be adjusted to reduce the error.
+
+	Therefore, while forward propagation is about calculating the output and the loss, gradient descent (the optimization step) takes place during backpropagation, where the gradients are used to update the model's parameters.
+
+ **39) How to reduce gradient decent:**
+
+ 	Reducing or optimizing the gradient descent process can involve several strategies to improve the efficiency and effectiveness of training a neural network. Here are some key techniques:
+
+	a) Learning Rate Adjustment:
+
+  	b) Gradient Clipping:
+
+   	c) Batch Normalization:
+
+      		Batch normalization normalizes the input to each layer so that they have a mean of zero and a variance of one
+
+ 	
+
+    	d) Momentum
+
+     	e) Optimization Algorithms:
+
+      	f) Regularization Techniques:
+
+	 	randomly selected neurons are ignored during training
+   		L1/L2 Regularization.
+
+     		
+		Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data. Here are the most common regularization techniques:
+
+       	g) Proper Initialization:
+
+ 	h) Mini-Batch Gradient Descent:
+
+  	i) Data Augmentation and Preprocessing:
+
+   	j) Early Stopping:
