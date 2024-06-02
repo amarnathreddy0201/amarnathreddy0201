@@ -1049,22 +1049,22 @@ Negative  |		|		  |
 
 **41) how to prevent cnnimage classification underfittinng using pytorch**
 
-	1) Increase model complexity:
+	a) Increase model complexity:
 
- 	2) Increase Training Duration:
+ 	b) Increase Training Duration:
 
-  	3) Learning Rate Tuning:
+  	c) Learning Rate Tuning:
    
 		Ensure the learning rate is neither too high nor too low. If too high, the model may converge prematurely to a suboptimal solution. If too low, the model may converge too slowly or get stuck.
 
-  	4) Reduce Regularization:
+  	d) Reduce Regularization:
    
 		If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
 
-  	5) Data Preprocessing:
+  	e) Data Preprocessing:
 
-   	6) Use Pretrained Models:
+   	f) Use Pretrained Models:
 
-    	7) Batch Normalization:
+    	g) Batch Normalization:
 
      	
