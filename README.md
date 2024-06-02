@@ -1002,23 +1002,21 @@ Negative  |		|		  |
 
    	c) Batch Normalization:
 
-      		Batch normalization normalizes the input to each layer so that they have a mean of zero and a variance of one
+      	Batch normalization normalizes the input to each layer so that they have a mean of zero and a variance of one
 
- 	
+    d) Momentum
 
-    	d) Momentum
+    e) Optimization Algorithms:
 
-     	e) Optimization Algorithms:
+    f) Regularization Techniques:
 
-      	f) Regularization Techniques:
-
-	 	randomly selected neurons are ignored during training
+	 	1) randomly selected neurons are ignored during training
    		L1/L2 Regularization.
 
      		
-		Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data. Here are the most common regularization techniques:
+		2) Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data. Here are the most common regularization techniques:
 
-       	g) Proper Initialization:
+    g) Proper Initialization:
 
  	h) Mini-Batch Gradient Descent:
 
@@ -1037,18 +1035,18 @@ Negative  |		|		  |
 
    	d) Batch normalization: 
     
-    		1) Normalize the activations of the layers to improve convergence and regularization.
+    	1) Normalize the activations of the layers to improve convergence and regularization.
 
-    		2) Batch Normalization (BatchNorm) is a technique to improve the training of deep neural networks by normalizing the inputs to each layer, which helps in accelerating training and reducing the 				sensitivity to network initialization
+    	2) Batch Normalization (BatchNorm) is a technique to improve the training of deep neural networks by normalizing the inputs to each layer, which helps in accelerating training and reducing the 				sensitivity to network initialization
 
-    	e) Early stopping:
+    e) Early stopping:
 
-     	f) Smaller model: 
+    f) Smaller model: 
       
-      		1) Reduce the complexity of your model by decreasing the number of layers or the number of units per layer.
+      	1) Reduce the complexity of your model by decreasing the number of layers or the number of units per layer.
 
-      	g) More data:
-       		1) Collect more training data if possible to improve generalization.
+    g) More data:
+       	1) Collect more training data if possible to improve generalization.
 
 
 **41) how to prevent cnnimage classification underfittinng using pytorch**
@@ -1063,12 +1061,12 @@ Negative  |		|		  |
 
   	d) Reduce Regularization:
    		
-     		2) If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
+     	1) If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
 
   	e) Data Preprocessing:
 
    	f) Use Pretrained Models:
     
-    	g) Batch Normalization:
+    g) Batch Normalization:
 
      	
