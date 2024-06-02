@@ -1031,6 +1031,7 @@ Negative  |		|		  |
  	b) Regularization : 
 
   	c) Dropout:
+    
    		1) Use dropout layers in your n/w to randomly set some activation to zero during training.
 
    	d) Batch normalization: 
@@ -1070,3 +1071,27 @@ Negative  |		|		  |
     g) Batch Normalization:
 
      	
+**42) Machine Learning Epoch**
+    
+    a) In machine learning, an epoch is one complete pass through the entire training dataset during the training process of a model. Training typically involves multiple epochs to improve the model's accuracy.
+
+**43) How can you get good results using pytorch using pretrained/transfer learning**
+
+    a) Leverages Prelearned Features:
+        
+        Pretrained models are typically trained on large and diverse datasets, such as ImageNet, which contains millions of images across thousands of categories. These models learn a variety of features that are generally useful for many tasks, such as edges, textures, and shapes. When you use a pretrained model, you start with a network that already knows these useful features, providing a strong foundation.
+
+    b) Reduces Training Time:
+        Training a deep neural network from scratch can be computationally expensive and time-consuming. Transfer learning allows you to start from an already trained model, requiring only a fraction of the time and computational resources to fine-tune the network for your specific task.
+
+    c) Improves Performance with Limited Data:
+        
+        When you have a small dataset, training a deep network from scratch can lead to overfitting. Pretrained models, on the other hand, help mitigate this by starting from a set of weights that generalize well, thus needing fewer data to fine-tune the model effectively.
+
+    d) Provides Robust Feature Extraction:
+        
+        Pretrained models are effective feature extractors. Even if you only retrain the final layers, the earlier layers can provide robust and meaningful features for your specific problem, improving overall model performance.
+    
+    Practical Steps to Leverage Transfer Learning for Better Results:
+
+        1) Choosing pre-trained model, modify the model, freezing layer, fine tunning, Data augmentation, hyper parameters, Regularization techniques.
