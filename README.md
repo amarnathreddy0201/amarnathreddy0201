@@ -1025,3 +1025,46 @@ Negative  |		|		  |
   	i) Data Augmentation and Preprocessing:
 
    	j) Early Stopping:
+
+**40) how to prevent cnnimage classification overfittinng using pytorch?**
+
+	a) data Augmentation : random crops, rotations, flips, color jittering(torch.transform)
+
+ 	b) Regularization : 
+
+  	c) Dropout: Use dropout layers in your n/w to randomly set some activation to zero during training.
+
+   	d) Batch normalization: 
+    
+    		1) Normalize the activations of the layers to improve convergence and regularization.
+
+    		2) Batch Normalization (BatchNorm) is a technique to improve the training of deep neural networks by normalizing the inputs to each layer, which helps in accelerating training and reducing the sensitivity to network initialization
+
+    	e) Early stopping:
+
+     	f) Smaller model: Reduce the complexity of your model by decreasing the number of layers or the number of units per layer
+
+      	g) More data: Collect more training data if possible to improve generalization.
+
+
+**41) how to prevent cnnimage classification underfittinng using pytorch**
+
+	1) Increase model complexity:
+
+ 	2) Increase Training Duration:
+
+  	3) Learning Rate Tuning:
+   
+		Ensure the learning rate is neither too high nor too low. If too high, the model may converge prematurely to a suboptimal solution. If too low, the model may converge too slowly or get stuck.
+
+  	4) Reduce Regularization:
+   
+		If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
+
+  	5) Data Preprocessing:
+
+   	6) Use Pretrained Models:
+
+    	7) Batch Normalization:
+
+     	
