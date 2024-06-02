@@ -1095,3 +1095,17 @@ Negative  |		|		  |
     Practical Steps to Leverage Transfer Learning for Better Results:
 
         1) Choosing pre-trained model, modify the model, freezing layer, fine tunning, Data augmentation, hyper parameters, Regularization techniques.
+
+**44) Gridsearchcv vs randomsearcv**
+
+    Both GridSearchCV and RandomSearchCV are techniques used in machine learning for hyperparameter tuning, which is the process of finding the best hyperparameters for a machine learning model.
+
+    GridSearchCV:
+
+        Slow, High computational power, Detecting for every combination of parameters, Not feasible for high-dimensional hyperparameter spaces, results same.
+
+    Randomsearchcv:
+
+        Fixed noof hyperparameters combinations, high efficiency, less computational power.
+
+    Choosing between GridSearchCV and RandomSearchCV depends on the specific needs of your project. If you have a small hyperparameter space and want to ensure finding the best parameters, GridSearchCV is the way to go. If you have a large hyperparameter space or limited computational resources, RandomSearchCV is typically more efficient and can still yield good results.
