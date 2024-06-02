@@ -938,7 +938,7 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
 
   		Only for one purpose.
 
-    	**b) Open-Closed Principle**
+    **b) Open-Closed Principle**
 
       		
 
