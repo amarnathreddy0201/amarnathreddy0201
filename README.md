@@ -1062,8 +1062,8 @@ Negative  |		|		  |
 		1) Ensure the learning rate is neither too high nor too low. If too high, the model may converge prematurely to a suboptimal solution. If too low, the model may converge too slowly or get stuck.
 
   	d) Reduce Regularization:
-   
-		2) If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
+   		
+     		2) If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
 
   	e) Data Preprocessing:
 
