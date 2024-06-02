@@ -1031,7 +1031,7 @@ Negative  |		|		  |
  	b) Regularization : 
 
   	c) Dropout:
-    
+
    		1) Use dropout layers in your n/w to randomly set some activation to zero during training.
 
    	d) Batch normalization: 
@@ -1075,7 +1075,7 @@ Negative  |		|		  |
     
     a) In machine learning, an epoch is one complete pass through the entire training dataset during the training process of a model. Training typically involves multiple epochs to improve the model's accuracy.
 
-**43) How can you get good results using pytorch using pretrained/transfer learning**
+**43) How can we get good results using pytorch using pretrained/transfer learning**
 
     a) Leverages Prelearned Features:
         
