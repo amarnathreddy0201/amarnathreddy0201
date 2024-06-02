@@ -1032,7 +1032,8 @@ Negative  |		|		  |
 
  	b) Regularization : 
 
-  	c) Dropout: Use dropout layers in your n/w to randomly set some activation to zero during training.
+  	c) Dropout:
+   		1) Use dropout layers in your n/w to randomly set some activation to zero during training.
 
    	d) Batch normalization: 
     
@@ -1042,9 +1043,12 @@ Negative  |		|		  |
 
     	e) Early stopping:
 
-     	f) Smaller model: Reduce the complexity of your model by decreasing the number of layers or the number of units per layer
+     	f) Smaller model: 
+      
+      		1) Reduce the complexity of your model by decreasing the number of layers or the number of units per layer.
 
-      	g) More data: Collect more training data if possible to improve generalization.
+      	g) More data:
+       		1) Collect more training data if possible to improve generalization.
 
 
 **41) how to prevent cnnimage classification underfittinng using pytorch**
@@ -1064,7 +1068,7 @@ Negative  |		|		  |
   	e) Data Preprocessing:
 
    	f) Use Pretrained Models:
-
+    
     	g) Batch Normalization:
 
      	
