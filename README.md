@@ -1038,7 +1038,7 @@ Negative  |		|		  |
     
     		1) Normalize the activations of the layers to improve convergence and regularization.
 
-    		2) Batch Normalization (BatchNorm) is a technique to improve the training of deep neural networks by normalizing the inputs to each layer, which helps in accelerating training and reducing the sensitivity to network initialization
+    		2) Batch Normalization (BatchNorm) is a technique to improve the training of deep neural networks by normalizing the inputs to each layer, which helps in accelerating training and reducing the 				sensitivity to network initialization
 
     	e) Early stopping:
 
@@ -1055,11 +1055,11 @@ Negative  |		|		  |
 
   	c) Learning Rate Tuning:
    
-		Ensure the learning rate is neither too high nor too low. If too high, the model may converge prematurely to a suboptimal solution. If too low, the model may converge too slowly or get stuck.
+		1) Ensure the learning rate is neither too high nor too low. If too high, the model may converge prematurely to a suboptimal solution. If too low, the model may converge too slowly or get stuck.
 
   	d) Reduce Regularization:
    
-		If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
+		2) If you are using regularization techniques like dropout or weight decay, try reducing them as they can sometimes prevent the model from learning effectively.
 
   	e) Data Preprocessing:
 
