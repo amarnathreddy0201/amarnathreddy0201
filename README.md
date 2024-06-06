@@ -1123,3 +1123,24 @@ Negative  |		|		  |
 
     e) The Problem is divided into parts and solved individually and then combined.          e) The problem is solved in an end-to-end manner.
 
+**46) Supervised learning is a machine learning technique that involves teaching a computer to perform tasks or make decisions by analyzing 
+
+data and predicting outcomes. It's a widely used approach in business, with applications in many industries. Here are some examples:**
+
+    Finance: Supervised learning helps detect fraudulent transactions, predict stock prices, and assess creditworthiness.
+    
+    Marketing: It helps personalize marketing campaigns, predict customer churn, and score leads.
+    
+    Sales: It helps improve dynamic pricing models.
+    
+    Customer service: It helps create chatbots that provide real-time recommendations and on-demand help.
+    
+    Security: It helps identify suspicious transactions and prevent fraud.
+    
+    Image recognition: It helps computers recognize objects in images.
+    
+    Spam detection: It helps identify and prevent spam emails.
+    
+    Healthcare: It helps clinicians make diagnoses and choose treatment options.
+    
+    Manufacturing: It helps with quality control.
