@@ -1111,7 +1111,7 @@ Negative  |		|		  |
     Choosing between GridSearchCV and RandomSearchCV depends on the specific needs of your project. If you have a small hyperparameter space and want to ensure finding the best parameters, GridSearchCV is the way to go. If you have a large hyperparameter space or limited computational resources, RandomSearchCV is typically more efficient and can still yield good results.
 
 
-**45) Machine learning                                                                                             Deep learning**
+**45) Machine learning                                                                       Deep learning**
 
  	a) Enables m/c to take decisions on their own. based on past data.                       a) Enables m/c's to take decesions with the help ofartificial neural n/w's.
 
@@ -1119,7 +1119,7 @@ Negative  |		|		  |
 
    	c) Works well on low-end systems.                                                        c) Needs high end s/m to work.
 
-    	d) Most features need to identified in advanced and manually coded.                      d) learns features from the data provided.
+    d) Most features need to identified in advanced and manually coded.                      d) learns features from the data provided.
 
-     	e) The Problem is divided into parts and solved individually and then combined.          e) The problem is solved in an end-to-end manner.
+    e) The Problem is divided into parts and solved individually and then combined.          e) The problem is solved in an end-to-end manner.
 
