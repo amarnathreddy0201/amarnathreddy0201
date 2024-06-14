@@ -1157,3 +1157,7 @@ data and predicting outcomes. It's a widely used approach in business, with appl
 3) Fraud Detection: In financial transactions, identifying fraudulent activities should have high precision to prevent normal transactions from being flagged as fraudulent. False positives could inconvenience customers and lead to a loss of trust in the financial institution.
 
 4) Search Engines and Recommendation Systems: In these applications, it is often more important that the returned results are highly relevant (high precision), even if it means some relevant results are missed (lower recall). Users typically prefer highly accurate results rather than sifting through numerous irrelevant ones.
+
+5) Legal Document Review: In e-discovery and legal document review, it's essential that the documents identified as relevant are indeed relevant to avoid legal risks and inefficiencies. High precision is preferred to ensure that the relevant documents are identified correctly.
+
+6) Advertising: In targeted advertising, ensuring that the ads shown are highly relevant to the user (high precision) can improve user experience and engagement, even if it means some potential customers are not shown the ad (lower recall).
