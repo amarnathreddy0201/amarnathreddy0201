@@ -1151,3 +1151,5 @@ data and predicting outcomes. It's a widely used approach in business, with appl
 **Applications Where Precision is More Valuable than Recall**
 
 1) Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
+
+2) Medical Diagnosis: In medical testing, particularly when screening for a serious but not immediately life-threatening condition, it might be more important to ensure that a positive result is truly indicative of the condition. For instance, a diagnostic test for a rare condition should have high precision to avoid unnecessary stress and further invasive testing on healthy patients.
