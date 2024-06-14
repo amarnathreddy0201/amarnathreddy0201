@@ -1153,3 +1153,7 @@ data and predicting outcomes. It's a widely used approach in business, with appl
 1) Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
 
 2) Medical Diagnosis: In medical testing, particularly when screening for a serious but not immediately life-threatening condition, it might be more important to ensure that a positive result is truly indicative of the condition. For instance, a diagnostic test for a rare condition should have high precision to avoid unnecessary stress and further invasive testing on healthy patients.
+
+3) Fraud Detection: In financial transactions, identifying fraudulent activities should have high precision to prevent normal transactions from being flagged as fraudulent. False positives could inconvenience customers and lead to a loss of trust in the financial institution.
+
+4) Search Engines and Recommendation Systems: In these applications, it is often more important that the returned results are highly relevant (high precision), even if it means some relevant results are missed (lower recall). Users typically prefer highly accurate results rather than sifting through numerous irrelevant ones.
