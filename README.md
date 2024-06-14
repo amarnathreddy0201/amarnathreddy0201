@@ -1144,3 +1144,10 @@ data and predicting outcomes. It's a widely used approach in business, with appl
     Healthcare: It helps clinicians make diagnoses and choose treatment options.
     
     Manufacturing: It helps with quality control.
+
+
+
+
+**Applications Where Precision is More Valuable than Recall**
+
+1) Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
