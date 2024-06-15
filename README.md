@@ -1150,48 +1150,48 @@ Negative  |		|		  |
 
 **47) Applications Where Precision is More Valuable than Recall**
 
-	1) Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
+	a) Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
 	
-	2) Medical Diagnosis: In medical testing, particularly when screening for a serious but not immediately life-threatening condition, it might be more important to ensure that a positive result is truly indicative of the condition. For instance, a diagnostic test for a rare condition should have high precision to avoid unnecessary stress and further invasive testing on healthy patients.
+	b) Medical Diagnosis: In medical testing, particularly when screening for a serious but not immediately life-threatening condition, it might be more important to ensure that a positive result is truly indicative of the condition. For instance, a diagnostic test for a rare condition should have high precision to avoid unnecessary stress and further invasive testing on healthy patients.
 	
-	3) Fraud Detection: In financial transactions, identifying fraudulent activities should have high precision to prevent normal transactions from being flagged as fraudulent. False positives could inconvenience customers and lead to a loss of trust in the financial institution.
+	c) Fraud Detection: In financial transactions, identifying fraudulent activities should have high precision to prevent normal transactions from being flagged as fraudulent. False positives could inconvenience customers and lead to a loss of trust in the financial institution.
 	
-	4) Search Engines and Recommendation Systems: In these applications, it is often more important that the returned results are highly relevant (high precision), even if it means some relevant results are missed (lower recall). Users typically prefer highly accurate results rather than sifting through numerous irrelevant ones.
+	d) Search Engines and Recommendation Systems: In these applications, it is often more important that the returned results are highly relevant (high precision), even if it means some relevant results are missed (lower recall). Users typically prefer highly accurate results rather than sifting through numerous irrelevant ones.
 	
-	5) Legal Document Review: In e-discovery and legal document review, it's essential that the documents identified as relevant are indeed relevant to avoid legal risks and inefficiencies. High precision is preferred to ensure that the relevant documents are identified correctly.
+	e) Legal Document Review: In e-discovery and legal document review, it's essential that the documents identified as relevant are indeed relevant to avoid legal risks and inefficiencies. High precision is preferred to ensure that the relevant documents are identified correctly.
 	
-	6) Advertising: In targeted advertising, ensuring that the ads shown are highly relevant to the user (high precision) can improve user experience and engagement, even if it means some potential customers are not shown the ad (lower recall).
+	f) Advertising: In targeted advertising, ensuring that the ads shown are highly relevant to the user (high precision) can improve user experience and engagement, even if it means some potential customers are not shown the ad (lower recall).
 
 
 
 **48) There are several types of segmentation in machine learning (ML), including image segmentation, market segmentation, and user segmentation:**
 
-1) Image segmentation
+    1) Image segmentation
+    
+        A process that involves labeling pixels in an image:
+        
+            a) Instance segmentation: Assigns a unique label to each pixel to differentiate between different instances of the same class
+        
+            b) Panoptic segmentation: A combination of semantic and instance segmentation that labels each pixel with a class label and identifies each object instance in the image
+        
+            c) DBSCAN clustering: Groups pixels into clusters based on their density.
    
-	A process that involves labeling pixels in an image:
-	
-	    a) Instance segmentation: Assigns a unique label to each pixel to differentiate between different instances of the same class
-	   
-	    b) Panoptic segmentation: A combination of semantic and instance segmentation that labels each pixel with a class label and identifies each object instance in the image
-	 
-	    c) DBSCAN clustering: Groups pixels into clusters based on their density.
-   
-2) Market segmentation
-   
-	A process that involves grouping buyers based on characteristics that may influence their behavior:
-	
-	Behavioral segmentation: Based directly on consumer behavior
-	
-	Geographic segmentation: Groups buyers by physical location, which can influence buying habits due to climate or resource access
-	
-	Demographic segmentation: Segments customers based on demographic factors, such as characteristics of a person or population
-	
-	Psychographic segmentation: Studies consumers based on their mental attributes, such as interests, values, lifestyle, income, and beliefs
+    2) Market segmentation
+    
+        A process that involves grouping buyers based on characteristics that may influence their behavior:
+        
+        Behavioral segmentation: Based directly on consumer behavior
+        
+        Geographic segmentation: Groups buyers by physical location, which can influence buying habits due to climate or resource access
+        
+        Demographic segmentation: Segments customers based on demographic factors, such as characteristics of a person or population
+        
+        Psychographic segmentation: Studies consumers based on their mental attributes, such as interests, values, lifestyle, income, and beliefs
 
-3) User segmentation
-	A process that involves segmenting customers based on characteristics:
-	
-	Supervised segmentation: Involves the marketer establishing predefined rules, and machine learning organizes the data according to those rules
+    3) User segmentation
+        A process that involves segmenting customers based on characteristics:
+        
+        Supervised segmentation: Involves the marketer establishing predefined rules, and machine learning organizes the data according to those rules
 
 **49) Activation functions**
 
@@ -1199,15 +1199,72 @@ Negative  |		|		  |
 
  	a) Sigmoid function:
 
-    		S(x)= {1}/{1+e^{-x}}
+    	S(x)= {1}/{1+e^{-x}}
 
-      		Range (0,1)
+      	Range (0,1)
 
 		Vanishing gradent
   
  	b) tanh : 
+        
+        ((e**x −e ** −x)/(e **x + e **−x))
 
-  		
+        range : (-1,1)
+
+        vanishing gradent
+
+    c) relu:
+
+        S(x) = max(0,1)
+
+        range : (0,inf)
+
+        mitigate vanishing gradent
+
+        dead neurons 
+
+    d) leaky - relu:
+
+        range = (-inf,inf)
+
+        S(x) = max(0.01x,x)
+
+        prevent dead neurons
+
+        Computational over head
+
+    e) Softmax:
+
+        Used in the o/p layer of classification n/w's to represent possibilites.
 
 
+**50) Loss functions/cost functions **
 
+    measures how well a machine learning model performs.
+
+    a) Regression loss:
+
+        i) Mean squared error:
+
+        ii) Mean Absolute error:
+
+        iii) Huber Loss:
+
+    b) Classification loss:
+
+        i) Binary cross entropy:
+
+        ii) Categorical cross entropy:
+
+        iii) Sparse categorical cross entropy:
+
+    c) Specialized loss functions:
+
+        i) Kullback-leibler
+
+        ii) Hinge loss
+
+        iii) cosine similarity
+
+        iv) Dice loss:
+        
