@@ -1010,11 +1010,23 @@ Negative  |		|		  |
 
     f) Regularization Techniques:
 
-	 	1) randomly selected neurons are ignored during training
+        Regularization is a technique used in ML to prevent overfitting by adding a penalty term to the loss fn that penalizes large coefficients in the model. This penalty encourages the model to favor simpler solutions and helps prevent it from fitting the noise in the training data too closely. Common regularization techniques include L1 regularization(Lasso) and L2 regularization(Ridge).
+
+        L1 regularization adds the absolute value of the coefficient as a penalty term.
+
+        L2 regularization adds the squared magnitude of the coefficient as a penalty term.
+
+	 	1) Randomly selected neurons are ignored during training
    		L1/L2 Regularization.
 
      		
-		2) Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data. Here are the most common regularization techniques:
+		2) Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data.
+        
+        Here are the most common regularization techniques:
+
+            a) Lasso(L1 regularization).
+
+            b) Ridge(L2 regularization).
 
     g) Proper Initialization:
 
