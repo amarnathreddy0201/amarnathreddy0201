@@ -964,7 +964,6 @@ Negative  |		|		  |
 
 **37) What is grdent descent:**
 
-	
 	Gradient descent is an optimization algorithm used to minimize the loss function in machine learning and neural networks. It is a method for finding the minimum of a function by iteratively moving towards the steepest descent, as defined by the negative of the gradient.
 
 	a) Loss Function:
