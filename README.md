@@ -967,16 +967,17 @@ Negative  |		|		  |
 	
 	Gradient descent is an optimization algorithm used to minimize the loss function in machine learning and neural networks. It is a method for finding the minimum of a function by iteratively moving towards the steepest descent, as defined by the negative of the gradient.
 
-	**Loss Function:**
+	a) Loss Function:
 
 		The loss function (or cost function) measures the difference between the predicted values and the actual target values. The goal of training a neural network is to minimize this loss function.
-	**Gradient:**
+	
+    b) Gradient:
 
 		The gradient is a vector of partial derivatives of the loss function with respect to each parameter (weights and biases) of the model. It points in the direction of the steepest increase in the loss function.
 
-	**The gradient descent algorithm involves the following steps:**
-
-	Initialization, Compute the Loss, Compute the Gradient, Update Parameters and Repeat
+	c) The gradient descent algorithm involves the following steps:
+        
+        Initialization, Compute the Loss, Compute the Gradient, Update Parameters and Repeat
 
 **38) when gradient descent occurs forward propagation or backwards propagation**
 
