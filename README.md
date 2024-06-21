@@ -1250,7 +1250,7 @@ Negative  |		|		  |
         Used in the o/p layer of classification n/w's to represent possibilites.
 
 
-**50) Loss functions/cost functions **
+**50) Loss functions/cost functions**
 
     measures how well a machine learning model performs.
 
