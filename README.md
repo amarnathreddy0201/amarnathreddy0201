@@ -1280,3 +1280,29 @@ Negative  |		|		  |
 
         iv) Dice loss:
         
+**51) GAN(generative Adversarial Network)**
+
+    a) Unsupervised learning, 2 neural network(discriminator and a generator), image synthesis, style transfer, text-to-image.
+
+        i) Generative 
+
+        ii) Adversarial
+
+        iii) Networks
+
+    b) Type of gan's:
+
+        i) Vanilla GAN(Stochastic gradent descent)
+
+        ii) Conditional GAN()
+
+        iii) Deep Convolution GAN
+
+        iv) Laplace Pyramid GAN
+
+        v) Super resolution GAN
+
+
+
+
+
