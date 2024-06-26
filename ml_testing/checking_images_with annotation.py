@@ -2,7 +2,7 @@ import os
 import glob
 
 
-names = ['damage', 'excess_glue', 'foreign_material', 'open_pleat'] # Your classes
+names = [] # Your classes
 
 images = glob.glob(r"valid\images\*.jpg") # Images directory
 # print(images)
