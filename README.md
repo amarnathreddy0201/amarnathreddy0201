@@ -237,7 +237,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 #### For docker installation in ec2 ###################
 1) sudo apt update
-2)  sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+2) sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
 3) curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 4) sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -247,6 +247,19 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 8) sudo systemctl enable docker
 9) docker --version
 
+
+- Command for docker in ec2
+
+    echo "Running a new container from the latest image..."
+
+    # Run a new container from the latest image with a specific name
+    docker run -d --name fastapi-app-simple-container -e AWS_ACCESS_KEY_ID= tour_access_key_id -e AWS_SECRET_ACCESS_KEY=your_access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8000:8000 amarnathreddysurapureddy0201/fastapi-app-simple:latest
+
+    1) amarnathreddysurapureddy0201 is user name
+    
+    2) fastapi-app-simple:latest is image
+    
+    3) Container : fastapi-app-simple-container
 
 
 # https://bastibe.de/2013-05-30-speeding-up-matplotlib.html
@@ -321,23 +334,23 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
    
    c) Edge detection filters:
    
-	1) Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
+        1) Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
 	
-	     	Sobel function in opencv is used to perform edge detection on an image. it computes the gradient of the image intensity at each pixel, which can be used to detect edges or sharp changes in intensity. Sobel edge detection typically involves convolving the image with a Sobel kernel in the both the horizontal and vertical directions to compute the gradient magnitude and direction.
+	    Sobel function in opencv is used to perform edge detection on an image. it computes the gradient of the image intensity at each pixel, which can be used to detect edges or sharp changes in intensity. Sobel edge detection typically involves convolving the image with a Sobel kernel in the both the horizontal and vertical directions to compute the gradient magnitude and direction.
    
-     	2) Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
+        2) Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
    
    d) Thresholding filters:
    
-      Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
+        1) Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
    
-      Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
+        2) Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
       
    e) Morphological filters:
    
-      Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
+        1) Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
    
-      Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
+        2) Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
 
    f) The anisotropic diffusion filter (ADF) is a technique used in image processing and computer vision to reduce image noise while preserving image content.
   
@@ -519,17 +532,6 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
           #Transfer tensor from GPU to CPU
           tensor_cpu_again = tensor_gpu.numpy()
 
-
-- Command for docker in ec2
-
-      echo "Running a new container from the latest image..."
-      # Run a new container from the latest image with a specific name
-      docker run -d --name fastapi-app-simple-container -e AWS_ACCESS_KEY_ID= tour_access_key_id -e AWS_SECRET_ACCESS_KEY=your_access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8000:8000 amarnathreddysurapureddy0201/fastapi-app-simple:latest
-
-      1) amarnathreddysurapureddy0201 is user name
-      2) fastapi-app-simple:latest is image
-      3) Container : fastapi-app-simple-container
-  
 **15) what is the use of activation function in neural network?**
 
     a) Activation functions, also known as transfer functions, are used in neural networks to calculate the weighted sum of inputs and biases, which then determines if a neuron can be activated. They also manipulate the presented data and produce an output for the neural network that contains the parameters in the data. Activation functions can be linear or nonlinear, and are used to control the output of neural networks across different domains.
@@ -1118,14 +1120,14 @@ Negative  |		|		  |
 
     Randomsearchcv:
 
-        Fixed noof hyperparameters combinations, high efficiency, less computational power.
+        Fixed no.of hyperparameters combinations, high efficiency, less computational power.
 
     Choosing between GridSearchCV and RandomSearchCV depends on the specific needs of your project. If you have a small hyperparameter space and want to ensure finding the best parameters, GridSearchCV is the way to go. If you have a large hyperparameter space or limited computational resources, RandomSearchCV is typically more efficient and can still yield good results.
 
 
 **45) Machine learning                                                                       Deep learning**
 
- 	a) Enables m/c to take decisions on their own. based on past data.                       a) Enables m/c's to take decesions with the help ofartificial neural n/w's.
+ 	a) Enables m/c to take decisions on their own. based on past data.                       a) Enables m/c's to take decesions with the help of artificial neural n/w's.
 
   	b) Needs only small amount of data.                                                      b) Needs a large amount of training data.
 
@@ -1156,9 +1158,6 @@ Negative  |		|		  |
     Healthcare: It helps clinicians make diagnoses and choose treatment options.
     
     Manufacturing: It helps with quality control.
-
-
-
 
 **47) Applications Where Precision is More Valuable than Recall**
 
@@ -1301,8 +1300,3 @@ Negative  |		|		  |
         iv) Laplace Pyramid GAN
 
         v) Super resolution GAN
-
-
-
-
-
