@@ -1300,3 +1300,23 @@ Negative  |		|		  |
         iv) Laplace Pyramid GAN
 
         v) Super resolution GAN
+
+**52)How would you approach developing a solution for synchronising data from multiple cameras? What challenges might you face, and how would you overcome them?**
+
+    a) Running multiple cameras : With the help of threads we will run the cameras. parallel operations.
+    
+    b) Frame capture and storing : Capturing frames and attach time stamp with microseconds precision. Save frames in buffer to manage timing.
+    
+    c) Data alignment and preprocessing : Process the frames based on time stamps. Process frames in parallel to reduce latency.
+    
+    d) Storage and Management : Design a storage system that can handle synchronized data streams. Implement robust error handling to deal with data loss or corruption.
+
+    e) latency: Use time-stamped frames and buffer data to account for latency variations. Implement Quality of Service to prioritize synchronization data.
+    
+    f) Frame rates and resolution: Down sample or up sample frames to match the target synchronization rate. Use image processing techniques to align frames spatially.
+
+    g) Overhead processing : parallel processing like GPU. will run the application.
+    
+    h) Corruption of frames : Implement error detection and correction mechanisms.
+
+
