@@ -1331,7 +1331,7 @@ Negative  |		|		  |
 
     Value: Represents the brightness or lightness of the color. It ranges from 0 to 100%, where 0% is completely black (no light) and 100% is the brightest and most intense color.
 
-    a) Practical Example in Computer Vision
+    a) Practical Example in Computer Vision :
 
         i) Color Detection:
 
@@ -1344,3 +1344,25 @@ Negative  |		|		  |
             RGB: Segmenting an image by color can be complex because similar colors can have very different RGB values.
 
             HSV: Segmentation can be easier and more accurate because the hue channel can be used to directly identify regions of specific colors.
+
+**Bias-Variance Trade-off**
+
+    1) The bias-variance trade-off is the balance between the complexity of the model and its ability to generalize to new data. The goal is to find a model that minimizes both bias and variance, thus achieving low overall error.
+
+        a) Underfitting (High Bias and Low Variance): The model is too simple to capture the underlying patterns in the data, resulting in high error on both the training and test sets.
+        
+        b) Overfitting (Low Bias and High Variance): The model is too complex and captures the noise in the training data, resulting in low training error but high test error.
+
+        c) Optimal Model (Balanced Bias and Variance): The model captures the underlying patterns in the data well without being overly complex. This results in low training and test error.
+
+    2) Techniques to Manage Bias and Variance
+        
+        a) Increase Model Complexity: Adding more features, using more complex algorithms, or adding layers to neural networks can reduce bias.
+
+        b) Regularization: Techniques like L1 (Lasso) and L2 (Ridge) regularization can help reduce variance by penalizing complex models.
+
+        c) Cross-Validation: Using cross-validation can help in selecting models and hyperparameters that generalize well to new data.
+        
+        d)Ensemble Methods: Techniques like bagging (e.g., Random Forest) and boosting (e.g., AdaBoost) combine multiple models to balance bias and variance.
+
+        e) Collecting More Data: More training data can help in reducing variance by providing more examples for the model to learn from.
