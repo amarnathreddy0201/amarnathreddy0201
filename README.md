@@ -1345,7 +1345,7 @@ Negative  |		|		  |
 
             HSV: Segmentation can be easier and more accurate because the hue channel can be used to directly identify regions of specific colors.
 
-**Bias-Variance Trade-off**
+**54Bias-Variance Trade-off**
 
     1) The bias-variance trade-off is the balance between the complexity of the model and its ability to generalize to new data. The goal is to find a model that minimizes both bias and variance, thus achieving low overall error.
 
@@ -1366,3 +1366,8 @@ Negative  |		|		  |
         d)Ensemble Methods: Techniques like bagging (e.g., Random Forest) and boosting (e.g., AdaBoost) combine multiple models to balance bias and variance.
 
         e) Collecting More Data: More training data can help in reducing variance by providing more examples for the model to learn from.
+
+***55) what is compiler***
+
+    In computing, a compiler is a computer program that translates computer code written in one programming language into another language.
+    
