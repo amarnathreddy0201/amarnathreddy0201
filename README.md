@@ -1471,7 +1471,7 @@ Negative  |		|		  |
         This method uses bicubic interpolation, which considers a 4x4 neighborhood of pixels to calculate the interpolated value. It produces smoother results than bilinear interpolation but is slower.
     
     INTER_LANCZOS4:
-    
+
         This method uses Lanczos resampling with a 4x4 kernel. It provides even smoother results than bicubic interpolation but is computationally more expensive.
     
     Choosing the Right Interpolation:
@@ -1482,4 +1482,59 @@ Negative  |		|		  |
 
         For real-time applications: INTER_NEAREST or INTER_LINEAR might be necessary due to their speed.
 
+**63 Problems with Normal Pointers**
+
+    a) Some Issues with normal pointers in C++ are as follows:
+
+        Memory Leaks: This occurs when memory is repeatedly allocated by a program but never freed. This leads to excessive memory consumption and eventually leads to a system crash. 
+
+        Dangling Pointers: A dangling pointer is a pointer that occurs at the time when the object is de-allocated from memory without modifying the value of the pointer.
+
+        Wild Pointers: Wild pointers are pointers that are declared and allocated memory but the pointer is never initialized to point to any valid object or address.
+
+        Data Inconsistency: Data inconsistency occurs when some data is stored in memory but is not updated in a consistent manner.
+
+        Buffer Overflow: When a pointer is used to write data to a memory address that is outside of the allocated memory block. This leads to the corruption of data which can be exploited by malicious attackers.
     
+**64) What is Feature engineering**
+
+    Feature Engineering is the process of creating new features or transforming existing features to improve the performance of a machine-learning model. It involves selecting relevant information from raw data and transforming it into a format that can be easily understood by a model. The goal is to improve model accuracy by providing more meaningful and relevant information.
+
+    a) What are the Steps in Feature Engineering?
+    
+    The steps for feature engineering vary per different Ml engineers and data scientists. Some of the common steps that are involved in most machine-learning algorithms are:
+
+        i) Data Cleansing : Data cleansing (also known as data cleaning or data scrubbing) involves identifying and removing or correcting any errors or inconsistencies in the dataset. This step is important to ensure that the data is accurate and reliable.
+    
+        ii) Data Transformation
+
+        iii) Feature Extraction
+
+        iv) Feature Selection
+            
+            Feature selection involves selecting the most relevant features from the dataset for use in machine learning. This can include techniques like correlation analysis, mutual information, and stepwise regression.
+    
+        vi) Feature Iteration
+            Feature iteration involves refining and improving the features based on the performance of the machine learning model. This can include techniques like adding new features, removing redundant features and transforming features in different ways.
+
+**65) CNN vs DNN**
+
+    DNN, or Deep Neural Network, is a type of artificial neural network with multiple hidden layers between the input and output layers.    
+    
+    DNNs are capable of learning and representing complex, non-linear relationships in data. They excel at tasks such as image recognition, natural language processing, and speech recognition.
+
+    CNN, or Convolutional Neural Network, is a specialized type of DNN that is particularly well-suited for processing grid-like data, such as images. CNNs use convolutional layers to extract local features from the input, and then combine these features hierarchically to capture higher-level patterns. This makes CNNs highly effective for tasks like image classification, object detection, and semantic segmentation.
+
+    The key differences between DNNs and CNNs are:
+
+        Architectural design: CNNs have a unique architecture with convolutional and pooling layers, whereas DNNs have a more traditional feed-forward structure with fully connected layers.
+
+        Spatial relationships: CNNs are designed to leverage the spatial relationships in the input data, such as the relative position of pixels in an image. DNNs do not have this built-in spatial awareness.
+
+        Parameter sharing: Convolutional layers in CNNs share parameters, which reduces the number of trainable parameters and makes the model more efficient, especially for large inputs like images.
+
+        Applications: CNNs are particularly well-suited for computer vision tasks, while DNNs can be applied to a wider range of problems, including image recognition, natural language processing, and speech recognition.
+
+        In summary, CNNs are a specialized type of DNN that are optimized for processing grid-like data, such as images, by leveraging the spatial relationships in the input and using a unique architectural design with convolutional and pooling layers.
+
+        
