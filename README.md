@@ -1537,4 +1537,25 @@ Negative  |		|		  |
 
         In summary, CNNs are a specialized type of DNN that are optimized for processing grid-like data, such as images, by leveraging the spatial relationships in the input and using a unique architectural design with convolutional and pooling layers.
 
+**66) Compile time vs Run time polymorphisms**
+
+    a) Compile Time Polymorphism in C++
+
+        In compile-time polymorphism, the compiler determines which function or operation to call based on the number, types, and order of arguments. It is also called Static Polymorphism as the function calls are statically binded to its definition.
+
+        It is further categorized into two types:
+
+        Function Overloading
+
+        Operator Overloading
+    
+    b) Run Time Polymorphism
+
+        In run-time polymorphism, the decision of which function to call is determined at runtime based on the actual object type rather than the reference or pointer type. It is also known as Dynamic Polymorphism because the function calls are dynamically bonded at the runtime.
+
+        Run Time Polymorphism can be exhibited by:
+
+        Method Overriding using Virtual Functions
+
+
         
