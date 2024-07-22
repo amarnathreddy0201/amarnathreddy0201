@@ -1164,9 +1164,7 @@ Negative  |		|		  |
 
     e) The Problem is divided into parts and solved individually and then combined.          e) The problem is solved in an end-to-end manner.
 
-**46) Supervised learning is a machine learning technique that involves teaching a computer to perform tasks or make decisions by analyzing**
-
-**data and predicting outcomes. It's a widely used approach in business, with applications in many industries. Here are some examples:**
+**46) Supervised learning is a machine learning technique that involves teaching a computer to perform tasks or make decisions by analyzingdata and predicting outcomes. It's a widely used approach in business, with applications in many industries. Here are some examples:**
 
     Finance: Supervised learning helps detect fraudulent transactions, predict stock prices, and assess creditworthiness.
     
@@ -1346,7 +1344,7 @@ Negative  |		|		  |
     
     h) Corruption of frames : Implement error detection and correction mechanisms.
 
-**53) HSV vs RGB:
+**53) HSV vs RGB:**
 
     RGB: Uses Red, Green, and Blue channels. Common for image display and basic processing. Not always intuitive for color-based tasks.
     
@@ -1398,7 +1396,7 @@ Negative  |		|		  |
 
     In computing, a compiler is a computer program that translates computer code written in one programming language into another language.
 
-**56) AI Compiler **
+**56) AI Compiler**
 
     An AI compiler translates an ML model into multi-level IRs in upper and lower layers. The upper layer is focused on hardware-independent but framework-related transformations and optimizations. The lower layer is responsible for hardware-related optimizations, code generation, and compilation.
 
@@ -1558,4 +1556,3 @@ Negative  |		|		  |
         Method Overriding using Virtual Functions
 
 
-        
