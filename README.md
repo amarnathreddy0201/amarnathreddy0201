@@ -1555,4 +1555,20 @@ Negative  |		|		  |
 
         Method Overriding using Virtual Functions
 
+**67) how good your in python**
 
+    I have extensive knowledge of Python and can assist with a wide range of tasks, including:
+
+    General Programming: Writing scripts, functions, and classes.
+
+    Data Analysis: Using libraries like Pandas, NumPy, and Matplotlib for data manipulation and visualization.
+
+    Machine Learning & AI: Implementing models using TensorFlow, PyTorch, and scikit-learn.
+
+    Computer Vision: Working with OpenCV, PIL, and specialized libraries for deep learning models like YOLO.
+
+    Web Development: Using frameworks like Flask and FastAPI.
+
+    Automation: Writing scripts for automating tasks and using tools like Selenium for web automation.
+    
+    Deployment: Setting up and deploying applications using Docker and AWS.
