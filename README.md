@@ -1276,6 +1276,8 @@ Negative  |		|		  |
 
 **50) Loss functions/cost functions**
 
+    As mentioned, loss functions help gauge how a machine learning model is performing with its given data, and how well it’s able to predict an expected outcome. Many machine learning algorithms use loss functions in the optimization process during training to evaluate and improve its output accuracy. Also, by minimizing a chosen loss function during optimization, this can help determine the best model parameters needed for given data.
+
     measures how well a machine learning model performs.
 
     a) Regression loss:
@@ -1557,18 +1559,33 @@ Negative  |		|		  |
 
 **67) how good your in python**
 
-    I have extensive knowledge of Python and can assist with a wide range of tasks, including:
+    a) I have extensive knowledge of Python and can assist with a wide range of tasks, including:
 
-    General Programming: Writing scripts, functions, and classes.
+    b) General Programming: Writing scripts, functions, and classes.
 
-    Data Analysis: Using libraries like Pandas, NumPy, and Matplotlib for data manipulation and visualization.
+    c) Data Analysis: Using libraries like Pandas, NumPy, and Matplotlib for data manipulation and visualization.
 
-    Machine Learning & AI: Implementing models using TensorFlow, PyTorch, and scikit-learn.
+    d) Machine Learning & AI: Implementing models using TensorFlow, PyTorch, and scikit-learn.
 
-    Computer Vision: Working with OpenCV, PIL, and specialized libraries for deep learning models like YOLO.
+    e) Computer Vision: Working with OpenCV, PIL, and specialized libraries for deep learning models like YOLO.
 
-    Web Development: Using frameworks like Flask and FastAPI.
+    f) Web Development: Using frameworks like Flask and FastAPI.
 
-    Automation: Writing scripts for automating tasks and using tools like Selenium for web automation.
+    g) Automation: Writing scripts for automating tasks and using tools like Selenium for web automation.
     
-    Deployment: Setting up and deploying applications using Docker and AWS.
+    h) Deployment: Setting up and deploying applications using Docker and AWS.
+
+**68) YOLOv8 vs DETR**
+
+    yolo : cnn
+
+    Detr : cnn + attention.
+
+        Hybrid encoders : 6 encoders and 6 decoders.
+
+            Encoder : features converting into sequences of feature images.
+
+            decoder : Prediction auxioliores + Threshold values.
+
+            IOU query : For bounding boxes.
+
