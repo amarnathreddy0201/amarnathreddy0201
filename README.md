@@ -1589,3 +1589,29 @@ Negative  |		|		  |
 
             IOU query : For bounding boxes.
 
+**68)YOLOv8 Model Variants and Parameters:
+
+    i) YOLOv8n (Nano)
+
+        Parameters: ~3 million
+        Purpose: Ultra-lightweight model designed for real-time performance on devices with limited computational resources like mobile devices or edge AI hardware.
+
+    ii) YOLOv8s (Small)
+
+        Parameters: ~11 million
+        Purpose: Small model that provides a good balance between speed and accuracy, suitable for use cases requiring real-time inference on standard hardware.
+    
+    iii) YOLOv8m (Medium)
+
+        Parameters: ~25 million
+        Purpose: Medium-sized model for applications where accuracy is more important than speed, yet still viable for near real-time inference on modern GPUs.
+
+    iv) YOLOv8l (Large)
+
+        Parameters: ~40 million
+        Purpose: Larger model for more accuracy-critical tasks, such as higher-resolution images or more complex object detection scenarios. This model requires more computational power but delivers higher accuracy.
+    
+    v) YOLOv8x (Extra Large)
+
+        Parameters: ~68 million
+        Purpose: The largest model variant focused on achieving the highest possible accuracy, with a significant computational cost. Suitable for high-end GPUs or server-based inference where speed is less of a concern.
