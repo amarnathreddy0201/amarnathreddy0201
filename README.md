@@ -1871,3 +1871,7 @@ Negative  |		|		  |
 
     Balancing these trade-offs effectively can lead to a model that meets the specific needs of your application, whether it’s in terms of accuracy, speed, or resource efficiency.
 
+
+Self attention layers
+
+    Self attention has several benefits that make it important in ml and ai : long-range dependencies: self attention allows the model to capture relationship between distant elements in a sequence, enabling it to understand complex patterns and dependencies. 
