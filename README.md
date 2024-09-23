@@ -1872,6 +1872,28 @@ Negative  |		|		  |
     Balancing these trade-offs effectively can lead to a model that meets the specific needs of your application, whether it’s in terms of accuracy, speed, or resource efficiency.
 
 
-Self attention layers
+***72) Self attention layers***
 
     Self attention has several benefits that make it important in ml and ai : long-range dependencies: self attention allows the model to capture relationship between distant elements in a sequence, enabling it to understand complex patterns and dependencies. 
+
+***73) What is embedding***
+
+    In machine learning, embedding is the process of converting real-world objects into mathematical representations that help machine learning models understand complex relationships between data. Embeddings are a critical tool for building applications like search engines, recommendation systems, chatbots, and fraud detection systems.
+
+***74) Resnet layers ***
+
+    - Convolutional layers
+        
+        These layers extract features from the input image by applying filters to detect patterns, edges, and textures. 
+    
+    - Residual blocks
+    
+        These blocks contain two convolutional layers, followed by a batch normalization layer and a rectified linear unit (ReLU) activation function. The output of the second convolutional layer is added to the input, and then passed through another ReLU activation function. 
+    
+    - Identity block
+        
+        This block processes and transforms the features extracted by the convolutional layers. 
+
+    - Fully connected layers
+    
+        These layers make the final classification by mapping the learned features to the output classes.layer.
