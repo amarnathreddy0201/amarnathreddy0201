@@ -5,3 +5,4 @@ images
 models
 augmentation_data/*.jpg
 augmentation_data/*.txt
+*.pt
