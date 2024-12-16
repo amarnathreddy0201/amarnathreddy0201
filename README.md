@@ -1897,3 +1897,12 @@ Negative  |		|		  |
     - Fully connected layers
     
         These layers make the final classification by mapping the learned features to the output classes.layer.
+
+
+ **75) What is statistics 
+
+      collection data
+      organizing data
+      Analysis of data
+      interpolation 
+      presentation 
