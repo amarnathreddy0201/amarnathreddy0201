@@ -264,7 +264,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
 # https://bastibe.de/2013-05-30-speeding-up-matplotlib.html
 
- ##  interview questions ##
+##  interview questions ##
 	 class Amar:
 	    amar ="amar"
 	    
@@ -294,63 +294,63 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 	print(Amar.Amar_call().amar) # it's returning Amar_class as a object
 
 
- **1) How yolo works?**
+## 1) How yolo works?
+
+a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
     
-      a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
+b) Inputting an image: The image is resized to 448x448, then passed through a CNN to extract features
     
-      Inputting an image: The image is resized to 448x448, then passed through a CNN to extract features
+c) Dividing the image into a grid: The grid size can be 13x13 or 19x19, with each cell containing 5 boxes
     
-      Dividing the image into a grid: The grid size can be 13x13 or 19x19, with each cell containing 5 boxes
+d) Predicting bounding boxes and class probabilities: Each cell predicts a set of bounding boxes and class probabilities
     
-      Predicting bounding boxes and class probabilities: Each cell predicts a set of bounding boxes and class probabilities
+e) Removing overlapping guesses: YOLO uses non-maximum suppression to remove any guesses that overlap with other guesses
     
-      Removing overlapping guesses: YOLO uses non-maximum suppression to remove any guesses that overlap with other guesses
+f) Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
     
-      Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
-    
-**2) Object detection vs segmentation**
+## 2) Object detection vs segmentation
    
    a) Finding the object and location of the object.
    
    b) Fine-grained information
    
-   Object detection:
-     Focuses on identifying and localizing specific objects within an image or video. It involves finding bounding boxes around objects and classifying them.
+   c) Object detection:
+    Focuses on identifying and localizing specific objects within an image or video. It involves finding bounding boxes around objects and classifying them.
    
-   Segmentation:
-     Focuses on dividing an image into meaningful regions and assigning class labels to each pixel. It provides fine-grained information about object boundaries and regions.
+   d) Segmentation:
+   Focuses on dividing an image into meaningful regions and assigning class labels to each pixel. It provides fine-grained information about object boundaries and regions.
 
 **3) Different types of filters:**
    
    a) Smoothing filters:
    
-     Gaussian filter: This filter applies a two-dimensional Gaussian function to the neighborhood pixels to smoothen the image. The greater the standard deviation of the Gaussian distribution, the greater the blur will be.
+   Gaussian filter: This filter applies a two-dimensional Gaussian function to the neighborhood pixels to smoothen the image. The greater the standard deviation of the Gaussian distribution, the greater the blur will be.
    
-     Median filter: This filter replaces each pixel value with the median of the neighboring pixels. It is effective in reducing the salt and pepper noise from the images.
+   Median filter: This filter replaces each pixel value with the median of the neighboring pixels. It is effective in reducing the salt and pepper noise from the images.
    
    b) Sharpening filters
    
-     Laplacian filter: This filter convolves over the image based on the principle of the Laplace transform. It calculates the image matrix's second-order derivative and highlights its edges and details by emphasizing regions of rapid intensity changes.
+   Laplacian filter: This filter convolves over the image based on the principle of the Laplace transform. It calculates the image matrix's second-order derivative and highlights its edges and details by emphasizing regions of rapid intensity changes.
    
    c) Edge detection filters:
    
-        1) Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
+   1) Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
 	
 	    Sobel function in opencv is used to perform edge detection on an image. it computes the gradient of the image intensity at each pixel, which can be used to detect edges or sharp changes in intensity. Sobel edge detection typically involves convolving the image with a Sobel kernel in the both the horizontal and vertical directions to compute the gradient magnitude and direction.
-   
-        2) Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
+
+   2) Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
    
    d) Thresholding filters:
    
-        1) Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
+   1) Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
    
-        2) Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
+   2) Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
       
    e) Morphological filters:
    
-        1) Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
+   1) Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
    
-        2) Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
+   2) Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
 
    f) The anisotropic diffusion filter (ADF) is a technique used in image processing and computer vision to reduce image noise while preserving image content.
   
@@ -358,7 +358,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
   
    h) Morphological operations include dilation, erosion, opening, closing, and boundary extraction. For example, dilation can expand image pixels or add pixels on object boundaries, while erosion can shrink the image pixels or remove pixels on object boundaries. Compound operations often combine dilation and erosion, such as closing, which performs dilation and then erosion, or opening, which performs erosion and then dilation.
    
-**4) Different types of segmentation(Semantic vs instance segmentation):**
+## 4) Different types of segmentation(Semantic vs instance segmentation):
    
    a) Semantic segmentation : One class consider as same entity.
    
@@ -368,34 +368,35 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       Semantic and instance segmentation have real-world applications such as: Urban planning and smart city management, Medical diagnostics and research, Autonomous vehicles and advanced driver-assistance systems (ADAS), Analyzing  medical scans, and Satellite or aerial imagery. 
      
 
-**5) How RT-DERT works?**
+## 5) How RT-DERT works?
    
-    Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
-  
-    **Key Features**
-      Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
-      IoU-aware Query Selection: Baidu's RT-DETR improves object query initialization by utilizing IoU-aware query selection. This allows the model to focus on the most relevant objects in the scene, enhancing the detection accuracy.
-      Adaptable Inference Speed: Baidu's RT-DETR supports flexible adjustments of inference speed by using different decoder layers without the need for retraining. This adaptability facilitates practical application in various real-time object detection scenarios.
+   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+   
+   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+   
+   IoU-aware Query Selection: Baidu's RT-DETR improves object query initialization by utilizing IoU-aware query selection. This allows the model to focus on the most relevant objects in the scene, enhancing the detection accuracy.
+   
+   Adaptable Inference Speed: Baidu's RT-DETR supports flexible adjustments of inference speed by using different decoder layers without the need for retraining. This adaptability facilitates practical application in various real-time object detection scenarios.
 
-6) Difference between low level and highlevel languages?
-   
-    High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today.
+## 6) Difference between low level and highlevel languages?
 
-**7) Difference between pytorch and tensorflow:**
+High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today.
+
+## 7) Difference between pytorch and tensorflow:**
    
-     a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. Both frameworks have their own strengths and weaknesses, and the best choice for you will depend on your specific needs.
+a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. Both frameworks have their own strengths and weaknesses, and the best choice for you will depend on your specific needs.
    
      b) PyTorch is a Python-based deep learning framework that is known for its flexibility and ease of use. PyTorch uses a dynamic computation graph, which allows you to create and modify your models on the fly. This makes PyTorch a good choice for rapid prototyping and experimentation.
    
      c) TensorFlow is another Python-based deep learning framework that is known for its scalability and performance. TensorFlow uses a static computation graph, which means that you need to define your model before you can start training it. This can make TensorFlow less flexible than PyTorch, but it also makes TensorFlow more efficient for training large models.
 
 
-**8) What is CUDA and why it is used?**
+## 8) What is CUDA and why it is used?**
    
     Compute Unified Device Architecture (CUDA) is a parallel computing platform and application programming interface (API) that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing, an approach called general-purpose computing on GPUs (GPGPU).
      
    
-**9) CUDA using pytorch:**
+## 9) CUDA using pytorch:**
     
     a) Check if CUDA is available:
    
@@ -417,7 +418,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
        print(torch.cuda.current_device())
 
 
-**10) CUDA using tensorflow:**
+## 10) CUDA using tensorflow:**
     
       a) Check if CUDA is available:
 
@@ -441,7 +442,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
           print(tf.config.experimental.get_visible_devices('GPU'))
 
 
-**11) What is a tensor?**
+## 11) What is a tensor?**
     
       A tensor is a mathematical object representing a multi-dimensional array of numerical values. In the context of machine learning frameworks like TensorFlow and PyTorch, tensors are the fundamental data structures used for computation.
 
@@ -455,7 +456,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
     e) Gradient Computation:
 
-**12) Difference between Tensor and Numpy:**
+## 12) Difference between Tensor and Numpy:**
 
     Tensors and NumPy arrays are both used to represent multi-dimensional arrays of numerical data, but they have some differences, especially in the context of machine learning frameworks like TensorFlow and PyTorch.
 
@@ -467,7 +468,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
 
     d) Memory Sharing:
 
-**13) What is REST API?**
+## 13) What is REST API?**
     
       REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing networked applications. RESTful APIs are designed to be simple, lightweight, and scalable, making them popular for building web services and APIs.
 
@@ -486,7 +487,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
       RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
 
 
-**14) Tensor CPU to GPU using pythorch and tensorflow:**
+## 14) Tensor CPU to GPU using pythorch and tensorflow:**
 
     Pytorch :
     
@@ -1880,7 +1881,7 @@ Negative  |		|		  |
 
     In machine learning, embedding is the process of converting real-world objects into mathematical representations that help machine learning models understand complex relationships between data. Embeddings are a critical tool for building applications like search engines, recommendation systems, chatbots, and fraud detection systems.
 
-***74) Resnet layers ***
+**74) Resnet layers***
 
     - Convolutional layers
         
@@ -1899,10 +1900,18 @@ Negative  |		|		  |
         These layers make the final classification by mapping the learned features to the output classes.layer.
 
 
- **75) What is statistics 
+ ***75) What is statistics*** 
 
-      collection data
-      organizing data
-      Analysis of data
-      interpolation 
-      presentation 
+    - collection data
+      
+    - organizing data
+    
+    - Analysis of data
+    
+    - interpolation 
+      
+    - presentation 
+
+***76) What is AI Compiler***
+
+    An "AI compiler" is a software tool that leverages artificial intelligence techniques to optimize and translate machine learning models (like those from TensorFlow or PyTorch) into efficient code for specific hardware, essentially streamlining the process of deploying AI models on different devices by automatically adjusting the code for maximum performance based on the target hardware; it essentially acts as a compiler specifically designed for machine learning models, enabling faster execution and better resource utilization across various platforms.
