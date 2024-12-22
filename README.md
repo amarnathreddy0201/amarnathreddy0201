@@ -38,28 +38,31 @@ For Django preparation:
   python manage.py migrate(it will put data in sqlite)
   python manage.py createsuperuser
 
-##### Virtual env for different python versions.
-  windows:
-    1) py -3.11 -m venv pyenv_3.11
-    2) Ex :-  py python_version -m venv your_venv_name.
+## Virtual env for different python versions.
+- windows:
+    - py -3.11 -m venv pyenv_3.11
+
+    - Ex :-  py python_version -m venv your_venv_name.
     
     python3.11 -m pip install ultralytics
 
-  Linux:
-   python3 -m venv pyven_3.11
+- Linux:
+
+   - python3 -m venv pyven_3.11
 
 pip install --user pipenv
+
 pipenv install django
 
-######    logging files ####################
-  import logging
-  logging.basicConfig(level=logging.INFO, filename='sample.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(filename)s - %(lineno)d')
-  logger = logging.getLogger(__name__)
-  logger.info("print")
+##    logging files 
+import logging
+logging.basicConfig(level=logging.INFO, filename='sample.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(filename)s - %(lineno)d')
+logger = logging.getLogger(__name__)
+logger.info("print")
 
 
 
-######################### CPP #############################
+##  CPP 
   1) Boost continuous sending data .
   2) https://stackoverflow.com/questions/72293309/boost-post-request-continuously-cpp
   
@@ -67,60 +70,78 @@ pipenv install django
   4) Opencv include in cmake : https://gist.github.com/UnaNancyOwen/9d25d9ef66b163e0667b4b3bf3962f8a
   5) Spdlog :   https://github.com/gabime/spdlog/blob/v1.x/CMakeLists.txt
 
-This is forlearning.
-###################  AWS ##############################
+## This is forlearning AWS ##############################
+  
   1) Check the table exist or not : https://stackoverflow.com/questions/42485616/how-to-check-if-dynamodb-table-exists#:~:text=You%20can%20use%20the%20ListTables,you%20request%20doesn't%20exist.
 
-##### fastapi with lambda(windows) ###################
+## fastapi with lambda(windows) ###################
   1) pip freeze>requirements.txt
   2) pip install -t dependencies -r requirements.txt
   3) Compress-Archive -Path .\dependencies -DestinationPath .\lambda_function.zip
   4) Compress-Archive -Path .\main.py -DestinationPath .\lambda_function.zip -Update
   
+## YOLO models 
+
   Classification	Detection	Segmentation	Kind
+
   yolov8n-cls.pt	yolov8n.pt	yolov8n-seg.pt	Nano
+
   yolov8s-cls.pt	yolov8s.pt	yolov8s-seg.pt	Small
+
   yolov8m-cls.pt	yolov8m.pt	yolov8m-seg.pt	Medium
+
   yolov8l-cls.pt	yolov8l.pt	yolov8l-seg.pt	Large
+
   yolov8x-cls.pt	yolov8x.pt	yolov8x-seg.pt	Huge
 
-**Creating a Python virtual environment in Linux**
+## Creating a Python virtual environment in Linux**
+
   1) pip is not in your system : sudo apt-get install python-pip
+
   2) pip install virtualenv
+
   3) Create a virtual environment now,
       $ virtualenv virtualenv_name
+
   4) virtualenv -p /usr/bin/python3 virtualenv_name
+
   5) source virtualenv_name/bin/activate
+
   6) deactivate
    
-**Creating Python virtualenv in Windows**
+## Creating Python virtualenv in Windows
+
   1) pip install virtualenv
+
   2) python -m venv myenv
+
   3) myenv\Scripts\activate
+
   4) deactivate
 
 
 ## Docker to build and run
-  $ docker pull mysql:8.2
+
+  - $ docker pull mysql:8.2
   
-  $ docker images
+  - $ docker images
   
-  $ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
-  
-  
-  $ docker exec -it container_name bash  // Check your docker website.
-  
-      ex : docker exec -it test-mysql bash
-  
-  $ mysql -u root -p    // Type this command it will show downside text
-  
-  Enter password: ...
-  mysql>
+  - $ docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d mysql
   
   
-  docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
+  - $ docker exec -it container_name bash  // Check your docker website.
   
-      example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
+    - ex : docker exec -it test-mysql bash
+  
+  - $ mysql -u root -p    // Type this command it will show downside text
+  
+  - Enter password: ...
+
+  - mysql>
+  
+  
+  - docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0.36-1.el8
+    - example : docker run -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 mysql:8.0
 
 
 # Docker for running the docker fastapi
@@ -128,25 +149,30 @@ This is forlearning.
 
 
 
-### Build the Docker image: Once you have your Dockerfile and application files ready, navigate to the directory containing these files and run the following command to build the Docker image:
+## Build the Docker image: Once you have your Dockerfile and application files ready, navigate to the directory containing these files and run the following command to build the Docker image:
 
-  1) docker build -t my-image .
-     
+- docker build -t my-image .
+  
   Replace my-image with the desired name for your image.
   
   Run a Docker container: After successfully building the Docker image, you can run a container using the following command:
   
-  2) docker run -d --name my-container -p 8080:80 my-image
+- docker run -d --name my-container -p 8080:80 my-image
 
 
-### Docker commands ########
+## Docker commands ########
+  
   1) stop the docker : sudo docker stop count-web-application-container
+  
   2) remove the docker : sudo docker rm count-web-application-container
+  
   3)  For clear : docker system prune -a
+  
   4)  For checking logs : docker logs count-web-application-container
 
 
-#### for pushing to docker hub #########
+## for pushing to docker hub 
+
   1) For checking log files : docker exec container_id_or_name cat /path/to/log/file
   
   2) docker tag count-web-application(name of the image) dockerhub/name
@@ -161,38 +187,54 @@ This is forlearning.
   
   **Note : name is application name.**
 
-#### Pull the docker image:
+## Pull the docker image:
 
-	1) sudo docker pull dockerhub/name:latest
-	2) sudo docker run -d --name container-name -e AWS_ACCESS_KEY_ID=access_key_id -e AWS_SECRET_ACCESS_KEY=access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8001:8001 dockerhub/name
- ## Docker commands for removing container and image
- 	For ec2 instance removing and new container:
-	stop the container : sudo docker stop count-web-application-container
-	remove the docker : sudo docker rm count-web-application-container
+1) sudo docker pull dockerhub/name:latest
+
+2) sudo docker run -d --name container-name -e AWS_ACCESS_KEY_ID=access_key_id -e AWS_SECRET_ACCESS_KEY=access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8001:8001 dockerhub/name
+
+## Docker commands for removing container and image
+
+- For ec2 instance removing and new container:
+	stop the container : sudo docker stop 
+    count-web-application-container
+
+- remove the docker : sudo docker rm count-web-application-container
 	Check the id of image : sudo docker images
 	remove the image : sudo docker rmi 0d051dca991e(id of the image)
 
 
-###  python 3.11 in ec2 instance commands ##
+## python 3.11 in ec2 instance commands ##
+
 MEmory checking : df -h
 
 1) sudo apt update
+
 2) sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+
 3) wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
+
 4) tar -xf Python-3.11.0.tgz
+
 5) cd Python-3.11.0
+
 6) ./configure --enable-optimizations
+
 7) make -j 8  # Adjust the number according to the number of CPU cores
+
 8) sudo make altinstall
    
 6) python3.11 -m venv myenv
+
 7) source myenv/bin/activate
 
 
-########################## For ip address finding #######
+## For ip address finding
+
 1) lsof -i :8000
+
 2) lsof -i -P -n | grep LISTEN
 
 ## Simple docker 
@@ -235,25 +277,34 @@ xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
   ```
 
 
-#### For docker installation in ec2 ###################
+## For docker installation in ec2 
+
 1) sudo apt update
+
 2) sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
 3) curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
 4) sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
 5) sudo apt update
+
 6) sudo apt install -y docker-ce docker-ce-cli containerd.io
+
 7) sudo systemctl start docker
+
 8) sudo systemctl enable docker
+
 9) docker --version
 
 
-- Command for docker in ec2
+## Command for docker in ec2
 
-    echo "Running a new container from the latest image..."
+echo "Running a new container from the latest image..."
 
-    # Run a new container from the latest image with a specific name
-    docker run -d --name fastapi-app-simple-container -e AWS_ACCESS_KEY_ID= tour_access_key_id -e AWS_SECRET_ACCESS_KEY=your_access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8000:8000 amarnathreddysurapureddy0201/fastapi-app-simple:latest
+Run a new container from the latest image with a specific name
+    
+- docker run -d --name fastapi-app-simple-container -e AWS_ACCESS_KEY_ID= tour_access_key_id -e AWS_SECRET_ACCESS_KEY=your_access_key -e AWS_DEFAULT_REGION=ap-south-1 -p 8000:8000 amarnathreddysurapureddy0201/fastapi-app-simple:latest
 
     1) amarnathreddysurapureddy0201 is user name
     
@@ -1873,45 +1924,44 @@ Negative  |		|		  |
     Balancing these trade-offs effectively can lead to a model that meets the specific needs of your application, whether it’s in terms of accuracy, speed, or resource efficiency.
 
 
-***72) Self attention layers***
+## 72) Self attention layers## 
 
     Self attention has several benefits that make it important in ml and ai : long-range dependencies: self attention allows the model to capture relationship between distant elements in a sequence, enabling it to understand complex patterns and dependencies. 
 
-***73) What is embedding***
+## 73) What is embedding
+    
+In machine learning, embedding is the process of converting real-world objects into mathematical representations that help machine learning models understand complex relationships between data. Embeddings are a critical tool for building applications like search engines, recommendation systems, chatbots, and fraud detection systems.
 
-    In machine learning, embedding is the process of converting real-world objects into mathematical representations that help machine learning models understand complex relationships between data. Embeddings are a critical tool for building applications like search engines, recommendation systems, chatbots, and fraud detection systems.
+## 74) Resnet layers
 
-**74) Resnet layers***
-
-    - Convolutional layers
+- Convolutional layers
         
-        These layers extract features from the input image by applying filters to detect patterns, edges, and textures. 
+    These layers extract features from the input image by applying filters to detect patterns, edges, and textures. 
     
-    - Residual blocks
+- Residual blocks
     
-        These blocks contain two convolutional layers, followed by a batch normalization layer and a rectified linear unit (ReLU) activation function. The output of the second convolutional layer is added to the input, and then passed through another ReLU activation function. 
+    These blocks contain two convolutional layers, followed by a batch normalization layer and a rectified linear unit (ReLU) activation function. The output of the second convolutional layer is added to the input, and then passed through another ReLU activation function. 
     
-    - Identity block
+- Identity block
         
-        This block processes and transforms the features extracted by the convolutional layers. 
+    This block processes and transforms the features extracted by the convolutional layers. 
 
-    - Fully connected layers
+- Fully connected layers
     
-        These layers make the final classification by mapping the learned features to the output classes.layer.
+    These layers make the final classification by mapping the learned features to the output classes.layer.
 
 
- ***75) What is statistics*** 
-
-    - collection data
+## 75) What is statistics
+- collection data
       
-    - organizing data
+- organizing data
     
-    - Analysis of data
+- Analysis of data
     
-    - interpolation 
+- interpolation 
       
-    - presentation 
+- presentation 
 
-***76) What is AI Compiler***
+## 76) What is AI Compiler
 
-    An "AI compiler" is a software tool that leverages artificial intelligence techniques to optimize and translate machine learning models (like those from TensorFlow or PyTorch) into efficient code for specific hardware, essentially streamlining the process of deploying AI models on different devices by automatically adjusting the code for maximum performance based on the target hardware; it essentially acts as a compiler specifically designed for machine learning models, enabling faster execution and better resource utilization across various platforms.
+An "AI compiler" is a software tool that leverages artificial intelligence techniques to optimize and translate machine learning models (like those from TensorFlow or PyTorch) into efficient code for specific hardware, essentially streamlining the process of deploying AI models on different devices by automatically adjusting the code for maximum performance based on the target hardware; it essentially acts as a compiler specifically designed for machine learning models, enabling faster execution and better resource utilization across various platforms.
