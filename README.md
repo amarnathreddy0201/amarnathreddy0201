@@ -1952,16 +1952,37 @@ In machine learning, embedding is the process of converting real-world objects i
 
 
 ## 75) What is statistics
-- collection data
-      
-- organizing data
     
-- Analysis of data
-    
-- interpolation 
+    - collection data
       
-- presentation 
+    - organizing data
+    
+    - Analysis of data
+    
+    - interpolation 
+      
+    - presentation 
 
 ## 76) What is AI Compiler
 
-An "AI compiler" is a software tool that leverages artificial intelligence techniques to optimize and translate machine learning models (like those from TensorFlow or PyTorch) into efficient code for specific hardware, essentially streamlining the process of deploying AI models on different devices by automatically adjusting the code for maximum performance based on the target hardware; it essentially acts as a compiler specifically designed for machine learning models, enabling faster execution and better resource utilization across various platforms.
+    An "AI compiler" is a software tool that leverages artificial intelligence techniques to optimize and translate machine learning models (like those from TensorFlow or PyTorch) into efficient code for specific hardware, essentially streamlining the process of deploying AI models on different devices by automatically adjusting the code for maximum performance based on the target hardware; it essentially acts as a compiler specifically designed for machine learning models, enabling faster execution and better resource utilization across various platforms.
+
+## 77) Training Loss more than testing loss
+
+    - Regularization Effects
+
+        - Regularization techniques (like dropout, L1/L2 regularization) are applied during training but not during evaluation
+
+    - Batch Normalization
+
+    - Small Training Dataset
+
+    - Dropout During Training
+
+    - Early Stopping
+
+    - Testing Dataset Simplicity
+
+    - Learning Rate Warm-Up
+
+    - Metric Misalignment
