@@ -2013,24 +2013,24 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-# Example data
+- Example data
 input = torch.randn(64, 784)  # Batch of 64 samples, each with 784 features
 labels = torch.randint(0, 10, (64,))  # Batch of 64 labels (10 classes)
 
-# Simple model
+- Simple model
 model = nn.Linear(784, 10)  # Input size 784, output size 10 (classification)
 loss_fn = nn.CrossEntropyLoss()  # Loss function
 optimizer = optim.SGD(model.parameters(), lr=0.01)  # Optimizer
 
-# Training loop (1 step shown for simplicity)
-# Forward pass
+- Training loop (1 step shown for simplicity)
+- Forward pass
 predictions = model(input)  # Compute predictions
 loss = loss_fn(predictions, labels)  # Calculate loss
 
-# Backward pass
+- Backward pass
 optimizer.zero_grad()  # Clear previous gradients
 loss.backward()  # Compute gradients
 
-# Update parameters
+ - Update parameters
 optimizer.step()  # Apply optimization step
 
