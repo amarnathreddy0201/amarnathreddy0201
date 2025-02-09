@@ -2105,3 +2105,25 @@ optimizer.step()  # Apply optimization step
 
     - He Initialization: When using ReLU, He initialization keeps activations balanced across layers without the risk of saturation or vanishing gradients.
 
+### 83) What is Ridge regression?
+- Ridge regression is a statistical technique that corrects for multicollinearity in linear regression models. It's also known as L2 regularization or Tikhonov regularization. 
+How it works 
+
+- Ridge regression adds a penalty term to the cost function of a linear regression model.
+This penalty term shrinks all coefficients towards zero, without eliminating any.
+The result is a more complex model with more consistent results.
+- When it's useful
+    - Ridge regression is useful when developing machine learning models with many parameters, especially if those parameters have high weights. 
+    
+    - It's also useful when independent variables in a model are highly correlated. 
+
+- What it's used for
+Ridge regression is used in many fields, including econometrics, chemistry, and engineering. 
+    
+    - It can help businesses predict future purchases and make better decisions.
+
+- How to select the ridge parameter 
+    
+    - Cross-validation is a common method for selecting the ridge parameter.
+    
+    - In cross-validation, the data is divided into subsets, and the model is trained on some subsets while being validated on the remaining ones.
