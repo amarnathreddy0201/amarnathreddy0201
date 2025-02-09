@@ -2106,6 +2106,9 @@ optimizer.step()  # Apply optimization step
     - He Initialization: When using ReLU, He initialization keeps activations balanced across layers without the risk of saturation or vanishing gradients.
 
 ### 83) What is Ridge regression?
+
+- Ridge regression is a procedure for eliminating the bias of coefficients and reducing the mean square error by shrinking the coefficients of a model towards zero in order to solve problems of overfitting or multicollinearity that are normally associated with ordinary least squares regression.
+
 - Ridge regression is a statistical technique that corrects for multicollinearity in linear regression models. It's also known as L2 regularization or Tikhonov regularization. 
 How it works 
 
@@ -2125,5 +2128,22 @@ Ridge regression is used in many fields, including econometrics, chemistry, and 
 - How to select the ridge parameter 
     
     - Cross-validation is a common method for selecting the ridge parameter.
-    
+
     - In cross-validation, the data is divided into subsets, and the model is trained on some subsets while being validated on the remaining ones.
+
+- Advantages and Disadvantages of Ridge Regression
+    - Advantages:
+
+        - Stability: Ridge regression provides more stable estimates in the presence of multicollinearity.
+    
+        - Bias-Variance Tradeoff: By introducing bias, ridge regression reduces the variance of the estimates, leading to lower MSE.
+    
+        - Interpretability: Unlike principal component regression, ridge regression retains the original predictors, making the results easier to interpret.
+
+    - Disadvantages:
+        
+        - Bias Introduction: The introduction of bias can lead to underestimation of the true effects of the predictors.
+        
+        - Parameter Selection: Choosing the optimal ridge parameter ?k can be challenging and computationally intensive.
+        
+        - Not Suitable for Variable Selection: Ridge regression does not perform variable selection, meaning all predictors remain in the model, even those with negligible effects.
