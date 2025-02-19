@@ -53,8 +53,7 @@ kaggle_original_labels=[
 ]
 
 
-# for d in [0, 2, 5, 6, 7]:
-#     print(kaggle_original_labels[d])
+
 
 # Define directories
 images_directory = 'images'  # Replace with the correct path to your images
