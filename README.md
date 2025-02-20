@@ -1953,12 +1953,7 @@ Negative  |		|		  |
     
     These layers make the final classification by mapping the learned features to the output classes.layer.
 
-
-<<<<<<< HEAD
-### 75) What is statistics
-=======
 ## 75) What is statistics
->>>>>>> 255575cb9b90b91031d831bcb74eb96f9b9f86cf
     
 - collection data
       
@@ -2008,10 +2003,8 @@ Negative  |		|		  |
 3. **When the GAN is Balanced:**
    - The generator and discriminator reach a state where both improve and challenge each other.
    - Generated images look increasingly realistic.  
-<<<<<<< HEAD
-=======
    - Neither the generator nor the discriminator dominates, leading to stable training.
->>>>>>> 255575cb9b90b91031d831bcb74eb96f9b9f86cf
+
   
 
 ### 79) Simple model training 
