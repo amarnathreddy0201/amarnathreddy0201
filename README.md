@@ -344,6 +344,10 @@ Run a new container from the latest image with a specific name
 	print(amar.Amar_call().amar) # it's returning Amar_class as a object
 	print(Amar.Amar_call().amar) # it's returning Amar_class as a object
 
+## Yolo training
+- !yolo task=detect mode=train model=yolov8s.pt data= "/data.yaml" epochs=1000 imgsz=640 batch=4 patience=150 save=True save_period=25 plots=True device=0
+
+
 
 ## 1) How yolo works?
 
