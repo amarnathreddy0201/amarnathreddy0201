@@ -8,16 +8,6 @@ def extract_numbers(filename):
     match = re.search(r'\d+', filename)  # Find the first sequence of digits
     return match.group() if match else None  # Return the number if found, else None
 
-# categories = [
-#     {"supercategory": "Helmet", "id": 0, "name": "Helmet"},
-#     {"supercategory": "Vest", "id": 2, "name": "Vest"},
-#     {"supercategory": "No_vest", "id": 5, "name": "No_vest"},
-#     {"supercategory": "Person", "id": 6, "name": "Person"},
-#     {"supercategory": "No_helmet", "id": 7, "name": "No_helmet"}
-    
-# ]
-
-# labels = ['Hardhat', 'Mask', 'NO-Hardhat', 'NO-Mask', 'NO-Safety Vest', 'Person', 'Safety Cone', 'Safety Vest', 'machinery', 'vehicle',"None"]
 labels = ['Excavator', 'Gloves', 'Hardhat', 'Ladder', 'Mask', 'NO-Hardhat', 'NO-Mask', 'NO-Safety Vest',
               'Person', 'SUV', 'Safety Cone', 'Safety Vest', 'bus', 'dump truck', 'fire hydrant', 'machinery',
               'mini-van', 'sedan', 'semi', 'trailer', 'truck and trailer', 'truck', 'van', 'vehicle', 'wheel loader']
