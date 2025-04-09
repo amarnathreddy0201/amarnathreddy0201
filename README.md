@@ -2132,6 +2132,7 @@ Ridge regression is used in many fields, including econometrics, chemistry, and 
     - In cross-validation, the data is divided into subsets, and the model is trained on some subsets while being validated on the remaining ones.
 
 - Advantages and Disadvantages of Ridge Regression
+
     - Advantages:
 
         - Stability: Ridge regression provides more stable estimates in the presence of multicollinearity.
