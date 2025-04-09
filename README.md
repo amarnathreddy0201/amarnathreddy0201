@@ -344,6 +344,10 @@ Run a new container from the latest image with a specific name
 	print(amar.Amar_call().amar) # it's returning Amar_class as a object
 	print(Amar.Amar_call().amar) # it's returning Amar_class as a object
 
+## Yolo training
+- !yolo task=detect mode=train model=yolov8s.pt data= "/data.yaml" epochs=1000 imgsz=640 batch=4 patience=150 save=True save_period=25 plots=True device=0
+
+
 
 ## 1) How yolo works?
 
@@ -1953,12 +1957,7 @@ Negative  |		|		  |
     
     These layers make the final classification by mapping the learned features to the output classes.layer.
 
-
-<<<<<<< HEAD
-### 75) What is statistics
-=======
 ## 75) What is statistics
->>>>>>> 255575cb9b90b91031d831bcb74eb96f9b9f86cf
     
 - collection data
       
@@ -2008,10 +2007,8 @@ Negative  |		|		  |
 3. **When the GAN is Balanced:**
    - The generator and discriminator reach a state where both improve and challenge each other.
    - Generated images look increasingly realistic.  
-<<<<<<< HEAD
-=======
    - Neither the generator nor the discriminator dominates, leading to stable training.
->>>>>>> 255575cb9b90b91031d831bcb74eb96f9b9f86cf
+
   
 
 ### 79) Simple model training 
