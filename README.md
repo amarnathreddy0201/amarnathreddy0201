@@ -2145,3 +2145,8 @@ Ridge regression is used in many fields, including econometrics, chemistry, and 
         - Parameter Selection: Choosing the optimal ridge parameter ?k can be challenging and computationally intensive.
         
         - Not Suitable for Variable Selection: Ridge regression does not perform variable selection, meaning all predictors remain in the model, even those with negligible effects.
+
+
+How to kill process in Linux
+   ps aux | grep firefox
+   kill 12345 # Replace 12345 with the actual PID
