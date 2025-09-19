@@ -2209,3 +2209,12 @@ with torch.no_grad():
 print("Grad tracked in inference:", pred.requires_grad)
 
 ```
+
+
+# Why Mixed Precision?
+
+FP16 (half precision) → faster, smaller memory but less accurate.
+
+FP32 (single precision) → stable but slower.
+
+Mixed precision uses FP16 where safe (matrix multiplies, conv layers) and FP32 where needed (loss, weight updates).
