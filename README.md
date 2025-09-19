@@ -2167,4 +2167,16 @@ print("∂f/∂y:", y.grad.item())  # derivative wrt y = x^2 + 3y^2 = 4 + 27 = 3
 
 
 
+# Higher order derivatives
+
+x = torch.tensor(2.0, requires_grad=True)
+
+y = x**3  # f(x) = x^3
+dy_dx = torch.autograd.grad(y, x, create_graph=True)[0]  # first derivative
+
+d2y_dx2 = torch.autograd.grad(dy_dx, x)[0]  # second derivative
+
+print("f(x):", y.item())       # 8
+print("dy/dx:", dy_dx.item())  # 3x^2 = 12
+print("d²y/dx²:", d2y_dx2.item())  # 6x = 12
 
