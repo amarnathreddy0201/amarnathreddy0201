@@ -2180,3 +2180,32 @@ print("f(x):", y.item())       # 8
 print("dy/dx:", dy_dx.item())  # 3x^2 = 12
 print("d²y/dx²:", d2y_dx2.item())  # 6x = 12
 
+
+
+
+# autograd vs no_grad in PyTorch
+
+autograd → tracks operations for gradients (used in training).
+
+no_grad → disables gradient tracking (used in inference).
+```
+import torch
+import torch.nn as nn
+
+# Simple model
+model = nn.Linear(2, 1)
+
+x = torch.tensor([[1.0, 2.0]])
+
+# Training mode (gradients tracked)
+y = model(x)
+loss = y.mean()
+loss.backward()  # computes gradients
+print("Grad available:", model.weight.grad is not None)
+
+# Inference mode (no gradients)
+with torch.no_grad():
+    pred = model(x)
+print("Grad tracked in inference:", pred.requires_grad)
+
+```
