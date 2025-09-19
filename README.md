@@ -2248,3 +2248,22 @@ Improved Performance & Accuracy: Models often perform better on the new task bec
 Lower Computational Costs: By reducing the need for extensive training and data, transfer learning significantly decreases the computational resources (like processor units and memory) needed to build and train AI models. 
 Enhanced Generalization: Transfer learning improves a model's ability to handle unseen data, as the pre-trained model has already captured broad patterns from diverse datasets, making it more robust in real-world applications. 
 Faster Prototyping: The efficiency gains in training time and data requirements allow for faster experimentation and prototyping of new AI applications. 
+
+
+
+
+# How to handle dimensional error in pytorch 
+
+Check shapes → Always print(tensor.shape) before operations.
+
+Broadcasting → Works if sizes match except for 1, else reshape.
+
+Reshape correctly → Use .view(), .reshape(), .unsqueeze(), .squeeze().
+
+Matrix multiplication → Inner dimensions must match (m, n) @ (n, p).
+
+Concatenation → All tensors must match in every dimension except the one you concat on.
+
+Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
+
+Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
