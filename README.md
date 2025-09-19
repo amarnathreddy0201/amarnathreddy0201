@@ -2150,3 +2150,21 @@ Ridge regression is used in many fields, including econometrics, chemistry, and 
 How to kill process in Linux
    ps aux | grep firefox
    kill 12345 # Replace 12345 with the actual PID
+
+
+
+# Derivate function in pytorch
+
+x = torch.tensor(2.0, requires_grad=True)
+y = torch.tensor(3.0, requires_grad=True)
+
+# f(x,y) = x^2 * y + y^3
+f = x**2 * y + y**3
+f.backward()
+
+print("∂f/∂x:", x.grad.item())  # derivative wrt x = 2xy = 2*2*3 = 12
+print("∂f/∂y:", y.grad.item())  # derivative wrt y = x^2 + 3y^2 = 4 + 27 = 31
+
+
+
+
