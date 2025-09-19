@@ -2218,3 +2218,19 @@ FP16 (half precision) → faster, smaller memory but less accurate.
 FP32 (single precision) → stable but slower.
 
 Mixed precision uses FP16 where safe (matrix multiplies, conv layers) and FP32 where needed (loss, weight updates).
+
+# Padding to equal.
+
+import torch
+from torch.nn.utils.rnn import pad_sequence
+
+sequences = [
+    torch.tensor([1, 2, 3]),
+    torch.tensor([4, 5]),
+    torch.tensor([6])
+]
+
+# Pad to equal length
+padded = pad_sequence(sequences, batch_first=True, padding_value=0)
+
+print(padded)
