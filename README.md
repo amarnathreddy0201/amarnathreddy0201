@@ -2267,3 +2267,16 @@ Concatenation → All tensors must match in every dimension except the one you c
 Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
 
 Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
+
+
+### LINUX Interview questions ###
+
+1) How to check server down in linux.
+
+ <systemctl status service-name>
+ Example : sudo systemctl status mysql
+2) Kernel vs shell script
+	The kernel operates at the core of the system, managing hardware resources and ensuring the smooth execution of processes, while the shell acts as an interface between the user and the system, allowing commands to be issued and executed.
+
+ 3) I Node
+	In Linux, an i-node, or index node, is a data structure that stores metadata about a file or directory on the filesystem, including its type, permissions, owner, size, and the locations of its data on the disk. Each i-node is assigned a unique i-node number, which acts as an index into a table of inodes on the filesystem, allowing the operating system to quickly locate and access the file's data and metadata. You can find a file's i-node number using the ls -i or stat commands. 
