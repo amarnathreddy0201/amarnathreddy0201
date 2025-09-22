@@ -2270,6 +2270,7 @@ Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueez
 
 
 ### 92) Palindrom
+```
 data = 123432
 
 def palindrome_data(data):    
@@ -2288,6 +2289,7 @@ def palindrome_data(data):
 
 print(palindrome_data(data))  // False
 print(palindrome_data(12321)) // True
+```
 
 
 # LINUX Interview questions
