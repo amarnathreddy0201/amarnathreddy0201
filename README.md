@@ -2230,7 +2230,7 @@ sequences = [
     torch.tensor([6])
 ]
 
-### 89) Pad to equal length
+// Pad to equal length
 padded = pad_sequence(sequences, batch_first=True, padding_value=0)
 
 print(padded)
@@ -2238,7 +2238,7 @@ print(padded)
 
 
 
-### 90) Benefits of transfer learning
+### 89) Benefits of transfer learning
 The main benefits of transfer learning in AI are reduced training time and data requirements, leading to lower computational costs and higher accuracy. By leveraging knowledge from pre-trained models, developers can achieve better performance with less task-specific data, making AI development more efficient and accessible.  
 
 Here's a breakdown of the benefits:
@@ -2252,7 +2252,7 @@ Faster Prototyping: The efficiency gains in training time and data requirements 
 
 
 
-### 91) How to handle dimensional error in pytorch 
+### 90) How to handle dimensional error in pytorch 
 
 Check shapes → Always print(tensor.shape) before operations.
 
@@ -2269,7 +2269,7 @@ Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
 Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
 
 
-### 92) Palindrom
+### 91) Palindrom
 ```
 data = 123432
 
