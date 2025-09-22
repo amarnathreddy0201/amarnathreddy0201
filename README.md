@@ -2153,7 +2153,7 @@ How to kill process in Linux
 
 
 
-# Derivate function in pytorch
+### 84) Derivate function in pytorch
 
 x = torch.tensor(2.0, requires_grad=True)
 y = torch.tensor(3.0, requires_grad=True)
@@ -2167,7 +2167,7 @@ print("∂f/∂y:", y.grad.item())  # derivative wrt y = x^2 + 3y^2 = 4 + 27 = 3
 
 
 
-# Higher order derivatives
+### 85) Higher order derivatives
 
 x = torch.tensor(2.0, requires_grad=True)
 
@@ -2183,7 +2183,7 @@ print("d²y/dx²:", d2y_dx2.item())  # 6x = 12
 
 
 
-# autograd vs no_grad in PyTorch
+### 86) autograd vs no_grad in PyTorch
 
 autograd → tracks operations for gradients (used in training).
 
@@ -2211,7 +2211,7 @@ print("Grad tracked in inference:", pred.requires_grad)
 ```
 
 
-# Why Mixed Precision?
+### 87) Why Mixed Precision?
 
 FP16 (half precision) → faster, smaller memory but less accurate.
 
@@ -2219,7 +2219,7 @@ FP32 (single precision) → stable but slower.
 
 Mixed precision uses FP16 where safe (matrix multiplies, conv layers) and FP32 where needed (loss, weight updates).
 
-# Padding to equal.
+### 88) Padding to equal.
 
 import torch
 from torch.nn.utils.rnn import pad_sequence
@@ -2230,7 +2230,7 @@ sequences = [
     torch.tensor([6])
 ]
 
-# Pad to equal length
+### 89) Pad to equal length
 padded = pad_sequence(sequences, batch_first=True, padding_value=0)
 
 print(padded)
@@ -2238,7 +2238,7 @@ print(padded)
 
 
 
-# Benefits of transfer learning
+### 90) Benefits of transfer learning
 The main benefits of transfer learning in AI are reduced training time and data requirements, leading to lower computational costs and higher accuracy. By leveraging knowledge from pre-trained models, developers can achieve better performance with less task-specific data, making AI development more efficient and accessible.  
 
 Here's a breakdown of the benefits:
@@ -2252,7 +2252,7 @@ Faster Prototyping: The efficiency gains in training time and data requirements 
 
 
 
-# How to handle dimensional error in pytorch 
+### 91) How to handle dimensional error in pytorch 
 
 Check shapes → Always print(tensor.shape) before operations.
 
@@ -2269,14 +2269,15 @@ Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
 Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
 
 
-### LINUX Interview questions ###
+# LINUX Interview questions
 
-1) How to check server down in linux.
+### 1) How to check server down in linux.
 
  <systemctl status service-name>
  Example : sudo systemctl status mysql
-2) Kernel vs shell script
+
+### 2) Kernel vs shell script
 	The kernel operates at the core of the system, managing hardware resources and ensuring the smooth execution of processes, while the shell acts as an interface between the user and the system, allowing commands to be issued and executed.
 
- 3) I Node
+### 3) I Node in linux
 	In Linux, an i-node, or index node, is a data structure that stores metadata about a file or directory on the filesystem, including its type, permissions, owner, size, and the locations of its data on the disk. Each i-node is assigned a unique i-node number, which acts as an index into a table of inodes on the filesystem, allowing the operating system to quickly locate and access the file's data and metadata. You can find a file's i-node number using the ls -i or stat commands. 
