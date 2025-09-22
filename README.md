@@ -2269,6 +2269,27 @@ Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
 Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
 
 
+### 92) Palindrom
+data = 123432
+
+def palindrome_data(data):    
+    data_str = str(data)
+    
+    i = 0
+    j = len(data_str) - 1   
+    
+    while i < j:
+        if data_str[i] != data_str[j]:
+            return False
+        i += 1
+        j -= 1
+    
+    return True
+
+print(palindrome_data(data))  // False
+print(palindrome_data(12321)) // True
+
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
