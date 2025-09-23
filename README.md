@@ -2443,6 +2443,7 @@ print("Shape of flattened matrix:", flat_matrix.shape)
 
 	
 
+Some save memory, some provide precesion, some enable GPU Acceleration.
 	
 
 # LINUX Interview questions
