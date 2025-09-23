@@ -2460,6 +2460,23 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 
 	d. CyclicLR
 
+### 101) Components of PyTorch
+
+	a. Tensors (torch.Tensor) → The basic data structure in PyTorch, similar to NumPy arrays, but with extra features like GPU acceleration.
+
+	b. Autograd → PyTorch’s automatic differentiation engine that computes gradients for tensors, which is the key for training neural networks.
+
+	c. Neural Network Module (torch.nn) → A high-level module that provides layers, loss functions, and tools to easily build neural network models.
+
+	d. Optimizers (torch.optim) → Algorithms like SGD and Adam that update model parameters using the gradients calculated by autograd.
+
+	e. Data Utilities (torch.utils.data) → Classes like Dataset and DataLoader to handle data loading, batching, and preprocessing efficiently.
+
+	f. Ecosystem Libraries → Extensions such as TorchVision (for images), TorchText (for language), and TorchAudio (for audio tasks).
+
+	g. CUDA Support (torch.cuda) → Lets you easily move tensors and models to GPU for faster training and computation.
+	
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
