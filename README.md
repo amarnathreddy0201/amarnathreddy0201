@@ -2292,6 +2292,33 @@ print(palindrome_data(12321)) // True
 ```
 
 
+### 92) torch shape
+
+import torch
+
+// Create a 1D tensor
+x = torch.tensor([1, 2, 3, 4, 5, 6])
+print("Original tensor x:", x)
+print("Shape of x:", x.shape)
+
+// Reshape to a 2x3 matrix
+y = torch.reshape(x, (2, 3))
+print("\nReshaped tensor y (2x3):", y)
+print("Shape of y:", y.shape)
+
+// Reshape using the -1 wildcard
+z = x.reshape((3, -1)) # Let PyTorch infer the second dimension
+print("\nReshaped tensor z (3x-1):", z)
+print("Shape of z:", z.shape)
+
+// Flatten a 2D tensor
+matrix = torch.tensor([[1, 2], [3, 4]])
+flat_matrix = matrix.reshape(-1) # Flatten to 1D
+print("\nOriginal matrix:", matrix)
+print("Flattened matrix:", flat_matrix)
+print("Shape of flattened matrix:", flat_matrix.shape)
+
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
