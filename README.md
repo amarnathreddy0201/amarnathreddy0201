@@ -2349,8 +2349,55 @@ print("Shape of flattened matrix:", flat_matrix.shape)
 		print("Gradient dz/dx:", dz_dx.numpy())
 	```
 
-### 94) 
+### 94) Explain the role of torch.Tensor
+
+	It's a multi-dimensional array that can store numbers, perform mathematical operations, and automatically calculate gradients for macine learning.
+
+	0D tensor → scalar (x = torch.tensor(5))
+	1D tensor → vector (x = torch.tensor([1,2,3]))
+	2D tensor → matrix (x = torch.tensor([[1,2],[3,4]]))
+
+	x = torch.tensor([1, 2, 3])
+	y = x * 2  # element-wise multiply → [2, 4, 6]
+
+### 95) What is a gradient desecnt in pytorch?
+
+	Gradient Descent is an optimization algorithm used to minimize a loss function in machine learning and deep learning.
+
+	A loss function measures how far your model’s predictions are from the true values.
+
+	Gradient descent updates the model’s parameters in the direction that reduces the loss.
+
+### 96) How do you create a tensor in Pytoch
+
+	Pytorch offers multiple ways to forge your data into powerful tensor form, each method serving different purpose.
+
+	data = [[1,2],[3,4]]
+	torch.tensor(data)
+	torch.zeros(2,3)
+	torch.ones(3,2)
+	torch.randn(4)
+	torch.randn(2, 3)
+	torch.randint(3, 5, (3,))  // tensor([4, 3, 4])
+	torch.randint(10, (2, 2))  // tensor([[0, 2], [5, 5]])
+	torch.randint(3, 10, (2, 2)) // tensor([[4, 5], [6, 7]])
+
+	torch.arange(5) // tensor([ 0,  1,  2,  3,  4])
+	torch.arange(1, 4) // tensor([ 1,  2,  3])
+	torch.arange(1, 2.5, 0.5) // tensor([ 1.0000,  1.5000,  2.0000])
+
+	input = torch.empty(2, 3)
+	torch.zeros_like(input)
+
+	torch.zeros_like(torch.tensor(9)) // 0 is the output.
 	
+
+### 97) 
+
+	
+
+	
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
