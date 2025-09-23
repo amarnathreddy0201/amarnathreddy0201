@@ -2318,7 +2318,33 @@ print("\nOriginal matrix:", matrix)
 print("Flattened matrix:", flat_matrix)
 print("Shape of flattened matrix:", flat_matrix.shape)
 
+### 93) What is pythorch and how does it differ from the tensorflow
+	
+	- PyTorch: A Python-based deep learning framework that uses dynamic computation graphs, making it easy and flexible for research and experimentation.
 
+	- TensorFlow: A deep learning framework by Google that originally used static computation graphs, now supports dynamic graphs (eager execution). It’s widely used in production and deployment.
+	- pytorch example
+	```
+		import torch
+		x = torch.tensor([2.0], requires_grad=True)
+		z = x**3 + 1
+		z.backward()
+		print("Value of z:", z.item())        
+		print("Gradient dz/dx:", x.grad.item())
+	```
+	- Tensorflow example 
+
+	```
+		import tensorflow as tf  
+		x = tf.Variable([2.0])
+		with tf.GradientTape() as tape:
+		    z = x**2 + 1
+		dz_dx = tape.gradient(z, x)
+		print("Value of z:", z.numpy())        
+		print("Gradient dz/dx:", dz_dx.numpy())
+	```
+
+	
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
