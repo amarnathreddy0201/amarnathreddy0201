@@ -2392,7 +2392,39 @@ print("Shape of flattened matrix:", flat_matrix.shape)
 	torch.zeros_like(torch.tensor(9)) // 0 is the output.
 	
 
-### 97) 
+### 97) What is the difference between torch.Tensor and torch.tensor()?
+
+	1) torch.Tensor is the class constructor(like a factory), while tensor.tesor() is a function(like a smart assistance) that infers data types automatically.
+
+	2) torch.Tensor([1,2,3]).dtype // torch.float32
+
+	3) torch.tensor([1, 2, 3]).dtype  //  torch.int64
+
+### 98) How can you convert a Numpy array to a Pytorch tensor and vice versa?
+
+	a) Numpy to torch tensor
+	```
+		import numpy as np
+		numpy_array = np.array([1,2,3,4])
+		tensor = torch.from_numpy(numpy_array)
+		tensor2 = torch.tensor(numpy_array)
+	
+	```
+	b) torch to numpy
+	```
+		torch_tensor = torch.tensor([5,6,7,8])
+		numpy_back = torch_tensor.numpy()
+	```
+
+	c) Combination numpy to tensor and tensor to numpy
+
+	```
+		numpy_array = np.array([1,2,3,4])
+		torch_tensor = torch.from_numpy(numpy_array)
+		numpy_back = torch_tensor.numpy()
+	```
+
+	
 
 	
 
