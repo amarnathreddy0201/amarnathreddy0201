@@ -2444,7 +2444,21 @@ print("Shape of flattened matrix:", flat_matrix.shape)
 	
 
 Some save memory, some provide precesion, some enable GPU Acceleration.
-	
+
+
+### 100) Common Learning Rate Schedules in PyTorch
+
+	a. StepLR
+
+	b. MultiStepLR
+
+	c. ExponentialLR
+
+	d. CosineAnnealingLR
+
+	e. ReduceLROnPlateau
+
+	d. CyclicLR
 
 # LINUX Interview questions
 
