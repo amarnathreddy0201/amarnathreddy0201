@@ -2519,11 +2519,9 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 
 ### 104) ML VS DL
 
-    - Machine Learning (ML):
-ML is a subset of AI where algorithms learn patterns from data to make predictions or decisions. Examples: decision trees, random forests, SVM, linear regression. It usually requires feature engineering (manual selection of input features).
+    - Machine Learning (ML): ML is a subset of AI where algorithms learn patterns from data to make predictions or decisions. Examples: decision trees, random forests, SVM, linear regression. It usually requires feature engineering (manual selection of input features).
 
-    - Deep Learning (DL):
-DL is a subset of ML that uses artificial neural networks with many layers to automatically learn complex features from raw data. It works well with large datasets and high computing power. Examples: CNNs for images, RNNs/Transformers for sequences.
+    - Deep Learning (DL): DL is a subset of ML that uses artificial neural networks with many layers to automatically learn complex features from raw data. It works well with large datasets and high computing power. Examples: CNNs for images, RNNs/Transformers for sequences.
 
 # LINUX Interview questions
 
