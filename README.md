@@ -2509,6 +2509,13 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 			iii. CTCLoss
 			iv. Dice Loss (custom, not built-in)
 
+
+### 103) Perceptron 
+
+    - Perceptron is a single-layer neural network that computes a weighted sum of inputs, adds a bias, and applies an activation function (originally a step function). It can only classify linearly separable data.
+
+    - MLP (Multi-Layer Perceptron) is a feedforward, fully connected neural network with one or more hidden layers. It uses non-linear activation functions and is trained using backpropagation with gradient descent, allowing it to learn non-linear decision boundaries.
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
