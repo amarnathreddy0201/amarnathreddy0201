@@ -2523,6 +2523,11 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 
     - Deep Learning (DL): DL is a subset of ML that uses artificial neural networks with many layers to automatically learn complex features from raw data. It works well with large datasets and high computing power. Examples: CNNs for images, RNNs/Transformers for sequences.
 
+
+### 105) SGD vs Adam
+
+    - The main difference is that SGD uses a single, fixed learning rate for all parameters, while Adam adaptively adjusts the learning rate for each parameter individually, using momentum and past squared gradients to improve convergence speed and efficiency. SGD is simpler and may lead to better generalization in some cases, but Adam often converges much faster, making it a popular choice for many deep learning tasks.
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
