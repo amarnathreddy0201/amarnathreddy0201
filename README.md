@@ -2612,6 +2612,27 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 > **Note:** Deep learning is most effective for tasks involving large datasets, pattern recognition, and complex decision-making where traditional algorithms fail.
 
 
+### 108) Applications of Ml and Dl
+
+
+| **Domain**                | **Machine Learning Applications**                               | **Deep Learning Applications**                                      |
+|----------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------|
+| **Healthcare**             | Disease prediction, medical diagnosis, drug discovery          | Medical imaging (X-ray, MRI), tumor detection, advanced drug modeling |
+| **Finance**                | Fraud detection, credit scoring, algorithmic trading           | High-frequency trading, deep fraud detection with complex patterns   |
+| **Retail & E-commerce**    | Recommendation systems, customer segmentation, demand forecasting | Personalized recommendations, image-based product search            |
+| **Transportation**         | Traffic prediction, predictive maintenance                     | Self-driving cars, autonomous drones, lane & object detection        |
+| **Manufacturing & Industry** | Quality control, process optimization                         | Defect detection using images, predictive maintenance with sensor data |
+| **Natural Language Processing** | Sentiment analysis, chatbots, language translation          | Advanced chatbots, text summarization, machine translation using transformers |
+| **Cybersecurity**           | Threat detection, anomaly detection                             | Intrusion detection using deep networks, malware analysis            |
+| **Agriculture**             | Crop yield prediction, disease detection                       | Disease detection using images, precision farming with drones & sensors |
+| **Entertainment & Media**   | Content recommendation, personalization                         | Deepfake generation, content recommendation with multimedia data    |
+| **Energy**                  | Load forecasting, fault detection                               | Predictive maintenance with sensor data, energy optimization using complex models |
+
+> **Note:**  
+> - ML works well with **structured/tabular data** and simpler pattern recognition tasks.  
+> - DL excels with **unstructured data** like images, audio, and text, requiring **large datasets** and more computation.  
+
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
