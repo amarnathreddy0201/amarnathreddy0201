@@ -2633,6 +2633,10 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 > - DL excels with **unstructured data** like images, audio, and text, requiring **large datasets** and more computation.  
 
 
+### 109) Perceptron
+
+    ![Alt text](Perceptron.png)
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
