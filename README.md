@@ -2635,7 +2635,24 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 
 ### 109) Perceptron
 
-![Alt text]("Perceptron.jpg")
+![Alt text]("./Perceptron.jpg")
+
+### 110) List vs Array
+
+	In Python, a list is a built-in data structure that can hold elements of different data types, like integers, strings, or even other lists. It’s very flexible but not memory-efficient when handling large amounts of numeric data.
+
+An array, on the other hand, comes from the array module. It’s more restricted because it can only hold elements of the same type, but it’s more memory-efficient for large numerical data.
+
+```
+	### Python list can hold mixed types
+	my_list = [1, "hello", 3.14]
+	print(my_list)  # [1, 'hello', 3.14]
+	
+	### Array requires same type
+	import array
+	my_array = array.array('i', [1, 2, 3, 4])
+	print(my_array)  # array('i', [1, 2, 3, 4])
+```
 
 # LINUX Interview questions
 
