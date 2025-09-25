@@ -2635,7 +2635,7 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 
 ### 109) Perceptron
 
-    ![Alt text](Perceptron.png)
+    ![Alt text](Perceptron.jpg)
 
 # LINUX Interview questions
 
