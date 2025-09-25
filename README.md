@@ -2528,6 +2528,40 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 
     - The main difference is that SGD uses a single, fixed learning rate for all parameters, while Adam adaptively adjusts the learning rate for each parameter individually, using momentum and past squared gradients to improve convergence speed and efficiency. SGD is simpler and may lead to better generalization in some cases, but Adam often converges much faster, making it a popular choice for many deep learning tasks.
 
+# 📌 Python List Functions & Methods
+
+## 🔹 List Methods
+
+| Method | Description | Example | Output |
+|--------|-------------|---------|--------|
+| `append(x)` | Adds an element at the end | `lst = [1,2]; lst.append(3)` | `[1, 2, 3]` |
+| `extend(iterable)` | Adds all elements from another iterable | `lst = [1]; lst.extend([2,3])` | `[1, 2, 3]` |
+| `insert(i, x)` | Inserts element at given index | `lst = [1,3]; lst.insert(1,2)` | `[1, 2, 3]` |
+| `remove(x)` | Removes first occurrence of element | `lst = [1,2,2]; lst.remove(2)` | `[1, 2]` |
+| `pop([i])` | Removes and returns element at index (default last) | `lst = [1,2,3]; lst.pop()` | `[1, 2]` |
+| `clear()` | Removes all elements | `lst = [1,2]; lst.clear()` | `[]` |
+| `index(x)` | Returns index of first occurrence | `lst = [10,20,30]; lst.index(20)` | `1` |
+| `count(x)` | Returns number of times element appears | `lst = [1,1,2]; lst.count(1)` | `2` |
+| `sort()` | Sorts the list (in place) | `lst = [3,1,2]; lst.sort()` | `[1, 2, 3]` |
+| `reverse()` | Reverses the list (in place) | `lst = [1,2,3]; lst.reverse()` | `[3, 2, 1]` |
+| `copy()` | Returns a shallow copy | `lst = [1,2]; new = lst.copy()` | `[1, 2]` |
+
+---
+
+## 🔹 Built-in Functions for Lists
+
+| Function | Description | Example | Output |
+|----------|-------------|---------|--------|
+| `len(lst)` | Returns number of elements | `len([1,2,3])` | `3` |
+| `max(lst)` | Largest element | `max([1,5,3])` | `5` |
+| `min(lst)` | Smallest element | `min([1,5,3])` | `1` |
+| `sum(lst)` | Sum of elements | `sum([1,2,3])` | `6` |
+| `sorted(lst)` | Returns new sorted list | `sorted([3,1,2])` | `[1, 2, 3]` |
+| `any(lst)` | True if any element is truthy | `any([0, "", 5])` | `True` |
+| `all(lst)` | True if all elements are truthy | `all([1,2,3])` | `True` |
+
+
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
