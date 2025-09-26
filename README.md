@@ -2802,9 +2802,9 @@ np.random.normal(mean, std, size)
 np.random.binomial(n, p, size)
 np.random.poisson(lam, size)
 
+# Pytorch functions 
 
-
-1. Tensor Creation
+### 1) Tensor Creation
 
 import torch
 
@@ -2917,6 +2917,120 @@ print(torch.matmul(A, B))
 //         [43., 50.]])
 
 
+### 4) Device management/Gpu
+
+x = torch.tensor([1, 2, 3])
+
+// Check GPU
+print(torch.cuda.is_available())
+
+// Move tensor to GPU
+if torch.cuda.is_available():
+    x = x.to("cuda")
+    print(x.device)   # cuda:0
+
+
+### 5) Autograd
+
+x = torch.tensor([2.0], requires_grad=True)
+y = x**2 + 3*x
+y.backward()        // dy/dx = 2x + 3
+print(x.grad)       // tensor([7.])
+
+// No gradient tracking
+with torch.no_grad():
+    z = x * 2
+print(z.requires_grad)  // False
+
+
+
+### 6) Neural network
+
+import torch.nn as nn
+
+// Linear layer
+layer = nn.Linear(4, 2)
+x = torch.rand(1, 4)
+print(layer(x))   # Output shape: (1, 2)
+
+// Activation
+act = nn.ReLU()
+print(act(torch.tensor([-1., 0., 2.])))  # tensor([0., 0., 2.])
+
+// Loss
+loss_fn = nn.MSELoss()
+y_pred = torch.tensor([0.5, 0.7])
+y_true = torch.tensor([1.0, 0.0])
+print(loss_fn(y_pred, y_true))  # tensor(0.3700)
+
+
+### 7) Optimization 
+
+model = nn.Linear(2, 1)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+
+// Dummy data
+x = torch.tensor([[1., 2.]])
+y = torch.tensor([[1.]])
+
+// Training step
+pred = model(x)
+loss = nn.MSELoss()(pred, y)
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+
+
+### 8) Data loading 
+
+from torch.utils.data import Dataset, DataLoader, TensorDataset
+
+// Custom Dataset
+class MyDataset(Dataset):
+    def __init__(self, data, labels):
+        self.data = data
+        self.labels = labels
+    def __len__(self):
+        return len(self.data)
+    def __getitem__(self, idx):
+        return self.data[idx], self.labels[idx]
+
+data = torch.tensor([[1], [2], [3]])
+labels = torch.tensor([0, 1, 0])
+
+dataset = MyDataset(data, labels)
+loader = DataLoader(dataset, batch_size=2, shuffle=True)
+
+for batch in loader:
+    print(batch)
+
+
+### 9) Serialization 
+
+// Save model
+torch.save(model.state_dict(), "model.pth")
+
+// Load model
+model = nn.Linear(2, 1)
+model.load_state_dict(torch.load("model.pth"))
+
+### 10) Random 
+torch.manual_seed(42)
+print(torch.rand(2, 2))   # Reproducible random values
+
+print(torch.randperm(5))  # Random permutation
+print(torch.randint(0, 10, (3,)))  # Random integers
+
+
+### 11) Utilities 
+
+x = torch.tensor([[1, 2, 3], [4, 5, 6]])
+
+print(x.numel())    # 6 (number of elements)
+print(x.size())     # torch.Size([2, 3])
+print(x.shape)      # (2, 3)
+print(x.clone())    # Copy of tensor
+print(torch.equal(x, x.clone()))  # True
 
 
 # LINUX Interview questions
