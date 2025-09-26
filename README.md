@@ -2685,10 +2685,60 @@ arr.itemsize
 arr.nbytes
 np.info(obj)
 
+Array Manipulation
+
+np.reshape(arr, newshape)
+np.resize(arr, newshape)
+np.ravel(arr)
+arr.flatten()
+np.transpose(arr)
+arr.T
+np.moveaxis(arr, source, dest)
+np.swapaxes(arr, axis1, axis2)
+np.expand_dims(arr, axis)
+np.squeeze(arr)
+np.concatenate([a, b], axis)
+np.stack([a, b], axis)
+np.hstack([a, b])
+np.vstack([a, b])
+np.split(arr, indices_or_sections)
+np.array_split(arr, sections)
+np.hsplit(arr, sections)
+np.vsplit(arr, sections)
 
 
+Mathematical Operations
 
-
+np.add(a, b)
+np.subtract(a, b)
+np.multiply(a, b)
+np.divide(a, b)
+np.floor_divide(a, b)
+np.power(a, b)
+np.mod(a, b)
+np.remainder(a, b)
+np.abs(a)
+np.negative(a)
+np.sign(a)
+np.sqrt(a)
+np.cbrt(a)
+np.square(a)
+np.exp(a)
+np.log(a)
+np.log10(a)
+np.log2(a)
+np.sin(a)
+np.cos(a)
+np.tan(a)
+np.arcsin(a)
+np.arccos(a)
+np.arctan(a)
+np.deg2rad(a)
+np.rad2deg(a)
+np.round(a)
+np.floor(a)
+np.ceil(a)
+np.clip(arr, min, max)
 
 
 
