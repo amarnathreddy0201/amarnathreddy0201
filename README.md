@@ -2641,7 +2641,7 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 
 	In Python, a list is a built-in data structure that can hold elements of different data types, like integers, strings, or even other lists. It’s very flexible but not memory-efficient when handling large amounts of numeric data.
 
-An array, on the other hand, comes from the array module. It’s more restricted because it can only hold elements of the same type, but it’s more memory-efficient for large numerical data.
+    An array, on the other hand, comes from the array module. It’s more restricted because it can only hold elements of the same type, but it’s more memory-efficient for large numerical data.
 
 ```
 	### Python list can hold mixed types
@@ -2653,6 +2653,54 @@ An array, on the other hand, comes from the array module. It’s more restricted
 	my_array = array.array('i', [1, 2, 3, 4])
 	print(my_array)  # array('i', [1, 2, 3, 4])
 ```
+
+
+### 111) Numpy functions
+
+    Array Creation
+
+
+np.array()
+np.zeros(shape)
+np.ones(shape)
+np.empty(shape)
+np.full(shape, value)
+np.arange(start, stop, step)
+np.linspace(start, stop, num)
+np.logspace(start, stop, num)
+np.eye(n)
+np.identity(n)
+np.random.rand(shape)
+np.random.randn(shape)
+np.random.randint(low, high, size)
+np.random.choice(arr, size)
+
+Array Inspection
+
+arr.shape
+arr.ndim
+arr.size
+arr.dtype
+arr.itemsize
+arr.nbytes
+np.info(obj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # LINUX Interview questions
 
