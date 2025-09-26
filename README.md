@@ -2809,32 +2809,39 @@ np.random.poisson(lam, size)
 import torch
 
 // From Python list
+
 x = torch.tensor([1, 2, 3])
 print(x)  // tensor([1, 2, 3])
 
 // Uninitialized tensor (random values in memory)
+
 x = torch.empty(2, 3)
 print(x.shape)  // torch.Size([2, 3])
 
 // Zeros
+
 x = torch.zeros(2, 3)
 print(x)  // tensor([[0., 0., 0.],
           //         [0., 0., 0.]])
 
 // Ones
+
 x = torch.ones(2, 3)
 print(x)  // tensor([[1., 1., 1.],
           //         [1., 1., 1.]])
 
 // Range
+
 x = torch.arange(0, 10, 2)
 print(x)  // tensor([0, 2, 4, 6, 8])
 
 // Linspace
+
 x = torch.linspace(0, 1, steps=5)
 print(x)  // tensor([0.0000, 0.2500, 0.5000, 0.7500, 1.0000])
 
 // Identity matrix
+
 x = torch.eye(3)
 print(x)
 // tensor([[1., 0., 0.],
@@ -2842,6 +2849,7 @@ print(x)
 //         [0., 0., 1.]])
 
 // Random
+
 x = torch.rand(2, 2)    # Uniform [0,1)
 x = torch.randn(2, 2)   # Normal distribution (mean=0, std=1)
 
@@ -2851,6 +2859,7 @@ x = torch.tensor([[1, 2, 3],
                   [4, 5, 6]])
 
 // Reshape
+
 y = x.reshape(3, 2)
 print(y)
 // tensor([[1, 2],
@@ -2858,34 +2867,42 @@ print(y)
 //         [5, 6]])
 
 // View (like reshape, but may share memory)
+
 y = x.view(3, 2)
 
 // Squeeze (remove dim=1)
+
 x = torch.tensor([[1], [2], [3]])
 print(x.shape)        
+
 // torch.Size([3, 1])
+
 y = x.squeeze()
 print(y.shape)        
 // torch.Size([3])
 
 // Unsqueeze (add dimension)
+
 y = x.unsqueeze(0)
 print(y.shape)         
 // torch.Size([1, 3, 1])
 
 // Flatten
+
 x = torch.tensor([[1, 2], [3, 4]])
 y = x.flatten()
 print(y)              
 // tensor([1, 2, 3, 4])
 
-# Concatenate
+// Concatenate
+
 a = torch.tensor([1, 2])
 b = torch.tensor([3, 4])
 c = torch.cat([a, b])
 print(c)              // tensor([1, 2, 3, 4])
 
-# Stack (adds new dimension)
+// Stack (adds new dimension)
+
 d = torch.stack([a, b])
 print(d)              // tensor([[1, 2],
                      //         [3, 4]])
@@ -2897,12 +2914,17 @@ a = torch.tensor([1., 2., 3.])
 b = torch.tensor([4., 5., 6.])
 
 // Element-wise
+
 print(torch.add(a, b))  
+
 // tensor([5., 7., 9.])
+
 print(torch.mul(a, b))  
+
 // tensor([ 4., 10., 18.])
 
 // Reduction
+
 x = torch.tensor([[1., 2.], [3., 4.]])
 print(x.sum())   // tensor(10.)
 print(x.mean())  // tensor(2.5)
@@ -2910,9 +2932,13 @@ print(x.max())   // tensor(4.)
 print(x.argmax())// tensor(3) (flattened index)
 
 // Linear Algebra
+
 A = torch.tensor([[1., 2.], [3., 4.]])
+
 B = torch.tensor([[5., 6.], [7., 8.]])
+
 print(torch.matmul(A, B))
+
 // tensor([[19., 22.],
 //         [43., 50.]])
 
@@ -2922,9 +2948,11 @@ print(torch.matmul(A, B))
 x = torch.tensor([1, 2, 3])
 
 // Check GPU
+
 print(torch.cuda.is_available())
 
 // Move tensor to GPU
+
 if torch.cuda.is_available():
     x = x.to("cuda")
     print(x.device)   # cuda:0
@@ -2949,15 +2977,18 @@ print(z.requires_grad)  // False
 import torch.nn as nn
 
 // Linear layer
+
 layer = nn.Linear(4, 2)
 x = torch.rand(1, 4)
 print(layer(x))   # Output shape: (1, 2)
 
 // Activation
+
 act = nn.ReLU()
 print(act(torch.tensor([-1., 0., 2.])))  # tensor([0., 0., 2.])
 
 // Loss
+
 loss_fn = nn.MSELoss()
 y_pred = torch.tensor([0.5, 0.7])
 y_true = torch.tensor([1.0, 0.0])
@@ -2970,10 +3001,12 @@ model = nn.Linear(2, 1)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 // Dummy data
+
 x = torch.tensor([[1., 2.]])
 y = torch.tensor([[1.]])
 
 // Training step
+
 pred = model(x)
 loss = nn.MSELoss()(pred, y)
 optimizer.zero_grad()
@@ -2986,6 +3019,7 @@ optimizer.step()
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 
 // Custom Dataset
+
 class MyDataset(Dataset):
     def __init__(self, data, labels):
         self.data = data
@@ -3008,13 +3042,16 @@ for batch in loader:
 ### 9) Serialization 
 
 // Save model
+
 torch.save(model.state_dict(), "model.pth")
 
 // Load model
+
 model = nn.Linear(2, 1)
 model.load_state_dict(torch.load("model.pth"))
 
 ### 10) Random 
+
 torch.manual_seed(42)
 print(torch.rand(2, 2))   # Reproducible random values
 
