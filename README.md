@@ -2741,7 +2741,66 @@ np.ceil(a)
 np.clip(arr, min, max)
 
 
+Statistics
 
+np.min(arr)
+np.max(arr)
+np.argmin(arr)
+np.argmax(arr)
+np.mean(arr)
+np.median(arr)
+np.std(arr)
+np.var(arr)
+np.percentile(arr, q)
+np.quantile(arr, q)
+np.corrcoef(arr)
+np.cov(arr)
+
+Linear Algebra
+
+np.dot(a, b)
+np.matmul(a, b)
+np.vdot(a, b)
+np.inner(a, b)
+np.outer(a, b)
+np.cross(a, b)
+np.linalg.inv(a)
+np.linalg.det(a)
+np.linalg.matrix_rank(a)
+np.linalg.eig(a)
+np.linalg.eigvals(a)
+np.linalg.norm(a)
+np.linalg.solve(a, b)
+np.trace(a)
+
+Indexing & Selection
+
+arr[i]
+arr[i:j]
+arr[:, i]
+arr[i, :]
+arr[::step]
+np.where(condition)
+np.nonzero(arr)
+np.take(arr, indices)
+np.put(arr, indices, values)
+np.extract(condition, arr)
+
+
+Random Functions
+
+np.random.seed(n)
+np.random.rand(d0, d1, ...)
+np.random.randn(d0, d1, ...)
+np.random.randint(low, high, size)
+np.random.random(size)
+np.random.choice(arr, size)
+np.random.permutation(arr)
+np.random.shuffle(arr)
+np.random.uniform(low, high, size)
+np.random.normal(mean, std, size)
+np.random.binomial(n, p, size)
+np.random.poisson(lam, size)
 
 
 
