@@ -2865,6 +2865,25 @@ for batch in loader:
 ```
 
 
+### 113) Decorators in python 
+
+def error_handler(func):
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)  # run the original function
+        except Exception as e:
+            print(f"Error in function '{func.__name__}': {e}")
+            return None   # return safe value instead of crashing
+    return wrapper
+
+
+@error_handler
+def divide(a, b):
+    return a / b
+
+
+print(divide(10, 2))  # ✅ 5.0
+print(divide(10, 0))  # ❌ handled by decorator → prints error
 
 
 
