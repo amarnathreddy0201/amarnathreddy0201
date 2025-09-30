@@ -913,3 +913,66 @@ a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. 
 
         1) Choosing pre-trained model, modify the model, freezing layer, fine tunning, Data augmentation, hyper parameters, Regularization techniques.
 
+
+### 43) Linear regression
+```
+import numpy as np
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+from sklearn.linear_model import LinearRegression
+
+// Sample data
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)   // Independent variable
+y = np.array([2, 4, 5, 4, 5])                  # Dependent variable
+
+// Create and train model
+model = LinearRegression()
+
+model.fit(X, y)
+
+// Predictions
+y_pred = model.predict(X)
+
+// Coefficients
+print("Slope (m):", model.coef_[0])
+
+print("Intercept (c):", model.intercept_)
+
+// Plot
+plt.scatter(X, y, color="blue", label="Data points")
+plt.plot(X, y_pred, color="red", label="Regression line")
+plt.legend()
+plt.show()
+```
+
+### 44) Logistic regression 
+```
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+// Sample dataset: exam score → pass/fail
+X = np.array([[35], [45], [50], [60], [70], [80], [90]])  # Exam scores
+y = np.array([0, 0, 0, 1, 1, 1, 1])                       # 0 = Fail, 1 = Pass
+
+// Split into train/test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+// Train logistic regression
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+// Predictions
+y_pred = model.predict(X_test)
+
+// Evaluation
+print("Predictions:", y_pred)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Report:\n", classification_report(y_test, y_pred))
+```
