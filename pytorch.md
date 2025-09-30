@@ -983,4 +983,4 @@ print("Report:\n", classification_report(y_test, y_pred))
 
     - MLP (Multi-Layer Perceptron) is a feedforward, fully connected neural network with one or more hidden layers. It uses non-linear activation functions and is trained using backpropagation with gradient descent, allowing it to learn non-linear decision boundaries.
 
-![Alt text]('Perceptron.jpg')
+![Alt text](Perceptron.jpg)
