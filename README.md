@@ -2886,6 +2886,48 @@ print(divide(10, 2))  # ✅ 5.0
 print(divide(10, 0))  # ❌ handled by decorator → prints error
 
 
+
+### 114) Python Code
+
+def rle_encode(s: str) -> str:
+    """Run-length encode without extra modules."""
+    if not s:
+        return ""
+    result = ""
+    count = 1
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            count += 1
+        else:
+            result += (str(count) if count > 1 else "") + s[i - 1]
+            count = 1
+    result += (str(count) if count > 1 else "") + s[-1]
+    return result
+
+def rle_decode(encoded: str) -> str:
+    """Decode run-length encoded string without extra modules."""
+    result = ""
+    count = ""
+    for ch in encoded:
+        if ch.isdigit():
+            count += ch
+        else:
+            num = int(count) if count else 1
+            result += ch * num
+            count = ""
+    return result
+
+// Test
+original = "AAAAYYPAAA"
+encoded = rle_encode(original)
+decoded = rle_decode(encoded)
+
+print("Original:", original)
+print("Encoded :", encoded)
+print("Decoded :", decoded)
+
+
+
 # 📊 Pandas Functions Cheat Sheet
 
 A quick reference guide for commonly used **Pandas functions**, organized by category.  
