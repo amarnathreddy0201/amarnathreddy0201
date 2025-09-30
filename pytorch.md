@@ -483,3 +483,201 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 
 	torch.zeros_like(torch.tensor(9)) // 0 is the output.
 
+### 21) torch shape
+
+import torch
+
+// Create a 1D tensor
+
+x = torch.tensor([1, 2, 3, 4, 5, 6])
+
+print("Original tensor x:", x)
+print("Shape of x:", x.shape)
+
+// Reshape to a 2x3 matrix
+
+y = torch.reshape(x, (2, 3))
+print("\nReshaped tensor y (2x3):", y)
+print("Shape of y:", y.shape)
+
+// Reshape using the -1 wildcard
+
+z = x.reshape((3, -1)) # Let PyTorch infer the second dimension
+print("\nReshaped tensor z (3x-1):", z)
+print("Shape of z:", z.shape)
+
+// Flatten a 2D tensor
+
+matrix = torch.tensor([[1, 2], [3, 4]])
+
+flat_matrix = matrix.reshape(-1) # Flatten to 1D
+
+print("\nOriginal matrix:", matrix)
+print("Flattened matrix:", flat_matrix)
+print("Shape of flattened matrix:", flat_matrix.shape)
+
+### 22) What is pythorch and how does it differ from the tensorflow
+	
+	- PyTorch: A Python-based deep learning framework that uses dynamic computation graphs, making it easy and flexible for research and experimentation.
+
+	- TensorFlow: A deep learning framework by Google that originally used static computation graphs, now supports dynamic graphs (eager execution). It’s widely used in production and deployment.
+	- pytorch example
+	```
+		import torch
+		x = torch.tensor([2.0], requires_grad=True)
+		z = x**3 + 1
+		z.backward()
+		print("Value of z:", z.item())        
+		print("Gradient dz/dx:", x.grad.item())
+	```
+	- Tensorflow example 
+
+	```
+		import tensorflow as tf  
+		x = tf.Variable([2.0])
+		with tf.GradientTape() as tape:
+		    z = x**2 + 1
+		dz_dx = tape.gradient(z, x)
+		print("Value of z:", z.numpy())        
+		print("Gradient dz/dx:", dz_dx.numpy())
+	```
+
+### 23) Explain the role of torch.Tensor
+
+	It's a multi-dimensional array that can store numbers, perform mathematical operations, and automatically calculate gradients for macine learning.
+
+	0D tensor → scalar (x = torch.tensor(5))
+	1D tensor → vector (x = torch.tensor([1,2,3]))
+	2D tensor → matrix (x = torch.tensor([[1,2],[3,4]]))
+
+	x = torch.tensor([1, 2, 3])
+	y = x * 2  # element-wise multiply → [2, 4, 6]
+
+### 24) How to handle dimensional error in pytorch 
+
+Check shapes → Always print(tensor.shape) before operations.
+
+Broadcasting → Works if sizes match except for 1, else reshape.
+
+Reshape correctly → Use .view(), .reshape(), .unsqueeze(), .squeeze().
+
+Matrix multiplication → Inner dimensions must match (m, n) @ (n, p).
+
+Concatenation → All tensors must match in every dimension except the one you concat on.
+
+Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
+
+Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
+
+### 25) Benefits of transfer learning
+
+The main benefits of transfer learning in AI are reduced training time and data requirements, leading to lower computational costs and higher accuracy. By leveraging knowledge from pre-trained models, developers can achieve better performance with less task-specific data, making AI development more efficient and accessible.  
+
+Here's a breakdown of the benefits:
+
+	Reduced Training Time: Instead of training a model from scratch, transfer learning uses pre-trained models, which have already learned general features from large datasets. This allows the new model to learn the target task much faster. 
+	
+	Less Data Required: Training deep learning models from scratch requires vast amounts of data, which can be expensive and difficult to obtain. Transfer learning enables high-quality results with smaller datasets, making it valuable for tasks where data is limited, such as in specialized domains.
+	
+	Improved Performance & Accuracy: Models often perform better on the new task because they start with a foundation of learned features and patterns from a related problem. This pre-learned knowledge helps the model generalize more effectively.
+	
+	Lower Computational Costs: By reducing the need for extensive training and data, transfer learning significantly decreases the computational resources (like processor units and memory) needed to build and train AI models.
+	
+	Enhanced Generalization: Transfer learning improves a model's ability to handle unseen data, as the pre-trained model has already captured broad patterns from diverse datasets, making it more robust in real-world applications.
+	
+	Faster Prototyping: The efficiency gains in training time and data requirements allow for faster experimentation and prototyping of new AI applications.
+
+### 26) autograd vs no_grad in PyTorch
+
+autograd → tracks operations for gradients (used in training).
+
+no_grad → disables gradient tracking (used in inference).
+```
+import torch
+import torch.nn as nn
+
+# Simple model
+model = nn.Linear(2, 1)
+
+x = torch.tensor([[1.0, 2.0]])
+
+# Training mode (gradients tracked)
+y = model(x)
+loss = y.mean()
+loss.backward()  # computes gradients
+print("Grad available:", model.weight.grad is not None)
+
+# Inference mode (no gradients)
+with torch.no_grad():
+    pred = model(x)
+print("Grad tracked in inference:", pred.requires_grad)
+
+```
+
+### 27) Higher order derivatives
+
+x = torch.tensor(2.0, requires_grad=True)
+
+y = x**3  # f(x) = x^3
+dy_dx = torch.autograd.grad(y, x, create_graph=True)[0]  # first derivative
+
+d2y_dx2 = torch.autograd.grad(dy_dx, x)[0]  # second derivative
+
+print("f(x):", y.item())       # 8
+print("dy/dx:", dy_dx.item())  # 3x^2 = 12
+print("d²y/dx²:", d2y_dx2.item())  # 6x = 12
+
+### 28) Derivate function in pytorch
+
+x = torch.tensor(2.0, requires_grad=True)
+y = torch.tensor(3.0, requires_grad=True)
+
+// f(x,y) = x^2 * y + y^3
+f = x**2 * y + y**3
+f.backward()
+
+print("∂f/∂x:", x.grad.item())  # derivative wrt x = 2xy = 2*2*3 = 12
+print("∂f/∂y:", y.grad.item())  # derivative wrt y = x^2 + 3y^2 = 4 + 27 = 31
+
+### 29) Padding to equal.
+
+import torch
+from torch.nn.utils.rnn import pad_sequence
+
+sequences = [
+    torch.tensor([1, 2, 3]),
+    torch.tensor([4, 5]),
+    torch.tensor([6])
+]
+
+// Pad to equal length
+padded = pad_sequence(sequences, batch_first=True, padding_value=0)
+
+print(padded)
+
+### 30) Simple model training 
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+- Example data
+input = torch.randn(64, 784)  # Batch of 64 samples, each with 784 features
+labels = torch.randint(0, 10, (64,))  # Batch of 64 labels (10 classes)
+
+- Simple model
+model = nn.Linear(784, 10)  # Input size 784, output size 10 (classification)
+loss_fn = nn.CrossEntropyLoss()  # Loss function
+optimizer = optim.SGD(model.parameters(), lr=0.01)  # Optimizer
+
+- Training loop (1 step shown for simplicity)
+- Forward pass
+predictions = model(input)  # Compute predictions
+loss = loss_fn(predictions, labels)  # Calculate loss
+
+- Backward pass
+optimizer.zero_grad()  # Clear previous gradients
+loss.backward()  # Compute gradients
+
+ - Update parameters
+optimizer.step()  # Apply optimization step
