@@ -2866,7 +2866,7 @@ for batch in loader:
 
 
 ### 113) Decorators in python 
-
+```
 def error_handler(func):
     def wrapper(*args, **kwargs):
         try:
@@ -2885,7 +2885,7 @@ def divide(a, b):
 print(divide(10, 2))  # ✅ 5.0
 print(divide(10, 0))  # ❌ handled by decorator → prints error
 
-
+```
 
 ### 114) Python Code
 
@@ -3134,7 +3134,7 @@ A quick reference guide for commonly used **Pandas functions**, organized by cat
 # Pytorch functions 
 
 ### 1) Tensor Creation
-
+```
 import torch
 
 // From Python list
@@ -3181,9 +3181,9 @@ print(x)
 
 x = torch.rand(2, 2)    # Uniform [0,1)
 x = torch.randn(2, 2)   # Normal distribution (mean=0, std=1)
-
+```
 ### 2. Tensor operations
-
+```
 x = torch.tensor([[1, 2, 3],
                   [4, 5, 6]])
 
@@ -3235,10 +3235,10 @@ print(c)              // tensor([1, 2, 3, 4])
 d = torch.stack([a, b])
 print(d)              // tensor([[1, 2],
                      //         [3, 4]])
-
+```
 
 ### 3) Mathematical Operations 
-
+```
 a = torch.tensor([1., 2., 3.])
 b = torch.tensor([4., 5., 6.])
 
@@ -3270,10 +3270,10 @@ print(torch.matmul(A, B))
 
 // tensor([[19., 22.],
 //         [43., 50.]])
-
+```
 
 ### 4) Device management/Gpu
-
+```
 x = torch.tensor([1, 2, 3])
 
 // Check GPU
@@ -3285,10 +3285,10 @@ print(torch.cuda.is_available())
 if torch.cuda.is_available():
     x = x.to("cuda")
     print(x.device)   # cuda:0
-
+```
 
 ### 5) Autograd
-
+```
 x = torch.tensor([2.0], requires_grad=True)
 y = x**2 + 3*x
 y.backward()        // dy/dx = 2x + 3
@@ -3298,11 +3298,11 @@ print(x.grad)       // tensor([7.])
 with torch.no_grad():
     z = x * 2
 print(z.requires_grad)  // False
-
+```
 
 
 ### 6) Neural network
-
+```
 import torch.nn as nn
 
 // Linear layer
@@ -3322,10 +3322,10 @@ loss_fn = nn.MSELoss()
 y_pred = torch.tensor([0.5, 0.7])
 y_true = torch.tensor([1.0, 0.0])
 print(loss_fn(y_pred, y_true))  # tensor(0.3700)
-
+```
 
 ### 7) Optimization 
-
+```
 model = nn.Linear(2, 1)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
@@ -3341,10 +3341,10 @@ loss = nn.MSELoss()(pred, y)
 optimizer.zero_grad()
 loss.backward()
 optimizer.step()
-
+```
 
 ### 8) Data loading 
-
+```
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 
 // Custom Dataset
@@ -3366,10 +3366,10 @@ loader = DataLoader(dataset, batch_size=2, shuffle=True)
 
 for batch in loader:
     print(batch)
-
+```
 
 ### 9) Serialization 
-
+```
 // Save model
 
 torch.save(model.state_dict(), "model.pth")
@@ -3378,18 +3378,18 @@ torch.save(model.state_dict(), "model.pth")
 
 model = nn.Linear(2, 1)
 model.load_state_dict(torch.load("model.pth"))
-
+```
 ### 10) Random 
-
+```
 torch.manual_seed(42)
 print(torch.rand(2, 2))   # Reproducible random values
 
 print(torch.randperm(5))  # Random permutation
 print(torch.randint(0, 10, (3,)))  # Random integers
-
+```
 
 ### 11) Utilities 
-
+```
 x = torch.tensor([[1, 2, 3], [4, 5, 6]])
 
 print(x.numel())    # 6 (number of elements)
@@ -3397,6 +3397,7 @@ print(x.size())     # torch.Size([2, 3])
 print(x.shape)      # (2, 3)
 print(x.clone())    # Copy of tensor
 print(torch.equal(x, x.clone()))  # True
+```
 
 
 # LINUX Interview questions
