@@ -338,3 +338,36 @@ for batch in loader:
 - Ecosystem Libraries → Extensions such as TorchVision (for images), TorchText (for language), and TorchAudio (for audio tasks).
 
 - CUDA Support (torch.cuda) → Lets you easily move tensors and models to GPU for faster training and computation.
+
+### 14) Role of Loss Functions in PyTorch
+
+          1. A loss function (also called a cost function or objective function) is a mathematical function that measures how well the model’s predictions match the target values.
+          
+          2. Roles in PyTorch training loop:
+          
+                    a. Measure error → Quantifies the difference between predicted outputs (y_pred) and true labels (y_true).
+          
+                    b. Guide optimization → Provides a signal for backpropagation (loss.backward()) so gradients can be calculated.
+          
+                    c. Control learning behavior → Different tasks need different losses (classification, regression, segmentation, etc.).
+          
+                    d. Impact convergence → The choice of loss affects how fast and how well the model learns.
+          
+          3. Differnt loss functions
+          
+                    a. Regression Losses
+                              i. Mean Squared Error Loss
+                              ii. Mean Absolute Error Loss
+                    b. Classification Losses
+                              i. Cross Entropy Loss
+                              ii. Binary Cross Entropy Loss
+                              iii. Negative Log Likelihood Loss
+                    c. Ranking & Margin Losses
+                              i. Hinge Embedding Loss (nn.HingeEmbeddingLoss)
+                              ii. Margin Ranking Loss (nn.MarginRankingLoss)
+                              iii. Triplet Margin Loss (nn.TripletMarginLoss) (e.g., face verification, Siamese networks).
+                    d. Specialized Losses
+                              i. Huber Loss
+                              ii. KL Divergence Loss
+                              iii. CTCLoss
+                              iv. Dice Loss (custom, not built-in)
