@@ -2927,6 +2927,42 @@ print("Encoded :", encoded)
 print("Decoded :", decoded)
 
 
+### 115) Linear regression
+
+import numpy as np
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+from sklearn.linear_model import LinearRegression
+
+// Sample data
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)   // Independent variable
+y = np.array([2, 4, 5, 4, 5])                  # Dependent variable
+
+// Create and train model
+model = LinearRegression()
+
+model.fit(X, y)
+
+// Predictions
+y_pred = model.predict(X)
+
+// Coefficients
+print("Slope (m):", model.coef_[0])
+
+print("Intercept (c):", model.intercept_)
+
+// Plot
+plt.scatter(X, y, color="blue", label="Data points")
+plt.plot(X, y_pred, color="red", label="Regression line")
+plt.legend()
+plt.show()
+
+
+
+
 
 # 📊 Pandas Functions Cheat Sheet
 
