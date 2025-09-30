@@ -976,3 +976,11 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("Report:\n", classification_report(y_test, y_pred))
 ```
+
+### 45) Perceptron 
+
+    - Perceptron is a single-layer neural network that computes a weighted sum of inputs, adds a bias, and applies an activation function (originally a step function). It can only classify linearly separable data.
+
+    - MLP (Multi-Layer Perceptron) is a feedforward, fully connected neural network with one or more hidden layers. It uses non-linear activation functions and is trained using backpropagation with gradient descent, allowing it to learn non-linear decision boundaries.
+
+![Alt text]('Perceptron.jpg')
