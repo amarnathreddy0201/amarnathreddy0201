@@ -265,3 +265,60 @@ print(x.shape)      # (2, 3)
 print(x.clone())    # Copy of tensor
 print(torch.equal(x, x.clone()))  # True
 ```
+### 12) Pytorch dataset and data loader
+
+🔹 Dataset
+
+Represents the entire data (images, text, numbers, etc.).
+
+Defines how to access one sample from the dataset.
+
+Implements __getitem__(index) → returns one data sample.
+
+Implements __len__() → returns total number of samples.
+
+Can be predefined (e.g., torchvision datasets) or custom (subclass Dataset).
+
+Example: A dataset of 10,000 images where each call gives one image + label.
+
+
+🔹 DataLoader
+
+Works as a wrapper around Dataset.
+
+Provides an iterator over the dataset.
+
+Loads data in batches instead of one sample.
+
+Handles shuffling of data.
+
+Supports parallel loading using num_workers.
+
+Speeds up training by efficiently preparing batches.
+
+Example: Instead of fetching 1 image, DataLoader fetches a batch of 64 images at once.
+
+```
+from torch.utils.data import Dataset, DataLoader
+import torch
+
+// Step 1: Create dataset
+class MyDataset(Dataset):
+    def __init__(self):
+        self.data = torch.arange(10)  # numbers 0-9
+
+    def __len__(self):
+        return len(self.data)  # total samples
+
+    def __getitem__(self, idx):
+        return self.data[idx]  # single sample
+
+dataset = MyDataset()
+
+// Step 2: Use DataLoader
+loader = DataLoader(dataset, batch_size=3, shuffle=True)
+
+// Step 3: Iterate batches
+for batch in loader:
+    print(batch)  # prints 3 numbers per batch
+```
