@@ -1745,29 +1745,6 @@ FP32 (single precision) → stable but slower.
 Mixed precision uses FP16 where safe (matrix multiplies, conv layers) and FP32 where needed (loss, weight updates).
 
 
-
-
-
-	
-
-
-	
-
-
-
-
-
-
-
-
-
-### 103) Perceptron 
-
-    - Perceptron is a single-layer neural network that computes a weighted sum of inputs, adds a bias, and applies an activation function (originally a step function). It can only classify linearly separable data.
-
-    - MLP (Multi-Layer Perceptron) is a feedforward, fully connected neural network with one or more hidden layers. It uses non-linear activation functions and is trained using backpropagation with gradient descent, allowing it to learn non-linear decision boundaries.
-
-
 ### 104) ML VS DL
 
     - Machine Learning (ML): ML is a subset of AI where algorithms learn patterns from data to make predictions or decisions. Examples: decision trees, random forests, SVM, linear regression. It usually requires feature engineering (manual selection of input features).
@@ -1851,30 +1828,6 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 > **Note:**  
 > - ML works well with **structured/tabular data** and simpler pattern recognition tasks.  
 > - DL excels with **unstructured data** like images, audio, and text, requiring **large datasets** and more computation.  
-
-
-### 109) Perceptron
-
-![Alt text]('./Perceptron.jpg')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
 
 
 # LINUX Interview questions
