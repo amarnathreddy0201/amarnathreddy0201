@@ -386,3 +386,36 @@ for batch in loader:
                       - CTCLoss
   
                       - Dice Loss (custom, not built-in)
+
+### 15) Common Learning Rate Schedules in PyTorch
+
+	a. StepLR
+
+	b. MultiStepLR
+
+	c. ExponentialLR
+
+	d. CosineAnnealingLR
+
+	e. ReduceLROnPlateau
+
+	d. CyclicLR
+
+### 16) what are the different tensor datatypes available in pyTorch?
+| **Data Type**                    | **Description**                                    | **Memory Size** | **Default Usage**              | **Example**                                      |
+| -------------------------------- | -------------------------------------------------- | --------------- | ------------------------------ | ------------------------------------------------ |
+| `torch.float32` / `torch.float`  | 32-bit floating point                              | 4 bytes         | Default for most deep learning | `torch.tensor([1.0, 2.0], dtype=torch.float32)`  |
+| `torch.float64` / `torch.double` | 64-bit floating point                              | 8 bytes         | High-precision calculations    | `torch.tensor([1.0, 2.0], dtype=torch.float64)`  |
+| `torch.float16` / `torch.half`   | 16-bit floating point (faster GPU training)        | 2 bytes         | Mixed precision training       | `torch.tensor([1.0, 2.0], dtype=torch.float16)`  |
+| `torch.bfloat16`                 | 16-bit “brain float” (TPUs/GPU)                    | 2 bytes         | Mixed precision training       | `torch.tensor([1.0, 2.0], dtype=torch.bfloat16)` |
+| `torch.int8`                     | 8-bit signed integer                               | 1 byte          | Small integer storage          | `torch.tensor([1, -2], dtype=torch.int8)`        |
+| `torch.uint8`                    | 8-bit unsigned integer                             | 1 byte          | Image data / masks             | `torch.tensor([0, 255], dtype=torch.uint8)`      |
+| `torch.int16` / `torch.short`    | 16-bit signed integer                              | 2 bytes         | Small integer storage          | `torch.tensor([1000, 2000], dtype=torch.int16)`  |
+| `torch.int32` / `torch.int`      | 32-bit signed integer                              | 4 bytes         | General integer storage        | `torch.tensor([1000, 2000], dtype=torch.int32)`  |
+| `torch.int64` / `torch.long`     | 64-bit signed integer                              | 8 bytes         | Default for indices            | `torch.tensor([1000, 2000], dtype=torch.int64)`  |
+| `torch.bool`                     | Boolean tensor (True/False)                        | 1 byte          | Masks, conditions              | `torch.tensor([True, False], dtype=torch.bool)`  |
+| `torch.complex64`                | 64-bit complex number (32-bit real + 32-bit imag)  | 8 bytes         | Scientific computing           | `torch.tensor([1+2j], dtype=torch.complex64)`    |
+| `torch.complex128`               | 128-bit complex number (64-bit real + 64-bit imag) | 16 bytes        | High-precision complex numbers | `torch.tensor([1+2j], dtype=torch.complex128)`   |
+
+
+Some save memory, some provide precesion, some enable GPU Acceleration.
