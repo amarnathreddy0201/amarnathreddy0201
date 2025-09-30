@@ -269,34 +269,34 @@ print(torch.equal(x, x.clone()))  # True
 
 🔹 Dataset
 
-Represents the entire data (images, text, numbers, etc.).
+- Represents the entire data (images, text, numbers, etc.).
 
-Defines how to access one sample from the dataset.
+- Defines how to access one sample from the dataset.
 
-Implements __getitem__(index) → returns one data sample.
+- Implements __getitem__(index) → returns one data sample.
 
-Implements __len__() → returns total number of samples.
+- Implements __len__() → returns total number of samples.
 
-Can be predefined (e.g., torchvision datasets) or custom (subclass Dataset).
+- Can be predefined (e.g., torchvision datasets) or custom (subclass Dataset).
 
-Example: A dataset of 10,000 images where each call gives one image + label.
+- Example: A dataset of 10,000 images where each call gives one image + label.
 
 
 🔹 DataLoader
 
-Works as a wrapper around Dataset.
+- Works as a wrapper around Dataset.
 
-Provides an iterator over the dataset.
+- Provides an iterator over the dataset.
 
-Loads data in batches instead of one sample.
+- Loads data in batches instead of one sample.
 
-Handles shuffling of data.
+- Handles shuffling of data.
 
-Supports parallel loading using num_workers.
+- Supports parallel loading using num_workers.
 
-Speeds up training by efficiently preparing batches.
+- Speeds up training by efficiently preparing batches.
 
-Example: Instead of fetching 1 image, DataLoader fetches a batch of 64 images at once.
+- Example: Instead of fetching 1 image, DataLoader fetches a batch of 64 images at once.
 
 ```
 from torch.utils.data import Dataset, DataLoader
