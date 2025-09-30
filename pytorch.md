@@ -615,7 +615,7 @@ print("Grad tracked in inference:", pred.requires_grad)
 ```
 
 ### 27) Higher order derivatives
-
+```
 x = torch.tensor(2.0, requires_grad=True)
 
 y = x**3  # f(x) = x^3
@@ -626,21 +626,21 @@ d2y_dx2 = torch.autograd.grad(dy_dx, x)[0]  # second derivative
 print("f(x):", y.item())       # 8
 print("dy/dx:", dy_dx.item())  # 3x^2 = 12
 print("d²y/dx²:", d2y_dx2.item())  # 6x = 12
-
+```
 ### 28) Derivate function in pytorch
-
+```
 x = torch.tensor(2.0, requires_grad=True)
 y = torch.tensor(3.0, requires_grad=True)
 
 // f(x,y) = x^2 * y + y^3
-f = x**2 * y + y**3
+f = x^2 * y + y^3
 f.backward()
 
 print("∂f/∂x:", x.grad.item())  # derivative wrt x = 2xy = 2*2*3 = 12
 print("∂f/∂y:", y.grad.item())  # derivative wrt y = x^2 + 3y^2 = 4 + 27 = 31
-
+```
 ### 29) Padding to equal.
-
+```
 import torch
 from torch.nn.utils.rnn import pad_sequence
 
@@ -654,9 +654,9 @@ sequences = [
 padded = pad_sequence(sequences, batch_first=True, padding_value=0)
 
 print(padded)
-
+```
 ### 30) Simple model training 
-
+```
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -681,3 +681,4 @@ loss.backward()  # Compute gradients
 
  - Update parameters
 optimizer.step()  # Apply optimization step
+```
