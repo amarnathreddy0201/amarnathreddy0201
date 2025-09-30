@@ -2928,7 +2928,7 @@ print("Decoded :", decoded)
 
 
 ### 115) Linear regression
-
+```
 import numpy as np
 
 import pandas as pd
@@ -2959,10 +2959,10 @@ plt.scatter(X, y, color="blue", label="Data points")
 plt.plot(X, y_pred, color="red", label="Regression line")
 plt.legend()
 plt.show()
-
+```
 
 ### 116) Logistic regression 
-
+```
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -2988,7 +2988,7 @@ print("Predictions:", y_pred)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("Report:\n", classification_report(y_test, y_pred))
-
+```
 
 
 # 📊 Pandas Functions Cheat Sheet
