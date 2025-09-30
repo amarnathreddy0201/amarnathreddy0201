@@ -344,7 +344,7 @@ for batch in loader:
 - A loss function (also called a cost function or objective function) is a mathematical function that measures how well the model’s predictions match the target values.
           
 - Roles in PyTorch training loop:
-- 
+
           - Measure error → Quantifies the difference between predicted outputs (y_pred) and true labels (y_true).
   
           - Guide optimization → Provides a signal for backpropagation (loss.backward()) so gradients can be calculated.
