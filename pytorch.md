@@ -419,3 +419,67 @@ for batch in loader:
 
 
 Some save memory, some provide precesion, some enable GPU Acceleration.
+
+### 17) What is the difference between torch.Tensor and torch.tensor()?
+
+	1) torch.Tensor is the class constructor(like a factory), while tensor.tesor() is a function(like a smart assistance) that infers data types automatically.
+
+	2) torch.Tensor([1,2,3]).dtype // torch.float32
+
+	3) torch.tensor([1, 2, 3]).dtype  //  torch.int64
+
+### 18) How can you convert a Numpy array to a Pytorch tensor and vice versa?
+
+	a) Numpy to torch tensor
+	```
+		import numpy as np
+		numpy_array = np.array([1,2,3,4])
+		tensor = torch.from_numpy(numpy_array)
+		tensor2 = torch.tensor(numpy_array)
+	
+	```
+	b) torch to numpy
+	```
+		torch_tensor = torch.tensor([5,6,7,8])
+		numpy_back = torch_tensor.numpy()
+	```
+
+	c) Combination numpy to tensor and tensor to numpy
+
+	```
+		numpy_array = np.array([1,2,3,4])
+		torch_tensor = torch.from_numpy(numpy_array)
+		numpy_back = torch_tensor.numpy()
+	```
+
+### 19) What is a gradient desecnt in pytorch?
+
+	Gradient Descent is an optimization algorithm used to minimize a loss function in machine learning and deep learning.
+
+	A loss function measures how far your model’s predictions are from the true values.
+
+	Gradient descent updates the model’s parameters in the direction that reduces the loss.
+
+### 20) How do you create a tensor in Pytoch
+
+	Pytorch offers multiple ways to forge your data into powerful tensor form, each method serving different purpose.
+
+	data = [[1,2],[3,4]]
+	torch.tensor(data)
+	torch.zeros(2,3)
+	torch.ones(3,2)
+	torch.randn(4)
+	torch.randn(2, 3)
+	torch.randint(3, 5, (3,))  // tensor([4, 3, 4])
+	torch.randint(10, (2, 2))  // tensor([[0, 2], [5, 5]])
+	torch.randint(3, 10, (2, 2)) // tensor([[4, 5], [6, 7]])
+
+	torch.arange(5) // tensor([ 0,  1,  2,  3,  4])
+	torch.arange(1, 4) // tensor([ 1,  2,  3])
+	torch.arange(1, 2.5, 0.5) // tensor([ 1.0000,  1.5000,  2.0000])
+
+	input = torch.empty(2, 3)
+	torch.zeros_like(input)
+
+	torch.zeros_like(torch.tensor(9)) // 0 is the output.
+
