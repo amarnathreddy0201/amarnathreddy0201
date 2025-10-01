@@ -316,96 +316,98 @@ Run a new container from the latest image with a specific name
 # https://bastibe.de/2013-05-30-speeding-up-matplotlib.html
 
 
-## Yolo training
+###  Yolo training
+
 - !yolo task=detect mode=train model=yolov8s.pt data= "/data.yaml" epochs=1000 imgsz=640 batch=4 patience=150 save=True save_period=25 plots=True device=0
 
 
+# Interview Questions
 
-## 1) How yolo works?
+### 1) How yolo works?
 
-a) The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
+- The basic behind idea behind yolo is to divide the i/p image into a grid of cellsand , for each cell, predict the probabilities of the presence of object and bounding box coordinates of the object.
     
-b) Inputting an image: The image is resized to 448x448, then passed through a CNN to extract features
+- Inputting an image: The image is resized to 448x448, then passed through a CNN to extract features
     
-c) Dividing the image into a grid: The grid size can be 13x13 or 19x19, with each cell containing 5 boxes
+- Dividing the image into a grid: The grid size can be 13x13 or 19x19, with each cell containing 5 boxes
     
-d) Predicting bounding boxes and class probabilities: Each cell predicts a set of bounding boxes and class probabilities
+- Predicting bounding boxes and class probabilities: Each cell predicts a set of bounding boxes and class probabilities
     
-e) Removing overlapping guesses: YOLO uses non-maximum suppression to remove any guesses that overlap with other guesses
+- Removing overlapping guesses: YOLO uses non-maximum suppression to remove any guesses that overlap with other guesses
     
-f) Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
+- Outputting the remaining guesses: YOLO outputs the remaining guesses as rectangles and object labels
     
-## 2) Object detection vs segmentation
+### 2) Object detection vs segmentation
    
-   a) Finding the object and location of the object.
+- Finding the object and location of the object.
    
-   b) Fine-grained information
+- Fine-grained information
    
-   c) Object detection:
+- Object detection:
     Focuses on identifying and localizing specific objects within an image or video. It involves finding bounding boxes around objects and classifying them.
    
-   d) Segmentation:
+ - Segmentation:
    Focuses on dividing an image into meaningful regions and assigning class labels to each pixel. It provides fine-grained information about object boundaries and regions.
 
 **3) Different types of filters:**
    
-   a) Smoothing filters:
+- Smoothing filters:
    
-   Gaussian filter: This filter applies a two-dimensional Gaussian function to the neighborhood pixels to smoothen the image. The greater the standard deviation of the Gaussian distribution, the greater the blur will be.
+    - Gaussian filter: This filter applies a two-dimensional Gaussian function to the neighborhood pixels to smoothen the image. The greater the standard deviation of the Gaussian distribution, the greater the blur will be.
    
-   Median filter: This filter replaces each pixel value with the median of the neighboring pixels. It is effective in reducing the salt and pepper noise from the images.
+    - Median filter: This filter replaces each pixel value with the median of the neighboring pixels. It is effective in reducing the salt and pepper noise from the images.
    
-   b) Sharpening filters
+- Sharpening filters
    
-   Laplacian filter: This filter convolves over the image based on the principle of the Laplace transform. It calculates the image matrix's second-order derivative and highlights its edges and details by emphasizing regions of rapid intensity changes.
+   - Laplacian filter: This filter convolves over the image based on the principle of the Laplace transform. It calculates the image matrix's second-order derivative and highlights its edges and details by emphasizing regions of rapid intensity changes.
    
-   c) Edge detection filters:
+- Edge detection filters:
    
-   1) Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
-	
-	    Sobel function in opencv is used to perform edge detection on an image. it computes the gradient of the image intensity at each pixel, which can be used to detect edges or sharp changes in intensity. Sobel edge detection typically involves convolving the image with a Sobel kernel in the both the horizontal and vertical directions to compute the gradient magnitude and direction.
+    - Sobel filter: It detects the edges by calculating the horizontal and vertical derivatives of the image and then combining them.
+	    
+        - Sobel function in opencv is used to perform edge detection on an image. it computes the gradient of the image intensity at each pixel, which can be used to detect edges or sharp changes in intensity. Sobel edge detection typically involves convolving the image with a Sobel kernel in the both the horizontal and vertical directions to compute the gradient magnitude and direction.
 
-   2) Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
+   - Robert filter: It detects the edges by calculating and combining derivatives of both the image diagonals.
    
-   d) Thresholding filters:
+- Thresholding filters:
    
-   1) Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
+    - Binary threshold filter: This filter converts a greyscaled image into a binary image by setting pixel values above a threshold to white and values below the threshold to black.
    
-   2) Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
+    - Adaptive threshold filter: It is similar to the binary threshold filter, but it determines its threshold based on the local neighborhood of each pixel.
       
-   e) Morphological filters:
+- Morphological filters:
    
-   1) Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
+   - Dilation filter: This filter expands the boundaries of regions in an image by replacing each pixel with a maximum value in its neighborhood. It helps fill gaps, join broken lines, and enlarge objects.
    
-   2) Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
+   - Erosion filter: This filter shrinks the boundaries of regions by replacing each pixel with the minimum value with its neighborhood. It helps remove noise, separates connected objects, and reduces object size.
 
-   f) The anisotropic diffusion filter (ADF) is a technique used in image processing and computer vision to reduce image noise while preserving image content.
+- The anisotropic diffusion filter (ADF) is a technique used in image processing and computer vision to reduce image noise while preserving image content.
   
-   g) The Bilateral Filter is a non-linear, edge-preserving smoothing filter that is commonly used in Computer Vision as a simple noise-reduction stage in a pipeline.
+- The Bilateral Filter is a non-linear, edge-preserving smoothing filter that is commonly used in Computer Vision as a simple noise-reduction stage in a pipeline.
   
-   h) Morphological operations include dilation, erosion, opening, closing, and boundary extraction. For example, dilation can expand image pixels or add pixels on object boundaries, while erosion can shrink the image pixels or remove pixels on object boundaries. Compound operations often combine dilation and erosion, such as closing, which performs dilation and then erosion, or opening, which performs erosion and then dilation.
+- Morphological operations include dilation, erosion, opening, closing, and boundary extraction. For example, dilation can expand image pixels or add pixels on object boundaries, while erosion can shrink the image pixels or remove pixels on object boundaries. Compound operations often combine dilation and erosion, such as closing, which performs dilation and then erosion, or opening, which performs erosion and then dilation.
    
-## 4) Different types of segmentation(Semantic vs instance segmentation):
+### 4) Different types of segmentation(Semantic vs instance segmentation):
    
-   a) Semantic segmentation : One class consider as same entity.
+   - Semantic segmentation : One class consider as same entity.
    
-   b) Instane segmentation : Distinguishes between different instances of the same class
+   - Instane segmentation : Distinguishes between different instances of the same class
    
-   c) Semantic segmentation treats all objects within a category as one entity. Instance segmentation treats multiple objects in the same class as unique individual instances. 
+   - Semantic segmentation treats all objects within a category as one entity. Instance segmentation treats multiple objects in the same class as unique individual instances. 
       Semantic and instance segmentation have real-world applications such as: Urban planning and smart city management, Medical diagnostics and research, Autonomous vehicles and advanced driver-assistance systems (ADAS), Analyzing  medical scans, and Satellite or aerial imagery. 
      
 
-## 5) How RT-DERT works?
+### 5) How RT-DERT works?
    
-   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+   - Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
    
-   Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
+   - Efficient Hybrid Encoder: Baidu's RT-DETR uses an efficient hybrid encoder that processes multiscale features by decoupling intra-scale interaction and cross-scale fusion. This unique Vision Transformers-based design reduces computational costs and allows for real-time object detection.
    
-   IoU-aware Query Selection: Baidu's RT-DETR improves object query initialization by utilizing IoU-aware query selection. This allows the model to focus on the most relevant objects in the scene, enhancing the detection accuracy.
+   - IoU-aware Query Selection: Baidu's RT-DETR improves object query initialization by utilizing IoU-aware query selection. This allows the model to focus on the most relevant objects in the scene, enhancing the detection accuracy.
    
-   Adaptable Inference Speed: Baidu's RT-DETR supports flexible adjustments of inference speed by using different decoder layers without the need for retraining. This adaptability facilitates practical application in various real-time object detection scenarios.
+   - Adaptable Inference Speed: Baidu's RT-DETR supports flexible adjustments of inference speed by using different decoder layers without the need for retraining. This adaptability facilitates practical application in various real-time object detection scenarios.
 
-## 6) Difference between low level and highlevel languages?
+### 6) Difference between low level and highlevel languages?
 
 High-level languages are easy to understand, debug, and are widely used today. They are portable and do not depend on machines. Low-level languages, on the other hand, are machine-friendly, difficult to understand, and not portable. They are machine-dependent and not commonly used for programming today.
 
@@ -419,120 +421,122 @@ High-level languages are easy to understand, debug, and are widely used today. T
 
 
 
-## 13) What is REST API?**
+### 13) What is REST API
+
+- REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing networked applications. RESTful APIs are designed to be simple, lightweight, and scalable, making them popular for building web services and APIs.
+
+    - Statelessness:
+
+    - Resources and URIs:
+
+    - HTTP Methods:
+
+    - Representation:
+
+    - Uniform Interface:
+
+    - State Transfer:
+
+- RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
+
+
+
     
-      REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing networked applications. RESTful APIs are designed to be simple, lightweight, and scalable, making them popular for building web services and APIs.
-
-      a) Statelessness:
-
-      b) Resources and URIs:
-
-      c) HTTP Methods:
-
-      d) Representation:
-
-      e) Uniform Interface:
-
-      f) State Transfer:
-
-      RESTful APIs are widely used in web development for building web services, mobile applications, and IoT (Internet of Things) devices. They provide a flexible and scalable way to expose functionality over the web, allowing different clients to interact with server-side resources using standard protocols and formats.
-
-
-
+### 16) how do you handle missing or corrupted data in a dataset
     
-**16) how do you handle missing or corrupted data in a dataset?**
+- Method 1 is deleting rows or columns.
     
-    a) Method 1 is deleting rows or columns.
-    
-        We usually use this method when it comes to empty cells.
+    -We usually use this method when it comes to empty cells.
         For example, if the majority of our data is missing for a column or for a row, we can simply delete them.
     
-    b) Method 2 is replacing the missing data with aggregated values.
+- Method 2 is replacing the missing data with aggregated values.
     
-        In this case, we can calculate the aggregated value based on the rest of the values we have in the column and put the received number to the empty spot.
+    - In this case, we can calculate the aggregated value based on the rest of the values we have in the column and put the received number to the empty spot.
     
-    c) Method 3 is creating an unknown category.
+- Method 3 is creating an unknown category.
     
-        Categorical features have a number of possible values, which gives us an opportunity to create one more category for the missing values. This way we will lower the variance by adding new information to the data. This could be used when the original information is missing or cannot be understood,
+    - Categorical features have a number of possible values, which gives us an opportunity to create one more category for the missing values. This way we will lower the variance by adding new information to the data. This could be used when the original information is missing or cannot be understood,
     
-    d) Method 4 is predicting missing values.
+- Method 4 is predicting missing values.
     
-        where we have no missing values, we can train a statistical or machine learning algorithm in order to predict the missing values. Since among the samples for which this training is performed, there are missing values, it is necessary to replace them initially using one of the simplest methods for recovering gaps. This way will give us better performance, unless, of course, a missing value should have a high variance. As always, an example. With Madan here, we don’t have any number for the experience column. If we have a bigger table, with more people with similar information — the same country, profession, and education — it is possible to calculate correctly the most possible result for the missing feature. In this case, even if we didn’t guess absolutely right.
+    - where we have no missing values, we can train a statistical or machine learning algorithm in order to predict the missing values. Since among the samples for which this training is performed, there are missing values, it is necessary to replace them initially using one of the simplest methods for recovering gaps. This way will give us better performance, unless, of course, a missing value should have a high variance. As always, an example. With Madan here, we don’t have any number for the experience column. If we have a bigger table, with more people with similar information — the same country, profession, and education — it is possible to calculate correctly the most possible result for the missing feature. In this case, even if we didn’t guess absolutely right.
 
-**17) What is Random seed?**
+### 17) What is Random seed?
     
-    Random seed is used to ensure that results are reproducible. This is important in data science and other fields. For example, in Python, random seed is used to generate a pseudo-random encryption key, which is an important part of computer security. Random seed also makes optimization of codes easy where random numbers are used for testing.
+- Random seed is used to ensure that results are reproducible. This is important in data science and other fields. For example, in Python, random seed is used to generate a pseudo-random encryption key, which is an important part of computer security. Random seed also makes optimization of codes easy where random numbers are used for testing.
+
+```
+import random
+
+random.seed(10)
+print(random.random())
+
+random.seed(10)
+print(random.random())
+```
+
+
+### 18) Why YOLO ?
+
+- Model for real time detection.
+
+- Yolov1 : problem with Small objects.
+
+- Yolov2 : Bounding boxes + Multi class
+
+- Yolov3 : Pyramid n/w's
+
+    - Different scales and resolutions
+
+- Yolov4 : Accuracy and speed
+
+    - CSPDarknet53 as the backbone network, Mish activation function, and improved data augmentation.
+
+- Yolov5 :
+
+- Yolov8 :
+
+    - Along with its versatility, YOLOv8 boasts several other innovations that make it a strong candidate for a wide range of object detection and image segmentation tasks. These include a new backbone network, anchor-free detection head, and loss function. Additionally, YOLOv8 is highly efficient and can run on a variety of hardware, from CPUs to GPUs.
+
+- Yolov9:
+
+    - This model is superior to RT-DETR and YOLO-MS in terms of accuracy and efficiency, setting new standards in lightweight model performance.
+
+
+### 19) What is Convolutional Neural Network?
+
+- CNN stands for Convolutional Neural Network, which is a class of deep neural networks commonly used in tasks involving visual imagery analysis, such as image classification, object detection, and image segmentation.
+
+- Here's a breakdown of CNNs and their components:
+
+    - Convolutional Layers : These are the fundamental building blocks of CNNs. Convolutional layers apply convolution operations to the input data using filters (also called kernels) to extract features. The filters slide over the input data, computing dot products at each position, which helps capture **spatial patterns and local dependencies in the data**.
+   
+    - Pooling Layers: Pooling layers are typically inserted between convolutional layers to **reduce the spatial dimensions of the feature maps** while retaining the most important information. Common **pooling operations include max pooling and average pooling, which downsample the input by taking the maximum or average** value within each pooling region.
+   
+    - Activation Functions: **Activation functions introduce non-linearity into the network**, allowing **CNNs to learn complex patterns and relationships in the data**. Popular activation functions used in CNNs include ReLU (Rectified Linear Unit), sigmoid, and tanh.
+   
+    - Fully Connected Layers: Fully connected layers, also known as dense layers, are typically found at the end of a CNN architecture. These layers connect every neuron in one layer to every neuron in the next layer, allowing the network to learn high-level features and make predictions based on the extracted features.
+   
+    - Flattening: Before passing the output of convolutional and pooling layers to fully connected layers, the feature maps are flattened into a one-dimensional vector. This flattening operation reshapes the data into a format suitable for input to the fully connected layers.
+   
+    - **CNNs** are trained using **backpropagation and gradient descent algorithms**, where the network learns to minimize a loss function by adjusting its weights and biases during the training process. They are particularly effective in handling high-dimensional data like images due to their ability to automatically learn hierarchical representations of features directly from the raw data.
+
+
+### 20) What is the purpose of GridSearcCV
+
+- GridSearchCV is a technique for finding the optimal parameter values from a given set of parameters in a grid. It's essentially a cross-validation technique. The model as well as the parameters must be entered. After extracting the best parameter values, predictions are made
 
     ```
-      import random
-  
-      random.seed(10)
-      print(random.random())
-      
-      random.seed(10)
-      print(random.random())
-
-
-**18) Why YOLO ?**
-
-    Model for real time detection.
-
-    Yolov1 : problem with Small objects.
-
-    Yolov2 : Bounding boxes + Multi class
-
-    Yolov3 : Pyramid n/w's
-
-        Different scales and resolutions
-
-    Yolov4 : Accuracy and speed
-
-        CSPDarknet53 as the backbone network, Mish activation function, and improved data augmentation.
-
-    Yolov5 :
-
-    Yolov8 :
-
-        Along with its versatility, YOLOv8 boasts several other innovations that make it a strong candidate for a wide range of object detection and image segmentation tasks. These include a new backbone network, anchor-free detection head, and loss function. Additionally, YOLOv8 is highly efficient and can run on a variety of hardware, from CPUs to GPUs.
-
-    Yolov9:
-
-        This model is superior to RT-DETR and YOLO-MS in terms of accuracy and efficiency, setting new standards in lightweight model performance.
-
-
-**19) What is Convolutional Neural Network?**
-
-    CNN stands for Convolutional Neural Network, which is a class of deep neural networks commonly used in tasks involving visual imagery analysis, such as image classification, object detection, and image segmentation.
-
-    Here's a breakdown of CNNs and their components:
-
-      1) Convolutional Layers : These are the fundamental building blocks of CNNs. Convolutional layers apply convolution operations to the input data using filters (also called kernels) to extract features. The filters slide over the input data, computing dot products at each position, which helps capture **spatial patterns and local dependencies in the data**.
-   
-      2) Pooling Layers: Pooling layers are typically inserted between convolutional layers to **reduce the spatial dimensions of the feature maps** while retaining the most important information. Common **pooling operations include max pooling and average pooling, which downsample the input by taking the maximum or average** value within each pooling region.
-   
-      3) Activation Functions: **Activation functions introduce non-linearity into the network**, allowing **CNNs to learn complex patterns and relationships in the data**. Popular activation functions used in CNNs include ReLU (Rectified Linear Unit), sigmoid, and tanh.
-   
-      4) Fully Connected Layers: Fully connected layers, also known as dense layers, are typically found at the end of a CNN architecture. These layers connect every neuron in one layer to every neuron in the next layer, allowing the network to learn high-level features and make predictions based on the extracted features.
-   
-      5) Flattening: Before passing the output of convolutional and pooling layers to fully connected layers, the feature maps are flattened into a one-dimensional vector. This flattening operation reshapes the data into a format suitable for input to the fully connected layers.
-   
-    **CNNs** are trained using **backpropagation and gradient descent algorithms**, where the network learns to minimize a loss function by adjusting its weights and biases during the training process. They are particularly effective in handling high-dimensional data like images due to their ability to automatically learn hierarchical representations of features directly from the raw data.
-
-
-**20) What is the purpose of GridSearcCV**
-
-    	GridSearchCV is a technique for finding the optimal parameter values from a given set of parameters in a grid. It's essentially a cross-validation technique. The model as well as the parameters must be entered. After extracting the best parameter values, predictions are made
-
-    	```
-	    params = dict()
-     
-	    params["C"] = (1e-6,1,10,100.0 )
-     
-	    params["gamma"] = (1e-6,1,10,100.0)
-     
-	    params["degree"] = (1,2,3)
-     
-	    params["kernel"] = ['linear','poly', 'rbf', 'sigmoid']
+    params = dict()
+    
+    params["C"] = (1e-6,1,10,100.0 )
+    
+    params["gamma"] = (1e-6,1,10,100.0)
+    
+    params["degree"] = (1,2,3)
+    
+    params["kernel"] = ['linear','poly', 'rbf', 'sigmoid']
+    ```
      
 **21) How to change tensor variable**
 	Now let's try to change one of the elements of the changable tensor.
@@ -554,121 +558,121 @@ High-level languages are easy to understand, debug, and are widely used today. T
 	changeable_tensor[0].assign(7)
 	changeable_tensor
  
-**22) Difference Between set, multiset, unordered_set, unordered_multiset in C++**
+### 22) Difference Between set, multiset, unordered_set, unordered_multiset in C++**
     
-	1. Set: Sets are associative containers that store unique elements following a specific order. Following are the properties of sets:
+- Set: Sets are associative containers that store unique elements following a specific order. Following are the properties of sets:
 
-		Stores the values in sorted order. 
-		Stores only unique values. 
-		Elements can only be inserted or deleted but cannot be modified. 
-		We can erase more than 1 element by giving the start iterator and end iterator position. 
-		Traversal using iterators. 
-		Sets are implemented as Binary Search Tree.
+    - Stores the values in sorted order. 
+    Stores only unique values. 
+    Elements can only be inserted or deleted but cannot be modified. 
+    We can erase more than 1 element by giving the start iterator and end iterator position. 
+    Traversal using iterators. 
+    Sets are implemented as Binary Search Tree.
 
-	3. Multisets: Multisets are associative containers that store multiple elements having equivalent values following a specific order. Following are the properties of multisets:
+- Multisets: Multisets are associative containers that store multiple elements having equivalent values following a specific order. Following are the properties of multisets:
 
-		Stores elements in sorted order.
+    - Stores elements in sorted order.
 
-		It allows the storage of multiple elements.
+    - It allows the storage of multiple elements.
 
-		We can erase more than 1 element by giving the start iterator and end iterator.
+    - We can erase more than 1 element by giving the start iterator and end iterator.
 
-	3. unordered_set: unordered_set are associative containers that store unique elements in no particular order. Following are the properties of Unordered_sets: 
+- unordered_set: unordered_set are associative containers that store unique elements in no particular order. Following are the properties of Unordered_sets: 
 
-		Elements can be stored in any order. ( no sorted order )
+    - Elements can be stored in any order. ( no sorted order )
 
-		Stores only unique values.
+    - Stores only unique values.
 
-		Hash-table used to store elements.
+    - Hash-table used to store elements.
 
-		We can erase only the element for which the iterator position is given.
+    - We can erase only the element for which the iterator position is given.
 
-	4. Unordered_multiset: Unordered_multiset is an associative container that contains a set of non-unique elements in unsorted order. Following are the properties of Unordered_multiset: 
+- Unordered_multiset: Unordered_multiset is an associative container that contains a set of non-unique elements in unsorted order. Following are the properties of Unordered_multiset: 
 
-		Elements can be stored in any order.
+    - Elements can be stored in any order.
 
-		Duplicate elements can be stored.
+    - Duplicate elements can be stored.
 
-		Hash-table used to store elements.
+    - Hash-table used to store elements.
 
-		We can erase only the element for which the iterator position is given.
+    - We can erase only the element for which the iterator position is given.
 
-**23) Map vs multimap:**
+### 23) Map vs multimap:
 	
- 	Map stores unique key-value pairs in a sorted manner. Each key is uniquely associated with a value that may or may not be unique. A key can be inserted or deleted from a map but cannot be modified. Values assigned to keys can be changed. It is a great way for quickly accessing value using the key and it is done in O(1) time.
+- Map stores unique key-value pairs in a sorted manner. Each key is uniquely associated with a value that may or may not be unique. A key can be inserted or deleted from a map but cannot be modified. Values assigned to keys can be changed. It is a great way for quickly accessing value using the key and it is done in O(1) time.
 
-	Multimap is similar to map with an addition that multiple elements can have same keys. Also, it is NOT required that the key value and mapped value pair has to be unique in this case. One important thing to note about multimap is that multimap keeps all the keys in sorted order always. These properties of multimap makes it very much useful in competitive programming.
+- Multimap is similar to map with an addition that multiple elements can have same keys. Also, it is NOT required that the key value and mapped value pair has to be unique in this case. One important thing to note about multimap is that multimap keeps all the keys in sorted order always. These properties of multimap makes it very much useful in competitive programming.
 
 
-**24) Backward Pass (Backpropagation):**
+### 24) Backward Pass (Backpropagation):
 	
- 	Backpropagation is the process of computing the gradient of the loss function with respect to each weight in the network, layer by layer, starting from the output layer and moving backward to the input layer. This gradient represents the **direction and magnitude of change that each weight should undergo to minimize the loss function.**
+- Backpropagation is the process of computing the gradient of the loss function with respect to each weight in the network, layer by layer, starting from the output layer and moving backward to the input layer. This gradient represents the **direction and magnitude of change that each weight should undergo to minimize the loss function.**
 
 
 
 
 **26) Greedy search vs Beam search:**
 
-		Greedy search and beam search are both search algorithms used in machine learning and natural language processing (NLP) tasks. They differ in how they make decisions during the search process:
+- Greedy search and beam search are both search algorithms used in machine learning and natural language processing (NLP) tasks. They differ in how they make decisions during the search process:
 
-		Greedy search Selects the single most likely option. It's simple and fast, but it only considers each position in isolation.
+- Greedy search Selects the single most likely option. It's simple and fast, but it only considers each position in isolation.
 
-		Beam search Maintains a beam of multiple candidates at each step, ranked based on their probabilities. It's more complex and computationally expensive than greedy search, but it's more accurate because it considers future steps when selecting the next word.
+- Beam search Maintains a beam of multiple candidates at each step, ranked based on their probabilities. It's more complex and computationally expensive than greedy search, but it's more accurate because it considers future steps when selecting the next word.
 
 
-**27) Super Resolution in OpenCV:**
+### 27) Super Resolution in OpenCV:
 
-    Overview: FSRCNN is an optimized and faster variant of the SRCNN model. It employs a deep neural network with a smaller filter size and fewer parameters, making it faster while still providing good image quality.
+- Overview: FSRCNN is an optimized and faster variant of the SRCNN model. It employs a deep neural network with a smaller filter size and fewer parameters, making it faster while still providing good image quality.
 
-	https://learnopencv.com/super-resolution-in-opencv/
+- https://learnopencv.com/super-resolution-in-opencv/
 
- 	Super-resolution refers to the process of upscaling or improving the details of the image. Follow this blog to learn the options for Super Resolution in OpenCV. When increasing the dimensions of an image, the extra pixels need to be interpolated somehow. Basic image processing techniques do not give good results as they do not take the surroundings in context while scaling up. Deep learning and, more recently, GANs come to the rescue here and provide much better results.
+- Super-resolution refers to the process of upscaling or improving the details of the image. Follow this blog to learn the options for Super Resolution in OpenCV. When increasing the dimensions of an image, the extra pixels need to be interpolated somehow. Basic image processing techniques do not give good results as they do not take the surroundings in context while scaling up. Deep learning and, more recently, GANs come to the rescue here and provide much better results.
 
-    Simply enlarging an image through conventional methods often results in a blurry or pixelated appearance.
+- Simply enlarging an image through conventional methods often results in a blurry or pixelated appearance.
 
- 	a) Resnet architecture
+ 	- Resnet architecture
 
-  	b) Residual Blocks are skip-connection blocks that learn residual functions with reference to the layer inputs, instead of learning unreferenced functions. They were introduced as part of the ResNet architecture.
+  	- Residual Blocks are skip-connection blocks that learn residual functions with reference to the layer inputs, instead of learning unreferenced functions. They were introduced as part of the ResNet architecture.
 
-   	c) Different techniques:
-    		i) EDSR : Enhanced deep resdiual network. it is slower than FSRCNN.
-      		ii) FSRCNN : 
-		iii) LapSRN : Same results as FSRCNN.
-  	    iv) ESPCN : Same speed as FSRCNN , giving less count than fsrcnn.
+   	- Different techniques:
+    	- EDSR : Enhanced deep resdiual network. it is slower than FSRCNN.
+        - FSRCNN : 
+		- LapSRN : Same results as FSRCNN.
+  	    - ESPCN : Same speed as FSRCNN , giving less count than fsrcnn.
 
-    d) Methods:
+    - Methods:
         
-        i) Interpolation-Based Methods:
+        - Interpolation-Based Methods:
 
-            Nearest-Neighbor Interpolation: Simplest method, copying the nearest pixel value to upscale. This often results in blocky images.
+            - Nearest-Neighbor Interpolation: Simplest method, copying the nearest pixel value to upscale. This often results in blocky images.
         
-            Bilinear Interpolation: Uses a weighted average of the four nearest pixels, resulting in smoother images but still with some blurring.
+            - Bilinear Interpolation: Uses a weighted average of the four nearest pixels, resulting in smoother images but still with some blurring.
             
-            Bicubic Interpolation: Considers 16 nearest pixels for a more refined result, reducing blurring compared to bilinear interpolation.
+            - Bicubic Interpolation: Considers 16 nearest pixels for a more refined result, reducing blurring compared to bilinear interpolation.
         
-        ii) Reconstruction-Based Methods:
+        - Reconstruction-Based Methods:
 
-            These methods assume a mathematical model to reconstruct a high-resolution image from a low-resolution one, often involving optimization techniques.
-            Example: Solving for the HR image that, when downsampled, closely matches the LR image while maintaining plausible detail and smoothness.
+            - These methods assume a mathematical model to reconstruct a high-resolution image from a low-resolution one, often involving optimization techniques.
+            
+            - Example: Solving for the HR image that, when downsampled, closely matches the LR image while maintaining plausible detail and smoothness.
         
-        iii) Learning-Based Methods:
+        - Learning-Based Methods:
 
-            Single-Image Super-Resolution (SISR): Enhances a single low-resolution image using a pre-trained model.
+            - Single-Image Super-Resolution (SISR): Enhances a single low-resolution image using a pre-trained model.
 
-            Multi-Image Super-Resolution: Combines information from multiple low-resolution images of the same scene to produce a higher-resolution image.
+            - Multi-Image Super-Resolution: Combines information from multiple low-resolution images of the same scene to produce a higher-resolution image.
 
-            Deep Learning Models: Utilize neural networks trained on large datasets of LR-HR image pairs to predict high-resolution details.
-
-
-
-**29) A (typical) architecture of a convolutional neural network**
+            - Deep Learning Models: Utilize neural networks trained on large datasets of LR-HR image pairs to predict high-resolution details.
 
 
-	1) A convolutional layer is the main building block of a CNN. It contains a set of filters (or kernels), parameters of which are to be learned throughout the training. The size of the filters is usually smaller than the actual image. Each filter convolves with the image and creates an activation map.
 
-	2) A hidden layer in a neural network is a layer of neurons that is neither the input nor output layer. The term "hidden" refers to the fact that these layers are not directly observable and are responsible for the depth of neural networks, allowing them to process complex data representations.
+### 29) A (typical) architecture of a convolutional neural network
 
-	3) The purpose of the pooling layers is to reduce the dimensions of the hidden layer by combining the outputs of neuron clusters at the previous layer into a single neuron in the next layer
+- A convolutional layer is the main building block of a CNN. It contains a set of filters (or kernels), parameters of which are to be learned throughout the training. The size of the filters is usually smaller than the actual image. Each filter convolves with the image and creates an activation map.
+
+- A hidden layer in a neural network is a layer of neurons that is neither the input nor output layer. The term "hidden" refers to the fact that these layers are not directly observable and are responsible for the depth of neural networks, allowing them to process complex data representations.
+
+- The purpose of the pooling layers is to reduce the dimensions of the hidden layer by combining the outputs of neuron clusters at the previous layer into a single neuron in the next layer
 
 
 
@@ -703,17 +707,17 @@ The Adam optimizer, short for “Adaptive Moment Estimation,” is an iterative 
 	
 
 
-**35) Solid priniciples of Python**
+### 35) Solid priniciples of Python
 
-	**a) Single Responsibility Principle**
+	**- Single Responsibility Principle**
 
   		Only for one purpose.
 
-    **b) Open-Closed Principle**
+    **- Open-Closed Principle**
 
       		
 
-**36) Confussion matrix**
+### 36) Confussion matrix**
 
 		Posi        Negative
           ---------------------------------
@@ -735,175 +739,186 @@ Negative  |		|		  |
 
 **37) What is grdent descent:**
 
-	Gradient descent is an optimization algorithm used to minimize the loss function in machine learning and neural networks. It is a method for finding the minimum of a function by iteratively moving towards the steepest descent, as defined by the negative of the gradient.
+- Gradient descent is an optimization algorithm used to minimize the loss function in machine learning and neural networks. It is a method for finding the minimum of a function by iteratively moving towards the steepest descent, as defined by the negative of the gradient.
 
-	a) Loss Function:
+	- Loss Function:
 
 		The loss function (or cost function) measures the difference between the predicted values and the actual target values. The goal of training a neural network is to minimize this loss function.
 	
-    b) Gradient:
+    - Gradient:
 
 		The gradient is a vector of partial derivatives of the loss function with respect to each parameter (weights and biases) of the model. It points in the direction of the steepest increase in the loss function.
 
-	c) The gradient descent algorithm involves the following steps:
+	- The gradient descent algorithm involves the following steps:
         
-        Initialization, Compute the Loss, Compute the Gradient, Update Parameters and Repeat
+        - Initialization, Compute the Loss, Compute the Gradient, Update Parameters and Repeat
 
-**38) when gradient descent occurs forward propagation or backwards propagation**
+### 38) when gradient descent occurs forward propagation or backwards propagation
 
-	Gradient descent primarily occurs during backpropagation in the context of training neural networks. Here's a brief overview of the process:
+- Gradient descent primarily occurs during backpropagation in the context of training neural networks. Here's a brief overview of the process:
 
-  	Backward Propagation (Backpropagation):
+- Backward Propagation (Backpropagation):
 
-	The calculated error from forward propagation is propagated back through the network.
+	- The calculated error from forward propagation is propagated back through the network.
  
-	Gradients of the loss function with respect to the weights and biases are computed using the chain rule of calculus.
+	- Gradients of the loss function with respect to the weights and biases are computed using the chain rule of calculus.
  
-	These gradients indicate how much the weights and biases need to be adjusted to reduce the error.
+	- These gradients indicate how much the weights and biases need to be adjusted to reduce the error.
 
-	Therefore, while forward propagation is about calculating the output and the loss, gradient descent (the optimization step) takes place during backpropagation, where the gradients are used to update the model's parameters.
+	- Therefore, while forward propagation is about calculating the output and the loss, gradient descent (the optimization step) takes place during backpropagation, where the gradients are used to update the model's parameters.
 
- **39) How to reduce gradient decent:**
+ ### 39) How to reduce gradient decent:
 
- 	Reducing or optimizing the gradient descent process can involve several strategies to improve the efficiency and effectiveness of training a neural network. Here are some key techniques:
+- Reducing or optimizing the gradient descent process can involve several strategies to improve the efficiency and effectiveness of training a neural network. Here are some key techniques:
 
-	a) Learning Rate Adjustment:
+	- Learning Rate Adjustment:
 
-  	b) Gradient Clipping:
+  	- Gradient Clipping:
 
-   	c) Batch Normalization:
+   	- Batch Normalization:
 
       	Batch normalization normalizes the input to each layer so that they have a mean of zero and a variance of one
 
-    d) Momentum
+    - Momentum
 
-    e) Optimization Algorithms:
+    - Optimization Algorithms:
 
-    f) Regularization Techniques:
+    - Regularization Techniques:
 
         Regularization is a technique used in ML to prevent overfitting by adding a penalty term to the loss fn that penalizes large coefficients in the model. This penalty encourages the model to favor simpler solutions and helps prevent it from fitting the noise in the training data too closely. Common regularization techniques include L1 regularization(Lasso) and L2 regularization(Ridge).
 
-        L1 regularization adds the absolute value of the coefficient as a penalty term.
+        - L1 regularization adds the absolute value of the coefficient as a penalty term.
 
-        L2 regularization adds the squared magnitude of the coefficient as a penalty term.
+        - L2 regularization adds the squared magnitude of the coefficient as a penalty term.
 
-	 	1) Randomly selected neurons are ignored during training
+	 	- Randomly selected neurons are ignored during training
    		L1/L2 Regularization.
 
      		
-		2) Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data.
+		- Regularization is a technique used in machine learning to prevent overfitting, which occurs when a model learns the training data too well, capturing noise and fluctuations rather than the underlying pattern. Regularization adds additional constraints or penalties to the model to ensure it generalizes better to unseen data.
         
-        Here are the most common regularization techniques:
+        - Here are the most common regularization techniques:
 
-            a) Lasso(L1 regularization).
+            - Lasso(L1 regularization).
 
-            b) Ridge(L2 regularization).
+            - Ridge(L2 regularization).
 
-    g) Proper Initialization:
+    - Proper Initialization:
 
- 	h) Mini-Batch Gradient Descent:
+ 	- Mini-Batch Gradient Descent:
 
-  	i) Data Augmentation and Preprocessing:
+  	- Data Augmentation and Preprocessing:
 
-   	j) Early Stopping:
+   	- Early Stopping:
 
-**44) Gridsearchcv vs randomsearcv**
+### 44) Gridsearchcv vs randomsearcv
 
-    Both GridSearchCV and RandomSearchCV are techniques used in machine learning for hyperparameter tuning, which is the process of finding the best hyperparameters for a machine learning model.
+- Both GridSearchCV and RandomSearchCV are techniques used in machine learning for hyperparameter tuning, which is the process of finding the best hyperparameters for a machine learning model.
 
-    GridSearchCV:
+-GridSearchCV:
 
-        Slow, High computational power, Detecting for every combination of parameters, Not feasible for high-dimensional hyperparameter spaces, results same.
+    - Slow, High computational power, Detecting for every combination of parameters, Not feasible for high-dimensional hyperparameter spaces, results same.
 
-    Randomsearchcv:
+- Randomsearchcv:
 
-        Fixed no.of hyperparameters combinations, high efficiency, less computational power.
+    - Fixed no.of hyperparameters combinations, high efficiency, less computational power.
 
-    Choosing between GridSearchCV and RandomSearchCV depends on the specific needs of your project. If you have a small hyperparameter space and want to ensure finding the best parameters, GridSearchCV is the way to go. If you have a large hyperparameter space or limited computational resources, RandomSearchCV is typically more efficient and can still yield good results.
+- Choosing between GridSearchCV and RandomSearchCV depends on the specific needs of your project. If you have a small hyperparameter space and want to ensure finding the best parameters, GridSearchCV is the way to go. If you have a large hyperparameter space or limited computational resources, RandomSearchCV is typically more efficient and can still yield good results.
 
 
-**45) Machine learning                                                                       Deep learning**
+### 45) Machine learning                                                                       Deep learning
 
- 	a) Enables m/c to take decisions on their own. based on past data.                       a) Enables m/c's to take decesions with the help of artificial neural n/w's.
-
-  	b) Needs only small amount of data.                                                      b) Needs a large amount of training data.
-
-   	c) Works well on low-end systems.                                                        c) Needs high end s/m to work.
-
-    d) Most features need to identified in advanced and manually coded.                      d) learns features from the data provided.
-
-    e) The Problem is divided into parts and solved individually and then combined.          e) The problem is solved in an end-to-end manner.
-
-**46) Supervised learning is a machine learning technique that involves teaching a computer to perform tasks or make decisions by analyzingdata and predicting outcomes. It's a widely used approach in business, with applications in many industries. Here are some examples:**
-
-    Finance: Supervised learning helps detect fraudulent transactions, predict stock prices, and assess creditworthiness.
+- Enables m/c to take decisions on their own. based on past data.            
     
-    Marketing: It helps personalize marketing campaigns, predict customer churn, and score leads.
-    
-    Sales: It helps improve dynamic pricing models.
-    
-    Customer service: It helps create chatbots that provide real-time recommendations and on-demand help.
-    
-    Security: It helps identify suspicious transactions and prevent fraud.
-    
-    Image recognition: It helps computers recognize objects in images.
-    
-    Spam detection: It helps identify and prevent spam emails.
-    
-    Healthcare: It helps clinicians make diagnoses and choose treatment options.
-    
-    Manufacturing: It helps with quality control.
+- Enables m/c's to take decesions with the help of artificial neural n/w's.
 
-**47) Applications Where Precision is More Valuable than Recall**
+- Needs only small amount of data.
 
-	a) Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
+- Needs a large amount of training data.
+
+- Works well on low-end systems.                                                       
+
+- Needs high end s/m to work.
+
+- Most features need to identified in advanced and manually coded.                      
+
+- learns features from the data provided.
+
+- The Problem is divided into parts and solved individually and then combined.          
+
+- The problem is solved in an end-to-end manner.
+
+### 46) Supervised learning is a machine learning technique that involves teaching a computer to perform tasks or make decisions by analyzingdata and predicting outcomes. It's a widely used approach in business, with applications in many industries. Here are some examples:**
+
+- Finance: Supervised learning helps detect fraudulent transactions, predict stock prices, and assess creditworthiness.
+    
+- Marketing: It helps personalize marketing campaigns, predict customer churn, and score leads.
+    
+- Sales: It helps improve dynamic pricing models.
+    
+- Customer service: It helps create chatbots that provide real-time recommendations and on-demand help.
+    
+- Security: It helps identify suspicious transactions and prevent fraud.
+    
+- Image recognition: It helps computers recognize objects in images.
+    
+- Spam detection: It helps identify and prevent spam emails.
+    
+- Healthcare: It helps clinicians make diagnoses and choose treatment options.
+    
+- Manufacturing: It helps with quality control.
+
+### 47) Applications Where Precision is More Valuable than Recall**
+
+- Spam Detection: In email spam detection, it's crucial to minimize the number of legitimate emails marked as spam (false positives). High precision ensures that the emails classified as spam are indeed spam, even if some spam emails are missed (lower recall).
 	
-	b) Medical Diagnosis: In medical testing, particularly when screening for a serious but not immediately life-threatening condition, it might be more important to ensure that a positive result is truly indicative of the condition. For instance, a diagnostic test for a rare condition should have high precision to avoid unnecessary stress and further invasive testing on healthy patients.
+- Medical Diagnosis: In medical testing, particularly when screening for a serious but not immediately life-threatening condition, it might be more important to ensure that a positive result is truly indicative of the condition. For instance, a diagnostic test for a rare condition should have high precision to avoid unnecessary stress and further invasive testing on healthy patients.
 	
-	c) Fraud Detection: In financial transactions, identifying fraudulent activities should have high precision to prevent normal transactions from being flagged as fraudulent. False positives could inconvenience customers and lead to a loss of trust in the financial institution.
+- Fraud Detection: In financial transactions, identifying fraudulent activities should have high precision to prevent normal transactions from being flagged as fraudulent. False positives could inconvenience customers and lead to a loss of trust in the financial institution.
 	
-	d) Search Engines and Recommendation Systems: In these applications, it is often more important that the returned results are highly relevant (high precision), even if it means some relevant results are missed (lower recall). Users typically prefer highly accurate results rather than sifting through numerous irrelevant ones.
+- Search Engines and Recommendation Systems: In these applications, it is often more important that the returned results are highly relevant (high precision), even if it means some relevant results are missed (lower recall). Users typically prefer highly accurate results rather than sifting through numerous irrelevant ones.
 	
-	e) Legal Document Review: In e-discovery and legal document review, it's essential that the documents identified as relevant are indeed relevant to avoid legal risks and inefficiencies. High precision is preferred to ensure that the relevant documents are identified correctly.
+- Legal Document Review: In e-discovery and legal document review, it's essential that the documents identified as relevant are indeed relevant to avoid legal risks and inefficiencies. High precision is preferred to ensure that the relevant documents are identified correctly.
 	
-	f) Advertising: In targeted advertising, ensuring that the ads shown are highly relevant to the user (high precision) can improve user experience and engagement, even if it means some potential customers are not shown the ad (lower recall).
+- Advertising: In targeted advertising, ensuring that the ads shown are highly relevant to the user (high precision) can improve user experience and engagement, even if it means some potential customers are not shown the ad (lower recall).
 
 
 
-**48) There are several types of segmentation in machine learning (ML), including image segmentation, market segmentation, and user segmentation:**
+### 48) There are several types of segmentation in machine learning (ML), including image segmentation, market segmentation, and user segmentation:
 
-    1) Image segmentation
+- Image segmentation
     
         A process that involves labeling pixels in an image:
         
-            a) Instance segmentation: Assigns a unique label to each pixel to differentiate between different instances of the same class
+            - Instance segmentation: Assigns a unique label to each pixel to differentiate between different instances of the same class
         
-            b) Panoptic segmentation: A combination of semantic and instance segmentation that labels each pixel with a class label and identifies each object instance in the image
+            - Panoptic segmentation: A combination of semantic and instance segmentation that labels each pixel with a class label and identifies each object instance in the image
         
-            c) DBSCAN clustering: Groups pixels into clusters based on their density.
+            - DBSCAN clustering: Groups pixels into clusters based on their density.
    
-    2) Market segmentation
+- Market segmentation
     
-        A process that involves grouping buyers based on characteristics that may influence their behavior:
+    - A process that involves grouping buyers based on characteristics that may influence their behavior:
         
-        Behavioral segmentation: Based directly on consumer behavior
+    - Behavioral segmentation: Based directly on consumer behavior
         
-        Geographic segmentation: Groups buyers by physical location, which can influence buying habits due to climate or resource access
+    - Geographic segmentation: Groups buyers by physical location, which can influence buying habits due to climate or resource access
         
-        Demographic segmentation: Segments customers based on demographic factors, such as characteristics of a person or population
+    - Demographic segmentation: Segments customers based on demographic factors, such as characteristics of a person or population
         
-        Psychographic segmentation: Studies consumers based on their mental attributes, such as interests, values, lifestyle, income, and beliefs
+    - Psychographic segmentation: Studies consumers based on their mental attributes, such as interests, values, lifestyle, income, and beliefs
 
-    3) User segmentation
-        A process that involves segmenting customers based on characteristics:
+- User segmentation
         
-        Supervised segmentation: Involves the marketer establishing predefined rules, and machine learning organizes the data according to those rules
+    - A process that involves segmenting customers based on characteristics:
+        
+    - Supervised segmentation: Involves the marketer establishing predefined rules, and machine learning organizes the data according to those rules
 
-**49) Activation functions**
+### 49) Activation functions**
 
-	For capturing complex pattern
+- For capturing complex pattern
 
- 	a) Sigmoid function:
+- Sigmoid function:
 
     	S(x)= {1}/{1+e^{-x}}
 
@@ -911,7 +926,7 @@ Negative  |		|		  |
 
 		Vanishing gradent
   
- 	b) tanh : 
+- tanh : 
         
         ((e**x −e ** −x)/(e **x + e **−x))
 
@@ -919,7 +934,7 @@ Negative  |		|		  |
 
         vanishing gradent
 
-    c) relu:
+- relu:
 
         S(x) = max(0,1)
 
@@ -929,7 +944,7 @@ Negative  |		|		  |
 
         dead neurons 
 
-    d) leaky - relu:
+- leaky - relu:
 
         range = (-inf,inf)
 
@@ -939,130 +954,130 @@ Negative  |		|		  |
 
         Computational over head
 
-    e) Softmax:
+- Softmax:
 
         Used in the o/p layer of classification n/w's to represent possibilites.
 
 
-**50) Loss functions/cost functions**
+### 50) Loss functions/cost functions
 
-    As mentioned, loss functions help gauge how a machine learning model is performing with its given data, and how well it’s able to predict an expected outcome. Many machine learning algorithms use loss functions in the optimization process during training to evaluate and improve its output accuracy. Also, by minimizing a chosen loss function during optimization, this can help determine the best model parameters needed for given data.
+- As mentioned, loss functions help gauge how a machine learning model is performing with its given data, and how well it’s able to predict an expected outcome. Many machine learning algorithms use loss functions in the optimization process during training to evaluate and improve its output accuracy. Also, by minimizing a chosen loss function during optimization, this can help determine the best model parameters needed for given data.
 
-    measures how well a machine learning model performs.
+-measures how well a machine learning model performs.
 
-    a) Regression loss:
+- Regression loss:
 
-        i) Mean squared error:
+    - Mean squared error:
 
-        ii) Mean Absolute error:
+    i- Mean Absolute error:
 
-        iii) Huber Loss:
+    ii- Huber Loss:
 
-    b) Classification loss:
+- Classification loss:
 
-        i) Binary cross entropy:
+    - Binary cross entropy:
 
-        ii) Categorical cross entropy:
+    i- Categorical cross entropy:
 
-        iii) Sparse categorical cross entropy:
+    ii- Sparse categorical cross entropy:
 
-    c) Specialized loss functions:
+- Specialized loss functions:
 
-        i) Kullback-leibler
+    - Kullback-leibler
 
-        ii) Hinge loss
+    i- Hinge loss
 
-        iii) cosine similarity
+    ii- cosine similarity
 
-        iv) Dice loss:
+    iv) Dice loss:
         
-**51) GAN(generative Adversarial Network)**
+### 51) GAN(generative Adversarial Network)
 
-    a) Unsupervised learning, 2 neural network(discriminator and a generator), image synthesis, style transfer, text-to-image.
+- Unsupervised learning, 2 neural network(discriminator and a generator), image synthesis, style transfer, text-to-image.
 
-        i) Generative 
+    - Generative 
 
-        ii) Adversarial
+    i- Adversarial
 
-        iii) Networks
+    ii- Networks
 
-    b) Type of gan's:
+- Type of gan's:
 
-        i) Vanilla GAN(Stochastic gradent descent)
+    - Vanilla GAN(Stochastic gradent descent)
 
-        ii) Conditional GAN()
+    i- Conditional GAN()
 
-        iii) Deep Convolution GAN
+    ii- Deep Convolution GAN
 
-        iv) Laplace Pyramid GAN
+    iv) Laplace Pyramid GAN
 
-        v) Super resolution GAN
+    v) Super resolution GAN
 
-**52)How would you approach developing a solution for synchronising data from multiple cameras? What challenges might you face, and how would you overcome them?**
+### 52)How would you approach developing a solution for synchronising data from multiple cameras? What challenges might you face, and how would you overcome them?**
 
-    a) Running multiple cameras : With the help of threads we will run the cameras. parallel operations.
+ - Running multiple cameras : With the help of threads we will run the cameras. parallel operations.
+
+- Frame capture and storing : Capturing frames and attach time stamp with microseconds precision. Save frames in buffer to manage timing.
     
-    b) Frame capture and storing : Capturing frames and attach time stamp with microseconds precision. Save frames in buffer to manage timing.
+- Data alignment and preprocessing : Process the frames based on time stamps. Process frames in parallel to reduce latency.
     
-    c) Data alignment and preprocessing : Process the frames based on time stamps. Process frames in parallel to reduce latency.
+- Storage and Management : Design a storage system that can handle synchronized data streams. Implement robust error handling to deal with data loss or corruption.
+
+- latency: Use time-stamped frames and buffer data to account for latency variations. Implement Quality of Service to prioritize synchronization data.
     
-    d) Storage and Management : Design a storage system that can handle synchronized data streams. Implement robust error handling to deal with data loss or corruption.
+- Frame rates and resolution: Down sample or up sample frames to match the target synchronization rate. Use image processing techniques to align frames spatially.
 
-    e) latency: Use time-stamped frames and buffer data to account for latency variations. Implement Quality of Service to prioritize synchronization data.
+- Overhead processing : parallel processing like GPU. will run the application.
     
-    f) Frame rates and resolution: Down sample or up sample frames to match the target synchronization rate. Use image processing techniques to align frames spatially.
+- Corruption of frames : Implement error detection and correction mechanisms.
 
-    g) Overhead processing : parallel processing like GPU. will run the application.
+### 53) HSV vs RGB:
+
+- RGB: Uses Red, Green, and Blue channels. Common for image display and basic processing. Not always intuitive for color-based tasks.
     
-    h) Corruption of frames : Implement error detection and correction mechanisms.
+- HSV: Uses Hue, Saturation, and Value channels. Better for color segmentation and analysis. More robust to lighting changes and perceptually intuitive.
 
-**53) HSV vs RGB:**
+- Hue: Represents the type of color (e.g., red, green, blue). It is an angle on the color wheel, ranging from 0 to 360 degrees, where each angle corresponds to a specific color.
 
-    RGB: Uses Red, Green, and Blue channels. Common for image display and basic processing. Not always intuitive for color-based tasks.
-    
-    HSV: Uses Hue, Saturation, and Value channels. Better for color segmentation and analysis. More robust to lighting changes and perceptually intuitive.
+- Saturation: Represents the intensity or purity of the color. It ranges from 0 to 100%, where 0% is a shade of gray and 100% is the most vivid version of the color.
 
-    Hue: Represents the type of color (e.g., red, green, blue). It is an angle on the color wheel, ranging from 0 to 360 degrees, where each angle corresponds to a specific color.
+- Value: Represents the brightness or lightness of the color. It ranges from 0 to 100%, where 0% is completely black (no light) and 100% is the brightest and most intense color.
 
-    Saturation: Represents the intensity or purity of the color. It ranges from 0 to 100%, where 0% is a shade of gray and 100% is the most vivid version of the color.
+- Practical Example in Computer Vision :
 
-    Value: Represents the brightness or lightness of the color. It ranges from 0 to 100%, where 0% is completely black (no light) and 100% is the brightest and most intense color.
+    - Color Detection:
 
-    a) Practical Example in Computer Vision :
+        - RGB: Detecting a red object might involve checking if the red channel is significantly higher than the green and blue channels.
 
-        i) Color Detection:
+        - HSV: Detecting a red object would involve looking for a specific range of hue values that correspond to red, often making the task simpler and more robust to lighting changes.
 
-            RGB: Detecting a red object might involve checking if the red channel is significantly higher than the green and blue channels.
+    - Image Segmentation:
 
-            HSV: Detecting a red object would involve looking for a specific range of hue values that correspond to red, often making the task simpler and more robust to lighting changes.
+        - RGB: Segmenting an image by color can be complex because similar colors can have very different RGB values.
 
-        ii) Image Segmentation:
+        - HSV: Segmentation can be easier and more accurate because the hue channel can be used to directly identify regions of specific colors.
 
-            RGB: Segmenting an image by color can be complex because similar colors can have very different RGB values.
+### 54) Bias-Variance Trade-off**
 
-            HSV: Segmentation can be easier and more accurate because the hue channel can be used to directly identify regions of specific colors.
+- The bias-variance trade-off is the balance between the complexity of the model and its ability to generalize to new data. The goal is to find a model that minimizes both bias and variance, thus achieving low overall error.
 
-**54Bias-Variance Trade-off**
-
-    1) The bias-variance trade-off is the balance between the complexity of the model and its ability to generalize to new data. The goal is to find a model that minimizes both bias and variance, thus achieving low overall error.
-
-        a) Underfitting (High Bias and Low Variance): The model is too simple to capture the underlying patterns in the data, resulting in high error on both the training and test sets.
+    - Underfitting (High Bias and Low Variance): The model is too simple to capture the underlying patterns in the data, resulting in high error on both the training and test sets.
         
-        b) Overfitting (Low Bias and High Variance): The model is too complex and captures the noise in the training data, resulting in low training error but high test error.
+    - Overfitting (Low Bias and High Variance): The model is too complex and captures the noise in the training data, resulting in low training error but high test error.
 
-        c) Optimal Model (Balanced Bias and Variance): The model captures the underlying patterns in the data well without being overly complex. This results in low training and test error.
+    - Optimal Model (Balanced Bias and Variance): The model captures the underlying patterns in the data well without being overly complex. This results in low training and test error.
 
-    2) Techniques to Manage Bias and Variance
+- Techniques to Manage Bias and Variance
         
-        a) Increase Model Complexity: Adding more features, using more complex algorithms, or adding layers to neural networks can reduce bias.
+    - Increase Model Complexity: Adding more features, using more complex algorithms, or adding layers to neural networks can reduce bias.
 
-        b) Regularization: Techniques like L1 (Lasso) and L2 (Ridge) regularization can help reduce variance by penalizing complex models.
+    - Regularization: Techniques like L1 (Lasso) and L2 (Ridge) regularization can help reduce variance by penalizing complex models.
 
-        c) Cross-Validation: Using cross-validation can help in selecting models and hyperparameters that generalize well to new data.
-        
-        d)Ensemble Methods: Techniques like bagging (e.g., Random Forest) and boosting (e.g., AdaBoost) combine multiple models to balance bias and variance.
+    - Cross-Validation: Using cross-validation can help in selecting models and hyperparameters that generalize well to new data.
+    
+    d)Ensemble Methods: Techniques like bagging (e.g., Random Forest) and boosting (e.g., AdaBoost) combine multiple models to balance bias and variance.
 
-        e) Collecting More Data: More training data can help in reducing variance by providing more examples for the model to learn from.
+    e) Collecting More Data: More training data can help in reducing variance by providing more examples for the model to learn from.
 
 **55) what is compiler**
 
@@ -1080,23 +1095,23 @@ Negative  |		|		  |
 
     Imagine AI that learns and adapts in real-time, seamlessly integrating vast knowledge for precise, context-aware responses. This is becoming reality with retrieval-augmented generation (RAG)!
 
-    a) Query Rewriting
+    - Query Rewriting
 
-    b) Multi-Query RAG for Comprehensive Information Retrieval
+    - Multi-Query RAG for Comprehensive Information Retrieval
 
-    c) Advance RAG with Multi-Hop Retrieval
+    - Advance RAG with Multi-Hop Retrieval
 
-    d) Integrate Tool Use into RAG Systems
+    - Integrate Tool Use into RAG Systems
 
-    i) 6 Ways for Optimizing RAG Performance
+    - 6 Ways for Optimizing RAG Performance
 
-        a) Well-organized & Clearly Formatted Data
+        - Well-organized & Clearly Formatted Data
 
-        b) Presence of Contextual Metadata
+        - Presence of Contextual Metadata
 
-        c) Data Quality
+        - Data Quality
 
-        d) Granularity of Data Segmentation
+        - Granularity of Data Segmentation
 
         e) Prompt Quality
 
@@ -1108,15 +1123,15 @@ Negative  |		|		  |
 
 **59) Encoder
 
-    a) Sentense classification.
+    - Sentense classification.
 
-    b) Named entity recognition.
+    - Named entity recognition.
 
 **60) Decoder **
 
-    a) text generation
+    - text generation
 
-    b) 
+    - 
 
 **61)Vectorization**
 
@@ -1154,7 +1169,7 @@ Negative  |		|		  |
 
 **63 Problems with Normal Pointers**
 
-    a) Some Issues with normal pointers in C++ are as follows:
+    - Some Issues with normal pointers in C++ are as follows:
 
         Memory Leaks: This occurs when memory is repeatedly allocated by a program but never freed. This leads to excessive memory consumption and eventually leads to a system crash. 
 
@@ -1170,21 +1185,21 @@ Negative  |		|		  |
 
     Feature Engineering is the process of creating new features or transforming existing features to improve the performance of a machine-learning model. It involves selecting relevant information from raw data and transforming it into a format that can be easily understood by a model. The goal is to improve model accuracy by providing more meaningful and relevant information.
 
-    a) What are the Steps in Feature Engineering?
+    - What are the Steps in Feature Engineering?
     
     The steps for feature engineering vary per different Ml engineers and data scientists. Some of the common steps that are involved in most machine-learning algorithms are:
 
-        i) Data Cleansing : Data cleansing (also known as data cleaning or data scrubbing) involves identifying and removing or correcting any errors or inconsistencies in the dataset. This step is important to ensure that the data is accurate and reliable.
+        - Data Cleansing : Data cleansing (also known as data cleaning or data scrubbing) involves identifying and removing or correcting any errors or inconsistencies in the dataset. This step is important to ensure that the data is accurate and reliable.
     
-        ii) Data Transformation
+        i- Data Transformation
 
-        iii) Feature Extraction
+        ii- Feature Extraction
 
         iv) Feature Selection
             
             Feature selection involves selecting the most relevant features from the dataset for use in machine learning. This can include techniques like correlation analysis, mutual information, and stepwise regression.
     
-        vi) Feature Iteration
+        v- Feature Iteration
             Feature iteration involves refining and improving the features based on the performance of the machine learning model. This can include techniques like adding new features, removing redundant features and transforming features in different ways.
 
 **65) CNN vs DNN**
@@ -1209,7 +1224,7 @@ Negative  |		|		  |
 
 **66) Compile time vs Run time polymorphisms**
 
-    a) Compile Time Polymorphism in C++
+    - Compile Time Polymorphism in C++
 
         In compile-time polymorphism, the compiler determines which function or operation to call based on the number, types, and order of arguments. It is also called Static Polymorphism as the function calls are statically binded to its definition.
 
@@ -1219,7 +1234,7 @@ Negative  |		|		  |
 
         Operator Overloading
     
-    b) Run Time Polymorphism
+    - Run Time Polymorphism
 
         In run-time polymorphism, the decision of which function to call is determined at runtime based on the actual object type rather than the reference or pointer type. It is also known as Dynamic Polymorphism because the function calls are dynamically bonded at the runtime.
 
@@ -1229,13 +1244,13 @@ Negative  |		|		  |
 
 **67) how good your in python**
 
-    a) I have extensive knowledge of Python and can assist with a wide range of tasks, including:
+    - I have extensive knowledge of Python and can assist with a wide range of tasks, including:
 
-    b) General Programming: Writing scripts, functions, and classes.
+    - General Programming: Writing scripts, functions, and classes.
 
-    c) Data Analysis: Using libraries like Pandas, NumPy, and Matplotlib for data manipulation and visualization.
+    - Data Analysis: Using libraries like Pandas, NumPy, and Matplotlib for data manipulation and visualization.
 
-    d) Machine Learning & AI: Implementing models using TensorFlow, PyTorch, and scikit-learn.
+    - Machine Learning & AI: Implementing models using TensorFlow, PyTorch, and scikit-learn.
 
     e) Computer Vision: Working with OpenCV, PIL, and specialized libraries for deep learning models like YOLO.
 
@@ -1261,17 +1276,17 @@ Negative  |		|		  |
 
 **68)YOLOv8 Model Variants and Parameters:**
 
-    i) YOLOv8n (Nano)
+    - YOLOv8n (Nano)
 
         Parameters: ~3 million
         Purpose: Ultra-lightweight model designed for real-time performance on devices with limited computational resources like mobile devices or edge AI hardware.
 
-    ii) YOLOv8s (Small)
+    i- YOLOv8s (Small)
 
         Parameters: ~11 million
         Purpose: Small model that provides a good balance between speed and accuracy, suitable for use cases requiring real-time inference on standard hardware.
     
-    iii) YOLOv8m (Medium)
+    ii- YOLOv8m (Medium)
 
         Parameters: ~25 million
         Purpose: Medium-sized model for applications where accuracy is more important than speed, yet still viable for near real-time inference on modern GPUs.
@@ -1322,7 +1337,7 @@ Negative  |		|		  |
 
         - Automated Penetration Testing: AI can assist in simulating cyberattacks to identify potential vulnerabilities in a system before they are exploited by attackers. This helps organizations find and fix security holes more efficiently.
 
-    - Security Operations Center (SOC) Support
+    - Security Operations Center (SO- Support
 
         - Alert Triage: AI can help security teams manage the large volume of alerts generated by security systems by prioritizing them based on severity and relevance. This reduces alert fatigue for human analysts and allows them to focus on the most critical issues.
 
@@ -1450,7 +1465,7 @@ Negative  |		|		  |
         #include <vector>
         #include <iostream>
 
-        void processStream(int streamID) {
+        void processStream(int streamI- {
             // Simulate stream processing
             std::cout << "Processing stream: " << streamID << std::endl;
         }
@@ -1459,7 +1474,7 @@ Negative  |		|		  |
             int numStreams = 10;
 
             #pragma omp parallel for
-            for (int i = 0; i < numStreams; ++i) {
+            for (int i = 0; i < numStreams; ++- {
                 processStream(i);
             }
 
