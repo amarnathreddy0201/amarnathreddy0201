@@ -1830,6 +1830,52 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 > - DL excels with **unstructured data** like images, audio, and text, requiring **large datasets** and more computation.  
 
 
+
+# Question: Can you explain how BoT-SORT works in multi-object tracking?
+
+Answer:
+BoT-SORT is a multi-object tracking (MOT) algorithm that improves over ByteTrack by adding appearance features and camera motion compensation. The goal is to assign consistent IDs to objects across video frames.
+
+Here’s how it works step by step:
+
+### 1) Detection Input
+
+It takes object detections from a detector like YOLO. Each detection includes bounding box, confidence score, and class.
+
+### 2) Motion Prediction (Kalman Filter)
+
+Each existing track predicts its next position using a Kalman filter, which models the motion of objects over time.
+
+### 3) Camera Motion Compensation
+
+If the camera itself is moving (e.g., surveillance, drone), BoT-SORT adjusts predictions using global motion estimation, so the tracker is robust in dynamic scenes.
+
+### 4) Affinity Calculation (Matching Strength)
+
+For associating detections with existing tracks, BoT-SORT combines:
+
+IOU overlap (spatial consistency)
+
+Appearance features from a ReID model (visual similarity)
+
+Motion distance from the Kalman filter prediction
+
+
+### 5) Data Association (Hungarian Algorithm)
+
+Using the affinity matrix, it assigns detections to tracks with the Hungarian algorithm.
+
+Unmatched detections start new tracks, while unmatched tracks may be terminated.
+
+### 6) Track Update
+
+Tracks are updated with the matched detection’s bounding box, motion state, and appearance embedding.
+
+### 7) Final Output
+
+Each object gets a unique ID, which remains consistent across frames, even under occlusion or camera movement.
+
+
 # LINUX Interview questions
 
 ### 1) How to check server down in linux.
