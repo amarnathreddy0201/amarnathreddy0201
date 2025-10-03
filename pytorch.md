@@ -986,3 +986,27 @@ print("Report:\n", classification_report(y_test, y_pred))
     - MLP (Multi-Layer Perceptron) is a feedforward, fully connected neural network with one or more hidden layers. It uses non-linear activation functions and is trained using backpropagation with gradient descent, allowing it to learn non-linear decision boundaries.
 
 
+
+# 🚀 Optimizer Comparison: Gradient Descent vs Momentum vs Adam vs AdamW
+
+This table summarizes the differences between **GD**, **Momentum**, **Adam**, and **AdamW** with equations, strengths, and use cases.
+
+---
+
+## 🔹 Comparison Table
+
+| Optimizer | Update Rule (Equation) | Key Idea | Strengths | Weaknesses | Typical Use |
+|-----------|-------------------------|----------|-----------|-------------|-------------|
+| **Gradient Descent (GD)** | \(\theta_{t+1} = \theta_t - \eta \nabla J(\theta_t)\) | Moves opposite to gradient | Simple, baseline | Slow, oscillates in valleys | Small/simple ML problems |
+| **Momentum** | \(v_{t+1} = \beta v_t + \eta \nabla J(\theta_t)\)<br>\(\theta_{t+1} = \theta_t - v_{t+1}\) | Adds inertia (velocity) to smooth updates | Faster, reduces zig-zagging | Needs LR tuning | CNNs, vision tasks |
+| **Adam** | \(m_t = \beta_1 m_{t-1} + (1-\beta_1)\nabla J(\theta_t)\)<br>\(v_t = \beta_2 v_{t-1} + (1-\beta_2)(\nabla J(\theta_t))^2\)<br>\(\hat{m}_t = \frac{m_t}{1-\beta_1^t},\; \hat{v}_t = \frac{v_t}{1-\beta_2^t}\)<br>\(\theta_{t+1} = \theta_t - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}\) | Momentum + adaptive learning rate | Fast, works well with sparse data | Can overfit, weaker generalization | NLP, general DL |
+| **AdamW** | Same as Adam, but with **decoupled weight decay**:<br>\(\theta_{t+1} = \theta_t - \eta \left(\frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon} + \lambda \theta_t\right)\) | Adam + proper weight decay | Better generalization, default in Transformers | Slightly more hyperparams | Transformers (BERT, GPT), modern DL |
+
+---
+
+## 🔑 Interview Quick Recall
+- **GD:** Simple, follows gradient, slow.  
+- **Momentum:** Adds inertia, smoother and faster.  
+- **Adam:** Combines momentum + adaptive learning rate, very fast.  
+- **AdamW:** Adam with correct weight decay → better generalization.  
+
