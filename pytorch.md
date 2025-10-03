@@ -995,14 +995,13 @@ This table summarizes the differences between **GD**, **Momentum**, **Adam**, an
 
 ## 🔹 Comparison Table
 
-| Optimizer | Update Rule (Equation) | Key Idea | Strengths | Weaknesses | Typical Use |
-|-----------|-------------------------|----------|-----------|-------------|-------------|
-| **Gradient Descent (GD)** | \(\theta_{t+1} = \theta_t - \eta \nabla J(\theta_t)\) | Moves opposite to gradient | Simple, baseline | Slow, oscillates in valleys | Small/simple ML problems |
-| **Momentum** | \(v_{t+1} = \beta v_t + \eta \nabla J(\theta_t)\)<br>\(\theta_{t+1} = \theta_t - v_{t+1}\) | Adds inertia (velocity) to smooth updates | Faster, reduces zig-zagging | Needs LR tuning | CNNs, vision tasks |
-| **Adam** | \(m_t = \beta_1 m_{t-1} + (1-\beta_1)\nabla J(\theta_t)\)<br>\(v_t = \beta_2 v_{t-1} + (1-\beta_2)(\nabla J(\theta_t))^2\)<br>\(\hat{m}_t = \frac{m_t}{1-\beta_1^t},\; \hat{v}_t = \frac{v_t}{1-\beta_2^t}\)<br>\(\theta_{t+1} = \theta_t - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}\) | Momentum + adaptive learning rate | Fast, works well with sparse data | Can overfit, weaker generalization | NLP, general DL |
-| **AdamW** | Same as Adam, but with **decoupled weight decay**:<br>\(\theta_{t+1} = \theta_t - \eta \left(\frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon} + \lambda \theta_t\right)\) | Adam + proper weight decay | Better generalization, default in Transformers | Slightly more hyperparams | Transformers (BERT, GPT), modern DL |
+| Optimizer | Update Rule | Key Idea |
+|-----------|-------------|----------|
+| GD | θ(t+1) = θ(t) - η ∇J(θ(t)) | Simple gradient step |
+| Momentum | v(t+1) = β v(t) + η ∇J(θ(t)) <br> θ(t+1) = θ(t) - v(t+1) | Adds inertia |
+| Adam | m(t) = β1 m(t-1) + (1-β1)∇J(θ(t)) <br> v(t) = β2 v(t-1) + (1-β2)(∇J(θ(t)))² <br> θ(t+1) = θ(t) - η m̂(t) / (√v̂(t) + ε) | Adaptive LR + Momentum |
+| AdamW | Same as Adam, but <br> θ(t+1) = θ(t) - η ( m̂(t) / (√v̂(t)+ε) + λθ(t) ) | Adam + decoupled weight decay |
 
----
 
 ## 🔑 Interview Quick Recall
 - **GD:** Simple, follows gradient, slow.  
