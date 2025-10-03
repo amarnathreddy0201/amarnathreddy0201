@@ -989,7 +989,89 @@ print("Report:\n", classification_report(y_test, y_pred))
 
 # 🚀 Optimizer Comparison: Gradient Descent vs Momentum vs Adam vs AdamW
 
+## 🔹 1. Gradient Descent (GD)
+
+Answer: Gradient Descent updates parameters directly in the opposite direction of the gradient.
+
+It’s simple but can be slow and may oscillate in narrow valleys.
+
+Formula: θt+1=θt−η∇J(θt)
+
+One-liner: “GD is the baseline optimizer but suffers from slow convergence and zig-zagging.”
+
 This table summarizes the differences between **GD**, **Momentum**, **Adam**, and **AdamW** with equations, strengths, and use cases.
+
+## 🔹 2. Momentum
+
+**Answer:**  
+Momentum adds a velocity term (like inertia) so updates don’t just depend on the current gradient but also on past gradients.  
+
+This helps **speed up convergence** and **reduce oscillations** in narrow valleys.
+
+**Formula:**  
+
+- Velocity update:  
+  `v(t+1) = β * v(t) + η * ∇J(θ(t))`
+
+- Parameter update:  
+  `θ(t+1) = θ(t) - v(t+1)`
+
+**One-liner:**  
+“Momentum is like rolling a ball down a hill—it smooths updates and converges faster.”
+
+## 🔹 3. Adam (Adaptive Moment Estimation)
+
+**Answer:**  
+Adam combines **Momentum + adaptive learning rates**.  
+
+It maintains running averages of gradients (mean) and squared gradients (variance).  
+Each parameter gets its **own learning rate**, making Adam **fast and effective**, especially in NLP and sparse data.
+
+**Formula (simplified):**  
+
+- Compute biased first moment (mean of gradients):  
+  `m(t) = β1 * m(t-1) + (1 - β1) * ∇J(θ(t))`
+
+- Compute biased second moment (variance of gradients):  
+  `v(t) = β2 * v(t-1) + (1 - β2) * (∇J(θ(t)))^2`
+
+- Bias-corrected moments:  
+  `m_hat(t) = m(t) / (1 - β1^t)`  
+  `v_hat(t) = v(t) / (1 - β2^t)`
+
+- Parameter update:  
+  `θ(t+1) = θ(t) - η * m_hat(t) / (sqrt(v_hat(t)) + ε)`
+
+**One-liner:**  
+“Adam adapts the learning rate for each parameter and usually converges quickly.”
+
+
+## 🔹 4. AdamW
+
+**Answer:**  
+Adam originally didn’t handle **weight decay** correctly—it coupled it with adaptive updates.  
+
+**AdamW decouples weight decay**, leading to much better generalization, especially in large models like Transformers.
+
+**Formula (simplified):**  
+
+- Compute biased first moment (mean of gradients):  
+  `m(t) = β1 * m(t-1) + (1 - β1) * ∇J(θ(t))`
+
+- Compute biased second moment (variance of gradients):  
+  `v(t) = β2 * v(t-1) + (1 - β2) * (∇J(θ(t)))^2`
+
+- Bias-corrected moments:  
+  `m_hat(t) = m(t) / (1 - β1^t)`  
+  `v_hat(t) = v(t) / (1 - β2^t)`
+
+- Parameter update with **decoupled weight decay**:  
+  `θ(t+1) = θ(t) - η * ( m_hat(t) / (sqrt(v_hat(t)) + ε) + λ * θ(t) )`  
+  where `λ` is the weight decay factor.
+
+**One-liner:**  
+“AdamW is basically Adam with correctly implemented weight decay—it’s the default optimizer for modern deep nets.”
+
 
 ---
 
