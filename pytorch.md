@@ -993,14 +993,17 @@ This table summarizes the differences between **GD**, **Momentum**, **Adam**, an
 
 ---
 
-## 🔹 Comparison Table
 
-| Optimizer | Update Rule | Key Idea |
-|-----------|-------------|----------|
-| GD | θ(t+1) = θ(t) - η ∇J(θ(t)) | Simple gradient step |
-| Momentum | v(t+1) = β v(t) + η ∇J(θ(t)) <br> θ(t+1) = θ(t) - v(t+1) | Adds inertia |
-| Adam | m(t) = β1 m(t-1) + (1-β1)∇J(θ(t)) <br> v(t) = β2 v(t-1) + (1-β2)(∇J(θ(t)))² <br> θ(t+1) = θ(t) - η m̂(t) / (√v̂(t) + ε) | Adaptive LR + Momentum |
-| AdamW | Same as Adam, but <br> θ(t+1) = θ(t) - η ( m̂(t) / (√v̂(t)+ε) + λθ(t) ) | Adam + decoupled weight decay |
+## 🔍 Differences Between GD, Momentum, Adam, and AdamW
+
+| Optimizer | Update Rule (simplified) | Key Difference | Pros | Cons | Best Use Case |
+|-----------|---------------------------|----------------|------|------|---------------|
+| **Gradient Descent (GD)** | θ(t+1) = θ(t) - η ∇J(θ(t)) | Basic gradient step | Simple, easy to understand | Slow, oscillates in narrow valleys | Small/simple ML problems |
+| **Momentum** | v(t+1) = β v(t) + η ∇J(θ(t)) <br> θ(t+1) = θ(t) - v(t+1) | Adds "velocity" (inertia) to updates | Faster, smoother convergence | Needs LR tuning | CNNs, vision tasks |
+| **Adam** | θ(t+1) = θ(t) - η ( m̂(t) / (√v̂(t)+ε) ) | Combines **momentum + adaptive learning rate** | Fast, works well with sparse gradients | Overfits, weaker generalization | NLP, general DL |
+| **AdamW** | θ(t+1) = θ(t) - η ( m̂(t)/(√v̂(t)+ε) + λθ(t) ) | **Adam + decoupled weight decay** | Best generalization, stable | Slightly more hyperparams | Transformers, modern DL |
+
+
 
 
 ## 🔑 Interview Quick Recall
