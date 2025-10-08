@@ -1845,6 +1845,108 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 > - DL excels with **unstructured data** like images, audio, and text, requiring **large datasets** and more computation.  
 
 
+# Swapping Two Variables -- Techniques
+
+This document lists different ways to swap two variables (`a` and `b`)
+in programming.\
+Assume initially:
+
+``` python
+a = 5
+b = 10
+```
+
+------------------------------------------------------------------------
+
+## 1. Using a Temporary Variable (Classic Method)
+
+``` python
+temp = a
+a = b
+b = temp
+```
+
+------------------------------------------------------------------------
+
+## 2. Without a Temporary Variable (Arithmetic Method)
+
+Works for numbers, but beware of overflow in some languages!
+
+``` python
+a = a + b
+b = a - b
+a = a - b
+```
+
+------------------------------------------------------------------------
+
+## 3. Using Multiplication and Division
+
+Only works if both numbers are non-zero and integers.
+
+``` python
+a = a * b
+b = a / b
+a = a / b
+```
+
+------------------------------------------------------------------------
+
+## 4. Using Tuple Unpacking (Python Specific)
+
+``` python
+a, b = b, a
+```
+
+------------------------------------------------------------------------
+
+## 5. Using Bitwise XOR (Works only for integers)
+
+``` python
+a = a ^ b
+b = a ^ b
+a = a ^ b
+```
+
+------------------------------------------------------------------------
+
+## 6. Using Functions
+
+``` python
+def swap(x, y):
+    return y, x
+
+a, b = swap(a, b)
+```
+
+------------------------------------------------------------------------
+
+## 7. Using Collections (Python-specific)
+
+``` python
+lst = [a, b]
+lst.reverse()
+a, b = lst
+```
+
+------------------------------------------------------------------------
+
+## Notes:
+
+-   **Method 2 and 3** may cause overflow in some languages (like
+    C/C++/Java).\
+-   **Method 3** doesn't work if `a` or `b` is zero.\
+-   **Method 4 and 7** are Python-specific tricks.\
+-   **Method 5 (XOR)** is language-independent but works only for
+    integers.
+
+------------------------------------------------------------------------
+
+✨ Recommended in Python: Use **Tuple Unpacking** since it is clean,
+safe, and efficient.
+
+
+
 
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
 
