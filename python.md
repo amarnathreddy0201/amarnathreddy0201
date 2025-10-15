@@ -310,3 +310,64 @@ def palindrome_data(data):
 print(palindrome_data(data))  // False
 print(palindrome_data(12321)) // True
 ```
+
+### 14) Multi inheretence
+
+```
+from abc import ABC,abstractmethod
+class Narayan(ABC):
+    @abstractmethod
+    def my_function(self):
+        pass
+    
+class KondaReddy(Narayan):
+    
+    def my_function(self):
+        print("My function in KondaReddy")
+    
+    @abstractmethod
+    def my_child(self):
+        pass
+class AmarReddy(KondaReddy):
+    def my_child(self):
+        print("My child function in AmarReddy")
+    def my_child1(self):
+        print("My child function in AmarReddy")
+        
+Reddy = AmarReddy()
+ 
+Reddy.my_function()
+```
+
+### 15) Multi inheretence
+```
+class Narayan(ABC):
+    def init(self):
+        print("Narayan constructor")
+ 
+    @abstractmethod
+    def my_function(self):
+        pass
+ 
+class KondaReddy(Narayan):
+    def init(self):
+        super().init()  # Call Narayan's constructor
+        print("KondaReddy constructor")
+ 
+    def my_function(self):
+        print("My function in KondaReddy")
+ 
+    @abstractmethod
+    def my_child(self):
+        pass
+ 
+class AmarReddy(KondaReddy):
+    def init(self):
+        super().init()  # Call KondaReddy's constructor
+        print("AmarReddy constructor")
+ 
+    def my_child(self):
+        print("My child function in AmarReddy")
+ 
+Reddy = AmarReddy()
+```
