@@ -1946,6 +1946,37 @@ a, b = lst
 safe, and efficient.
 
 
+# 🚀 Interview Explanation: Reducing Latency for AWS Instance in USA Used from India
+
+“If my AWS instance is running in the USA and I need to access it from India, I’ll face higher latency because of geographical distance and network hops.
+To mitigate this, there are several solutions depending on the use case.”
+
+🧩 1. Deploy Closer to Users
+
+The first and most effective solution is to deploy the instance in an AWS region closer to India, like Mumbai (ap-south-1) or Hyderabad (ap-south-2).
+This reduces round-trip time drastically — from around 250 ms down to 30–50 ms.
+
+🌍 2. Use AWS Global Accelerator
+
+If the instance must stay in the USA, I can use AWS Global Accelerator.
+It routes traffic through the AWS global edge network, minimizing hops over the public internet and improving latency by 30–60 ms.
+
+⚡ 3. Use Amazon CloudFront (CDN)
+
+For static files or cached API responses, I can use Amazon CloudFront.
+It caches content in edge locations in India, so users get responses quickly without hitting the main server every time.
+
+🧠 4. Use Caching and Replication
+
+I can also implement caching with ElastiCache (Redis) or use database read replicas in India to reduce data access latency for read-heavy workloads.
+
+🧰 5. Optimize Application Requests
+
+At the application level, I can reduce API round trips, enable HTTP/2 or gRPC, and use asynchronous processing to hide latency from the user experience.
+
+✅ Conclusion
+
+“So overall, to mitigate latency between India and a USA AWS instance, I’d either deploy closer to the user, or use AWS Global Accelerator, CloudFront, and caching strategies to minimize response time and improve performance.”
 
 
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
