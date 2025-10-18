@@ -1979,6 +1979,53 @@ At the application level, I can reduce API round trips, enable HTTP/2 or gRPC, a
 “So overall, to mitigate latency between India and a USA AWS instance, I’d either deploy closer to the user, or use AWS Global Accelerator, CloudFront, and caching strategies to minimize response time and improve performance.”
 
 
+# 🎯 Interview Answer (Direct & Practical)
+
+“If my production model is underfitting — meaning it’s not learning enough patterns and gives poor results — I handle it in a few steps.”
+
+🧩 1. Check Model Complexity
+
+The model might be too simple for the data.
+
+I can move from a basic model (like Logistic Regression) to something more complex (like XGBoost or Neural Networks).
+
+In deep models, I may increase layers or neurons.
+
+⚙️ 2. Reduce Regularization
+
+High regularization (like strong L1/L2 or high dropout) can make the model too restricted.
+
+I reduce those penalties and retune hyperparameters.
+
+🧠 3. Add More or Better Features
+
+I perform feature engineering to capture hidden relationships — for example, interaction terms, temporal features, or domain-specific signals.
+
+More informative features help the model learn richer patterns.
+
+📊 4. Retrain with More or Latest Data
+
+In production, underfitting often happens because data patterns change.
+
+I collect more recent data, retrain the model, or use online/incremental learning to keep it updated.
+
+🧹 5. Check Data Quality and Drift
+
+I verify if input data in production differs from training data.
+
+If there’s data drift, I fix preprocessing pipelines, handle missing values, or re-align feature distributions.
+
+🔁 6. Continuous Monitoring
+
+I use MLOps tools to monitor metrics like accuracy, loss, and drift.
+
+When I detect underfitting signs, I trigger a retraining pipeline automatically.
+
+✅ Example Summary (for the interview)
+
+“In production, if my model underfits, I make it more flexible by reducing regularization, adding better features, or using a more complex algorithm.
+I also retrain with new data and monitor for data drift so the model stays accurate over time.”
+
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
 
 Answer:
