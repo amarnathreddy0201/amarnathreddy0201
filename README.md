@@ -2109,6 +2109,21 @@ Avoid overlapping experiments that can affect data integrity
 “So, A/B Testing is basically a controlled experiment that lets us compare two models or system versions using real-world data.
 It’s one of the safest and most reliable ways to validate that a new change truly improves performance before a full rollout.”
 
+
+# explain Feature Engineering and Feature Store
+
+“Feature engineering is the process of transforming raw data into meaningful features that help a machine learning model learn better.
+For example, from a timestamp, I can create features like day of the week, hour of the day, or weekend flag.
+From numerical data, I can create ratios, moving averages, or normalized values.
+These engineered features improve model performance and help capture hidden patterns.”
+
+“A feature store, on the other hand, is a centralized system that stores, manages, and serves these features for both training and real-time inference.
+It ensures that features used during training are consistent with those used in production, avoiding problems like feature drift.
+For instance, in a recommendation system, we store user interaction features in the feature store so both the training model and the live serving model use the exact same data.”
+
+“In short, feature engineering creates the features, and the feature store ensures they are reusable, consistent, and production-ready.”
+
+
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
 
 Answer:
