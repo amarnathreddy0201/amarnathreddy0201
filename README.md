@@ -2021,10 +2021,10 @@ safe, and efficient.
 		
 		When I detect underfitting signs, I trigger a retraining pipeline automatically.
 
-✅ Example Summary (for the interview)
-
-“In production, if my model underfits, I make it more flexible by reducing regularization, adding better features, or using a more complex algorithm.
-I also retrain with new data and monitor for data drift so the model stays accurate over time.”
+	✅ Example Summary (for the interview)
+	
+	“In production, if my model underfits, I make it more flexible by reducing regularization, adding better features, or using a more complex algorithm.
+	I also retrain with new data and monitor for data drift so the model stays accurate over time.”
 
 
 # “Offline learning trains the model once on a fixed dataset and retrains periodically, while online learning continuously updates the model with new incoming data.
