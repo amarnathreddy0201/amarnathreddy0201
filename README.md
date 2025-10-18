@@ -2030,6 +2030,85 @@ I also retrain with new data and monitor for data drift so the model stays accur
 # “Offline learning trains the model once on a fixed dataset and retrains periodically, while online learning continuously updates the model with new incoming data.
 Offline learning is simpler and stable, but online learning is better for dynamic, real-time environments.”
 
+
+# 💬 “Can you explain A/B Testing in detail?”
+
+🧩 1. Start with the Definition
+
+“A/B Testing is a statistical experiment used to compare two versions of a system — A (control) and B (variant) — to determine which performs better.
+It’s widely used in machine learning, marketing, and product development to make data-driven decisions.”
+
+⚙️ 2. Explain the Process Step-by-Step
+
+“The process generally involves five main steps:”
+
+Step 1: Define the Goal
+
+First, I identify what metric I want to improve — for example, click-through rate, conversion rate, or model accuracy.
+
+This metric becomes the evaluation criterion for the test.
+
+Step 2: Create Two Versions
+
+Version A → current or existing version (control).
+
+Version B → new version with changes (experiment).
+
+In ML, Version B could be a new model or updated algorithm.
+
+Step 3: Split the Audience Randomly
+
+I divide the traffic or users randomly into two groups:
+
+Group A → uses the control version
+
+Group B → uses the new version
+
+Randomization ensures both groups are statistically similar, avoiding bias.
+
+Step 4: Measure Performance
+
+Both groups use the system simultaneously.
+
+I collect data on the target metric — e.g., click rate, revenue per user, or accuracy improvement.
+
+Then I perform statistical significance testing (like a t-test) to confirm whether the difference is real or just by chance.
+
+Step 5: Decide and Deploy
+
+If Version B shows statistically significant improvement, I deploy it fully to production.
+
+If not, I keep Version A or adjust and test again.
+
+🧠 3. Give a Machine Learning Example
+
+“For example, let’s say I have a fraud detection model running in production.
+I develop a new version with better feature engineering.
+Instead of replacing the old one directly, I do an A/B test —
+I send 80% of transactions to the old model (A) and 20% to the new model (B), then compare metrics like precision, recall, and false positives.
+If model B consistently performs better, I promote it to full production.”
+
+📊 4. Key Benefits
+
+Reduces risk before full rollout
+
+Gives statistical confidence in decisions
+
+Provides real-world performance insights
+
+⚠️ 5. Points to Monitor
+
+Sample size must be large enough to ensure valid results
+
+Test duration should capture different traffic patterns
+
+Avoid overlapping experiments that can affect data integrity
+
+✅ 6. Short Summary (End with Confidence)
+
+“So, A/B Testing is basically a controlled experiment that lets us compare two models or system versions using real-world data.
+It’s one of the safest and most reliable ways to validate that a new change truly improves performance before a full rollout.”
+
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
 
 Answer:
