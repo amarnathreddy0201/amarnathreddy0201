@@ -2026,6 +2026,10 @@ When I detect underfitting signs, I trigger a retraining pipeline automatically.
 “In production, if my model underfits, I make it more flexible by reducing regularization, adding better features, or using a more complex algorithm.
 I also retrain with new data and monitor for data drift so the model stays accurate over time.”
 
+
+# “Offline learning trains the model once on a fixed dataset and retrains periodically, while online learning continuously updates the model with new incoming data.
+Offline learning is simpler and stable, but online learning is better for dynamic, real-time environments.”
+
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
 
 Answer:
