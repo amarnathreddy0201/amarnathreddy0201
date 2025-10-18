@@ -2123,6 +2123,14 @@ For instance, in a recommendation system, we store user interaction features in 
 
 “In short, feature engineering creates the features, and the feature store ensures they are reusable, consistent, and production-ready.”
 
+# What is Data Drift and Feature Drift?
+
+	Answer:
+	
+	“Data drift occurs when the overall input data distribution changes over time compared to the training data, affecting model performance.
+	Feature drift happens when a specific feature’s distribution changes over time.
+	Both can reduce accuracy, so in production we monitor distributions, set alerts, and retrain models when significant drift is detected.”
+
 
 # Question: Can you explain how BoT-SORT works in multi-object tracking?
 
