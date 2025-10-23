@@ -985,7 +985,9 @@ print("Report:\n", classification_report(y_test, y_pred))
 
     - MLP (Multi-Layer Perceptron) is a feedforward, fully connected neural network with one or more hidden layers. It uses non-linear activation functions and is trained using backpropagation with gradient descent, allowing it to learn non-linear decision boundaries.
 
+### 46) What is a model in Machine learning.
 
+	In machine learning, a model is essentially a mathematical or computational representation of a system, process, or pattern in data. It’s what “learns” from data and is used to make predictions, classifications, or decisions.
 
 # 🚀 Optimizer Comparison: Gradient Descent vs Momentum vs Adam vs AdamW
 
