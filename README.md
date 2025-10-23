@@ -1844,6 +1844,9 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 > - ML works well with **structured/tabular data** and simpler pattern recognition tasks.  
 > - DL excels with **unstructured data** like images, audio, and text, requiring **large datasets** and more computation.  
 
+### 109) What is a cross Validation?
+
+	Cross-validation is a machine learning technique for evaluating a model's performance on unseen data by repeatedly splitting the dataset into training and testing sets. It involves training the model on a subset of the data and testing it on the remaining portion, then rotating which subset is used for testing across multiple iterations. The final performance metric is typically the average of the results from all iterations, which provides a more robust and reliable estimate and helps prevent overfitting.  
 
 # Swapping Two Variables -- Techniques
 
