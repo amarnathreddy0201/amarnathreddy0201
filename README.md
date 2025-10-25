@@ -1848,6 +1848,28 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 
 	Cross-validation is a machine learning technique for evaluating a model's performance on unseen data by repeatedly splitting the dataset into training and testing sets. It involves training the model on a subset of the data and testing it on the remaining portion, then rotating which subset is used for testing across multiple iterations. The final performance metric is typically the average of the results from all iterations, which provides a more robust and reliable estimate and helps prevent overfitting.  
 
+
+### 110) Anagram
+
+def compare(d1, d2):
+    d1 = d1.replace(" ", "").lower()
+    d2 = d2.replace(" ", "").lower()
+    dic = {}
+    for d in d1:
+        dic[d] = dic.get(d, 0) + 1
+    for d in d2:
+        if d not in dic:
+            print("no anagram")
+            return False
+        dic[d] -= 1
+    if sum(dic.values()) == 0:
+        print("Anagram")
+        return True
+    else:
+        print("no anagram")
+        return False
+
+
 # Swapping Two Variables -- Techniques
 
 This document lists different ways to swap two variables (`a` and `b`)
