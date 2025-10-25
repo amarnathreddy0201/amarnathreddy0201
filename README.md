@@ -1850,7 +1850,7 @@ Deep learning, a subset of machine learning, is widely used for tasks involving 
 
 
 ### 110) Anagram
-
+```
 def compare(d1, d2):
     d1 = d1.replace(" ", "").lower()
     d2 = d2.replace(" ", "").lower()
@@ -1868,7 +1868,7 @@ def compare(d1, d2):
     else:
         print("no anagram")
         return False
-
+```
 
 # Swapping Two Variables -- Techniques
 
