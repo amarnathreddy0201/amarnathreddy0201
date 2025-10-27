@@ -1870,7 +1870,7 @@ def compare(d1, d2):
         return False
 ```
 
-### 🎯 Sample Interview Answer:
+### 🎯 Name few libraries in python for Data analysis and Scientific computation:
 
 	- Python has a rich ecosystem of libraries for data analysis and scientific computation. Some of the most important ones include:
 	
