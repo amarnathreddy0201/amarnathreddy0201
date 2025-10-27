@@ -1870,6 +1870,26 @@ def compare(d1, d2):
         return False
 ```
 
+### 🎯 Sample Interview Answer:
+
+	- Python has a rich ecosystem of libraries for data analysis and scientific computation. Some of the most important ones include:
+	
+	- NumPy: It’s the foundation of scientific computing in Python. It provides support for multi-dimensional arrays and a wide range of mathematical operations. Most other data analysis libraries are built on top of NumPy.
+	
+	- Pandas: This is used for data manipulation and analysis. It introduces powerful data structures like Series and DataFrame, which make handling structured data (like CSV or Excel files) very convenient.
+	
+	- SciPy: Built on NumPy, it’s used for scientific and technical computing — like optimization, integration, and signal processing.
+	
+	- Matplotlib and Seaborn: These are used for data visualization. Matplotlib provides low-level control to create all kinds of plots, while Seaborn simplifies the process and creates more attractive, statistical graphics.
+	
+	- Scikit-learn: A machine learning library used for data mining and predictive modeling — including classification, regression, and clustering.
+	
+	- Statsmodels: This is mainly for statistical analysis and hypothesis testing — often used in econometrics or regression analysis.
+	
+	- SymPy: Used for symbolic mathematics — like solving equations algebraically.
+	
+	- Dask: Helps scale up data analysis by enabling parallel and distributed computing with NumPy and Pandas-like syntax.
+
 # Swapping Two Variables -- Techniques
 
 This document lists different ways to swap two variables (`a` and `b`)
