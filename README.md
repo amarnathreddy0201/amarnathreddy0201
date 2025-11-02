@@ -1870,6 +1870,13 @@ def compare(d1, d2):
         return False
 ```
 
+### 111) Worst case in Computer vision
+
+The worst condition in computer vision occurs when the visual input is unclear or degraded — meaning the image doesn’t have enough information for the model to recognize objects correctly.
+Examples include low lighting, where features become too dark to detect; motion blur, where moving objects appear smeared; occlusion, when objects are partially hidden; and bad weather like fog or rain, which reduces visibility.
+
+These conditions distort or hide important visual details such as edges and textures, leading to poor model accuracy. To handle this, we use techniques like data augmentation, domain adaptation, or sensor fusion to make models more robust.
+
 ### 🎯 Name few libraries in python for Data analysis and Scientific computation:
 
 	- Python has a rich ecosystem of libraries for data analysis and scientific computation. Some of the most important ones include:
