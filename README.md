@@ -1877,6 +1877,24 @@ Examples include low lighting, where features become too dark to detect; motion 
 
 These conditions distort or hide important visual details such as edges and textures, leading to poor model accuracy. To handle this, we use techniques like data augmentation, domain adaptation, or sensor fusion to make models more robust.
 
+### 112) Count the number of times INFO, DEBUG and ERROR.
+```
+from collections import Counter
+
+count = Counter()
+
+data = ["ehchc DEBUG","rvhrubv INFO", "eugcgyer INFO ecv","yy ERROR hcb","kjvtrhbvhu"]
+
+for dat in data:
+    if "DEBUG" in  dat:
+        count["DEBUG"]+=1
+    elif "INFO" in dat:
+        count["INFO"]+=1
+
+print(count)
+```
+
+
 ### 🎯 Name few libraries in python for Data analysis and Scientific computation:
 
 	- Python has a rich ecosystem of libraries for data analysis and scientific computation. Some of the most important ones include:
