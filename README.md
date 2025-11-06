@@ -1771,7 +1771,37 @@ Mixed precision uses FP16 where safe (matrix multiplies, conv layers) and FP32 w
 
     - The main difference is that SGD uses a single, fixed learning rate for all parameters, while Adam adaptively adjusts the learning rate for each parameter individually, using momentum and past squared gradients to improve convergence speed and efficiency. SGD is simpler and may lead to better generalization in some cases, but Adam often converges much faster, making it a popular choice for many deep learning tasks.
 
+### 106) Threading in Python
+```
+import threading
+import time
+import random
+data =[]
 
+def square(num):
+    # print(f"Square: {num*num}")
+    while True:
+        print("Added data : ", num)
+        data.append(num)
+        time.sleep(0.001)
+
+def cube():
+    # print(f"Cube: {num*num*num}")
+    while True:
+        remove = data.pop()
+        print("Removed data : ", remove)
+        time.sleep(0.001)
+
+t1 = threading.Thread(target=square, args=(random.randint(0,1000000),))
+t2 = threading.Thread(target=cube, args=())
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+
+print("Done!")
+```
 
 
 ### 107) Deep Learning Applications
