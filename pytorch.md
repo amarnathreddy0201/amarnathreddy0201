@@ -1088,11 +1088,15 @@ Adam originally didn’t handle **weight decay** correctly—it coupled it with 
 | **AdamW** | θ(t+1) = θ(t) - η ( m̂(t)/(√v̂(t)+ε) + λθ(t) ) | **Adam + decoupled weight decay** | Best generalization, stable | Slightly more hyperparams | Transformers, modern DL |
 
 
-
-
 ## 🔑 Interview Quick Recall
 - **GD:** Simple, follows gradient, slow.  
 - **Momentum:** Adds inertia, smoother and faster.  
 - **Adam:** Combines momentum + adaptive learning rate, very fast.  
 - **AdamW:** Adam with correct weight decay → better generalization.  
+
+### 46) VLM vs DL
+
+![Alt text](vlm vs dl.png)
+
+![Alt text](clm vs dl1.png)
 
