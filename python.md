@@ -371,3 +371,27 @@ class AmarReddy(KondaReddy):
  
 Reddy = AmarReddy()
 ```
+
+
+### 16) Second largest number.
+
+```                                  data = [99, 4, 5, 6, 4, 33]
+# data = [5, 1, 1]
+final_array = []
+
+if len(data) == 0:
+    print("No data")
+elif len(data) == 1:
+    print("Only one element")
+else:
+    big = second = float('-inf')
+    for d in data:
+        if d > big:
+            second = big
+            big = d
+        elif big > d > second:
+            second = d
+
+    print("Largest:", big)
+    print("Second largest:", second if second != float('-inf') else "No second largest")
+```
