@@ -9,3 +9,7 @@
 ### 3) Architecture
 
 - The architecture of YOLOv8 is divided into three main components: the backbone, neck, and head. The backbone extracts features from the input image, the neck fuses these features from different scales, and the head predicts bounding boxes and class probabilities. It is built upon a convolutional neural network (CNN) and uses an advanced CSPDarknet-like structure for its backbone. 
+
+### 4) Loss in Classification:
+
+- A loss function in classification measures how well a model's predictions match the actual class labels by quantifying the error. Common examples include cross-entropy loss, used for probability-based classification, and hinge loss, often used with support vector machines to maximize the margin between classes. The goal of training is to minimize this loss function to produce more accurate predictions. 
