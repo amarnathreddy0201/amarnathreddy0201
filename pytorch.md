@@ -1100,3 +1100,21 @@ Adam originally didn’t handle **weight decay** correctly—it coupled it with 
 
 ![Alt text]("clm vs dl1.png")
 
+
+
+
+### 47) Why k=10
+- In a RAG system, we usually retrieve the top-k most relevant chunks from a vector store — and a common default is k = 10.
+The reason is that it balances recall and efficiency. Retrieving too few chunks might miss important context, while retrieving too many adds noise and increases token usage.
+Empirically, 10 gives good coverage without overloading the model’s context window or harming response quality.
+Of course, the optimal number depends on the data and can be tuned, but 10 is a solid starting point.
+
+
+
+
+
+
+
+
+
+
