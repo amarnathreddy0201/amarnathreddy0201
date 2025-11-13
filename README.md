@@ -2328,3 +2328,26 @@ user = User(id="1", name="Amarnath", age="twenty")
 ### 4) How to kill process in Linux
    ps aux | grep firefox
    kill 12345 # Replace 12345 with the actual PID
+
+
+# 🐳 Docker vs Virtual Machine 🖥️
+
+A clear comparison between **Docker containers** and **Virtual Machines (VMs)** — their architecture, performance, and use cases.
+
+---
+
+## 🧩 Concept Overview
+
+| Feature | **Docker (Container)** | **Virtual Machine (VM)** |
+|:--------|:-----------------------|:--------------------------|
+| **Definition** | Lightweight, isolated environments that share the host OS kernel. | Full-fledged systems with their own OS running on a hypervisor. |
+| **Isolation Level** | Process-level isolation. | Hardware-level isolation. |
+| **Startup Time** | Seconds. | Minutes. |
+| **Resource Usage** | Lightweight (shares kernel). | Heavy (each VM runs its own OS). |
+| **Portability** | Very portable — runs consistently across environments. | Less portable due to dependency on hypervisor and guest OS. |
+| **Performance** | Near-native (minimal overhead). | Lower performance (hypervisor overhead). |
+| **Storage** | Uses layered file system (e.g., OverlayFS). | Uses full disk image (GBs). |
+| **Use Case** | Microservices, CI/CD, lightweight deployments. | Full OS isolation, legacy app support, multiple OS environments. |
+
+---
+
