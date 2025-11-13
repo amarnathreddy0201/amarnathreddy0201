@@ -395,3 +395,18 @@ else:
     print("Largest:", big)
     print("Second largest:", second if second != float('-inf') else "No second largest")
 ```
+
+### 17) find the maximum profit you could make by buying and selling once
+```
+prices = [1, 25, 34, 65, 78]
+
+min_price = prices[0]
+max_profit = 0
+
+for price in prices:
+    profit = price - min_price
+    max_profit = max(max_profit, profit)
+    min_price = min(min_price, price)
+
+print("Maximum Profit:", max_profit)
+```
