@@ -1111,6 +1111,42 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 
 
 
+# 🔍 Retrieval Methods in RAG — Comparison Table
+
+| Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
+|:------------------|:------|:------------------|:--------------------------|:------|:------|
+| **Cosine Similarity** | Dense / Semantic | Measures angle between vectors (normalized) | General-purpose retrieval where embeddings represent semantic meaning | Fast, widely supported, normalization removes magnitude bias | Ignores vector magnitude |
+| **Dot Product (Inner Product)** | Dense / Semantic | Measures alignment without normalization | When embeddings are trained using dot product (e.g., OpenAI models) | Efficient, simple | Sensitive to vector magnitude |
+| **Euclidean Distance (L2)** | Dense / Numeric | Straight-line distance | When embeddings encode spatial meaning or numeric relationships | Intuitive, works for structured data | Sensitive to scale differences |
+| **Manhattan Distance (L1)** | Dense | Sum of absolute differences | Sparse or high-dimensional embeddings | Robust to outliers | Less smooth metric, slower optimization |
+| **BM25 / TF-IDF** | Sparse / Lexical | Keyword frequency and document frequency | When exact term match or domain-specific jargon is important | Excellent keyword matching | No semantic understanding |
+| **Hybrid (Dense + Sparse)** | Mixed | Weighted combination of dense + lexical scores | Balanced retrieval in real-world RAG systems | Combines semantics + keywords | Slightly complex to tune |
+| **Neural Reranker (Cross-Encoder)** | ML-based | Learned relevance score | Second-stage re-ranking for high-precision QA or doc ranking | Very accurate, context-aware | Slow, computationally expensive |
+| **Graph-Based Retrieval** | Structural / Knowledge | Traversal of entity relationships | Knowledge-rich or linked data (e.g., ontologies, enterprise KBs) | Understands relationships, logical connections | Requires structured graph data |
+| **ANN (Approx. Nearest Neighbor)** | Indexing Technique | Any (Cosine, Dot, L2) | Large-scale retrieval for millions of vectors | Scalable and fast | Slight recall loss |
+
+---
+
+### ✅ Quick Recommendations
+
+| Goal | Recommended Retrieval Setup |
+|:------|:-----------------------------|
+| Fast semantic search | **Cosine or Dot Product** |
+| Domain-specific keyword search | **BM25** |
+| Mix of semantics and keywords | **Hybrid (Dense + Sparse)** |
+| Highly accurate question answering | **Vector retrieval + Neural Reranker** |
+| Large-scale production systems | **ANN-based indexing (e.g., HNSW, IVF)** |
+| Knowledge graph or ontology search | **Graph-based retrieval** |
+
+---
+
+### 💡 Tip
+In production-grade RAG pipelines:
+1. Start with **vector retrieval (cosine or dot product)** for top-k candidates.  
+2. Apply a **reranker** for better precision.  
+3. Optionally add **BM25** or **hybrid scoring** for better coverage of exact keywords.
+
+
 
 
 
