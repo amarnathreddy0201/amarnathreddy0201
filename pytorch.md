@@ -1115,7 +1115,11 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
     - Forget gate: Decides which information from the previous cell state to discard.
     - Input gate: Decides which new information from the current input to store in the cell state.
     - Output gate: Decides what part of the cell state to output for the next step.
-    - Cell state: Acts as a conveyor belt for information, allowing it to flow through the network with minimal changes unless explicitly altered by the gates. 
+    - Cell state: Acts as a conveyor belt for information, allowing it to flow through the network with minimal changes unless explicitly altered by the gates.
+
+### 49) R-squared (\(R^{2}\))
+    
+    - is not an "error" but a metric that measures the proportion of the variance in the dependent variable that is predictable from the independent variables in a regression model
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
