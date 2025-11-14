@@ -1109,7 +1109,13 @@ The reason is that it balances recall and efficiency. Retrieving too few chunks 
 Empirically, 10 gives good coverage without overloading the model’s context window or harming response quality.
 Of course, the optimal number depends on the data and can be tuned, but 10 is a solid starting point.
 
-
+### 48) How RNN works
+    
+    - Gated cells: Instead of a simple feedback loop, LSTMs use a cell state and a system of gates to regulate the flow of information.
+    - Forget gate: Decides which information from the previous cell state to discard.
+    - Input gate: Decides which new information from the current input to store in the cell state.
+    - Output gate: Decides what part of the cell state to output for the next step.
+    - Cell state: Acts as a conveyor belt for information, allowing it to flow through the network with minimal changes unless explicitly altered by the gates. 
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
