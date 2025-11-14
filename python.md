@@ -410,3 +410,7 @@ for price in prices:
 
 print("Maximum Profit:", max_profit)
 ```
+
+### 18) What is docker
+
+	- Docker is an open-source platform that enables developers to build, deploy, and run applications in isolated environments called containers. It provides a standardized way to package an application and all its dependencies (libraries, system tools, code, and runtime) into a single, portable unit.
