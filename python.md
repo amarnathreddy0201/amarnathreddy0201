@@ -450,35 +450,35 @@ print("Maximum Profit:", max_profit)
 	- case2)
 	```
 	import pandas as pd
-import numpy as np
-
-# sample DataFrame
-df = pd.DataFrame({
-    'age': [10, 20, 30, 40, 50],
-    'salary': [1000, 2000, 3000, 4000, 5000],
-    'label': [0, 1, 0, 1, 0]
-})
-
-test_ratio = 0.2
-n_rows = len(df)
-n_test = int(n_rows * test_ratio)
-
-# fix random seed for reproducibility
-np.random.seed(42)
-
-# shuffle row indices
-indices = np.arange(n_rows)
-np.random.shuffle(indices)
-
-test_idx = indices[:n_test]
-train_idx = indices[n_test:]
-
-train_df = df.iloc[train_idx]
-test_df  = df.iloc[test_idx]
-
-print("---- TRAIN ----")
-print(train_df)
-
-print("\n---- TEST ----")
-print(test_df)
-```
+	import numpy as np
+	
+	# sample DataFrame
+	df = pd.DataFrame({
+	    'age': [10, 20, 30, 40, 50],
+	    'salary': [1000, 2000, 3000, 4000, 5000],
+	    'label': [0, 1, 0, 1, 0]
+	})
+	
+	test_ratio = 0.2
+	n_rows = len(df)
+	n_test = int(n_rows * test_ratio)
+	
+	# fix random seed for reproducibility
+	np.random.seed(42)
+	
+	# shuffle row indices
+	indices = np.arange(n_rows)
+	np.random.shuffle(indices)
+	
+	test_idx = indices[:n_test]
+	train_idx = indices[n_test:]
+	
+	train_df = df.iloc[train_idx]
+	test_df  = df.iloc[test_idx]
+	
+	print("---- TRAIN ----")
+	print(train_df)
+	
+	print("\n---- TEST ----")
+	print(test_df)
+	```
