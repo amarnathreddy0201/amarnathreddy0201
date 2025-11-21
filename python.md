@@ -415,26 +415,70 @@ print("Maximum Profit:", max_profit)
 
 	- Docker is an open-source platform that enables developers to build, deploy, and run applications in isolated environments called containers. It provides a standardized way to package an application and all its dependencies (libraries, system tools, code, and runtime) into a single, portable unit.
 
-### 19)
-```
-import pandas as pd
+### 19) Custom train and split data set
+
+	- case1) 
+	```
+	import pandas as pd
+	import numpy as np
+	
+	df = pd.DataFrame({
+	    "A": range(10),
+	    "B": np.random.randn(10),
+	    "label": np.arange(10)
+	})
+	
+	test_size = 0.2
+	
+	# Shuffle the rows
+	df_shuffled = df.sample(frac=1, random_state=42).reset_index(drop=True)
+	
+	test_count = int(len(df) * test_size)
+	
+	test_df = df_shuffled[:test_count]
+	train_df = df_shuffled[test_count:]
+	
+	print(len(test_df))
+	X_train = train_df.drop("label", axis=1)
+	y_train = train_df["label"]
+	
+	X_test = test_df.drop("label", axis=1)
+	y_test = test_df["label"]
+	
+	```
+
+	- case2)
+	```
+	import pandas as pd
 import numpy as np
 
+# sample DataFrame
 df = pd.DataFrame({
-    "A": range(10),
-    "B": np.random.randn(10),
-    "label": np.arange(10)
+    'age': [10, 20, 30, 40, 50],
+    'salary': [1000, 2000, 3000, 4000, 5000],
+    'label': [0, 1, 0, 1, 0]
 })
 
-test_size = 0.2
+test_ratio = 0.2
+n_rows = len(df)
+n_test = int(n_rows * test_ratio)
 
-# Shuffle the rows
-df_shuffled = df.sample(frac=1, random_state=42).reset_index(drop=True)
+# fix random seed for reproducibility
+np.random.seed(42)
 
-test_count = int(len(df) * test_size)
+# shuffle row indices
+indices = np.arange(n_rows)
+np.random.shuffle(indices)
 
-test_df = df_shuffled[:test_count]
-train_df = df_shuffled[test_count:]
+test_idx = indices[:n_test]
+train_idx = indices[n_test:]
 
-print(len(test_df))
+train_df = df.iloc[train_idx]
+test_df  = df.iloc[test_idx]
+
+print("---- TRAIN ----")
+print(train_df)
+
+print("\n---- TEST ----")
+print(test_df)
 ```
