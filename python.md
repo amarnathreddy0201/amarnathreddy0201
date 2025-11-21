@@ -414,3 +414,27 @@ print("Maximum Profit:", max_profit)
 ### 18) What is docker
 
 	- Docker is an open-source platform that enables developers to build, deploy, and run applications in isolated environments called containers. It provides a standardized way to package an application and all its dependencies (libraries, system tools, code, and runtime) into a single, portable unit.
+
+### 19)
+```
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame({
+    "A": range(10),
+    "B": np.random.randn(10),
+    "label": np.arange(10)
+})
+
+test_size = 0.2
+
+# Shuffle the rows
+df_shuffled = df.sample(frac=1, random_state=42).reset_index(drop=True)
+
+test_count = int(len(df) * test_size)
+
+test_df = df_shuffled[:test_count]
+train_df = df_shuffled[test_count:]
+
+print(len(test_df))
+```
