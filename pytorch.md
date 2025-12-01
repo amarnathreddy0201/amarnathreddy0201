@@ -266,7 +266,7 @@ print(x.clone())    # Copy of tensor
 print(torch.equal(x, x.clone()))  # True
 ```
 ### 12) Pytorch dataset and data loader
-
+```
 🔹 Dataset
 
 - Represents the entire data (images, text, numbers, etc.).
@@ -298,7 +298,7 @@ print(torch.equal(x, x.clone()))  # True
 
 - Example: Instead of fetching 1 image, DataLoader fetches a batch of 64 images at once.
 
-```
+
 from torch.utils.data import Dataset, DataLoader
 import torch
 
@@ -324,7 +324,7 @@ for batch in loader:
 ```
 
 ### 13) Components of PyTorch
-
+```
 - Tensors (torch.Tensor) → The basic data structure in PyTorch, similar to NumPy arrays, but with extra features like GPU acceleration.
 
 - Autograd → PyTorch’s automatic differentiation engine that computes gradients for tensors, which is the key for training neural networks.
@@ -338,9 +338,10 @@ for batch in loader:
 - Ecosystem Libraries → Extensions such as TorchVision (for images), TorchText (for language), and TorchAudio (for audio tasks).
 
 - CUDA Support (torch.cuda) → Lets you easily move tensors and models to GPU for faster training and computation.
+```
 
 ### 14) Role of Loss Functions in PyTorch
-
+```
 - A loss function (also called a cost function or objective function) is a mathematical function that measures how well the model’s predictions match the target values.
           
 - Roles in PyTorch training loop:
@@ -386,7 +387,7 @@ for batch in loader:
                       - CTCLoss
   
                       - Dice Loss (custom, not built-in)
-
+```
 ### 15) Common Learning Rate Schedules in PyTorch
 
 	a. StepLR
