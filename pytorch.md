@@ -1158,6 +1158,7 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 - A global minimum is the lowest point of a function over its entire domain, while a local minimum is the lowest point in a specific, smaller region of the function. A function can have only one global minimum, but it can have multiple local minima. A global minimum is also a local minimum of the region in which it is located.
 
 ### 54) The Transformer architecture leverages parallel computing in both its encoder and decoder modules, but the autoregressive nature is specific to the decoder during generation.
+```
 - Parallel Computing:
 	- Encoder: The encoder processes the entire input sequence simultaneously. Its self-attention mechanism computes the relationships between all tokens in the input sequence in parallel, allowing for efficient processing and capturing of long-range dependencies.
 	
@@ -1171,8 +1172,11 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 
 	- Parallel Computing: Both the encoder and the decoder (especially during training) utilize parallel computing for efficiency.
 Autoregressive: The decoder is the module responsible for autoregressive generation during inference, predicting tokens sequentially based on previous outputs.
+```
 
-### 54) In Natural Language Processing (NLP), especially within Transformer models and attention mechanisms, Query (Q), Key (K), and Value (V) are fundamental concepts that enable the model to understand contextual relationships between words in a sequence.
+### 55) In Natural Language Processing (NLP), especially within Transformer models and attention mechanisms, Query (Q), Key (K), and Value (V) are fundamental concepts that enable the model to understand contextual relationships between words in a sequence.
+
+```
 - 1. Query (Q):
   
 	- The query represents the information a specific word is "seeking" or "looking for" within the input sequence.
@@ -1197,7 +1201,7 @@ Autoregressive: The decoder is the module responsible for autoregressive generat
 	- Attention Weights: These similarity scores are then normalized (often using a softmax function) to produce attention weights. These weights indicate how much "attention" the current word should pay to each other word in the sequence. Higher weights signify greater relevance.
    
 	- Weighted Sum of Values: The attention weights are then used to compute a weighted sum of the Value vectors of all words in the sequence. This weighted sum creates a new, context-aware representation for the original word, incorporating information from relevant words in the sentence.
-
+```
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
