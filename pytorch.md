@@ -1122,6 +1122,31 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
     
     - is not an "error" but a metric that measures the proportion of the variance in the dependent variable that is predictable from the independent variables in a regression model
 
+### 50) What is a Vision-Language Model?
+
+	- A Vision Language Model (VLM) is an AI model that understands and processes both visual (image, video) and textual information together. These multimodal models bridge the gap between computer vision and natural language processing, enabling them to perform tasks like describing images, answering questions about their content, and generating images from text. They achieve this by converting visual data into a format that can be processed alongside text by a language model architecture. 
+
+	- How they work
+	
+		- Vision and language integration: VLMs are built on architectures that can handle both visual and textual data. They often use techniques like self-attention and cross-attention to connect visual elements with linguistic concepts.
+		
+		- Multimodal representation: Both images and text are converted into a common format, known as embeddings, that allows the model to process them in a unified way.
+		
+		- Training: They are trained on vast datasets of paired images and text, which teaches them to connect visual features to their corresponding words and phrases. 
+
+### 51) Comparison: Vision-Language Models vs LLMs vs CNNs
+
+| Feature | Vision-Language Model (VLM) | Pure Large Language Model (LLM) | Pure Convolutional Neural Network (CNN) |
+|-------|------------------------------|---------------------------------|-----------------------------------------|
+| **Modality** | Multimodal (Vision + Text) | Unimodal (Text only) | Unimodal (Vision only) |
+| **Primary Input** | Images interleaved with text prompts | Text prompts only | Images / pixel data |
+| **Primary Output** | Text (descriptions, answers, reasoning) | Text (generation, summarization, Q&A) | Classification labels, bounding boxes, segmentation masks |
+| **Core Architecture** | Vision encoder + Projector (fusion layer) + LLM decoder | Transformer-based architecture | Convolutional layers with spatial feature extraction |
+| **Capabilities** | Visual Q&A, image captioning, multimodal reasoning, general-purpose tasks via prompts | Text summarization, translation, reasoning, content creation | Image classification, object detection, segmentation, feature extraction |
+| **Flexibility** | Highly flexible; supports multiple vision tasks via prompting without retraining per task | Flexible within text-only domain | Task-specific; usually requires retraining for new tasks or classes |
+
+
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
