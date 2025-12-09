@@ -1146,7 +1146,7 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 | **Flexibility** | Highly flexible; supports multiple vision tasks via prompting without retraining per task | Flexible within text-only domain | Task-specific; usually requires retraining for new tasks or classes |
 
 ### 52) CLIP Summary
-
+```
 - CLIP uses two separate neural networks—an image encoder (like ResNet or ViT) and a text encoder (a Transformer)—to turn images and text into vectors in the same embedding space.
 
 - It is trained on large sets of image–text pairs using contrastive learning, which teaches the model to make matching pairs (image + its caption) have similar embeddings and non-matching pairs have different embeddings.
@@ -1156,6 +1156,8 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 ### 53) global minima and local minima
 
 - A global minimum is the lowest point of a function over its entire domain, while a local minimum is the lowest point in a specific, smaller region of the function. A function can have only one global minimum, but it can have multiple local minima. A global minimum is also a local minimum of the region in which it is located.
+```
+
 
 ### 54) The Transformer architecture leverages parallel computing in both its encoder and decoder modules, but the autoregressive nature is specific to the decoder during generation.
 ```
