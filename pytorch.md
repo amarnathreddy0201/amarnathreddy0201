@@ -1155,7 +1155,49 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 
 ### 53) global minima and local minima
 
-- A global minimum is the lowest point of a function over its entire domain, while a local minimum is the lowest point in a specific, smaller region of the function. A function can have only one global minimum, but it can have multiple local minima. A global minimum is also a local minimum of the region in which it is located. 
+- A global minimum is the lowest point of a function over its entire domain, while a local minimum is the lowest point in a specific, smaller region of the function. A function can have only one global minimum, but it can have multiple local minima. A global minimum is also a local minimum of the region in which it is located.
+
+### 54) The Transformer architecture leverages parallel computing in both its encoder and decoder modules, but the autoregressive nature is specific to the decoder during generation.
+- Parallel Computing:
+	- Encoder: The encoder processes the entire input sequence simultaneously. Its self-attention mechanism computes the relationships between all tokens in the input sequence in parallel, allowing for efficient processing and capturing of long-range dependencies.
+	
+	- Decoder (during training): During training, the decoder also benefits from parallel computation through a technique called "teacher forcing." The entire target sequence (shifted for prediction) can be fed into the decoder at once, and the masked self-attention ensures that each token's prediction only considers preceding tokens, maintaining the autoregressive property while still enabling parallel processing of the sequence.
+
+- Autoregressive Nature:
+
+	- Decoder (during inference/generation): The autoregressive property primarily resides in the decoder during the inference or generation phase. When generating an output sequence, the decoder predicts one token at a time, using the previously generated tokens as part of its input. This sequential generation process is inherently autoregressive. The masked self-attention within the decoder is crucial here, as it prevents the model from "cheating" by looking at future tokens in the target sequence when making a prediction.
+
+- In summary:
+
+	- Parallel Computing: Both the encoder and the decoder (especially during training) utilize parallel computing for efficiency.
+Autoregressive: The decoder is the module responsible for autoregressive generation during inference, predicting tokens sequentially based on previous outputs.
+
+### 54) In Natural Language Processing (NLP), especially within Transformer models and attention mechanisms, Query (Q), Key (K), and Value (V) are fundamental concepts that enable the model to understand contextual relationships between words in a sequence.
+- 1. Query (Q):
+  
+	- The query represents the information a specific word is "seeking" or "looking for" within the input sequence.
+ 	- For each word in a sentence, a query vector is generated, representing that word's "question" about other words' relevance.
+    
+- 2. Key (K):
+
+	- The keys represent the "metadata" or "information content" that each word in the sequence offers.
+   
+	- Every word in the sequence has a key vector, essentially describing what information that word "provides."
+   
+- 3. Value (V):
+ 
+	- The values represent the actual "content" or "meaning" of each word in the sequence.
+   
+	- Each word has a value vector that holds its contextual information, which will be used to construct a new, context-aware representation of the word.
+   
+- How they work together in Self-Attention:
+  
+	- Similarity Calculation: For a given word (represented by its Query vector), its similarity or relevance to every other word in the sequence (represented by their Key vectors) is calculated. This is typically done using a dot product.
+   
+	- Attention Weights: These similarity scores are then normalized (often using a softmax function) to produce attention weights. These weights indicate how much "attention" the current word should pay to each other word in the sequence. Higher weights signify greater relevance.
+   
+	- Weighted Sum of Values: The attention weights are then used to compute a weighted sum of the Value vectors of all words in the sequence. This weighted sum creates a new, context-aware representation for the original word, incorporating information from relevant words in the sentence.
+
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
