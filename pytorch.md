@@ -1098,9 +1098,9 @@ Adam originally didn’t handle **weight decay** correctly—it coupled it with 
 
 ### 46) VLM vs DL
 
-![Alt text]("vlm_vs_dl.png")
+![Alt text](vlm_vs_dl.png)
 
-![Alt text]("vlm_vs_dl1.png")
+![Alt text](vlm_vs_dl1.png)
 
 
 
