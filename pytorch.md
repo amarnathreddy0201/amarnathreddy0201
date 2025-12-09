@@ -555,7 +555,7 @@ print("Shape of flattened matrix:", flat_matrix.shape)
 	y = x * 2  # element-wise multiply → [2, 4, 6]
 
 ### 24) How to handle dimensional error in pytorch 
-
+```
 Check shapes → Always print(tensor.shape) before operations.
 
 Broadcasting → Works if sizes match except for 1, else reshape.
@@ -569,9 +569,10 @@ Concatenation → All tensors must match in every dimension except the one you c
 Padding / trimming → Use torch.nn.functional.pad() to equalize sizes.
 
 Batch dimension → Models expect (batch, channels, H, W) → add with .unsqueeze(0).
+```
 
 ### 25) Benefits of transfer learning
-
+```
 The main benefits of transfer learning in AI are reduced training time and data requirements, leading to lower computational costs and higher accuracy. By leveraging knowledge from pre-trained models, developers can achieve better performance with less task-specific data, making AI development more efficient and accessible.  
 
 Here's a breakdown of the benefits:
@@ -587,13 +588,13 @@ Here's a breakdown of the benefits:
 	Enhanced Generalization: Transfer learning improves a model's ability to handle unseen data, as the pre-trained model has already captured broad patterns from diverse datasets, making it more robust in real-world applications.
 	
 	Faster Prototyping: The efficiency gains in training time and data requirements allow for faster experimentation and prototyping of new AI applications.
-
+```
 ### 26) autograd vs no_grad in PyTorch
-
+```
 autograd → tracks operations for gradients (used in training).
 
 no_grad → disables gradient tracking (used in inference).
-```
+
 import torch
 import torch.nn as nn
 
