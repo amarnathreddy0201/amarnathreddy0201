@@ -1208,6 +1208,89 @@ Autoregressive: The decoder is the module responsible for autoregressive generat
 	- Weighted Sum of Values: The attention weights are then used to compute a weighted sum of the Value vectors of all words in the sequence. This weighted sum creates a new, context-aware representation for the original word, incorporating information from relevant words in the sentence.
 ```
 
+### 56) Vision-Language Models and Redundant Frames
+```
+- Overview
+
+	- This document explains how Vision-Language Models (VLMs) handle redundant or repeated frames in video or image-sequence inputs. This is a common interview question when discussing multimodal AI systems, video understanding, or transformer-based architectures.
+
+- Why Redundant Frames Aren't a Problem
+
+	- VLMs are designed to extract meaningful visual information, not to count every frame equally.
+When many frames are visually similar, the model automatically identifies and reduces their influence through its internal architecture.
+
+		- 1. Frame Embedding Reveals Redundancy
+
+			Each frame is converted into a vector embedding.
+			
+			Frame → Embedding (v1, v2, v3...)
+			
+			If the frames are redundant, their embeddings become nearly identical.
+			This similarity signals to the model that they contain the same information.
+
+		- 2. Self-Attention Down-Weights Duplicate Information
+
+			Transformers use a self-attention mechanism to relate all embeddings to each other.
+			
+			When embeddings look similar:
+			
+			The attention scores between them become uniform
+			
+			No single redundant frame gains high importance
+			
+			The model instead focuses on unique or informative frames
+			
+			This is an automatic property of self-attention — no hard-coded logic needed.
+
+		- 3. Temporal Modeling Detects “No Change”
+
+			Video VLMs include temporal components such as:
+			
+				- temporal self-attention
+			
+				- time-aware positional encodings
+			
+				- motion-awareness modules
+			
+			These layers allow the model to determine:
+			
+				- “Nothing changed between these frames.”
+			
+			Repeated frames are therefore assigned low temporal significance.
+
+		- 4. Pooling and Compression Layers Filter Redundancy
+
+			Many VLMs use compression mechanisms such as:
+			
+				- key-frame selection
+			
+				- adaptive frame weighting
+			
+				- temporal pooling
+			
+			During this process, redundant frames contribute little to the pooled representation and may be effectively ignored.
+
+		- 5. Training Teaches Models to Ignore Redundant Inputs
+
+			VLMs are trained on large-scale videos, many containing:
+			
+				- static scenes
+			
+				- slow transitions
+			
+				- long periods with repeated frames
+			
+			The training loss encourages the model to focus on new, meaningful, or action-related visual changes.
+			This teaches the model to treat redundant frames as low-value.
+
+Final effect:
+
+Redundant frames do not confuse or degrade a VLM.
+They simply contribute very little to the final representation.
+
+```
+
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
