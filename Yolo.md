@@ -42,7 +42,8 @@ The goal of training is to minimize this loss function to produce more accurate 
 ### 5) YOLO (You Only Look Once) Overview
 
          YOLO is a real-time object detection algorithm that detects objects in a single pass of a neural network.
-         It divides the image into a grid and predicts bounding boxes and class probabilities simultaneously, making it very fast and efficient.
+         It divides the image into a grid and predicts bounding boxes and class probabilities simultaneously,
+         making it very fast and efficient.
          
          - Key Features
          
