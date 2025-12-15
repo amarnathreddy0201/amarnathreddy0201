@@ -1290,6 +1290,38 @@ They simply contribute very little to the final representation.
 
 ```
 
+### 57) Vanishing vs Exploding Gradient — Interview Summary
+
+````
+    - Vanishing Gradient Problem
+
+        - Happens when gradients become too small during backpropagation.
+
+        - Early layers learn very slowly or stop learning.
+
+        - Common in deep networks and RNNs, especially with sigmoid/tanh activations.
+
+        - Impact: Model fails to learn long-term dependencies.
+
+        - Solutions: ReLU family activations, proper initialization (Xavier/He), batch normalization, residual connections, LSTM/GRU.
+
+    - Exploding Gradient Problem
+
+        - Happens when gradients become too large during backpropagation.
+
+        - Causes unstable training and large weight updates.
+
+        - Common in deep networks and RNNs.
+
+        - Impact: Loss becomes NaN or oscillates.
+
+        - Solutions: Gradient clipping, smaller learning rate, proper initialization, batch normalization, LSTM/GRU.
+
+    - One-line difference:
+
+        - Vanishing gradients stop learning; exploding gradients destabilize learning.
+```
+
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
