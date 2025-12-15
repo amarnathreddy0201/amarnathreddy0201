@@ -1341,6 +1341,31 @@ They simply contribute very little to the final representation.
 
 ```
 
+### 59) Pooling Methods – Quick Summary
+```
+    - Max Pooling: Keeps strongest feature (most common)
+
+    - Average Pooling: Smooths features by averaging
+
+    - Min Pooling: Takes minimum value (rare)
+
+    - Sum Pooling: Adds values in window
+
+    - Global Pooling: One value per feature map (reduces parameters)
+
+    - L2 / Norm Pooling: Uses magnitude (√sum of squares)
+
+    - Stochastic Pooling: Random selection (reduces overfitting)
+
+    - Adaptive Pooling: Fixed output size for any input
+
+    - Fractional Pooling: Non-integer pooling regions
+
+    - Attention-Based Pooling: Learns weighted importance
+
+Most used: Max Pooling, Average Pooling, Global Average Pooling.
+```
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
