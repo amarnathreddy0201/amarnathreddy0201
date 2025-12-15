@@ -1292,7 +1292,7 @@ They simply contribute very little to the final representation.
 
 ### 57) Vanishing vs Exploding Gradient — Interview Summary
 
-````
+```
     - Vanishing Gradient Problem
 
         - Happens when gradients become too small during backpropagation.
@@ -1320,6 +1320,7 @@ They simply contribute very little to the final representation.
     - One-line difference:
 
         - Vanishing gradients stop learning; exploding gradients destabilize learning.
+
 ```
 
 
