@@ -1323,6 +1323,23 @@ They simply contribute very little to the final representation.
 
 ```
 
+### 58) CNN Example with Dropout
+```
+	model = nn.Sequential(
+    nn.Conv2d(3, 32, kernel_size=3),
+    nn.ReLU(),
+    nn.MaxPool2d(2),
+    nn.Dropout2d(0.25),
+
+    nn.Flatten(),
+    nn.Linear(32 * 15 * 15, 128),
+    nn.ReLU(),
+    nn.Dropout(0.5),
+
+    nn.Linear(128, 10)
+)
+
+```
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
