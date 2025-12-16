@@ -482,3 +482,26 @@ print("Maximum Profit:", max_profit)
 	print("\n---- TEST ----")
 	print(test_df)
 	```
+
+### 20) Sum == user input
+```
+data = [i for i in range(10)]
+user_input = 5
+seen_numbers = {} # Dictionary to store numbers we have encountered
+
+print(f"Finding pairs in {data} that sum to {user_input}:")
+
+for num in data:
+    complement = user_input - num
+    # Check if the 'complement' needed to reach the target is already in our dictionary
+   
+    if complement in seen_numbers:
+        # If it is, we found a pair!
+        print(complement, num)
+    
+    # Add the current number to the dictionary for future checks
+    # The value stored (e.g., 'True') doesn't matter much here, just the key presence.
+    seen_numbers[num] = True
+```
+
+
