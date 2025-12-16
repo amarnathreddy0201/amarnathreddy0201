@@ -1366,6 +1366,16 @@ They simply contribute very little to the final representation.
 Most used: Max Pooling, Average Pooling, Global Average Pooling.
 ```
 
+### 60) The core difference lies in how they manage their latent space and their intended purpose.
+```
+- A standard autoencoder is primarily used for dimensionality reduction or data compression. It learns a deterministic mapping, taking an input and squeezing it down to a single, fixed point in a latent space. The problem is that this latent space can be disjointed and irregular, so you can't easily sample from it to create new data.
+
+- A variational autoencoder, on the other hand, is a generative model. It doesn't map inputs to single points; instead, the encoder outputs the parameters of a probability distribution—specifically, the mean and variance—for that input in the latent space.
+
+- By adding a regularization term to the loss function (the KL divergence term), the VAE forces its latent space to be smooth and continuous, typically conforming to a normal distribution. This structure allows us to sample new points meaningfully from this smooth distribution to generate diverse, novel data that looks realistic.
+So, the AE compresses data deterministically, while the VAE learns
+```
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
