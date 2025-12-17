@@ -504,4 +504,50 @@ for num in data:
     seen_numbers[num] = True
 ```
 
+### 21) Monkey patching in Python
+```
+is a technique for dynamically modifying or extending a module, class, or object at runtime without changing its original source code. This is possible due to Python's dynamic nature, where attributes and methods can be reassigned as easily as variables.
 
+- Example: Patching a class method 
+
+# original_module.py
+class MyClass:
+    def say_hello(self):
+        return "Hello, Welcome to TutorialsPoint!"
+
+# patch_script.py
+from original_module import MyClass
+
+# Define a new function with the desired behavior
+def new_say_hello(self):
+    return "Greetings from a patch!"
+
+# Monkey patch MyClass with the new function
+MyClass.say_hello = new_say_hello
+
+# Test the patched method
+obj = MyClass()
+print(obj.say_hello())
+# Output: Greetings from a patch!
+
+-  Example: Patching a module-level function
+
+# my_module.py
+def original_function():
+    return "Original behavior"
+
+# main_script.py
+import my_module
+
+# Define a new function
+def new_function():
+    return "Patched behavior"
+
+# Monkey patch the function in the module
+my_module.original_function = new_function
+
+# Test the patched function
+print(my_module.original_function())
+# Output: Patched behavior
+
+```
