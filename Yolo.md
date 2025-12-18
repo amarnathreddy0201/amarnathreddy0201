@@ -92,3 +92,25 @@ The goal of training is to minimize this loss function to produce more accurate 
                   - Drones & robotics
          
                   - Retail analytics 
+
+### 6) Segment Anything Model
+```
+The Segment Anything Model (SAM) is a groundbreaking computer vision foundation model by Meta AI designed for promptable image segmentation.
+
+Its architecture is composed of three main, modular components: an image encoder, a prompt encoder, and a mask decoder, which work together to generate segmentation masks based on user input.
+
+
+- SAM Architecture Components
+
+The design is optimized for flexibility and real-time performance after initial image processing, mirroring the prompt-based interaction of large language models (LLMs).
+
+         - Image Encoder: This is a large, pre-trained Vision Transformer (ViT), specifically a Masked Autoencoder (MAE) pre-trained variant. Its function is to process the high-resolution input image once and transform it into a dense, rich image embedding (a 16x downsampled feature map). This computationally intensive step runs only one time per image and forms the basis for subsequent, faster interactions.
+
+         - Prompt Encoder: This lightweight component processes the user's input, or "prompt", into embedding vectors. It handles two types of prompts:
+
+                  - Sparse prompts: These include points (clicks indicating foreground/background), bounding boxes, or free-form text. They are converted into positional encodings and learned embeddings.
+
+                  - Dense prompts: These are existing segmentation masks, embedded using convolutional layers and added element-wise to the image embedding.
+
+         - Mask Decoder: This is an efficient, lightweight Transformer-based decoder that maps the image embedding, prompt embeddings, and a special output token to generate segmentation masks.It uses bidirectional cross-attention to refine the interaction between the image and prompt information. To handle potential ambiguity in prompts (e.g., a single click could refer to a shirt or the person wearing it), the model predicts multiple masks (typically three) along with their confidence (IoU) scores. 
+```
