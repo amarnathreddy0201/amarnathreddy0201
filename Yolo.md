@@ -118,9 +118,10 @@ The design is optimized for flexibility and real-time performance after initial 
 
                   - Dense prompts: These are existing segmentation masks, embedded using convolutional layers and added element-wise to the image embedding.
 
-         - Mask Decoder: This is an efficient, lightweight Transformer-based decoder that maps the image embedding, prompt embeddings, and a special output token to generate segmentation masks.
+         - Mask Decoder:
+                  - This is an efficient, lightweight Transformer-based decoder that maps the image embedding, prompt embeddings, and a special output token to generate segmentation masks.
 
-                           It uses bidirectional cross-attention to refine the interaction between the image and prompt information.
+                  - It uses bidirectional cross-attention to refine the interaction between the image and prompt information.
 
                   To handle potential ambiguity in prompts (e.g., a single click could refer to a shirt or the person wearing it), the model predicts multiple masks (typically three) along with their confidence (IoU) scores. 
 ```
