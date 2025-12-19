@@ -125,3 +125,40 @@ The design is optimized for flexibility and real-time performance after initial 
 
                   To handle potential ambiguity in prompts (e.g., a single click could refer to a shirt or the person wearing it), the model predicts multiple masks (typically three) along with their confidence (IoU) scores. 
 ```
+### 7) yolo object detection and drawing bounding boxes.
+```
+from ultralytics import YOLO
+import cv2
+model = YOLO()
+classes = {
+  "class": {
+    "0": "person","1": "bicycle","2": "car","3": "motorcycle","4": "airplane","5": "bus","6": "train","7": "truck","8": "boat",
+    "9": "traffic light","10": "fire hydrant","11": "stop sign","12": "parking meter","13": "bench","14": "bird","15": "cat",
+    "16": "dog","17": "horse","18": "sheep","19": "cow","20": "elephant","21": "bear","22": "zebra","23": "giraffe",
+    "24": "backpack","25": "umbrella","26": "handbag","27": "tie","28": "suitcase","29": "frisbee","30": "skis",
+    "31": "snowboard","32": "sports ball","33": "kite","34": "baseball bat","35": "baseball glove","36": "skateboard","37": "surfboard",
+    "38": "tennis racket","39": "bottle","40": "wine glass","41": "cup","42": "fork","43": "knife",
+    "44": "spoon","45": "bowl","46": "banana","47": "apple","48": "sandwich","49": "orange","50": "brocolli","51": "carrot",
+    "52": "hot dog","53": "pizza","54": "donut","55": "cake","56": "chair","57": "couch","58": "potted plant",
+    "59": "bed","60": "dining table","61": "toilet","62": "tv","63": "laptop","64": "mouse","65": "remote","66": "keyboard",
+    "67": "cell phone","68": "microwave","69": "oven","70": "toaster","71": "sink","72": "refrigerator","73": "book",
+    "74": "clock","75": "vase","76": "scissors","77": "teddy bear","78": "hair drier","79": "toothbrush"
+  }
+}
+image= cv2.imread(r"D:\Amar_documents\car\istockphoto-1045979216-612x612.jpg")
+height,width = image.shape[:2]
+results = model.predict(image)
+data = results[0].boxes
+clss = data.cls
+confs = data.conf
+boxes = data.xyxy
+for i in range(len(boxes)):
+    box = boxes[i]
+    box= list(box)
+    cls= int(clss[i].numpy())
+    cls = classes["class"][str(cls)]
+    cv2.rectangle(image,(int(box[0]),int(box[1])),(int(box[2]),int(box[3])),1,2)
+    cv2.putText(image,str(cls),(int((box[0]+box[2])//2), int((box[1]+box[3])//2)),color=(255,200,34),thickness=2,fontScale=1,fontFace=1)
+cv2.imshow("image results" , image)
+cv2.waitKey(0)
+```
