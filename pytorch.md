@@ -1376,6 +1376,23 @@ Most used: Max Pooling, Average Pooling, Global Average Pooling.
 So, the AE compresses data deterministically, while the VAE learns
 ```
 
+### 61) SAM Architecture – Summary
+
+![Alt text](sam.png)
+
+The Segment Anything Model (SAM) is a prompt-based image segmentation model composed of three main components:
+
+Image Encoder
+A Vision Transformer (ViT) that converts the input image into a dense feature representation. This step is computationally expensive but done only once.
+
+Prompt Encoder
+Encodes user inputs such as points, bounding boxes, or masks into embeddings that describe what region or object to segment.
+
+Mask Decoder
+A lightweight transformer that combines image embeddings and prompt embeddings using attention mechanisms to generate one or more segmentation masks along with confidence scores.
+
+Overall, SAM enables zero-shot, flexible, and interactive segmentation by decoupling image understanding from user prompts.
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
