@@ -1396,9 +1396,16 @@ Overall, SAM enables zero-shot, flexible, and interactive segmentation by decoup
 
 ### Q: How do you check whether a face recognition model correctly maps the same person?
 ```
-I evaluate the model at the embedding level by comparing face feature vectors. Images of the same person should produce embeddings that are close together, while different identities should be far apart. I measure this using cosine similarity or Euclidean distance, analyze intra-class versus inter-class separation, apply a similarity threshold, and validate performance using metrics like verification accuracy, FAR, and FRR.
+I evaluate the model at the embedding level by comparing face feature vectors.
+
+
+Images of the same person should produce embeddings that are close together, while different identities should be far apart.
+
+
+I measure this using cosine similarity or Euclidean distance, analyze intra-class versus inter-class separation, apply a similarity threshold, and validate performance using metrics like verification accuracy, FAR, and FRR.
 
 ```
+
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
