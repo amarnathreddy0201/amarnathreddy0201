@@ -1394,7 +1394,7 @@ A lightweight transformer that combines image embeddings and prompt embeddings u
 Overall, SAM enables zero-shot, flexible, and interactive segmentation by decoupling image understanding from user prompts.
 
 
-### Q: How do you check whether a face recognition model correctly maps the same person?
+### 62): How do you check whether a face recognition model correctly maps the same person?
 ```
 I evaluate the model at the embedding level by comparing face feature vectors.
 
@@ -1404,6 +1404,29 @@ Images of the same person should produce embeddings that are close together, whi
 
 I measure this using cosine similarity or Euclidean distance, analyze intra-class versus inter-class separation, apply a similarity threshold, and validate performance using metrics like verification accuracy, FAR, and FRR.
 
+```
+
+### 63) User prompt vs User prompt
+```
+A system prompt defines the role, behavior, and rules of the AI model.
+
+It controls how the model should respond, such as tone, format, and limitations.
+
+The system prompt is set at the beginning and usually hidden from the user.
+
+A user prompt is the actual question or task given by the user.
+
+User prompts change with every interaction.
+
+The system prompt has higher priority than the user prompt.
+
+If there is a conflict, the system prompt always overrides the user prompt.
+
+System prompts are used to enforce safety and consistency.
+
+User prompts focus on what problem needs to be solved.
+
+Together, they help guide the model to produce accurate and controlled responses.
 ```
 
 
