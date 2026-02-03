@@ -595,6 +595,16 @@ autograd → tracks operations for gradients (used in training).
 
 no_grad → disables gradient tracking (used in inference).
 
+Interview explanation of torch.no_grad()
+
+torch.no_grad() is used to temporarily disable gradient computation in PyTorch.
+
+It is mainly used during model inference or evaluation, where backpropagation is not needed. By turning off gradient tracking,
+
+it reduces memory usage and improves performance, since PyTorch does not store intermediate values for gradient calculation.
+
+In short, it helps make inference faster and more memory-efficient.
+
 import torch
 import torch.nn as nn
 
