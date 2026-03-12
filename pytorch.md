@@ -1439,6 +1439,47 @@ User prompts focus on what problem needs to be solved.
 Together, they help guide the model to produce accurate and controlled responses.
 ```
 
+### 64) 𝗤𝘂𝗮𝗻𝘁𝗶𝘇𝗮𝘁𝗶𝗼𝗻 𝗶𝗻 𝗠𝗟 & 𝗗𝗟 — 𝗺𝗼𝗿𝗲 𝘁𝗵𝗮𝗻 𝗷𝘂𝘀𝘁 𝗼𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻
+```
+Quantization is the process of reducing numerical precision in machine learning models , for example, converting weights and activations from 32-bit floating point (FP32) to INT8 or INT16 , while preserving model accuracy as much as possible.
+
+Quantization helps us make models:
+ ✔️ Faster
+ ✔️ Smaller
+ ✔️ Energy efficient
+ ✔️ Ready for edge & real-time deployment
+
+But here’s the key question:
+ 𝘞𝘩𝘢𝘵 𝘥𝘰 𝘸𝘦 𝘭𝘰𝘴𝘦 𝘸𝘩𝘦𝘯 𝘸𝘦 𝘨𝘢𝘪𝘯 𝘴𝘱𝘦𝘦𝘥?
+
+🧠 𝗧𝗵𝗶𝘀 𝗶𝘀 𝘄𝗵𝗲𝗿𝗲 𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗶𝗯𝗹𝗲 𝗔𝗜 𝘀𝘁𝗲𝗽𝘀 𝗶𝗻
+
+Responsible AI is not a policy document.
+ It’s a 𝗱𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗺𝗶𝗻𝗱𝘀𝗲𝘁.
+
+When applying quantization, developers should ask:
+🔹 Does accuracy drop in critical scenarios?
+🔹 Are some data groups affected more than others?
+🔹 Does the model behave consistently in low-light, noise, or rare cases?
+🔹 Can we explain what changed after optimization?
+🔹 Are limitations clearly documented?
+
+⚖️ 𝗧𝗵𝗲 𝘁𝗵𝗼𝘂𝗴𝗵𝘁 𝗽𝗿𝗼𝗰𝗲𝘀𝘀 𝘁𝗼 𝗰𝗮𝗿𝗿𝘆 𝗳𝗼𝗿𝘄𝗮𝗿𝗱
+
+Optimization says:
+ ➡️ “Make it faster.”
+
+Responsibility says:
+ ➡️ “Make it trustworthy.”
+
+Both must move together.
+
+𝘘𝘶𝘢𝘯𝘵𝘪𝘻𝘢𝘵𝘪𝘰𝘯 𝘮𝘢𝘬𝘦𝘴 𝘈𝘐 𝘦𝘧𝘧𝘪𝘤𝘪𝘦𝘯𝘵.
+𝘙𝘦𝘴𝘱𝘰𝘯𝘴𝘪𝘣𝘭𝘦 𝘈𝘐 𝘮𝘢𝘬𝘦𝘴 𝘈𝘐 𝘳𝘦𝘭𝘪𝘢𝘣𝘭𝘦.
+
+In production systems, success is not just about deploying lightweight models - 𝗶𝘁’𝘀 𝗮𝗯𝗼𝘂𝘁 𝗱𝗲𝗽𝗹𝗼𝘆𝗶𝗻𝗴 𝗺𝗼𝗱𝗲𝗹𝘀 𝘁𝗵𝗮𝘁 𝗽𝗲𝗼𝗽𝗹𝗲 𝗰𝗮𝗻 𝘁𝗿𝘂𝘀𝘁.
+```
+
 
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
