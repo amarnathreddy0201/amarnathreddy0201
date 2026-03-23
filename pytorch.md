@@ -485,7 +485,7 @@ Some save memory, some provide precesion, some enable GPU Acceleration.
 	torch.zeros_like(torch.tensor(9)) // 0 is the output.
 
 ### 21) torch shape
-
+```
 import torch
 
 // Create a 1D tensor
@@ -516,6 +516,7 @@ flat_matrix = matrix.reshape(-1) # Flatten to 1D
 print("\nOriginal matrix:", matrix)
 print("Flattened matrix:", flat_matrix)
 print("Shape of flattened matrix:", flat_matrix.shape)
+```
 
 ### 22) What is pythorch and how does it differ from the tensorflow
 	
