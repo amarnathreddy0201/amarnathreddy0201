@@ -145,3 +145,15 @@ import pandas as pd
 
 marks = pd.Series([85, 90, 78], index=['Alice', 'Bob', 'Charlie'])
 print(marks)
+
+
+## Reading 100 GB of DATA from CSV file.
+```
+import pandas as pd
+
+chunk_size = 10_000  # number of rows per chunk
+
+for chunk in pd.read_csv("large_file.csv", chunksize=chunk_size):
+    # process each chunk
+    print(chunk.head())
+```
