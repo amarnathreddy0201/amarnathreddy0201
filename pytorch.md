@@ -1190,8 +1190,9 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 
 - After training, CLIP can understand how images relate to natural language and can perform tasks like zero-shot classification, image–text search, and powering generative models.
 
+```
 ### 53) global minima and local minima
-
+```
 - A global minimum is the lowest point of a function over its entire domain, while a local minimum is the lowest point in a specific, smaller region of the function. A function can have only one global minimum, but it can have multiple local minima. A global minimum is also a local minimum of the region in which it is located.
 ```
 
