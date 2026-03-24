@@ -1467,7 +1467,7 @@ I measure this using cosine similarity or Euclidean distance, analyze intra-clas
 
 ```
 
-### 63) User prompt vs User prompt
+### 63) System prompt vs User prompt
 ```
 A system prompt defines the role, behavior, and rules of the AI model.
 
