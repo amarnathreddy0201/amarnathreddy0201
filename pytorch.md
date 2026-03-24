@@ -1417,18 +1417,30 @@ Most used: Max Pooling, Average Pooling, Global Average Pooling.
 
 ### 60) The core difference lies in how they manage their latent space and their intended purpose.
 ```
-- A standard autoencoder is primarily used for dimensionality reduction or data compression. It learns a deterministic mapping, taking an input and squeezing it down to a single, fixed point in a latent space. The problem is that this latent space can be disjointed and irregular, so you can't easily sample from it to create new data.
+- A standard autoencoder is primarily used for dimensionality reduction or data compression.
 
-- A variational autoencoder, on the other hand, is a generative model. It doesn't map inputs to single points; instead, the encoder outputs the parameters of a probability distribution—specifically, the mean and variance—for that input in the latent space.
+	It learns a deterministic mapping, taking an input and squeezing it down to a single, fixed point in a latent space.
 
-- By adding a regularization term to the loss function (the KL divergence term), the VAE forces its latent space to be smooth and continuous, typically conforming to a normal distribution. This structure allows us to sample new points meaningfully from this smooth distribution to generate diverse, novel data that looks realistic.
-So, the AE compresses data deterministically, while the VAE learns
+	The problem is that this latent space can be disjointed and irregular, so you can't easily sample from it to create new data.
+
+- A variational autoencoder, on the other hand, is a generative model.
+
+	It doesn't map inputs to single points; instead, the encoder outputs the parameters of a probability distribution—specifically,
+
+	the mean and variance—for that input in the latent space.
+
+- By adding a regularization term to the loss function (the KL divergence term), the VAE forces its latent space to be smooth and continuous,
+
+	typically conforming to a normal distribution. This structure allows us to sample new points meaningfully from this smooth distribution to generate diverse,
+
+	novel data that looks realistic. So, the AE compresses data deterministically, while the VAE learns
 ```
 
 ### 61) SAM Architecture – Summary
 
 ![Alt text](sam.png)
 
+```
 The Segment Anything Model (SAM) is a prompt-based image segmentation model composed of three main components:
 
 Image Encoder
@@ -1441,7 +1453,7 @@ Mask Decoder
 A lightweight transformer that combines image embeddings and prompt embeddings using attention mechanisms to generate one or more segmentation masks along with confidence scores.
 
 Overall, SAM enables zero-shot, flexible, and interactive segmentation by decoupling image understanding from user prompts.
-
+```
 
 ### 62): How do you check whether a face recognition model correctly maps the same person?
 ```
