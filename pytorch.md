@@ -832,9 +832,16 @@ a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. 
 
 ### 38) what is the use of activation function in neural network?**
 
-    a) Activation functions, also known as transfer functions, are used in neural networks to calculate the weighted sum of inputs and biases, which then determines if a neuron can be activated. They also manipulate the presented data and produce an output for the neural network that contains the parameters in the data. Activation functions can be linear or nonlinear, and are used to control the output of neural networks across different domains.
+    a) Activation functions, also known as transfer functions, are used in neural networks to calculate the weighted sum of inputs and biases, 
+		
+		which then determines if a neuron can be activated.
+	
+	They also manipulate the presented data and produce an output for the neural network that contains the parameters in the data. Activation functions can be linear or 			
+		nonlinear, and are used to control the output of neural networks across different domains.
     
-    b) Activation functions introduce non-linearities to neural networks, enabling them to learn complex patterns and make non-linear predictions. For example, the sigmoid function is commonly used in artificial neural networks, particularly in feedforward neural networks, because it allows the network to introduce non-linearity into the model, which allows the neural network to learn more complex decision boundaries.
+    b) Activation functions introduce non-linearities to neural networks, enabling them to learn complex patterns and make non-linear predictions.
+	
+		For example, the sigmoid function is commonly used in artificial neural networks, particularly in feedforward neural networks, because it allows the network to 				introduce non-linearity into the model, which allows the neural network to learn more complex decision boundaries.
 
     c) Here are some examples of activation functions:
     
@@ -848,11 +855,15 @@ a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. 
     
         3) tanh:
     
-            Also called the hyperbolic tangent activation function, this mathematical function commonly used in artificial neural networks for their hidden layers. It transforms input values to produce output values between -1 and 1.
+            Also called the hyperbolic tangent activation function, this mathematical function commonly used in artificial neural networks for their hidden layers.
+			
+				It transforms input values to produce output values between -1 and 1.
     
         4) Linear:
     
-            Also known as "no activation," or "identity function" (multiplied x1.0), this function doesn't do anything to the weighted sum of the input, it simply spits out the value it was given.
+            Also known as "no activation," or "identity function" (multiplied x1.0), this function doesn't do anything to the weighted sum of the input,
+			
+				it simply spits out the value it was given.
 
 ### 39) how to prevent cnnimage classification overfittinng using pytorch?
 
