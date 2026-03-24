@@ -920,18 +920,30 @@ a) PyTorch and TensorFlow are two of the most popular deep learning frameworks. 
 
     a) Leverages Prelearned Features:
         
-        Pretrained models are typically trained on large and diverse datasets, such as ImageNet, which contains millions of images across thousands of categories. These models learn a variety of features that are generally useful for many tasks, such as edges, textures, and shapes. When you use a pretrained model, you start with a network that already knows these useful features, providing a strong foundation.
+        Pretrained models are typically trained on large and diverse datasets, such as ImageNet, which contains millions of images across thousands of categories.
+		
+		These models learn a variety of features that are generally useful for many tasks, such as edges, textures, and shapes. When you use a pretrained model,
+		
+		you start with a network that already knows these useful features, providing a strong foundation.
 
     b) Reduces Training Time:
-        Training a deep neural network from scratch can be computationally expensive and time-consuming. Transfer learning allows you to start from an already trained model, requiring only a fraction of the time and computational resources to fine-tune the network for your specific task.
+        Training a deep neural network from scratch can be computationally expensive and time-consuming.
+		
+		Transfer learning allows you to start from an already trained model, requiring only a fraction of the time
+		
+		and computational resources to fine-tune the network for your specific task.
 
     c) Improves Performance with Limited Data:
         
-        When you have a small dataset, training a deep network from scratch can lead to overfitting. Pretrained models, on the other hand, help mitigate this by starting from a set of weights that generalize well, thus needing fewer data to fine-tune the model effectively.
+        When you have a small dataset, training a deep network from scratch can lead to overfitting. Pretrained models,
+		
+		on the other hand, help mitigate this by starting from a set of weights that generalize well, thus needing fewer data to fine-tune the model effectively.
 
     d) Provides Robust Feature Extraction:
         
-        Pretrained models are effective feature extractors. Even if you only retrain the final layers, the earlier layers can provide robust and meaningful features for your specific problem, improving overall model performance.
+        Pretrained models are effective feature extractors. Even if you only retrain the final layers,
+		
+		the earlier layers can provide robust and meaningful features for your specific problem, improving overall model performance.
     
     Practical Steps to Leverage Transfer Learning for Better Results:
 
