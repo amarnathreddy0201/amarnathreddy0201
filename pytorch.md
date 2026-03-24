@@ -1200,13 +1200,27 @@ Of course, the optimal number depends on the data and can be tuned, but 10 is a 
 ### 54) The Transformer architecture leverages parallel computing in both its encoder and decoder modules, but the autoregressive nature is specific to the decoder during generation.
 ```
 - Parallel Computing:
-	- Encoder: The encoder processes the entire input sequence simultaneously. Its self-attention mechanism computes the relationships between all tokens in the input sequence in parallel, allowing for efficient processing and capturing of long-range dependencies.
+	- Encoder: The encoder processes the entire input sequence simultaneously.
+
+	Its self-attention mechanism computes the relationships between all tokens in the input sequence in parallel,
+
+	allowing for efficient processing and capturing of long-range dependencies.
 	
-	- Decoder (during training): During training, the decoder also benefits from parallel computation through a technique called "teacher forcing." The entire target sequence (shifted for prediction) can be fed into the decoder at once, and the masked self-attention ensures that each token's prediction only considers preceding tokens, maintaining the autoregressive property while still enabling parallel processing of the sequence.
+	- Decoder (during training): During training, the decoder also benefits from parallel computation through a technique called "teacher forcing."
+
+		The entire target sequence (shifted for prediction) can be fed into the decoder at once, and the masked self-attention ensures
+
+		that each token's prediction only considers preceding tokens, maintaining the autoregressive property while still enabling parallel processing of the sequence.
 
 - Autoregressive Nature:
 
-	- Decoder (during inference/generation): The autoregressive property primarily resides in the decoder during the inference or generation phase. When generating an output sequence, the decoder predicts one token at a time, using the previously generated tokens as part of its input. This sequential generation process is inherently autoregressive. The masked self-attention within the decoder is crucial here, as it prevents the model from "cheating" by looking at future tokens in the target sequence when making a prediction.
+	- Decoder (during inference/generation): The autoregressive property primarily resides in the decoder during the inference or generation phase.
+
+		When generating an output sequence, the decoder predicts one token at a time, using the previously generated tokens as part of its input.
+
+		This sequential generation process is inherently autoregressive. The masked self-attention within the decoder is crucial here,
+
+		as it prevents the model from "cheating" by looking at future tokens in the target sequence when making a prediction.
 
 - In summary:
 
