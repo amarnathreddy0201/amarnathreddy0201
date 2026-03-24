@@ -147,7 +147,7 @@ marks = pd.Series([85, 90, 78], index=['Alice', 'Bob', 'Charlie'])
 print(marks)
 
 
-## Reading 100 GB of DATA from CSV file.
+## 🔹14. Reading 100 GB of DATA from CSV file.
 ```
 import pandas as pd
 
