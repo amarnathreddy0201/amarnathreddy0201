@@ -134,3 +134,14 @@ A quick reference guide for commonly used **Pandas functions**, organized by cat
 
 ---
 
+
+## 🔹13. What is series in pandas
+
+A Series in pandas is a one-dimensional labeled array that holds data along with an index. It is similar to a single column in a table.”
+
+Example:
+
+import pandas as pd
+
+marks = pd.Series([85, 90, 78], index=['Alice', 'Bob', 'Charlie'])
+print(marks)
