@@ -60,12 +60,16 @@ print(divide(10, 0))  # ❌ handled by decorator → prints error
 ```
 
 ### 3) List vs Array
-
-	In Python, a list is a built-in data structure that can hold elements of different data types, like integers, strings, or even other lists. It’s very flexible but not memory-efficient when handling large amounts of numeric data.
-
-    An array, on the other hand, comes from the array module. It’s more restricted because it can only hold elements of the same type, but it’s more memory-efficient for large numerical data.
-
 ```
+	In Python, a list is a built-in data structure that can hold elements of different data types, like integers, strings, or even other lists.
+	
+		It’s very flexible but not memory-efficient when handling large amounts of numeric data.
+
+    An array, on the other hand, comes from the array module.
+		
+		It’s more restricted because it can only hold elements of the same type, but it’s more memory-efficient for large numerical data.
+
+
   // Python list can hold mixed types
 	my_list = [1, "hello", 3.14]
 	print(my_list)  # [1, 'hello', 3.14]
