@@ -1532,6 +1532,13 @@ In production systems, success is not just about deploying lightweight models - 
 ```
 
 
+### 65) data integration vs data ingestion
+```
+Data ingestion focuses on reliably moving data from multiple sources into a centralized system, either in batch or real-time.
+
+Data integration ensures that this data is consistent, cleaned, and transformed into a unified format, enabling meaningful analytics and business insights.
+```
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
