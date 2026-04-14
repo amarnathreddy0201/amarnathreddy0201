@@ -1533,6 +1533,8 @@ In production systems, success is not just about deploying lightweight models - 
 
 
 ### 65) data integration vs data ingestion
+
+![Alt text](DEandDI.png)
 ```
 Data ingestion focuses on reliably moving data from multiple sources into a centralized system, either in batch or real-time.
 
