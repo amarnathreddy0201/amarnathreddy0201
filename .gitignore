@@ -1,6 +1,6 @@
 data
 
-
+*.jpg
 images
 models
 augmentation_data/*.jpg
