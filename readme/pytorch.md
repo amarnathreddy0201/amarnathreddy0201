@@ -1541,6 +1541,13 @@ Data ingestion focuses on reliably moving data from multiple sources into a cent
 Data integration ensures that this data is consistent, cleaned, and transformed into a unified format, enabling meaningful analytics and business insights.
 ```
 
+### 66) Pre-train vs Fine tune
+```
+Pre-training is the initial large-scale training phase where the model learns general language patterns, grammar, reasoning, and contextual understanding from huge datasets.
+Fine-tuning is a second stage where we adapt that model to a specific domain or task using smaller labeled datasets.
+Pre-training gives broad intelligence, while fine-tuning improves task-specific accuracy and behavior
+```
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
