@@ -1548,6 +1548,53 @@ Fine-tuning is a second stage where we adapt that model to a specific domain or 
 Pre-training gives broad intelligence, while fine-tuning improves task-specific accuracy and behavior
 ```
 
+### 67) Create a FastAPI POST endpoint that accepts a list of numerical features and returns their sum in JSON format using Pydantic validation.
+
+```
+from typing import List
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+
+class FeaturesRequest(BaseModel):
+    features: List[float]
+
+
+@app.post("/sum")
+def sum_features(data: FeaturesRequest):
+    total = sum(data.features)
+
+    return {
+        "features": data.features,
+        "sum": total
+    }
+```
+
+### 68) Optimization Technique
+```
+Model Optimization: Techniques like quantization, distillation, and pruning are used to reduce model size and computation time. Quantization converts model precision from FP32 to INT8/FP16 for faster inference, distillation creates smaller lightweight models, and pruning removes unnecessary parameters to improve execution speed.
+
+Inference Optimization: Dynamic batching, batch size tuning, and optimized runtimes such as TensorRT or ONNX Runtime help improve inference performance. Dynamic batching processes multiple requests together for better GPU utilization, while batch tuning balances latency and throughput.
+
+Hardware Optimization: GPU acceleration and FP16 inference are commonly used to speed up deep learning workloads. GPUs enable parallel computation, and half-precision inference reduces memory usage and increases processing speed.
+
+API Optimization: Async APIs in FastAPI, connection pooling, and streaming responses improve request handling efficiency. Asynchronous APIs support high concurrency, connection pooling minimizes overhead, and streaming provides partial responses faster for better user experience.
+
+Data Optimization: Tokenization caching, parallel preprocessing, and efficient file formats such as Parquet or Arrow reduce preprocessing latency. These techniques help avoid repeated computation and speed up data loading pipelines.
+
+Caching Techniques: Redis caching and model warmup are widely used in production systems. Redis stores frequent responses for near-instant retrieval, while model warmup prevents cold-start latency by loading models during startup.
+
+Infrastructure Optimization: Load balancing and autoscaling improve scalability and response time. Load balancers distribute traffic across multiple servers, and autoscaling automatically adjusts resources based on workload.
+
+Database Optimization: Database indexing and vector databases improve retrieval speed. Indexing accelerates query performance, while vector databases such as FAISS or Pinecone enable fast semantic search for embeddings.
+
+LLM Optimization: KV cache and context window reduction are important for large language models. KV caching reuses transformer attention states for faster token generation, and reducing context size lowers computational overhead.
+
+Monitoring and Observability: Latency monitoring using metrics like P95 and P99 helps identify production bottlenecks. Tools such as Prometheus and Grafana are commonly used to monitor system performance and optimize response times.
+```
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
