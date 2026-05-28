@@ -1595,6 +1595,15 @@ LLM Optimization: KV cache and context window reduction are important for large 
 Monitoring and Observability: Latency monitoring using metrics like P95 and P99 helps identify production bottlenecks. Tools such as Prometheus and Grafana are commonly used to monitor system performance and optimize response times.
 ```
 
+### 69) Hugging face, Torch, 
+```
+Pandas is used for preprocessing structured data, Hugging Face provides pretrained transformer models, and PyTorch executes the deep learning computations.
+
+In production, batch processing is used to process multiple requests together for efficient GPU utilization and higher throughput.
+
+Typically, the pipeline is exposed through FastAPI and optimized using GPU inference, async APIs, and model caching.
+```
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
