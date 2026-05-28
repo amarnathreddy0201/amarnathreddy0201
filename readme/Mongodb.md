@@ -205,3 +205,31 @@ print("Collection Stats:", db.command("collstats", "people"))
 collection.drop()
 client.drop_database("mydatabase")
 client.close()
+
+
+
+
+
+### Create a FastAPI POST endpoint that accepts a list of numerical features and returns their sum in JSON format using Pydantic validation.
+
+```
+from typing import List
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+
+class FeaturesRequest(BaseModel):
+    features: List[float]
+
+
+@app.post("/sum")
+def sum_features(data: FeaturesRequest):
+    total = sum(data.features)
+
+    return {
+        "features": data.features,
+        "sum": total
+    }
+```
