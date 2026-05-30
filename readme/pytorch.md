@@ -1604,6 +1604,10 @@ In production, batch processing is used to process multiple requests together fo
 Typically, the pipeline is exposed through FastAPI and optimized using GPU inference, async APIs, and model caching.
 ```
 
+### 70) LLM Optimization
+
+![Alt text](Optimization.png)
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
