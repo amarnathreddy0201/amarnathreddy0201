@@ -555,3 +555,7 @@ print(my_module.original_function())
 # Output: Patched behavior
 
 ```
+
+### 22) Devops
+
+![Alt text](devops.png)
