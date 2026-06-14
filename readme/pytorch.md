@@ -1608,6 +1608,23 @@ Typically, the pipeline is exposed through FastAPI and optimized using GPU infer
 
 ![Alt text](Optimization.png)
 
+### Decision tree vs Mini Max algorithm
+
+| Feature | Decision Tree | Min-Max Tree |
+|---------|--------------|--------------|
+| Purpose | Used for classification and regression in machine learning. | Used for decision-making in two-player adversarial games. |
+| Domain | Machine Learning, Data Mining | Game Theory, Artificial Intelligence |
+| Structure | Nodes represent feature tests; leaves represent predictions. | Nodes represent game states; leaves represent utility/payoff values. |
+| Decision Process | Chooses splits based on entropy, Gini index, etc. | Uses the Minimax algorithm to maximize gain and minimize loss. |
+| Players Involved | No opponent involved. | Two players: MAX and MIN. |
+| Output | Class label or numerical value. | Best move or action for a player. |
+| Evaluation Criteria | Information Gain, Gini Impurity, Variance Reduction. | Utility function or heuristic evaluation. |
+| Learning | Learns from training data. | Does not learn; searches game states. |
+| Search Depth | Usually fixed after training. | Explores game tree to a specified depth. |
+| Applications | Spam detection, medical diagnosis, customer churn prediction. | Chess, Tic-Tac-Toe, Checkers, Connect Four. |
+| Example | Predict whether an email is spam. | Determine the best move in a chess game. |
+| Goal | Predict outcomes from data. | Find the optimal strategy against an opponent. |
+
 # 🔍 Retrieval Methods in RAG — Comparison Table
 
 | Retrieval Method | Type | Similarity Metric | When It Helps (Use Case) | Pros | Cons |
