@@ -889,3 +889,620 @@ For engineers working in **LLMs**, **Vision-Language Models (VLMs)**, or **Gener
 There is no single solution to overcome context window limitations. Modern LLM systems combine multiple techniques such as **RAG**, **context compression**, **memory augmentation**, **efficient attention mechanisms**, and **long-context models** to build scalable, efficient, and high-performing AI applications.
 
 The optimal strategy depends on the application requirements, available computational resources, latency constraints, and the size of the knowledge base.
+
+## Q29. Maintaining Context in Large Language Models (LLMs)
+
+### Overview
+
+Large Language Models (LLMs) have a fixed context window, meaning they can only process a limited number of input tokens at once. To build conversational AI, assistants, coding copilots, and enterprise applications, maintaining context across multiple interactions is essential.
+
+This document explains the most common techniques used to preserve context in LLM applications.
+
+---
+
+### 1. Conversation History
+
+The simplest way to maintain context is by sending previous conversation messages along with the current user query.
+
+### Example
+
+```
+System:
+You are an AI assistant.
+
+User:
+What is Machine Learning?
+
+Assistant:
+Machine Learning is...
+
+User:
+Explain supervised learning.
+```
+
+The LLM understands that the second question refers to the previous discussion.
+
+### Advantages
+
+- Easy to implement
+- Maintains conversational flow
+
+### Limitations
+
+- Context grows continuously
+- Eventually exceeds the model's context window
+
+---
+
+### 2. Sliding Context Window
+
+Instead of sending the entire conversation history, keep only the most recent interactions.
+
+### Example
+
+```
+Conversation
+
+Message 1
+Message 2
+...
+Message 20
+
+↓
+
+Keep only
+
+Message 15
+Message 16
+Message 17
+Message 18
+Message 19
+Message 20
+```
+
+### Advantages
+
+- Constant memory usage
+- Faster inference
+
+### Limitations
+
+- Older information is forgotten
+
+---
+
+### 3. Conversation Summarization
+
+Summarize older parts of the conversation and replace them with a concise summary.
+
+### Workflow
+
+```
+Conversation
+
+↓
+
+Summarizer
+
+↓
+
+Conversation Summary
+
+↓
+
+Current Conversation
+
+↓
+
+LLM
+```
+
+### Example
+
+Instead of
+
+```
+100 conversation messages
+```
+
+Store
+
+```
+Summary:
+"The user is building a RAG chatbot using LangChain."
+```
+
+### Advantages
+
+- Preserves important information
+- Saves tokens
+
+---
+
+### 4. Memory Buffer
+
+Store all previous interactions in memory.
+
+```
+User
+
+↓
+
+Memory Buffer
+
+↓
+
+LLM
+```
+
+### Suitable For
+
+- Short conversations
+- Small chatbots
+
+### Limitation
+
+Memory size increases continuously.
+
+---
+
+### 5. Buffer Window Memory
+
+Store only the last **N** interactions.
+
+Example
+
+```
+Memory Size = 5
+
+Message 96
+Message 97
+Message 98
+Message 99
+Message 100
+```
+
+Older messages are discarded.
+
+---
+
+### 6. Summary Memory
+
+Combine summarization with conversation history.
+
+```
+Conversation
+
+↓
+
+Summarize Older Messages
+
+↓
+
+Conversation Summary
+
++
+
+Recent Messages
+
+↓
+
+LLM
+```
+
+This provides both long-term understanding and recent context.
+
+---
+
+### 7. Vector Memory (Semantic Memory)
+
+Instead of storing messages sequentially, convert them into embeddings and store them in a vector database.
+
+### Workflow
+
+```
+Conversation
+
+↓
+
+Embeddings
+
+↓
+
+Vector Database
+
+↓
+
+Similarity Search
+
+↓
+
+Relevant Memories
+
+↓
+
+LLM
+```
+
+### Vector Databases
+
+- FAISS
+- Chroma
+- Pinecone
+- Weaviate
+- Milvus
+- Qdrant
+
+### Advantages
+
+- Retrieves only relevant memories
+- Scales to millions of interactions
+
+---
+
+### 8. Knowledge Graph Memory
+
+Represent entities and relationships as a graph.
+
+### Example
+
+```
+User
+
+↓
+
+Lives in Bangalore
+
+↓
+
+Works at ABC
+
+↓
+
+Interested in LLMs
+```
+
+When the user asks:
+
+```
+Suggest AI meetups near me.
+```
+
+The system retrieves:
+
+- Bangalore
+- AI Interest
+
+instead of the full conversation.
+
+### Advantages
+
+- Structured memory
+- Better reasoning
+
+---
+
+### 9. Retrieval-Augmented Memory (RAG)
+
+Combine conversation history with external knowledge.
+
+```
+User Query
+
+↓
+
+Retrieve Documents
+
+↓
+
+Retrieve Conversation Memory
+
+↓
+
+Combine
+
+↓
+
+LLM
+```
+
+### Advantages
+
+- Personal context
+- External knowledge
+- Accurate responses
+
+---
+
+### 10. Long-Term Memory
+
+Store important user information permanently.
+
+### Example
+
+```
+User Preferences
+
+↓
+
+Database
+
+↓
+
+Retrieve When Needed
+
+↓
+
+LLM
+```
+
+Examples
+
+- Preferred programming language
+- Favorite framework
+- Name
+- Time zone
+- Learning goals
+
+### Applications
+
+- AI assistants
+- Customer support
+- Personalized tutoring
+
+---
+
+### 11. KV Cache
+
+During text generation, cache the attention key-value pairs.
+
+```
+Prompt
+
+↓
+
+KV Cache
+
+↓
+
+Next Token
+
+↓
+
+Reuse Cache
+```
+
+### Advantages
+
+- Faster inference
+- Reduced computation
+
+> **Note:** KV Cache accelerates generation but does **not** preserve conversational memory across sessions.
+
+---
+
+### 12. Prefix Cache
+
+Cache the shared system prompt or instruction.
+
+```
+System Prompt
+
+↓
+
+Cache Once
+
+↓
+
+User Prompt
+
+↓
+
+LLM
+```
+
+### Advantages
+
+- Faster response
+- Reduced computation
+- Lower latency
+
+---
+
+### 13. Session-Based Memory
+
+Maintain context only during a user's active session.
+
+```
+Session Start
+
+↓
+
+Conversation
+
+↓
+
+Memory
+
+↓
+
+Session End
+
+↓
+
+Delete Memory
+```
+
+Used in
+
+- Chatbots
+- Customer support
+- Web applications
+
+---
+
+### 14. Persistent Memory
+
+Store important information in a database.
+
+```
+User
+
+↓
+
+Database
+
+↓
+
+Retrieve
+
+↓
+
+LLM
+```
+
+Technologies
+
+- PostgreSQL
+- MongoDB
+- Redis
+- SQLite
+
+---
+
+### 15. Agent Memory
+
+Modern AI agents maintain multiple memory types.
+
+```
+                 User Query
+                      │
+        ┌─────────────┴─────────────┐
+        │                           │
+ Short-Term Memory          Long-Term Memory
+        │                           │
+        └─────────────┬─────────────┘
+                      │
+               Tool Memory
+                      │
+              Retrieved Documents
+                      │
+                     LLM
+```
+
+Frameworks
+
+- LangGraph
+- AutoGen
+- CrewAI
+- Letta
+- MemGPT
+
+---
+
+### Best Practices
+
+### Keep Recent Messages
+
+Always include the most recent conversation.
+
+---
+
+### Summarize Older Conversations
+
+Replace long histories with concise summaries.
+
+---
+
+### Retrieve Relevant Memories
+
+Use semantic search instead of loading everything.
+
+---
+
+### Store User Preferences Separately
+
+Keep long-term preferences in a database rather than the prompt.
+
+---
+
+### Use RAG
+
+Retrieve both:
+
+- Relevant documents
+- Relevant conversation history
+
+---
+
+### Use Memory Hierarchy
+
+```
+Current Conversation
+        │
+        ▼
+Short-Term Memory
+        │
+        ▼
+Conversation Summary
+        │
+        ▼
+Vector Memory
+        │
+        ▼
+Long-Term Database
+```
+
+---
+
+### Comparison
+
+| Technique | Best For | Scalability |
+|------------|----------|-------------|
+| Conversation History | Simple Chatbots | ⭐⭐ |
+| Sliding Window | Recent Context | ⭐⭐⭐ |
+| Summary Memory | Long Conversations | ⭐⭐⭐⭐ |
+| Vector Memory | Semantic Retrieval | ⭐⭐⭐⭐⭐ |
+| Knowledge Graph | Structured Facts | ⭐⭐⭐⭐ |
+| RAG Memory | Enterprise AI | ⭐⭐⭐⭐⭐ |
+| Session Memory | Temporary Chats | ⭐⭐⭐ |
+| Persistent Memory | Personalized AI | ⭐⭐⭐⭐⭐ |
+| Agent Memory | Autonomous Agents | ⭐⭐⭐⭐⭐ |
+
+---
+
+### Recommended Architecture
+
+```
+                  User Query
+                       │
+                       ▼
+            Recent Conversation
+                       │
+                       ▼
+          Conversation Summary
+                       │
+                       ▼
+          Vector Memory Retrieval
+                       │
+                       ▼
+        Long-Term User Preferences
+                       │
+                       ▼
+        External Knowledge (RAG)
+                       │
+                       ▼
+             Prompt Construction
+                       │
+                       ▼
+                     LLM
+                       │
+                       ▼
+                  Final Response
+```
+
+---
+
+### Conclusion
+
+Maintaining context in LLMs requires combining multiple strategies rather than relying solely on the model's context window. A production-ready system typically integrates **recent conversation history**, **conversation summaries**, **semantic memory (vector databases)**, **persistent user preferences**, and **RAG**. This layered approach enables scalable, personalized, and context-aware AI applications while staying within the model's token limits.
