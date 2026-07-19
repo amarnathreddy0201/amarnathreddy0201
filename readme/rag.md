@@ -435,13 +435,13 @@ Accuracy generally increases from Naive → Advanced → Agentic RAG.
 
 ## Q28. Overcoming Context Window Limitations in Large Language Models (LLMs)
 
-## Overview
+### Overview
 
 Large Language Models (LLMs) have a fixed **context window**, which limits the number of input tokens they can process in a single request. When documents, conversations, or codebases exceed this limit, several techniques can be used to effectively overcome or mitigate the constraint.
 
 ---
 
-# 1. Retrieval-Augmented Generation (RAG)
+### 1. Retrieval-Augmented Generation (RAG)
 
 Retrieval-Augmented Generation (RAG) retrieves only the most relevant information instead of sending the entire dataset to the LLM.
 
@@ -485,7 +485,7 @@ LLM
 
 ---
 
-# 2. Context Compression
+### 2. Context Compression
 
 Instead of passing the complete document, compress it into a smaller representation.
 
@@ -518,7 +518,7 @@ LLM
 
 ---
 
-# 3. Sliding Window
+### 3. Sliding Window
 
 Split long text into overlapping chunks and process them sequentially.
 
@@ -538,7 +538,7 @@ Window 3 :                    [160 ---------------- 260]
 
 ---
 
-# 4. Hierarchical Summarization
+### 4. Hierarchical Summarization
 
 Summarize large documents recursively.
 
@@ -571,7 +571,7 @@ LLM
 
 ---
 
-# 5. Memory-Augmented LLMs
+### 5. Memory-Augmented LLMs
 
 Maintain different types of memory outside the context window.
 
@@ -598,7 +598,7 @@ Maintain different types of memory outside the context window.
 
 ---
 
-# 6. KV Cache (Key-Value Cache)
+### 6. KV Cache (Key-Value Cache)
 
 During autoregressive generation, previously computed attention keys and values are cached.
 
@@ -626,7 +626,7 @@ Reuse Cached KV
 
 ---
 
-# 7. Prefix Cache / Prompt Cache
+### 7. Prefix Cache / Prompt Cache
 
 Reuse computation for common system prompts.
 
@@ -658,7 +658,7 @@ User C
 
 ---
 
-# 8. Sparse Attention
+### 8. Sparse Attention
 
 Instead of every token attending to every other token, attention is restricted.
 
@@ -701,7 +701,7 @@ Important Tokens Only
 
 ---
 
-# 9. FlashAttention
+### 9. FlashAttention
 
 FlashAttention is an optimized attention algorithm designed for modern GPUs.
 
@@ -720,7 +720,7 @@ FlashAttention is an optimized attention algorithm designed for modern GPUs.
 
 ---
 
-# 10. State Space Models (SSMs)
+### 10. State Space Models (SSMs)
 
 Alternative architectures replace self-attention with state-space mechanisms.
 
@@ -737,7 +737,7 @@ Alternative architectures replace self-attention with state-space mechanisms.
 
 ---
 
-# 11. Chunk-and-Reason
+### 11. Chunk-and-Reason
 
 Retrieve and reason over information incrementally.
 
@@ -776,7 +776,7 @@ Answer
 
 ---
 
-# 12. Agentic Retrieval
+### 12. Agentic Retrieval
 
 AI agents iteratively retrieve information as needed.
 
@@ -813,7 +813,7 @@ Final Answer
 
 ---
 
-# 13. Fine-Tuning
+### 13. Fine-Tuning
 
 Store domain-specific knowledge within model weights instead of prompts.
 
@@ -830,7 +830,7 @@ Store domain-specific knowledge within model weights instead of prompts.
 
 ---
 
-# 14. Long Context Models
+### 14. Long Context Models
 
 Use models that natively support larger context windows.
 
@@ -847,7 +847,7 @@ Use models that natively support larger context windows.
 
 ---
 
-# Comparison of Techniques
+### Comparison of Techniques
 
 | Technique | Best Use Case | Advantages |
 |------------|---------------|------------|
@@ -868,7 +868,7 @@ Use models that natively support larger context windows.
 
 ---
 
-# Recommended Learning Path
+### Recommended Learning Path
 
 For engineers working in **LLMs**, **Vision-Language Models (VLMs)**, or **Generative AI**, the following progression is recommended:
 
@@ -884,7 +884,7 @@ For engineers working in **LLMs**, **Vision-Language Models (VLMs)**, or **Gener
 
 ---
 
-# Conclusion
+### Conclusion
 
 There is no single solution to overcome context window limitations. Modern LLM systems combine multiple techniques such as **RAG**, **context compression**, **memory augmentation**, **efficient attention mechanisms**, and **long-context models** to build scalable, efficient, and high-performing AI applications.
 
