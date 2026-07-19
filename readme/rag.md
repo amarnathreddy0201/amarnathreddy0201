@@ -890,6 +890,7 @@ There is no single solution to overcome context window limitations. Modern LLM s
 
 The optimal strategy depends on the application requirements, available computational resources, latency constraints, and the size of the knowledge base.
 
+
 ## Q29. Maintaining Context in Large Language Models (LLMs)
 
 ### Overview
@@ -1506,3 +1507,566 @@ Long-Term Database
 ### Conclusion
 
 Maintaining context in LLMs requires combining multiple strategies rather than relying solely on the model's context window. A production-ready system typically integrates **recent conversation history**, **conversation summaries**, **semantic memory (vector databases)**, **persistent user preferences**, and **RAG**. This layered approach enables scalable, personalized, and context-aware AI applications while staying within the model's token limits.
+
+
+## Q30) Small Language Model (SLM) Hyperparameters
+
+### Overview
+
+Hyperparameters are configuration settings that control how a Small Language Model (SLM) is trained, fine-tuned, or used for inference. Choosing the right hyperparameters significantly impacts model performance, training stability, memory usage, and inference speed.
+
+---
+
+### 1. Learning Rate
+
+Controls how much the model weights are updated after each optimization step.
+
+**Formula**
+
+\[
+W_{new} = W_{old} - \eta \nabla L
+\]
+
+Where:
+- **η** = Learning rate
+- **L** = Loss
+
+### Typical Values
+
+| Model Size | Learning Rate |
+|------------|---------------|
+| Fine-tuning | 1e-5 – 5e-5 |
+| LoRA | 1e-4 – 3e-4 |
+| QLoRA | 2e-4 |
+| Pretraining | 1e-4 – 1e-3 |
+
+---
+
+### 2. Batch Size
+
+Number of training samples processed before updating model weights.
+
+```
+Batch Size = 32
+
+Input
+
+Sample 1
+Sample 2
+...
+Sample 32
+
+↓
+
+Forward Pass
+
+↓
+
+Backward Pass
+
+↓
+
+Weight Update
+```
+
+### Effects
+
+Large Batch
+- Faster training
+- Higher GPU memory usage
+- More stable gradients
+
+Small Batch
+- Less memory
+- Noisier gradients
+- Better generalization in some cases
+
+Typical Values
+
+```
+1
+2
+4
+8
+16
+32
+64
+```
+
+---
+
+### 3. Epochs
+
+One complete pass over the training dataset.
+
+```
+Dataset
+
+↓
+
+Epoch 1
+
+↓
+
+Epoch 2
+
+↓
+
+Epoch 3
+```
+
+Typical
+
+- Fine-tuning: 1–5
+- Pretraining: Hundreds or thousands
+
+---
+
+### 4. Sequence Length (Context Length)
+
+Maximum number of tokens processed in one input.
+
+Examples
+
+```
+512 Tokens
+
+1024 Tokens
+
+2048 Tokens
+
+4096 Tokens
+
+8192 Tokens
+
+32768 Tokens
+```
+
+Longer context
+
+Pros
+- More context
+- Better reasoning
+
+Cons
+- Higher memory usage
+- Slower training
+
+---
+
+### 5. Optimizer
+
+Updates model parameters during training.
+
+Common Optimizers
+
+- Adam
+- AdamW
+- SGD
+- Adafactor
+- Lion
+
+Most LLM fine-tuning uses
+
+```
+AdamW
+```
+
+---
+
+### 6. Weight Decay
+
+Regularization to prevent overfitting.
+
+Typical Values
+
+```
+0
+
+0.01
+
+0.05
+
+0.1
+```
+
+---
+
+### 7. Warmup Steps
+
+Gradually increase the learning rate at the beginning of training.
+
+```
+Learning Rate
+
+      ________
+     /
+    /
+___/
+
+Training Steps
+```
+
+Typical
+
+```
+3%
+
+5%
+
+10%
+```
+
+of total training steps.
+
+---
+
+### 8. Gradient Accumulation
+
+Simulates a larger batch size without increasing GPU memory usage.
+
+Example
+
+```
+Mini Batch = 4
+
+Gradient Accumulation = 8
+
+Effective Batch
+
+4 × 8 = 32
+```
+
+---
+
+### 9. Gradient Clipping
+
+Limits gradient magnitude to prevent exploding gradients.
+
+Typical
+
+```
+1.0
+```
+
+---
+
+### 10. Dropout
+
+Randomly disables neurons during training.
+
+```
+Neuron
+
+↓
+
+Dropped (Probability = p)
+```
+
+Typical Values
+
+```
+0.1
+
+0.2
+
+0.3
+```
+
+---
+
+### 11. Maximum Training Steps
+
+Stop training after a fixed number of optimizer updates.
+
+Example
+
+```
+1000 Steps
+
+5000 Steps
+
+10000 Steps
+```
+
+---
+
+### 12. Scheduler
+
+Controls how the learning rate changes during training.
+
+Common Schedulers
+
+- Linear
+- Cosine
+- Cosine with Restarts
+- Polynomial
+- Constant
+
+Most Common
+
+```
+Cosine
+
+Linear
+```
+
+---
+
+### 13. Precision
+
+Controls numerical precision during training.
+
+| Precision | Memory | Speed |
+|------------|--------|-------|
+| FP32 | High | Slow |
+| FP16 | Medium | Fast |
+| BF16 | Medium | Fast |
+| INT8 | Low | Very Fast |
+| INT4 | Very Low | Fast |
+
+---
+
+### 14. LoRA Hyperparameters
+
+If using LoRA fine-tuning:
+
+### Rank (r)
+
+```
+4
+
+8
+
+16
+
+32
+
+64
+```
+
+### Alpha
+
+```
+16
+
+32
+
+64
+```
+
+### Dropout
+
+```
+0.05
+
+0.1
+```
+
+Target Modules
+
+```
+q_proj
+
+k_proj
+
+v_proj
+
+o_proj
+```
+
+---
+
+### 15. QLoRA Hyperparameters
+
+Common Configuration
+
+```
+Quantization
+
+4-bit
+
+NF4
+
+Double Quantization
+
+Enabled
+
+Compute Type
+
+BF16
+```
+
+---
+
+### 16. Generation Hyperparameters (Inference)
+
+### Temperature
+
+Controls randomness.
+
+| Value | Behavior |
+|---------|----------|
+| 0.0 | Deterministic |
+| 0.2 | Low randomness |
+| 0.7 | Balanced |
+| 1.0 | Creative |
+| >1.2 | Highly random |
+
+---
+
+### Top-k Sampling
+
+Choose the next token from the top **k** most probable tokens.
+
+Typical
+
+```
+20
+
+40
+
+50
+
+100
+```
+
+---
+
+### Top-p (Nucleus Sampling)
+
+Choose tokens until cumulative probability reaches **p**.
+
+Typical
+
+```
+0.8
+
+0.9
+
+0.95
+```
+
+---
+
+### Repetition Penalty
+
+Reduces repeated words or phrases.
+
+Typical
+
+```
+1.05
+
+1.1
+
+1.2
+```
+
+---
+
+### Max New Tokens
+
+Maximum number of tokens generated.
+
+Examples
+
+```
+128
+
+256
+
+512
+
+1024
+```
+
+---
+
+### Beam Search
+
+Number of candidate sequences explored during decoding.
+
+Typical
+
+```
+1 (Greedy)
+
+4
+
+8
+```
+
+---
+
+### Early Stopping
+
+Stop generation when an EOS (End-of-Sequence) token is produced.
+
+```
+True
+
+False
+```
+
+---
+
+### Common Hyperparameters for Fine-Tuning
+
+| Hyperparameter | Typical Value |
+|----------------|---------------|
+| Learning Rate | 2e-5 |
+| Batch Size | 8 |
+| Epochs | 3 |
+| Weight Decay | 0.01 |
+| Warmup Ratio | 0.03 |
+| Gradient Clipping | 1.0 |
+| Optimizer | AdamW |
+| Scheduler | Cosine |
+| Precision | BF16 / FP16 |
+| Sequence Length | 2048 |
+| Gradient Accumulation | 4 |
+
+---
+
+### Common Hyperparameters for LoRA
+
+| Hyperparameter | Typical Value |
+|----------------|---------------|
+| Rank (r) | 16 |
+| Alpha | 32 |
+| Dropout | 0.05 |
+| Learning Rate | 2e-4 |
+| Batch Size | 8 |
+| Epochs | 3 |
+
+---
+
+### Common Hyperparameters for Inference
+
+| Hyperparameter | Typical Value |
+|----------------|---------------|
+| Temperature | 0.7 |
+| Top-k | 50 |
+| Top-p | 0.95 |
+| Repetition Penalty | 1.1 |
+| Max New Tokens | 512 |
+| Beam Size | 1–4 |
+
+---
+
+### Best Practices
+
+- Use **AdamW** optimizer for most fine-tuning tasks.
+- Start with a **low learning rate (1e-5–5e-5)** for full fine-tuning and **2e-4** for LoRA/QLoRA.
+- Enable **warmup** (3–10%) to stabilize training.
+- Use **gradient accumulation** when GPU memory is limited.
+- Prefer **BF16** (if supported) or **FP16** for efficient training.
+- Set **temperature = 0.7**, **top-p = 0.95**, and **top-k = 50** for balanced text generation.
+- Monitor validation loss and use **early stopping** to avoid overfitting.
+
+---
+
+### Conclusion
+
+Hyperparameters determine the efficiency, stability, and quality of SLM training and inference. Careful tuning of parameters such as **learning rate**, **batch size**, **optimizer**, **sequence length**, **precision**, and **generation settings** is essential for achieving optimal performance while balancing computational cost.
